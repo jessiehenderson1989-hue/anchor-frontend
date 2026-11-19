@@ -48,7 +48,14 @@ function App() {
               </ProtectedRoute>
             }
           />
-          <Route path="/delete-account" element={<DeleteAccount />} />
+          <Route
+            path="/delete-account"
+            element={
+              <ProtectedRoute>
+                <DeleteAccount />
+              </ProtectedRoute>
+            }
+          />
           <Route
             path="/foster-care-intro"
             element={
