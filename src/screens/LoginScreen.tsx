@@ -44,8 +44,6 @@ export function LoginScreen() {
           setError("Please confirm your email address before signing in.")
         } else if (authError.message.includes('User not found')) {
           setError("We couldn't find an account with that email. Would you like to create one?")
-        } else if (authError.message.toLowerCase().includes('database error')) {
-          setError('That username may already be taken. Please try a different one.')
         } else {
           setError("We're having trouble connecting. Please check your internet and try again.")
         }
@@ -131,6 +129,8 @@ export function LoginScreen() {
           setError('This email is already registered. Would you like to sign in instead?')
         } else if (authError.message.includes('Password')) {
           setError('Please choose a stronger password (at least 6 characters).')
+        } else if (authError.message.toLowerCase().includes('database error')) {
+          setError('That username may already be taken. Please try a different one.')
         } else {
           setError("We're having trouble connecting. Please check your internet and try again.")
         }

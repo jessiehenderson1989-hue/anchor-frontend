@@ -248,7 +248,7 @@ const STAGE_CONTENT: Record<string, Record<Role, StageContent>> = {
     youth: {
       name: '12-Month Review Hearing',
       whatHappens: 'The judge takes a close look at your situation and decides what comes next. If you want to go home, say so. If things are not safe at home, say that too. Your voice matters here.',
-      yourRights: ['Right to express your wishes about placement', 'Right to an attorney who represents only you', 'Right to participate in long-term planning for your life'],
+      yourRights: ['Right to express your wishes about placement', 'Right to your own attorney', 'Right to participate in long-term planning for your life'],
       tasks: [
         'Have an honest conversation with your attorney about what you want',
         'Tell your attorney if going home is or is not what you want right now',
@@ -272,9 +272,9 @@ const STAGE_CONTENT: Record<string, Record<Role, StageContent>> = {
   },
   'eighteen-month': {
     parent: {
-      name: '18-Month Permanency Hearing',
+      name: '18-Month Review',
       whatHappens: 'The court determines a permanent plan for your child. Reunification is still possible if you have made significant progress. This is the most important hearing. Be there, bring everything, and advocate for yourself.',
-      yourRights: ['Right to advocate for reunification', 'Right to present all evidence of your progress', "Right to appeal: 60 days for most orders, only 7 days to start a writ if a .26 hearing is set", 'Right to an attorney'],
+      yourRights: ['Right to advocate for reunification', 'Right to present all evidence of your progress', "Right to appeal: 60 days for most orders, only 7 days to start a writ (a fast kind of appeal) if a .26 hearing is set", 'Right to an attorney'],
       tasks: [
         'This is the most critical hearing — do not miss it for any reason',
         'Bring every document, certificate, and letter showing your progress',
@@ -285,7 +285,7 @@ const STAGE_CONTENT: Record<string, Record<Role, StageContent>> = {
       ],
     },
     youth: {
-      name: '18-Month Permanency Hearing',
+      name: '18-Month Decision',
       whatHappens: 'The judge is deciding on a long-term plan for your life — going home, guardianship, or adoption. Tell your attorney and the judge exactly what you want. This decision should reflect what is best for you.',
       yourRights: ['Right to have your wishes considered in the permanent plan', 'Right to maintain contact with siblings and important people', 'Right to participate in your own permanency planning'],
       tasks: [
@@ -297,7 +297,7 @@ const STAGE_CONTENT: Record<string, Record<Role, StageContent>> = {
       ],
     },
     supporter: {
-      name: '18-Month Permanency Hearing',
+      name: '18-Month Review',
       whatHappens: 'The court is finalizing a permanent plan. If you are interested in guardianship or adoption, speak up now. The court considers all stable, loving options for the child.',
       yourRights: ['Right to be assessed for guardianship or adoption', 'Right to request de facto parent status if you have been the primary caregiver', 'Right to provide a statement to the court'],
       tasks: [
@@ -311,7 +311,7 @@ const STAGE_CONTENT: Record<string, Record<Role, StageContent>> = {
   },
   'review-hearings': {
     parent: {
-      name: 'Post-Permanency Reviews',
+      name: 'Ongoing Reviews',
       whatHappens: 'If reunification was successful, the court may hold follow-up hearings to make sure things are going well. Stay connected with your social worker and complete any remaining requirements.',
       yourRights: ['Right to request modification of orders', 'Right to ongoing support services', 'Right to appeal decisions you disagree with'],
       tasks: [
@@ -323,7 +323,7 @@ const STAGE_CONTENT: Record<string, Record<Role, StageContent>> = {
       ],
     },
     youth: {
-      name: 'Post-Permanency Reviews',
+      name: 'Regular Check-Ins',
       whatHappens: 'The court is checking in to make sure your permanent plan is working. If you are nearing 18, you have rights to extended services. Ask your attorney about Extended Foster Care.',
       yourRights: ['Right to Extended Foster Care services up to age 21', 'Right to transition planning support', 'Right to maintain connections with important people in your life'],
       tasks: [
@@ -335,7 +335,7 @@ const STAGE_CONTENT: Record<string, Record<Role, StageContent>> = {
       ],
     },
     supporter: {
-      name: 'Post-Permanency Reviews',
+      name: 'Ongoing Reviews',
       whatHappens: 'The case is moving toward closure. If you are a guardian or adoptive parent, the court will check in on how things are going. Reach out to your social worker if you need support.',
       yourRights: ['Right to request support services as a caregiver', 'Right to maintain court-ordered contact arrangements', 'Right to request modification of orders if circumstances change'],
       tasks: [

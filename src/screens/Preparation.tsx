@@ -32,7 +32,7 @@ const COPY = {
   parent: {
     heading: 'Get Ready',
     subheading: 'A little preparation goes a long way.',
-    privacyNote: 'None of your notes are shared with CPS or the court.',
+    privacyNote: 'Anchor does not share your notes with CPS or the court. Your question goes to an AI service to write your guide.',
     prepOptions: [
       { type: 'hearing' as PrepType, icon: FileText, title: 'Before a Hearing', description: 'What to say, what to bring, what to expect.' },
       { type: 'meeting' as PrepType, icon: Users, title: 'Before a Meeting', description: 'Prepare for your attorney or social worker.' },
@@ -55,7 +55,7 @@ const COPY = {
   youth: {
     heading: 'Get Ready',
     subheading: 'Your thoughts matter. Let\'s organize them.',
-    privacyNote: 'None of this is shared with your parents, social worker, or the court.',
+    privacyNote: 'Anchor does not share this with your parents, social worker, or the court. Your question goes to an AI service to write your guide.',
     prepOptions: [
       { type: 'hearing' as PrepType, icon: FileText, title: 'Before Court', description: 'What to say, what to expect, how to feel ready.' },
       { type: 'meeting' as PrepType, icon: Users, title: 'Before a Meeting', description: 'Get ready to talk to your lawyer, social worker, or CASA.' },
@@ -79,7 +79,7 @@ const COPY = {
   supporter: {
     heading: 'Get Ready',
     subheading: 'Being prepared helps you show up for them.',
-    privacyNote: 'Only you can see this in Anchor. Your question goes to an AI service to write your guide.',
+    privacyNote: 'Anchor does not share this with anyone in the case. Your question goes to an AI service to write your guide.',
     prepOptions: [
       { type: 'hearing' as PrepType, icon: FileText, title: 'Before a Hearing', description: 'How to support someone going to court.' },
       { type: 'meeting' as PrepType, icon: Users, title: 'Before a Meeting', description: 'Prepare to support someone meeting with professionals.' },
@@ -170,7 +170,7 @@ export function Preparation() {
       if (user) {
         await supabase.from('preparation_notes').insert({
           user_id: user.id,
-          prep_type: `before_${selectedType}`,
+          prep_type: selectedType === 'after_hearing' ? 'after_hearing' : `before_${selectedType}`,
           concerns,
           generated_guide: { content: data.response },
         })

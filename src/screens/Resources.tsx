@@ -409,7 +409,7 @@ export function Resources() {
                       </a>
                     )}
                     {resource.text_line && (
-                      <a href={`sms:${(resource.text_line.match(/\d{5,}/) || [resource.text_line.split(' ')[0]])[0]}`}
+                      <a href={`sms:${resource.text_line.replace(/\D/g, '') || resource.text_line.split(' ')[0]}`}
                         style={{ display: 'inline-flex', alignItems: 'center', gap: 6, background: '#EAF0F8', color: '#3A5A80', borderRadius: 12, padding: '8px 14px', fontFamily: 'DM Sans, sans-serif', fontWeight: 600, fontSize: 13, textDecoration: 'none' }}>
                         <MessageSquare size={13} /> Text
                       </a>

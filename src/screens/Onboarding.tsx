@@ -28,6 +28,9 @@ const INTAKE_STAGE_TO_KEY: Record<string, string> = {
   detention: 'detention', jurisdiction: 'jurisdiction', disposition: 'disposition',
   review: 'six-month', permanency: 'permanency',
 }
+const totalStepsFor = (role: string) => TEXT_REMINDERS_READY
+  ? (role === 'supporter' ? 7 : 10)
+  : (role === 'supporter' ? 6 : role === 'youth' ? 9 : 8)
 const furthestStageKey = (selected: string[]): string | null => {
   const furthest = [...INTAKE_STAGE_ORDER].reverse().find(s => selected.includes(s))
   return furthest ? INTAKE_STAGE_TO_KEY[furthest] : null
@@ -315,9 +318,14 @@ export function Onboarding() {
               .eq('id', row.id)
           }
 
+          // Home shows the stage the person is in now, the same one the timeline marks in progress
+          const currentInProgress = timelineRows.find(r => r.order_index === highestCompletedOrder + 1)
+          if (currentInProgress && highestCompletedOrder > 0) {
+            await updateProfile({ current_stage: currentInProgress.stage_key })
+          }
+
           // If user provided a next court date, attach it to the current in_progress stage
           if (nextCourtDate) {
-            const currentInProgress = timelineRows.find(r => r.order_index === highestCompletedOrder + 1)
             if (currentInProgress) {
               await supabase
                 .from('timeline_stages')
@@ -392,7 +400,7 @@ export function Onboarding() {
       navigate(profile?.onboarding_foster_care_seen ? '/dashboard' : '/foster-care-intro')
       return
     }
-    if (profile?.intake_step && profile.intake_step <= 10) setStep(profile.intake_step)
+    if (profile?.intake_step) setStep(Math.min(profile.intake_step, totalStepsFor(profile.role || 'parent')))
   }, [profile, navigate])
 
   const saveProgress = async (currentStep: number, data: Record<string, unknown>) => {
@@ -488,9 +496,11 @@ export function Onboarding() {
       }
     }
 
-    await saveProgress(nextStep, updates)
+    const finishing = nextStep >= 11 || (role === 'supporter' && nextStep >= 8)
+    // When finishing, stay on this step while the timeline is set up
+    await saveProgress(finishing ? step : nextStep, updates)
 
-    if (nextStep >= 11 || (role === 'supporter' && nextStep >= 8)) {
+    if (finishing) {
       // Seed timeline stages + contacts from onboarding answers before marking complete
       if (user) {
         await seedOnboardingData(user.id)
@@ -551,9 +561,7 @@ export function Onboarding() {
     return false
   }
 
-  const getTotalSteps = () => TEXT_REMINDERS_READY
-    ? (role === 'supporter' ? 7 : 10)
-    : (role === 'supporter' ? 6 : role === 'youth' ? 9 : 8)
+  const getTotalSteps = () => totalStepsFor(role)
   const totalSteps = getTotalSteps()
   const progress = (step / totalSteps) * 100
 

@@ -248,7 +248,8 @@ export function Settings() {
     setLoading(true); setError('')
     try {
       // Update role in profiles
-      const { error: profileError } = await updateProfile({ role: selectedRole })
+      // The timeline is rebuilt for the new role, so Home starts from the first stage too
+      const { error: profileError } = await updateProfile({ role: selectedRole, current_stage: 'case-opening' })
       if (profileError) throw profileError
 
       // Re-seed timeline for the new role
@@ -461,6 +462,7 @@ export function Settings() {
           </button>}
         </div>
 
+        {TEXT_REMINDERS_READY && (<>
         {/* ── NOTIFICATIONS ── */}
         <p style={{ fontSize: 11, fontWeight: 700, letterSpacing: '0.07em', textTransform: 'uppercase', color: '#8A8098', marginBottom: 8, paddingLeft: 4 }}>
           Notifications
@@ -506,6 +508,7 @@ export function Settings() {
             </button>
           </div>
         </div>
+        </>)}
 
         {/* ── PRIVACY & DATA ── */}
         <p style={{ fontSize: 11, fontWeight: 700, letterSpacing: '0.07em', textTransform: 'uppercase', color: '#8A8098', marginBottom: 8, paddingLeft: 4 }}>
@@ -614,7 +617,7 @@ export function Settings() {
       {showChangeRole && (
         <Modal title="Change Your Role" onClose={() => { setShowChangeRole(false); setError('') }}>
           <p style={{ fontSize: 14, color: '#4A4058', marginBottom: 16, lineHeight: 1.5 }}>
-            Your role determines what content, rights, and resources you see. Changing it will update your timeline.
+            Your role determines what content, rights, and resources you see. Changing it rebuilds your timeline for the new role. Court dates and checked-off steps on your timeline will be cleared.
           </p>
           {error && <ErrorBox msg={error} />}
           <div className="space-y-3 mb-5">
