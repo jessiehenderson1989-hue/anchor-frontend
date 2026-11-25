@@ -16,7 +16,7 @@ const CONTENT: Record<string, { headline: string; subtitle: string; sections: Se
     sections: [
       {
         title: 'Foster care is temporary',
-        body: 'The goal of the system is reunification whenever it\'s safe. Most cases resolve within 6–18 months. The court sets regular hearings to track progress and check in on your case plan.',
+        body: 'The goal of the system is reunification whenever it\'s safe. Most parents get about one year of services if they keep making progress. If your child is under 3, you may get only 6 months. The court sets regular hearings to track progress and check in on your case plan.',
       },
       {
         title: 'Having your child removed is not the end',
@@ -24,7 +24,7 @@ const CONTENT: Record<string, { headline: string; subtitle: string; sections: Se
       },
       {
         title: 'You still have rights',
-        body: 'You have the right to a free attorney, to visit your child regularly, to receive a copy of your case plan, and to speak at every court hearing. No one can take those rights away.',
+        body: 'You have the right to a free attorney, to visit your child regularly, to receive a copy of your case plan, and to speak at every court hearing. Your lawyer can explain each one.',
       },
       {
         title: 'The system has a lot of moving parts',
@@ -50,7 +50,7 @@ const CONTENT: Record<string, { headline: string; subtitle: string; sections: Se
       },
       {
         title: 'You have rights',
-        body: 'You have the right to know what\'s happening in your case, to have a say in decisions that affect you, to be treated with respect, and to have an attorney who works only for you.',
+        body: 'You have the right to know what\'s happening in your case, to have a say in decisions that affect you, to be treated with respect, and to have your own attorney.',
       },
       {
         title: 'You are not alone',

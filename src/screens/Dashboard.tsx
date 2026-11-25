@@ -52,7 +52,7 @@ const PEER_QUOTES: Record<Role, Record<string, string>> = {
   youth: {
     'case-opening':   "Nobody explained anything to me at first. You're allowed to ask questions. Your lawyer works for you, not the system. Ask them to explain everything.",
     'detention':      "I didn't know I could speak at my first hearing. You can. If you want the judge to know something, tell your lawyer beforehand.",
-    'jurisdiction':   "Your lawyer is supposed to be fighting for what you want, not just what the adults think is best. If something doesn't feel right, say something.",
+    'jurisdiction':   "Your lawyer tells the judge what you want and what they think is best for you. Those can be different. If something doesn't feel right, say something.",
     'disposition':    "When they make the plan, you should have some say in it. If nobody's asking what you want, that's a problem. Ask your lawyer to bring it up.",
     'six-month':      "The check-ins can feel pointless but they're actually your chance to tell the court how things are really going. If something isn't right, this is the moment.",
     'twelve-month':   "By this point I was starting to wonder what my future looked like. You're allowed to think about your future out loud.",
@@ -78,7 +78,7 @@ const PEER_QUOTES: Record<Role, Record<string, string>> = {
 // ─── WHAT MATTERS ────────────────────────────────────────────────────────────
 const WHAT_MATTERS: Record<Role, Record<string, string[]>> = {
   parent: {
-    'case-opening':   ["Find your attorney today — you have the right to one at no cost","Don't talk to the social worker without your attorney present","Write everything down — dates, names, what was said"],
+    'case-opening':   ["Find your attorney today — you have the right to one at no cost","Ask your lawyer before you answer questions about what the county says happened","Write everything down — dates, names, what was said"],
     'detention':      ["Meet with your attorney before the hearing","Arrive early and dress respectfully — first impressions matter","Ask about visitation — get a schedule in writing"],
     'jurisdiction':   ["Review the petition with your attorney — understand the allegations","Decide what you want to contest — you don't have to agree","Gather evidence that supports your side"],
     'disposition':    ["Read your case plan carefully — start on it immediately","Enroll in required services this week — don't wait","Ask about help with transportation or childcare"],
@@ -90,7 +90,7 @@ const WHAT_MATTERS: Record<Role, Record<string, string[]>> = {
     'case-closure':   ["Get copies of all your case records","Ask about aftercare services — support doesn't have to end","Know what closure means for your specific situation"],
   },
   youth: {
-    'case-opening':   ["Meet your lawyer — they work only for you","Ask where you're going and why — you have the right to know","Tell someone what you need — you are allowed to ask"],
+    'case-opening':   ["Meet your lawyer — they tell the judge what you want","Ask where you're going and why — you have the right to know","Tell someone what you need — you are allowed to ask"],
     'detention':      ["Talk to your lawyer before the hearing","You can speak in court — your lawyer can help you do that","Ask about seeing your family — your wishes matter"],
     'jurisdiction':   ["Ask your lawyer what is being said about your family","Tell your lawyer what you want — your wishes should be represented","Ask questions if you don't understand something"],
     'disposition':    ["Tell your social worker what you need — therapy, tutoring, medical care","Ask about your visitation schedule","Make sure your voice is in the plan"],

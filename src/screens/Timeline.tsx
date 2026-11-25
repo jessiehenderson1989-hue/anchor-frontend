@@ -80,7 +80,7 @@ const STAGE_CONTENT: Record<string, Record<Role, StageContent>> = {
   detention: {
     parent: {
       name: 'Detention Hearing',
-      whatHappens: 'The court decides if your child can return home or must stay in foster care while the case continues. This happens within 48–72 hours of removal. Tell the judge if family members can care for your child.',
+      whatHappens: 'The court decides if your child can return home or must stay in foster care while the case continues. The social worker has 2 court days to file papers, and this hearing is the next court day. Weekends and holidays do not count. Tell the judge if family members can care for your child.',
       yourRights: ['Right to be present and speak', 'Right to an attorney', 'Right to suggest relatives for placement', 'Right to visits with your child'],
       tasks: [
         'Go to the hearing — do not miss it even if you do not have an attorney yet',
@@ -105,7 +105,7 @@ const STAGE_CONTENT: Record<string, Record<Role, StageContent>> = {
     supporter: {
       name: 'Detention Hearing',
       whatHappens: 'The judge decides where the child will live during the case. If you want the child placed with you, this is the time to tell the court. Contact the social worker right away.',
-      yourRights: ['Right to request placement', 'Right to speak to the social worker', 'Right to attend the hearing if you are a caregiver'],
+      yourRights: ['Right to request placement', 'Right to speak to the social worker', 'You can ask to attend the hearing. The judge decides.'],
       tasks: [
         'Call the social worker immediately and ask to be considered for placement',
         'Be prepared for a home study or background check',
@@ -143,7 +143,7 @@ const STAGE_CONTENT: Record<string, Record<Role, StageContent>> = {
     supporter: {
       name: 'Jurisdiction Hearing',
       whatHappens: "The court is deciding if the allegations in the case are proven. If you have information that could help, share it with the family's attorney. The outcome affects what happens next in the case.",
-      yourRights: ['Right to attend hearings as a caregiver', 'Right to submit a statement through the court', 'Right to request information about placement decisions'],
+      yourRights: ['You can ask to attend hearings. The judge decides.', 'Right to submit a statement through the court', 'Right to request information about placement decisions'],
       tasks: [
         "Contact the family's attorney if you have relevant information",
         'Attend the hearing as support if the parent invites you',
@@ -274,7 +274,7 @@ const STAGE_CONTENT: Record<string, Record<Role, StageContent>> = {
     parent: {
       name: '18-Month Permanency Hearing',
       whatHappens: 'The court determines a permanent plan for your child. Reunification is still possible if you have made significant progress. This is the most important hearing. Be there, bring everything, and advocate for yourself.',
-      yourRights: ['Right to advocate for reunification', 'Right to present all evidence of your progress', "Right to appeal the court's decision", 'Right to an attorney'],
+      yourRights: ['Right to advocate for reunification', 'Right to present all evidence of your progress', "Right to appeal: 60 days for most orders, only 7 days to start a writ if a .26 hearing is set", 'Right to an attorney'],
       tasks: [
         'This is the most critical hearing — do not miss it for any reason',
         'Bring every document, certificate, and letter showing your progress',
