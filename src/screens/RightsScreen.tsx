@@ -114,8 +114,8 @@ export function RightsScreen() {
       if (needle.length <= 3) return false
       const idx = haystack.indexOf(needle)
       if (idx === -1) return false
-      const before = idx === 0 || /W/.test(haystack[idx - 1])
-      const after = idx + needle.length >= haystack.length || /W/.test(haystack[idx + needle.length])
+      const before = idx === 0 || /\W/.test(haystack[idx - 1])
+      const after = idx + needle.length >= haystack.length || /\W/.test(haystack[idx + needle.length])
       return before && after
     }).slice(0, 4)
   }

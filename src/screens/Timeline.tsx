@@ -192,7 +192,7 @@ const STAGE_CONTENT: Record<string, Record<Role, StageContent>> = {
       ],
     },
   },
-  '6_month_review': {
+  'six-month': {
     parent: {
       name: '6-Month Review Hearing',
       whatHappens: 'The judge reviews your progress on your case plan. Bring every completion certificate, letter, and proof of attendance. This is your chance to show how hard you have been working.',
@@ -231,7 +231,7 @@ const STAGE_CONTENT: Record<string, Record<Role, StageContent>> = {
       ],
     },
   },
-  '12_month_review': {
+  'twelve-month': {
     parent: {
       name: '12-Month Review Hearing',
       whatHappens: 'This is a critical hearing. If you have not made substantial progress, the court may move toward a permanent plan. Bring everything showing your progress. Talk to your attorney before this hearing.',
@@ -270,7 +270,7 @@ const STAGE_CONTENT: Record<string, Record<Role, StageContent>> = {
       ],
     },
   },
-  '18_month_permanency': {
+  'eighteen-month': {
     parent: {
       name: '18-Month Permanency Hearing',
       whatHappens: 'The court determines a permanent plan for your child. Reunification is still possible if you have made significant progress. This is the most important hearing. Be there, bring everything, and advocate for yourself.',
@@ -309,7 +309,7 @@ const STAGE_CONTENT: Record<string, Record<Role, StageContent>> = {
       ],
     },
   },
-  post_permanency: {
+  'review-hearings': {
     parent: {
       name: 'Post-Permanency Reviews',
       whatHappens: 'If reunification was successful, the court may hold follow-up hearings to make sure things are going well. Stay connected with your social worker and complete any remaining requirements.',
@@ -369,6 +369,8 @@ interface TimelineStage {
   order_index: number
   status: 'not_started' | 'in_progress' | 'completed'
   court_date: string | null
+  what_happens?: string | null
+  your_rights?: string[] | null
   tasks: Task[]
   icon_name: string
   color: string
@@ -417,7 +419,7 @@ const STATUS_STYLES = {
 
 export function Timeline() {
   const navigate = useNavigate()
-  const { user, profile } = useAuth()
+  const { user, profile, updateProfile } = useAuth()
   const role: Role = (profile?.role as Role) || 'parent'
 
   const [viewMode, setViewMode] = useState<'cards' | 'list'>('cards')
@@ -464,7 +466,15 @@ export function Timeline() {
   const getContent = (stage: TimelineStage): StageContent => {
     const lookup = STAGE_CONTENT[stage.stage_key]
     if (lookup && lookup[role]) return lookup[role]
-    return fallbackContent(stage.stage_name, role)
+    // No written content for this stage and role: use what the database holds for it
+    const base = fallbackContent(stage.stage_name, role)
+    const dbTasks = (stage.tasks || []).map(t => t.task).filter(Boolean)
+    return {
+      name: stage.stage_name,
+      whatHappens: stage.what_happens || base.whatHappens,
+      yourRights: stage.your_rights && stage.your_rights.length > 0 ? stage.your_rights : base.yourRights,
+      tasks: dbTasks.length > 0 ? dbTasks : base.tasks,
+    }
   }
 
   // Get task completion state: merge role-specific task labels with DB completion state
@@ -562,7 +572,7 @@ export function Timeline() {
       setStages(prev => prev.map(s => s.id === stageId ? { ...s, court_date: date } : s))
       // Sync to profile so Dashboard court date stays current
       if (user) {
-        await supabase.from('profiles').update({ next_court_date: date || null }).eq('id', user.id)
+        await updateProfile({ next_court_date: date || null })
       }
     } catch (err) {
       console.error('Error updating court date:', err)
@@ -584,9 +594,9 @@ export function Timeline() {
       // Sync current_stage to profile so Dashboard journey map stays current
       const nextStage = stages.find(s => s.order_index === orderIndex + 1)
       if (user && nextStage?.stage_key) {
-        await supabase.from('profiles').update({ current_stage: nextStage.stage_key }).eq('id', user.id)
+        await updateProfile({ current_stage: nextStage.stage_key })
       }
-      trackEvent('timeline_stage_completed', { stage_id: stageId })
+      trackEvent('timeline_stage_completed', { metadata: { stage_id: stageId } })
       await initializeTimeline()
     } catch (err) {
       console.error('Error marking stage complete:', err)
@@ -595,7 +605,8 @@ export function Timeline() {
 
   const formatDate = (dateString: string | null) => {
     if (!dateString) return null
-    return new Date(dateString).toLocaleDateString('en-US', { month: 'short', day: 'numeric', year: 'numeric' })
+    // A plain date has no time zone. Without a time it shows a day early in California.
+    return new Date(dateString.length === 10 ? dateString + 'T00:00:00' : dateString).toLocaleDateString('en-US', { month: 'short', day: 'numeric', year: 'numeric' })
   }
 
   const getStageIcon = (iconName: string) =>

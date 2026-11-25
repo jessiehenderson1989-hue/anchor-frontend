@@ -44,6 +44,8 @@ export function LoginScreen() {
           setError("Please confirm your email address before signing in.")
         } else if (authError.message.includes('User not found')) {
           setError("We couldn't find an account with that email. Would you like to create one?")
+        } else if (authError.message.toLowerCase().includes('database error')) {
+          setError('That username may already be taken. Please try a different one.')
         } else {
           setError("We're having trouble connecting. Please check your internet and try again.")
         }
@@ -105,13 +107,10 @@ export function LoginScreen() {
     setLoading(true)
 
     try {
-      const { data: existingUsername } = await supabase
-        .from('profiles')
-        .select('id')
-        .eq('username', username)
-        .maybeSingle()
+      // Signed-out people cannot read profiles, so the database answers yes or no
+      const { data: usernameFree } = await supabase.rpc('username_available', { p_username: username })
 
-      if (existingUsername) {
+      if (usernameFree === false) {
         setError('This username is already taken. Please choose another one.')
         setLoading(false)
         return
@@ -448,7 +447,7 @@ export function LoginScreen() {
 
         {/* ── CONTACT SUPPORT ── */}
         <button
-          onClick={() => {}}
+          onClick={() => navigate('/contact-support')}
           className="w-full py-3.5 rounded-2xl font-semibold mb-5 flex items-center justify-center gap-2 transition-all active:scale-95"
           style={{ background: 'transparent', border: '1.5px solid rgba(122,102,144,0.3)', color: '#7A6690' }}
         >

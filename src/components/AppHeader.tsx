@@ -7,6 +7,8 @@ import { ConfirmDialog } from './ConfirmDialog'
 
 interface AppHeaderProps {
   showBack?: boolean
+  /** Accepted so screens can name themselves. The header does not show it. */
+  title?: string
 }
 
 const STAGE_COUNT = 10

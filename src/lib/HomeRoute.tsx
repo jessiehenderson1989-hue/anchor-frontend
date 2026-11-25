@@ -89,7 +89,7 @@ export function HomeRoute() {
 
   // Profile fully loaded — now safe to route
   if (user && profile) {
-    if (profile.intake_completed === false) return <Navigate to="/onboarding" replace />
+    if (profile.intake_completed !== true) return <Navigate to="/onboarding" replace />
     if (!profile.onboarding_foster_care_seen) return <Navigate to="/foster-care-intro" replace />
     return <Navigate to="/dashboard" replace />
   }

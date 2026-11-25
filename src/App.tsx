@@ -43,7 +43,7 @@ function App() {
           <Route
             path="/onboarding"
             element={
-              <ProtectedRoute>
+              <ProtectedRoute allowBeforeIntake>
                 <Onboarding />
               </ProtectedRoute>
             }
@@ -51,7 +51,7 @@ function App() {
           <Route
             path="/delete-account"
             element={
-              <ProtectedRoute>
+              <ProtectedRoute allowBeforeIntake>
                 <DeleteAccount />
               </ProtectedRoute>
             }
@@ -147,7 +147,7 @@ function App() {
           <Route
             path="/terms"
             element={
-              <ProtectedRoute>
+              <ProtectedRoute allowBeforeIntake>
                 <TermsOfService />
               </ProtectedRoute>
             }
@@ -155,19 +155,13 @@ function App() {
           <Route
             path="/privacy"
             element={
-              <ProtectedRoute>
+              <ProtectedRoute allowBeforeIntake>
                 <PrivacyPolicy />
               </ProtectedRoute>
             }
           />
-          <Route
-            path="/contact-support"
-            element={
-              <ProtectedRoute>
-                <ContactSupport />
-              </ProtectedRoute>
-            }
-          />
+          {/* Open to everyone: people who cannot sign in need it most */}
+          <Route path="/contact-support" element={<ContactSupport />} />
           <Route path="*" element={<Navigate to="/" replace />} />
         </Routes>
       </AuthProvider>

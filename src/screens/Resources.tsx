@@ -40,7 +40,7 @@ const PARENT_CATEGORIES: ParentCategory[] = ['All', 'Classes & Workshops', 'Hous
 type YouthCategory = 'All' | 'Rights in Foster Care' | 'Court Process for Youth' | 'Education Rights' | 'Mental Health Resources' | 'Legal Representation and CASA' | 'Emancipation / Aging Out' | 'Crisis and Hotline Resources' | 'General Foster Youth Resources'
 const YOUTH_CATEGORIES: YouthCategory[] = ['All', 'Crisis and Hotline Resources', 'Rights in Foster Care', 'Court Process for Youth', 'Education Rights', 'Mental Health Resources', 'Legal Representation and CASA', 'Emancipation / Aging Out', 'General Foster Youth Resources']
 
-const CA_COUNTIES = ['All Counties','Los Angeles','Orange County','San Diego','Sacramento','Alameda','Contra Costa','Fresno','Kern','Riverside','San Bernardino','San Francisco','San Joaquin','Santa Clara','Stanislaus','Ventura']
+const CA_COUNTIES = ['All Counties','Los Angeles','Orange','San Diego','Sacramento','Alameda','Contra Costa','Fresno','Kern','Riverside','San Bernardino','San Francisco','San Joaquin','Santa Clara','Stanislaus','Ventura']
 
 const getParentCategoryIcon = (cat: string) => {
   switch (cat) {
@@ -130,7 +130,10 @@ export function Resources() {
       setLoading(true)
       const role = profile?.role || 'parent'
       const { data, error: fetchError } = await supabase
-        .from('resources').select('*').contains('user_role', [role]).order('name', { ascending: true })
+        .from('resources').select('*')
+        // A supporter may be helping a parent or a youth, so they see every resource
+        .overlaps('user_role', role === 'supporter' ? ['parent', 'youth', 'supporter'] : [role])
+        .order('name', { ascending: true })
       if (fetchError) throw fetchError
       setResources(data || [])
       setError(null)
@@ -406,7 +409,7 @@ export function Resources() {
                       </a>
                     )}
                     {resource.text_line && (
-                      <a href={`sms:${resource.text_line.split(' ')[0]}`}
+                      <a href={`sms:${(resource.text_line.match(/\d{5,}/) || [resource.text_line.split(' ')[0]])[0]}`}
                         style={{ display: 'inline-flex', alignItems: 'center', gap: 6, background: '#EAF0F8', color: '#3A5A80', borderRadius: 12, padding: '8px 14px', fontFamily: 'DM Sans, sans-serif', fontWeight: 600, fontSize: 13, textDecoration: 'none' }}>
                         <MessageSquare size={13} /> Text
                       </a>

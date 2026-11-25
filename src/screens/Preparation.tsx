@@ -79,7 +79,7 @@ const COPY = {
   supporter: {
     heading: 'Get Ready',
     subheading: 'Being prepared helps you show up for them.',
-    privacyNote: 'None of this is shared with anyone.',
+    privacyNote: 'Only you can see this in Anchor. Your question goes to an AI service to write your guide.',
     prepOptions: [
       { type: 'hearing' as PrepType, icon: FileText, title: 'Before a Hearing', description: 'How to support someone going to court.' },
       { type: 'meeting' as PrepType, icon: Users, title: 'Before a Meeting', description: 'Prepare to support someone meeting with professionals.' },
@@ -170,10 +170,9 @@ export function Preparation() {
       if (user) {
         await supabase.from('preparation_notes').insert({
           user_id: user.id,
-          prep_type: selectedType,
+          prep_type: `before_${selectedType}`,
           concerns,
           generated_guide: { content: data.response },
-          exported: false,
         })
       }
     } catch (err) {
@@ -243,7 +242,7 @@ export function Preparation() {
       setShowSaveModal(false)
       setSavedSuccess(true)
       setTimeout(() => setSavedSuccess(false), 3000)
-      trackEvent('preparation_completed', { role: userRole, prep_type: selectedType })
+      trackEvent('preparation_completed', { role: userRole, prep_type: selectedType ?? undefined })
     } catch {
       setError('Could not save. Please try again.')
     }
@@ -431,8 +430,7 @@ export function Preparation() {
 
             {error && (
               <div
-                style={{ marginTop: 10, borderRadius: 12, padding: 10, display: 'flex', alignItems: 'flex-start', gap: 8 }}
-                style={{ background: '#F5ECD8', border: '1px solid rgba(200,136,58,0.2)' }}
+                style={{ marginTop: 10, borderRadius: 12, padding: 10, display: 'flex', alignItems: 'flex-start', gap: 8, background: '#F5ECD8', border: '1px solid rgba(200,136,58,0.2)' }}
               >
                 <AlertCircle size={15} style={{ color: '#C8883A', flexShrink: 0, marginTop: 2 }} />
                 <p style={{ fontFamily: 'DM Sans, sans-serif', fontSize: 12, color: '#7A5A2A', margin: 0 }}>{error}</p>
@@ -510,7 +508,7 @@ export function Preparation() {
                 <div style={{ display: 'flex', alignItems: 'center', gap: 8, marginBottom: 10 }}>
                   <Sparkles size={15} color="#7A6690" />
                   <p style={{ fontFamily: 'DM Sans, sans-serif', fontSize: 10, fontWeight: 700, textTransform: 'uppercase', letterSpacing: '0.05em', color: '#7A6690', margin: 0 }}>
-                    {i === 0 ? 'Your Preparation Guide' : 'Follow-up'}
+                    {i === 0 ? 'Your Preparation Guide · Written by AI' : 'Follow-up · Written by AI'}
                   </p>
                 </div>
                 <div

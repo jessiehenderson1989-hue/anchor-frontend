@@ -152,6 +152,10 @@ function ErrorBox({ msg }: { msg: string }) {
   )
 }
 
+// Not built yet. These stay hidden until they do something real.
+const SPANISH_READY = false
+const TEXT_REMINDERS_READY = false
+
 // ── ROLE CONFIG ───────────────────────────────────────────────────────────────
 const ROLES = [
   {
@@ -250,7 +254,6 @@ export function Settings() {
       // Re-seed timeline for the new role
       const { error: timelineError } = await supabase.rpc('initialize_user_timeline', {
         p_user_id: user!.id,
-        p_role: selectedRole,
       })
       if (timelineError) {
         // Non-fatal — timeline may already exist; log but don't block
@@ -446,7 +449,7 @@ export function Settings() {
             </div>
             <ChevronRight className="w-4 h-4" style={{ color: '#8A8098' }} />
           </button>
-          <button style={rowLast} onClick={() => { haptics.light(); setShowLanguageModal(true) }} className="w-full hover:bg-purple-50 transition-colors">
+          {SPANISH_READY && <button style={rowLast} onClick={() => { haptics.light(); setShowLanguageModal(true) }} className="w-full hover:bg-purple-50 transition-colors">
             <div className="flex items-center gap-3">
               <div style={iconWrap}><Globe className="w-4 h-4" style={{ color: '#7A6690' }} /></div>
               <div>
@@ -455,7 +458,7 @@ export function Settings() {
               </div>
             </div>
             <ChevronRight className="w-4 h-4" style={{ color: '#8A8098' }} />
-          </button>
+          </button>}
         </div>
 
         {/* ── NOTIFICATIONS ── */}

@@ -18,6 +18,20 @@ import { useAuth } from '../contexts/AuthContext'
 import { supabase } from '../lib/supabase'
 
 type Role = 'parent' | 'youth' | 'supporter'
+
+// Text reminders are not sent yet, so intake does not ask about them.
+const TEXT_REMINDERS_READY = false
+
+// Intake answers use short names. The timeline and Home use these keys.
+const INTAKE_STAGE_ORDER = ['detention', 'jurisdiction', 'disposition', 'review', 'permanency']
+const INTAKE_STAGE_TO_KEY: Record<string, string> = {
+  detention: 'detention', jurisdiction: 'jurisdiction', disposition: 'disposition',
+  review: 'six-month', permanency: 'permanency',
+}
+const furthestStageKey = (selected: string[]): string | null => {
+  const furthest = [...INTAKE_STAGE_ORDER].reverse().find(s => selected.includes(s))
+  return furthest ? INTAKE_STAGE_TO_KEY[furthest] : null
+}
 type ChildrenStatus = 'at_home' | 'removed' | 'with_family'
 type LawyerStatus = 'yes' | 'no' | 'unsure'
 type CaseManagerStatus = 'yes' | 'no' | 'unsure'
@@ -256,8 +270,8 @@ export function Onboarding() {
         detention: 'detention',
         jurisdiction: 'jurisdiction',
         disposition: 'disposition',
-        review: '6_month_review',
-        permanency: '18_month_permanency',
+        review: 'six-month',
+        permanency: 'permanency',
       }
 
       // If user selected stages during onboarding, mark them completed
@@ -383,7 +397,12 @@ export function Onboarding() {
 
   const saveProgress = async (currentStep: number, data: Record<string, unknown>) => {
     setSaving(true)
-    await updateProfile({ ...data, intake_step: currentStep })
+    const { error } = await updateProfile({ ...data, intake_step: currentStep })
+    if (error) {
+      // Never lose the person's place because one answer could not be saved
+      console.error('Intake answers not saved:', error.message)
+      await updateProfile({ intake_step: currentStep })
+    }
     setSaving(false)
   }
 
@@ -407,9 +426,9 @@ export function Onboarding() {
           updates.court_history = courtHistory
           if (courtHistory === 'not_yet' || courtHistory === 'scheduled') nextStep = 7
           break
-        case 6: updates.current_stage = selectedStages[selectedStages.length - 1] || null; break
+        case 6: updates.current_stage = furthestStageKey(selectedStages); break
         case 7: updates.next_court_date = nextCourtDate || null; break
-        case 8: updates.primary_concerns = primaryConcerns; break
+        case 8: updates.primary_concerns = primaryConcerns; if (!TEXT_REMINDERS_READY) nextStep = 11; break
         case 9:
           updates.text_reminders_enabled = textRemindersEnabled
           updates.phone_number = textRemindersEnabled ? phoneNumber : null
@@ -439,9 +458,9 @@ export function Onboarding() {
           updates.court_history = courtHistory
           if (courtHistory === 'not_yet' || courtHistory === 'scheduled') nextStep = 8
           break
-        case 7: updates.current_stage = selectedStages[selectedStages.length - 1] || null; break
+        case 7: updates.current_stage = furthestStageKey(selectedStages); break
         case 8: updates.next_court_date = nextCourtDate || null; break
-        case 9: updates.primary_concerns = primaryConcerns; break
+        case 9: updates.primary_concerns = primaryConcerns; if (!TEXT_REMINDERS_READY) nextStep = 11; break
         case 10:
           updates.text_reminders_enabled = textRemindersEnabled
           updates.phone_number = textRemindersEnabled ? phoneNumber : null
@@ -458,9 +477,9 @@ export function Onboarding() {
           updates.court_history = courtHistory
           if (courtHistory === 'not_yet' || courtHistory === 'scheduled') nextStep = 5
           break
-        case 4: updates.current_stage = selectedStages[selectedStages.length - 1] || null; break
+        case 4: updates.current_stage = furthestStageKey(selectedStages); break
         case 5: updates.next_court_date = nextCourtDate || null; break
-        case 6: updates.primary_concerns = primaryConcerns; break
+        case 6: updates.primary_concerns = primaryConcerns; if (!TEXT_REMINDERS_READY) nextStep = 8; break
         case 7:
           updates.text_reminders_enabled = textRemindersEnabled
           updates.phone_number = textRemindersEnabled ? phoneNumber : null
@@ -532,11 +551,13 @@ export function Onboarding() {
     return false
   }
 
-  const getTotalSteps = () => role === 'supporter' ? 7 : 10
+  const getTotalSteps = () => TEXT_REMINDERS_READY
+    ? (role === 'supporter' ? 7 : 10)
+    : (role === 'supporter' ? 6 : role === 'youth' ? 9 : 8)
   const totalSteps = getTotalSteps()
   const progress = (step / totalSteps) * 100
 
-  const isLastStep = (role === 'supporter' && step === 7) || (role !== 'supporter' && step === totalSteps)
+  const isLastStep = step === totalSteps
 
   // ── RENDER ────────────────────────────────────────────────────────────────
   return (

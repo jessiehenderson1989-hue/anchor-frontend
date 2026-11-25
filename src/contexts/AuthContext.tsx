@@ -7,7 +7,7 @@ interface Profile {
   first_name?: string
   username?: string
   role?: string
-  current_stage?: string
+  current_stage?: string | null
   language?: string
   children_status?: string
   has_lawyer?: boolean
@@ -17,7 +17,7 @@ interface Profile {
   case_manager_name?: string
   case_manager_phone?: string
   court_history?: string
-  next_court_date?: string
+  next_court_date?: string | null
   primary_concerns?: string
   text_reminders_enabled?: boolean
   phone_number?: string

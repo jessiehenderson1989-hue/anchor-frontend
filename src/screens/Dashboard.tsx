@@ -511,6 +511,7 @@ export function Dashboard() {
           <div style={{ display: 'flex', gap: 8 }}>
             {[
               { label: 'Prepare', sub: 'Court guide', bg: 'linear-gradient(145deg,#F4EFF8,#EDE5F4)', text: '#7A5A98', sub2: '#4A3068', shadow: 'rgba(120,90,160,0.12)', path: '/preparation' },
+              { label: 'Legal',   sub: 'Forms & laws', bg: 'linear-gradient(145deg,#EAF0F8,#DCE6F2)', text: '#4A70A8', sub2: '#2A4870', shadow: 'rgba(74,112,168,0.1)',  path: '/legal' },
               { label: 'Rights',  sub: 'Know yours',  bg: 'linear-gradient(145deg,#EAF4F0,#DCECe6)', text: '#387868', sub2: '#1A4838', shadow: 'rgba(60,130,110,0.1)',  path: '/rights' },
               { label: 'Notes',   sub: notesCount > 0 ? `${notesCount} saved` : 'Add one', bg: 'linear-gradient(145deg,#FDF0E0,#F5E4CC)', text: '#A87830', sub2: '#6A4010', shadow: 'rgba(180,120,40,0.1)',  path: '/notes' },
             ].map((chip) => (

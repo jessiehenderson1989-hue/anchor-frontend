@@ -190,7 +190,7 @@ export function Contacts() {
   const openEditContactModal = (contact: Contact) => {
     haptics.light()
     setEditingContact(contact)
-    setContactForm({ name: contact.name, role: contact.role, phone: contact.phone, email: contact.email, notes: contact.notes })
+    setContactForm({ name: contact.name, role: contact.role, phone: contact.phone || '', email: contact.email || '', notes: contact.notes || '' })
     setShowContactModal(true)
     setExpandedContact(null)
   }
@@ -275,7 +275,7 @@ export function Contacts() {
 
   const formatDate = (dateString: string | null) => {
     if (!dateString) return 'Not set'
-    return new Date(dateString).toLocaleDateString('en-US', { month: 'short', day: 'numeric', year: 'numeric' })
+    return new Date(dateString.length === 10 ? dateString + 'T00:00:00' : dateString).toLocaleDateString('en-US', { month: 'short', day: 'numeric', year: 'numeric' })
   }
 
   const formatPhone = (phone: string) => {
@@ -603,7 +603,7 @@ export function Contacts() {
                   Cancel
                 </button>
                 <button onClick={handleSaveCourtInfo}
-                  style={{ flex: 1, padding: '14px', background: 'linear-gradient(160deg,#8A74A0 0%,#6A5588 100%)', border: 'none', borderRadius: 16, boxShadow: '0 6px 24px rgba(100,75,140,0.3), inset 0 1px 0 rgba(255,255,255,0.2)', fontFamily: 'DM Sans, sans-serif', fontWeight: 600, fontSize: 15, color: '#fff', cursor: 'pointer', boxShadow: '0 4px 16px rgba(122,102,144,0.3)' }}>
+                  style={{ flex: 1, padding: '14px', background: 'linear-gradient(160deg,#8A74A0 0%,#6A5588 100%)', border: 'none', borderRadius: 16, fontFamily: 'DM Sans, sans-serif', fontWeight: 600, fontSize: 15, color: '#fff', cursor: 'pointer', boxShadow: '0 4px 16px rgba(122,102,144,0.3)' }}>
                   Save Court Info
                 </button>
               </div>

@@ -55,10 +55,10 @@ export function ContactSupport() {
             We got your message and will follow up within a few days. Thank you for reaching out.
           </p>
           <button
-            onClick={() => navigate('/settings')}
+            onClick={() => navigate(user ? '/settings' : '/')}
             style={{ background: '#7A6690', color: '#fff', border: 'none', borderRadius: 16, padding: '14px 28px', fontFamily: 'DM Sans, sans-serif', fontWeight: 700, fontSize: 15, cursor: 'pointer', boxShadow: '0 4px 16px rgba(122,102,144,0.3)' }}
           >
-            Back to Settings
+            {user ? 'Back to Settings' : 'Back'}
           </button>
         </div>
       </div>

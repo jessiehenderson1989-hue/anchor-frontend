@@ -159,6 +159,7 @@ export function Notes() {
           title: formData.title.trim(),
           content: formData.content.trim(),
           category: formData.category,
+          stage_key: formData.stage_key || null,
         })
         if (error) throw error
       }

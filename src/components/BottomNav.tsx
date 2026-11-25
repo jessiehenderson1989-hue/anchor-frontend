@@ -1,13 +1,13 @@
 import { useLocation, useNavigate } from 'react-router-dom'
-import { List, FileText, Scale, Users } from 'lucide-react'
+import { List, FileText, Compass, Users } from 'lucide-react'
 import { haptics } from '../lib/haptics'
 
 const tabs = [
   { id: 'home',      label: 'Home',     icon: null,     path: '/dashboard', color: '#7A6690', bg: 'rgba(122,102,144,0.12)', border: 'rgba(122,102,144,0.22)' },
   { id: 'timeline',  label: 'Timeline', icon: List,     path: '/timeline',  color: '#4A8878', bg: 'rgba(74,136,120,0.1)',   border: 'rgba(74,136,120,0.18)'  },
-  { id: 'notes',     label: 'Notes',    icon: FileText, path: '/notes',     color: '#7A6690', bg: 'rgba(122,102,144,0.08)', border: 'rgba(122,102,144,0.14)' },
-  { id: 'legal',     label: 'Legal',    icon: Scale,    path: '/legal',     color: '#4A70A8', bg: 'rgba(74,112,168,0.08)',  border: 'rgba(74,112,168,0.14)'  },
   { id: 'contacts',  label: 'Team',     icon: Users,    path: '/contacts',  color: '#A85878', bg: 'rgba(168,88,120,0.08)',  border: 'rgba(168,88,120,0.14)'  },
+  { id: 'notes',     label: 'Notes',    icon: FileText, path: '/notes',     color: '#7A6690', bg: 'rgba(122,102,144,0.08)', border: 'rgba(122,102,144,0.14)' },
+  { id: 'resources', label: 'Resources', icon: Compass, path: '/resources', color: '#4A70A8', bg: 'rgba(74,112,168,0.08)',  border: 'rgba(74,112,168,0.14)'  },
 ]
 
 export function BottomNav() {
