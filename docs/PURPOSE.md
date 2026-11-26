@@ -71,12 +71,15 @@ wins and Anchor is corrected.
 - Welfare and Institutions Code sections 300 to 395, Judicial Council forms.
 - Advokids, For Birth Parents: https://advokids.org/for-birth-parents/
 
-Gaps found when these were first reviewed (Nov 2026). None are built. Each
-needs Jessie's OK before it is:
-- A section for relatives and important connections
-- The court orientation video
-- A pointer to the Self-Help live chat
-- A clear note on how a parent gets included in the case
+Gaps found when these were first reviewed (Nov 2026), all built and
+approved by Jessie on Nov 26, 2026:
+- Relatives and close family friends: Legal Library page
+- Court orientation video: link in the Legal Library
+- Self-Help live chat: link in the Legal Library
+- How a parent gets included in the case: Legal Library page
+
+Accounts are for ages 13 and up. Youth sign-up asks age before an account
+is made. Under 13 gets the /under-13 page and no account.
 
 ## Not built yet (do not describe as working)
 - Spanish (planned for year two)
