@@ -340,7 +340,7 @@ export function LoginScreen() {
               <h2 className="text-xl font-bold mb-1" style={{ fontFamily: "'Fraunces', Georgia, serif", color: '#2A2030' }}>Create Account</h2>
               <p className="text-sm mb-6" style={{ color: '#5A5065' }}>Join Anchor and start finding your footing today.</p>
 
-              <form onSubmit={handleSignUp} className="space-y-4">
+              <form onSubmit={handleSignUp} noValidate className="space-y-4">
                 <div>
                   <label className={labelClass} style={labelStyle}>First Name</label>
                   <input
