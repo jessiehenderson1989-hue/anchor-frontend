@@ -333,7 +333,7 @@ export function Contacts() {
         <div style={{ display: 'flex', alignItems: 'flex-start', justifyContent: 'space-between', marginBottom: 24 }}>
           <div>
             <h1 style={{ fontFamily: 'Fraunces, serif', fontSize: 28, fontWeight: 700, color: '#2A2030', margin: 0 }}>My Team</h1>
-            <p style={{ fontFamily: 'DM Sans, sans-serif', fontSize: 14, color: '#8A8098', marginTop: 4 }}>
+            <p style={{ fontFamily: 'DM Sans, sans-serif', fontSize: 14, color: '#695F7B', marginTop: 4 }}>
               Everyone working on your case
             </p>
           </div>
@@ -378,7 +378,7 @@ export function Contacts() {
               { label: 'Next date', value: formatDate(courtInfo?.next_court_date || profile?.next_court_date || null) },
             ].map(({ label, value }) => (
               <div key={label} style={{ display: 'flex', justifyContent: 'space-between', alignItems: 'center' }}>
-                <span style={{ fontFamily: 'DM Sans, sans-serif', fontSize: 13, color: '#8A8098' }}>{label}</span>
+                <span style={{ fontFamily: 'DM Sans, sans-serif', fontSize: 13, color: '#695F7B' }}>{label}</span>
                 <span style={{ fontFamily: 'DM Sans, sans-serif', fontSize: 13, fontWeight: 600, color: value ? '#2A2030' : '#C8C0D0' }}>
                   {value || 'Not set'}
                 </span>
@@ -394,11 +394,11 @@ export function Contacts() {
               <Users size={32} color="#7A6690" />
             </div>
             <h3 style={{ fontFamily: 'Fraunces, serif', fontSize: 20, fontWeight: 700, color: '#2A2030', marginBottom: 8 }}>Build your team</h3>
-            <p style={{ fontFamily: 'DM Sans, sans-serif', fontSize: 14, color: '#8A8098', lineHeight: 1.6, marginBottom: 20 }}>
+            <p style={{ fontFamily: 'DM Sans, sans-serif', fontSize: 14, color: '#695F7B', lineHeight: 1.6, marginBottom: 20 }}>
               Save the people supporting you through this process so you always have their info handy.
             </p>
             <div style={{ display: 'flex', flexDirection: 'column', gap: 8, textAlign: 'left', background: '#FAF7F2', borderRadius: 16, padding: '12px 16px', border: '1px solid rgba(255,255,255,0.88)' }}>
-              <p style={{ fontFamily: 'DM Sans, sans-serif', fontSize: 12, fontWeight: 700, color: '#8A8098', textTransform: 'uppercase', letterSpacing: '0.07em', margin: 0 }}>Who to add first</p>
+              <p style={{ fontFamily: 'DM Sans, sans-serif', fontSize: 12, fontWeight: 700, color: '#695F7B', textTransform: 'uppercase', letterSpacing: '0.07em', margin: 0 }}>Who to add first</p>
               {['Your attorney — they work for you', 'Your social worker', 'A CASA volunteer if you have one', 'A trusted family member or friend'].map((person, i) => (
                 <div key={i} style={{ display: 'flex', gap: 8, alignItems: 'center' }}>
                   <div style={{ width: 5, height: 5, borderRadius: '50%', background: '#C8B8D0', flexShrink: 0 }} />
@@ -507,7 +507,7 @@ export function Contacts() {
                   {editingContact ? 'Edit Contact' : 'New Contact'}
                 </h2>
                 {!editingContact && (
-                  <p style={{ fontFamily: 'DM Sans, sans-serif', fontSize: 13, color: '#8A8098', marginTop: 4 }}>
+                  <p style={{ fontFamily: 'DM Sans, sans-serif', fontSize: 13, color: '#695F7B', marginTop: 4 }}>
                     Saved securely in your Anchor account
                   </p>
                 )}

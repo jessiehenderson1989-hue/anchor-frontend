@@ -22,7 +22,7 @@ const labelStyle: React.CSSProperties = {
   fontWeight: 600,
   letterSpacing: '0.08em',
   textTransform: 'uppercase' as const,
-  color: '#9A90A8',
+  color: '#756B87',
 }
 
 function LogoMark() {
@@ -171,7 +171,7 @@ export function ForgotPasswordScreen() {
             <div>
               <label style={labelStyle}>Email Address</label>
               <div className="relative">
-                <Mail className="absolute left-3 top-1/2 -translate-y-1/2 w-4 h-4" style={{ color: '#9A90A8' }} />
+                <Mail className="absolute left-3 top-1/2 -translate-y-1/2 w-4 h-4" style={{ color: '#756B87' }} />
                 <input
                   type="email"
                   value={email}

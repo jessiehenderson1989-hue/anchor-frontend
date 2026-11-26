@@ -22,7 +22,7 @@ const labelStyle: React.CSSProperties = {
   fontWeight: 600,
   letterSpacing: '0.08em',
   textTransform: 'uppercase' as const,
-  color: '#9A90A8',
+  color: '#756B87',
 }
 
 function LogoMark() {
@@ -215,7 +215,7 @@ export function ResetPasswordScreen() {
         <div>
           <label style={labelStyle}>New Password</label>
           <div className="relative">
-            <Lock className="absolute left-3 top-1/2 -translate-y-1/2 w-4 h-4" style={{ color: '#9A90A8' }} />
+            <Lock className="absolute left-3 top-1/2 -translate-y-1/2 w-4 h-4" style={{ color: '#756B87' }} />
             <input
               type={showPassword ? 'text' : 'password'}
               value={password}
@@ -229,18 +229,18 @@ export function ResetPasswordScreen() {
               type="button"
               onClick={() => setShowPassword(!showPassword)}
               className="absolute right-3 top-1/2 -translate-y-1/2"
-              style={{ color: '#9A90A8' }}
+              style={{ color: '#756B87' }}
             >
               {showPassword ? <EyeOff className="w-4 h-4" /> : <Eye className="w-4 h-4" />}
             </button>
           </div>
-          <p className="text-xs mt-1" style={{ color: '#9A90A8' }}>At least 6 characters</p>
+          <p className="text-xs mt-1" style={{ color: '#756B87' }}>At least 6 characters</p>
         </div>
 
         <div>
           <label style={labelStyle}>Confirm Password</label>
           <div className="relative">
-            <Lock className="absolute left-3 top-1/2 -translate-y-1/2 w-4 h-4" style={{ color: '#9A90A8' }} />
+            <Lock className="absolute left-3 top-1/2 -translate-y-1/2 w-4 h-4" style={{ color: '#756B87' }} />
             <input
               type={showConfirmPassword ? 'text' : 'password'}
               value={confirmPassword}
@@ -254,7 +254,7 @@ export function ResetPasswordScreen() {
               type="button"
               onClick={() => setShowConfirmPassword(!showConfirmPassword)}
               className="absolute right-3 top-1/2 -translate-y-1/2"
-              style={{ color: '#9A90A8' }}
+              style={{ color: '#756B87' }}
             >
               {showConfirmPassword ? <EyeOff className="w-4 h-4" /> : <Eye className="w-4 h-4" />}
             </button>

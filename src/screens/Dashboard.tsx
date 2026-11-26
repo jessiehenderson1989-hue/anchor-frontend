@@ -275,7 +275,7 @@ export function Dashboard() {
 
           {/* Top meta row */}
           <div style={{ display: 'flex', alignItems: 'center', justifyContent: 'space-between', marginBottom: 16 }}>
-            <div style={{ fontSize: 12, color: 'rgba(255,255,255,0.42)', fontWeight: 700, letterSpacing: '0.1em', textTransform: 'uppercase' }}>
+            <div style={{ fontSize: 12, color: 'rgba(255,255,255,0.78)', fontWeight: 700, letterSpacing: '0.1em', textTransform: 'uppercase' }}>
               Stage {currentStageIndex + 1} of 10
             </div>
             <div style={{ display: 'flex', alignItems: 'center', gap: 5 }}>
@@ -289,11 +289,11 @@ export function Dashboard() {
             <div style={{ fontFamily: 'Fraunces, serif', fontSize: 32, fontWeight: 800, color: 'rgba(255,255,255,0.95)', lineHeight: 1.05, marginBottom: 4 }}>
               {profile?.first_name ? `Hi, ${profile.first_name}.` : 'Your Blueprint.'}
             </div>
-            <div style={{ fontFamily: 'Fraunces, serif', fontSize: 20, fontWeight: 600, color: 'rgba(255,255,255,0.55)', fontStyle: 'italic', lineHeight: 1.2 }}>
+            <div style={{ fontFamily: 'Fraunces, serif', fontSize: 20, fontWeight: 600, color: 'rgba(255,255,255,0.85)', fontStyle: 'italic', lineHeight: 1.2 }}>
               You're still here.
             </div>
           </div>
-          <div style={{ fontFamily: 'DM Sans, sans-serif', fontSize: 12, color: 'rgba(255,255,255,0.35)', lineHeight: 1.5 }}>
+          <div style={{ fontFamily: 'DM Sans, sans-serif', fontSize: 12, color: 'rgba(255,255,255,0.72)', lineHeight: 1.5 }}>
             That matters more than you know.
           </div>
 
@@ -537,7 +537,7 @@ export function Dashboard() {
           {teamMembers.length > 0 && (
             <div>
               <div style={{ display: 'flex', alignItems: 'center', justifyContent: 'space-between', marginBottom: 8 }}>
-                <p style={{ fontFamily: 'DM Sans, sans-serif', fontSize: 12, fontWeight: 700, color: '#9A90A8', textTransform: 'uppercase', letterSpacing: '0.06em', margin: 0 }}>Your team</p>
+                <p style={{ fontFamily: 'DM Sans, sans-serif', fontSize: 12, fontWeight: 700, color: '#756B87', textTransform: 'uppercase', letterSpacing: '0.06em', margin: 0 }}>Your team</p>
                 <button onClick={() => { haptics.light(); navigate('/contacts') }} style={{ background: 'none', border: 'none', fontFamily: 'DM Sans, sans-serif', fontSize: 12, fontWeight: 700, color: '#7A6690', cursor: 'pointer', padding: 0 }}>See all</button>
               </div>
               <div style={{
@@ -557,7 +557,7 @@ export function Dashboard() {
                     </div>
                     <div style={{ flex: 1, minWidth: 0 }}>
                       <p style={{ fontFamily: 'DM Sans, sans-serif', fontSize: 13, fontWeight: 600, color: '#2A2030', margin: 0, overflow: 'hidden', textOverflow: 'ellipsis', whiteSpace: 'nowrap' }}>{m.name}</p>
-                      <p style={{ fontFamily: 'DM Sans, sans-serif', fontSize: 12, color: '#9A90A8', margin: 0 }}>{m.role}</p>
+                      <p style={{ fontFamily: 'DM Sans, sans-serif', fontSize: 12, color: '#756B87', margin: 0 }}>{m.role}</p>
                     </div>
                     {m.phone && <a href={`tel:${m.phone}`} onClick={(e) => e.stopPropagation()}><MapPin size={14} color="#7A6690" /></a>}
                   </div>

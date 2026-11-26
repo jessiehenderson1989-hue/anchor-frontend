@@ -80,7 +80,7 @@ const S = {
     fontWeight: 700,
     letterSpacing: '0.07em',
     textTransform: 'uppercase' as const,
-    color: '#9A90A8',
+    color: '#756B87',
     marginBottom: 8,
   } as React.CSSProperties,
   heading: {
@@ -583,7 +583,7 @@ export function Onboarding() {
               style={{ width: `${progress}%`, background: '#7A6690' }}
             />
           </div>
-          <p className="text-xs font-semibold" style={{ color: '#9A90A8' }}>
+          <p className="text-xs font-semibold" style={{ color: '#756B87' }}>
             Step {step} of {totalSteps}
           </p>
         </div>
@@ -790,7 +790,7 @@ export function Onboarding() {
                     </div>
                     <div>
                       <p style={{ color: '#2A2030', fontWeight: isSelected ? 600 : 400, fontSize: 15 }}>{stage.label}</p>
-                      <p style={{ color: '#9A90A8', fontSize: 12, marginTop: 2 }}>{stage.sub}</p>
+                      <p style={{ color: '#756B87', fontSize: 12, marginTop: 2 }}>{stage.sub}</p>
                     </div>
                   </div>
                 </button>
@@ -811,7 +811,7 @@ export function Onboarding() {
               onChange={e => setNextCourtDate(e.target.value)}
               style={S.input}
             />
-            <p style={{ fontSize: 13, color: '#9A90A8', marginTop: 8 }}>Leave blank if you do not know yet.</p>
+            <p style={{ fontSize: 13, color: '#756B87', marginTop: 8 }}>Leave blank if you do not know yet.</p>
           </div>
         )}
 
@@ -941,7 +941,7 @@ export function Onboarding() {
                       </div>
                       <div className="flex-1">
                         <p style={{ color: '#2A2030', fontWeight: 600, fontSize: 14 }}>{cat.label}</p>
-                        <p style={{ color: '#9A90A8', fontSize: 12 }}>{cat.desc}</p>
+                        <p style={{ color: '#756B87', fontSize: 12 }}>{cat.desc}</p>
                       </div>
                       <button
                         type="button"
@@ -1023,8 +1023,8 @@ export function Onboarding() {
 
         {/* Privacy note */}
         <div className="flex items-center justify-center gap-2 mt-6">
-          <Lock className="w-3 h-3" style={{ color: '#9A90A8' }} />
-          <p style={{ fontSize: 12, color: '#9A90A8' }}>
+          <Lock className="w-3 h-3" style={{ color: '#756B87' }} />
+          <p style={{ fontSize: 12, color: '#756B87' }}>
             Your answers are private and never shared with CPS or the court.
           </p>
         </div>

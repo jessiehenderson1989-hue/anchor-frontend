@@ -107,7 +107,7 @@ export function Welcome() {
         >
           I Already Have an Account
         </button>
-        <p className="text-center text-xs pt-1" style={{ color: '#9A90A8' }}>
+        <p className="text-center text-xs pt-1" style={{ color: '#756B87' }}>
           Free and confidential support for families in California
         </p>
       </div>

@@ -81,7 +81,7 @@ export function ContactSupport() {
 
         {/* Topic */}
         <div style={{ marginBottom: 20 }}>
-          <label style={{ display: 'block', fontFamily: 'DM Sans, sans-serif', fontSize: 12, fontWeight: 700, letterSpacing: '0.07em', textTransform: 'uppercase', color: '#8A8098', marginBottom: 10 }}>
+          <label style={{ display: 'block', fontFamily: 'DM Sans, sans-serif', fontSize: 12, fontWeight: 700, letterSpacing: '0.07em', textTransform: 'uppercase', color: '#695F7B', marginBottom: 10 }}>
             What's this about? <span style={{ fontWeight: 400, textTransform: 'none', letterSpacing: 0 }}>(optional)</span>
           </label>
           <div style={{ display: 'flex', flexDirection: 'column', gap: 8 }}>
@@ -107,7 +107,7 @@ export function ContactSupport() {
 
         {/* Message */}
         <div style={{ marginBottom: 20 }}>
-          <label style={{ display: 'block', fontFamily: 'DM Sans, sans-serif', fontSize: 12, fontWeight: 700, letterSpacing: '0.07em', textTransform: 'uppercase', color: '#8A8098', marginBottom: 8 }}>
+          <label style={{ display: 'block', fontFamily: 'DM Sans, sans-serif', fontSize: 12, fontWeight: 700, letterSpacing: '0.07em', textTransform: 'uppercase', color: '#695F7B', marginBottom: 8 }}>
             Your message
           </label>
           <textarea
@@ -133,7 +133,7 @@ export function ContactSupport() {
           {loading ? 'Sending…' : 'Send Message'}
         </button>
 
-        <p style={{ fontFamily: 'DM Sans, sans-serif', fontSize: 12, color: '#8A8098', textAlign: 'center', marginTop: 16, lineHeight: 1.5 }}>
+        <p style={{ fontFamily: 'DM Sans, sans-serif', fontSize: 12, color: '#695F7B', textAlign: 'center', marginTop: 16, lineHeight: 1.5 }}>
           We typically respond within 2–3 business days.{'\n'}For urgent legal questions, please contact your attorney.
         </p>
       </div>

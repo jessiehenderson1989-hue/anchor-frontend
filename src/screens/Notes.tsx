@@ -232,7 +232,7 @@ export function Notes() {
             <h1 style={{ fontFamily: 'Fraunces, serif', fontSize: 28, fontWeight: 700, color: '#2A2030', margin: 0 }}>
               My Notes
             </h1>
-            <p style={{ fontFamily: 'DM Sans, sans-serif', fontSize: 14, color: '#8A8098', marginTop: 4 }}>
+            <p style={{ fontFamily: 'DM Sans, sans-serif', fontSize: 14, color: '#695F7B', marginTop: 4 }}>
               Saved securely in your Anchor account
             </p>
           </div>
@@ -255,7 +255,7 @@ export function Notes() {
 
         {/* Search */}
         <div style={{ position: 'relative', marginBottom: 24, marginTop: 20 }}>
-          <Search size={16} style={{ position: 'absolute', left: 14, top: '50%', transform: 'translateY(-50%)', color: '#8A8098' }} />
+          <Search size={16} style={{ position: 'absolute', left: 14, top: '50%', transform: 'translateY(-50%)', color: '#695F7B' }} />
           <input
             type="text"
             value={searchQuery}
@@ -288,14 +288,14 @@ export function Notes() {
             <h3 style={{ fontFamily: 'Fraunces, serif', fontSize: 20, fontWeight: 700, color: '#2A2030', marginBottom: 8 }}>
               {searchQuery ? 'No notes found' : 'Your notes live here'}
             </h3>
-            <p style={{ fontFamily: 'DM Sans, sans-serif', fontSize: 14, color: '#8A8098', lineHeight: 1.6, marginBottom: 20 }}>
+            <p style={{ fontFamily: 'DM Sans, sans-serif', fontSize: 14, color: '#695F7B', lineHeight: 1.6, marginBottom: 20 }}>
               {searchQuery
                 ? 'Try a different search term'
                 : 'Use notes to track what happens at hearings, visits, and meetings. Tap + New to get started.'}
             </p>
             {!searchQuery && (
               <div style={{ display: 'flex', flexDirection: 'column', gap: 8, textAlign: 'left', background: '#FAF7F2', borderRadius: 16, padding: '12px 16px', border: '1px solid rgba(255,255,255,0.88)' }}>
-                <p style={{ fontFamily: 'DM Sans, sans-serif', fontSize: 12, fontWeight: 700, color: '#8A8098', textTransform: 'uppercase', letterSpacing: '0.07em', margin: 0 }}>Ideas to get started</p>
+                <p style={{ fontFamily: 'DM Sans, sans-serif', fontSize: 12, fontWeight: 700, color: '#695F7B', textTransform: 'uppercase', letterSpacing: '0.07em', margin: 0 }}>Ideas to get started</p>
                 {["What happened at today's hearing", 'Questions to ask my attorney', 'What the judge said about my case plan', 'How my visit with my child went'].map((idea, i) => (
                   <div key={i} style={{ display: 'flex', gap: 8, alignItems: 'center' }}>
                     <div style={{ width: 5, height: 5, borderRadius: '50%', background: '#C8B8D0', flexShrink: 0 }} />
@@ -339,14 +339,14 @@ export function Notes() {
                       {truncateContent(note.content)}
                     </p>
                   )}
-                  <p style={{ fontFamily: 'DM Sans, sans-serif', fontSize: 12, color: '#8A8098', margin: 0 }}>
+                  <p style={{ fontFamily: 'DM Sans, sans-serif', fontSize: 12, color: '#695F7B', margin: 0 }}>
                     {formatDate(note.updated_at)}
                   </p>
                   <div style={{ position: 'absolute', top: 14, right: 14, display: 'flex', gap: 4 }}>
-                    <button onClick={() => openEditModal(note)} style={{ width: 40, height: 40, borderRadius: 10, background: 'transparent', border: 'none', display: 'flex', alignItems: 'center', justifyContent: 'center', cursor: 'pointer', color: '#8A8098' }}>
+                    <button onClick={() => openEditModal(note)} style={{ width: 40, height: 40, borderRadius: 10, background: 'transparent', border: 'none', display: 'flex', alignItems: 'center', justifyContent: 'center', cursor: 'pointer', color: '#695F7B' }}>
                       <Pencil size={15} />
                     </button>
-                    <button onClick={() => setDeleteConfirm(note.id)} style={{ width: 40, height: 40, borderRadius: 10, background: 'transparent', border: 'none', display: 'flex', alignItems: 'center', justifyContent: 'center', cursor: 'pointer', color: '#8A8098' }}>
+                    <button onClick={() => setDeleteConfirm(note.id)} style={{ width: 40, height: 40, borderRadius: 10, background: 'transparent', border: 'none', display: 'flex', alignItems: 'center', justifyContent: 'center', cursor: 'pointer', color: '#695F7B' }}>
                       <Trash2 size={15} />
                     </button>
                   </div>
@@ -416,7 +416,7 @@ export function Notes() {
               </div>
               <div>
                 <label style={{ fontFamily: 'DM Sans, sans-serif', fontSize: 13, fontWeight: 600, color: '#4A4058', display: 'block', marginBottom: 6 }}>
-                  Link to a stage <span style={{ fontWeight: 400, color: '#8A8098' }}>(optional)</span>
+                  Link to a stage <span style={{ fontWeight: 400, color: '#695F7B' }}>(optional)</span>
                 </label>
                 <select
                   value={formData.stage_key || ''}

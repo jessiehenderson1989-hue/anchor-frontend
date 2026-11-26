@@ -100,14 +100,14 @@ export function Glossary() {
           <h1 style={{ fontFamily: 'Fraunces, serif', fontSize: 28, fontWeight: 700, color: '#2A2030', margin: 0 }}>
             Glossary
           </h1>
-          <p style={{ fontFamily: 'DM Sans, sans-serif', fontSize: 14, color: '#8A8098', marginTop: 4 }}>
+          <p style={{ fontFamily: 'DM Sans, sans-serif', fontSize: 14, color: '#695F7B', marginTop: 4 }}>
             Plain-language definitions for court and legal terms
           </p>
         </div>
 
         {/* Search */}
         <div style={{ position: 'relative', marginBottom: 14 }}>
-          <Search size={16} style={{ position: 'absolute', left: 14, top: '50%', transform: 'translateY(-50%)', color: '#8A8098' }} />
+          <Search size={16} style={{ position: 'absolute', left: 14, top: '50%', transform: 'translateY(-50%)', color: '#695F7B' }} />
           <input
             type="text"
             value={searchQuery}
@@ -152,7 +152,7 @@ export function Glossary() {
         </div>
 
         {/* Result count */}
-        <p style={{ fontFamily: 'DM Sans, sans-serif', fontSize: 13, color: '#8A8098', marginBottom: 14 }}>
+        <p style={{ fontFamily: 'DM Sans, sans-serif', fontSize: 13, color: '#695F7B', marginBottom: 14 }}>
           {filteredTerms.length} {filteredTerms.length === 1 ? 'term' : 'terms'}
         </p>
 
@@ -165,7 +165,7 @@ export function Glossary() {
             <h3 style={{ fontFamily: 'Fraunces, serif', fontSize: 20, fontWeight: 700, color: '#2A2030', marginBottom: 8 }}>
               {searchQuery ? `No results for "${searchQuery}"` : 'No terms in this category'}
             </h3>
-            <p style={{ fontFamily: 'DM Sans, sans-serif', fontSize: 14, color: '#8A8098' }}>
+            <p style={{ fontFamily: 'DM Sans, sans-serif', fontSize: 14, color: '#695F7B' }}>
               {searchQuery ? 'Try a different search term' : 'Select a different category'}
             </p>
           </div>
@@ -248,7 +248,7 @@ export function Glossary() {
                       {/* Related terms */}
                       {term.related_terms?.length > 0 && (
                         <div>
-                          <p style={{ fontFamily: 'DM Sans, sans-serif', fontSize: 12, fontWeight: 600, color: '#8A8098', marginBottom: 8, textTransform: 'uppercase', letterSpacing: '0.04em' }}>
+                          <p style={{ fontFamily: 'DM Sans, sans-serif', fontSize: 12, fontWeight: 600, color: '#695F7B', marginBottom: 8, textTransform: 'uppercase', letterSpacing: '0.04em' }}>
                             Related Terms
                           </p>
                           <div style={{ display: 'flex', flexWrap: 'wrap', gap: 6 }}>
@@ -272,7 +272,7 @@ export function Glossary() {
 
                       {/* Source */}
                       {term.source && (
-                        <p style={{ fontFamily: 'DM Sans, sans-serif', fontSize: 12, color: '#8A8098', fontStyle: 'italic', margin: 0 }}>
+                        <p style={{ fontFamily: 'DM Sans, sans-serif', fontSize: 12, color: '#695F7B', fontStyle: 'italic', margin: 0 }}>
                           Source: {term.source}
                         </p>
                       )}
@@ -285,7 +285,7 @@ export function Glossary() {
         )}
 
         {filteredTerms.length > 0 && (
-          <p style={{ fontFamily: 'DM Sans, sans-serif', fontSize: 13, color: '#8A8098', textAlign: 'center', marginTop: 24 }}>
+          <p style={{ fontFamily: 'DM Sans, sans-serif', fontSize: 13, color: '#695F7B', textAlign: 'center', marginTop: 24 }}>
             {filteredTerms.length} {filteredTerms.length === 1 ? 'term' : 'terms'} shown
           </p>
         )}

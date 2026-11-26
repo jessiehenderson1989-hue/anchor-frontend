@@ -42,7 +42,7 @@ const label: React.CSSProperties = {
   fontWeight: 700,
   letterSpacing: '0.07em',
   textTransform: 'uppercase',
-  color: '#8A8098',
+  color: '#695F7B',
   marginBottom: 6,
 }
 const primaryBtn: React.CSSProperties = {
@@ -133,7 +133,7 @@ function Modal({ title, onClose, children }: { title: string; onClose: () => voi
           <h2 style={{ fontFamily: "'Fraunces', Georgia, serif", fontWeight: 700, fontSize: 20, color: '#2A2030' }}>
             {title}
           </h2>
-          <button onClick={onClose} style={{ color: '#8A8098', background: 'none', border: 'none', cursor: 'pointer' }}>
+          <button onClick={onClose} style={{ color: '#695F7B', background: 'none', border: 'none', cursor: 'pointer' }}>
             <X className="w-5 h-5" />
           </button>
         </div>
@@ -396,7 +396,7 @@ export function Settings() {
                 {profile?.first_name || profile?.username || 'Your Account'}
               </p>
               {profile?.username && (
-                <p style={{ fontSize: 13, color: '#8A8098' }}>@{profile.username}</p>
+                <p style={{ fontSize: 13, color: '#695F7B' }}>@{profile.username}</p>
               )}
               {profile?.role && (
                 <span
@@ -418,7 +418,7 @@ export function Settings() {
         </div>
 
         {/* ── ACCOUNT ── */}
-        <p style={{ fontSize: 12, fontWeight: 700, letterSpacing: '0.07em', textTransform: 'uppercase', color: '#8A8098', marginBottom: 8, paddingLeft: 4 }}>
+        <p style={{ fontSize: 12, fontWeight: 700, letterSpacing: '0.07em', textTransform: 'uppercase', color: '#695F7B', marginBottom: 8, paddingLeft: 4 }}>
           Account
         </p>
         <div style={{ ...sectionCard, marginBottom: 20 }}>
@@ -427,14 +427,14 @@ export function Settings() {
               <div style={iconWrap}><Lock className="w-4 h-4" style={{ color: '#7A6690' }} /></div>
               <span style={{ fontSize: 15, fontWeight: 500, color: '#2A2030' }}>Change Password</span>
             </div>
-            <ChevronRight className="w-4 h-4" style={{ color: '#8A8098' }} />
+            <ChevronRight className="w-4 h-4" style={{ color: '#695F7B' }} />
           </button>
           <div style={row}>
             <div className="flex items-center gap-3">
               <div style={iconWrap}><Mail className="w-4 h-4" style={{ color: '#7A6690' }} /></div>
               <div>
                 <p style={{ fontSize: 15, fontWeight: 500, color: '#2A2030' }}>Email</p>
-                <p style={{ fontSize: 12, color: '#8A8098' }}>{maskEmail(user?.email || '')}</p>
+                <p style={{ fontSize: 12, color: '#695F7B' }}>{maskEmail(user?.email || '')}</p>
               </div>
             </div>
             <button
@@ -450,26 +450,26 @@ export function Settings() {
               <div style={iconWrap}><RefreshCw className="w-4 h-4" style={{ color: '#7A6690' }} /></div>
               <div>
                 <p style={{ fontSize: 15, fontWeight: 500, color: '#2A2030' }}>Change Role</p>
-                <p style={{ fontSize: 12, color: '#8A8098' }}>Currently: {roleLabel[profile?.role || ''] || '—'}</p>
+                <p style={{ fontSize: 12, color: '#695F7B' }}>Currently: {roleLabel[profile?.role || ''] || '—'}</p>
               </div>
             </div>
-            <ChevronRight className="w-4 h-4" style={{ color: '#8A8098' }} />
+            <ChevronRight className="w-4 h-4" style={{ color: '#695F7B' }} />
           </button>
           {SPANISH_READY && <button style={rowLast} onClick={() => { haptics.light(); setShowLanguageModal(true) }} className="w-full hover:bg-purple-50 transition-colors">
             <div className="flex items-center gap-3">
               <div style={iconWrap}><Globe className="w-4 h-4" style={{ color: '#7A6690' }} /></div>
               <div>
                 <p style={{ fontSize: 15, fontWeight: 500, color: '#2A2030' }}>Language</p>
-                <p style={{ fontSize: 12, color: '#8A8098' }}>{language === 'en' ? 'English' : 'Español'}</p>
+                <p style={{ fontSize: 12, color: '#695F7B' }}>{language === 'en' ? 'English' : 'Español'}</p>
               </div>
             </div>
-            <ChevronRight className="w-4 h-4" style={{ color: '#8A8098' }} />
+            <ChevronRight className="w-4 h-4" style={{ color: '#695F7B' }} />
           </button>}
         </div>
 
         {TEXT_REMINDERS_READY && (<>
         {/* ── NOTIFICATIONS ── */}
-        <p style={{ fontSize: 12, fontWeight: 700, letterSpacing: '0.07em', textTransform: 'uppercase', color: '#8A8098', marginBottom: 8, paddingLeft: 4 }}>
+        <p style={{ fontSize: 12, fontWeight: 700, letterSpacing: '0.07em', textTransform: 'uppercase', color: '#695F7B', marginBottom: 8, paddingLeft: 4 }}>
           Notifications
         </p>
         <div style={{ ...sectionCard, marginBottom: 20 }}>
@@ -478,7 +478,7 @@ export function Settings() {
               <div style={iconWrap}><Bell className="w-4 h-4" style={{ color: '#7A6690' }} /></div>
               <div>
                 <p style={{ fontSize: 15, fontWeight: 500, color: '#2A2030' }}>Text Reminders</p>
-                <p style={{ fontSize: 12, color: '#8A8098' }}>Court dates and appointments</p>
+                <p style={{ fontSize: 12, color: '#695F7B' }}>Court dates and appointments</p>
               </div>
             </div>
             <button
@@ -502,7 +502,7 @@ export function Settings() {
               <div style={iconWrap}><Phone className="w-4 h-4" style={{ color: '#7A6690' }} /></div>
               <div>
                 <p style={{ fontSize: 15, fontWeight: 500, color: '#2A2030' }}>Phone Number</p>
-                <p style={{ fontSize: 12, color: '#8A8098' }}>{maskPhone(profile?.phone_number)}</p>
+                <p style={{ fontSize: 12, color: '#695F7B' }}>{maskPhone(profile?.phone_number)}</p>
               </div>
             </div>
             <button
@@ -516,7 +516,7 @@ export function Settings() {
         </>)}
 
         {/* ── PRIVACY & DATA ── */}
-        <p style={{ fontSize: 12, fontWeight: 700, letterSpacing: '0.07em', textTransform: 'uppercase', color: '#8A8098', marginBottom: 8, paddingLeft: 4 }}>
+        <p style={{ fontSize: 12, fontWeight: 700, letterSpacing: '0.07em', textTransform: 'uppercase', color: '#695F7B', marginBottom: 8, paddingLeft: 4 }}>
           Privacy & Data
         </p>
         <div style={{ ...sectionCard, marginBottom: 20 }}>
@@ -530,10 +530,10 @@ export function Settings() {
               <div style={iconWrap}><Download className="w-4 h-4" style={{ color: '#7A6690' }} /></div>
               <div className="text-left">
                 <p style={{ fontSize: 15, fontWeight: 500, color: '#2A2030' }}>Export My Data</p>
-                <p style={{ fontSize: 12, color: '#8A8098' }}>Download a copy of your information</p>
+                <p style={{ fontSize: 12, color: '#695F7B' }}>Download a copy of your information</p>
               </div>
             </div>
-            <ChevronRight className="w-4 h-4" style={{ color: '#8A8098' }} />
+            <ChevronRight className="w-4 h-4" style={{ color: '#695F7B' }} />
           </button>
           <button
             style={rowLast}
@@ -546,7 +546,7 @@ export function Settings() {
               </div>
               <div className="text-left">
                 <p style={{ fontSize: 15, fontWeight: 500, color: '#A85878' }}>Delete Account</p>
-                <p style={{ fontSize: 12, color: '#8A8098' }}>Permanently remove all your data</p>
+                <p style={{ fontSize: 12, color: '#695F7B' }}>Permanently remove all your data</p>
               </div>
             </div>
             <ChevronRight className="w-4 h-4" style={{ color: '#A85878', opacity: 0.5 }} />
@@ -554,7 +554,7 @@ export function Settings() {
         </div>
 
         {/* ── ABOUT ── */}
-        <p style={{ fontSize: 12, fontWeight: 700, letterSpacing: '0.07em', textTransform: 'uppercase', color: '#8A8098', marginBottom: 8, paddingLeft: 4 }}>
+        <p style={{ fontSize: 12, fontWeight: 700, letterSpacing: '0.07em', textTransform: 'uppercase', color: '#695F7B', marginBottom: 8, paddingLeft: 4 }}>
           About
         </p>
         <div style={{ ...sectionCard, marginBottom: 20 }}>
@@ -563,21 +563,21 @@ export function Settings() {
               <div style={iconWrap}><FileText className="w-4 h-4" style={{ color: '#7A6690' }} /></div>
               <span style={{ fontSize: 15, fontWeight: 500, color: '#2A2030' }}>Terms of Service</span>
             </div>
-            <ChevronRight className="w-4 h-4" style={{ color: '#8A8098' }} />
+            <ChevronRight className="w-4 h-4" style={{ color: '#695F7B' }} />
           </button>
           <button style={row} onClick={() => { haptics.light(); navigate('/privacy') }} className="w-full hover:bg-purple-50 transition-colors">
             <div className="flex items-center gap-3">
               <div style={iconWrap}><Shield className="w-4 h-4" style={{ color: '#7A6690' }} /></div>
               <span style={{ fontSize: 15, fontWeight: 500, color: '#2A2030' }}>Privacy Policy</span>
             </div>
-            <ChevronRight className="w-4 h-4" style={{ color: '#8A8098' }} />
+            <ChevronRight className="w-4 h-4" style={{ color: '#695F7B' }} />
           </button>
           <button style={rowLast} onClick={() => { haptics.light(); navigate('/contact-support') }} className="w-full hover:bg-purple-50 transition-colors">
             <div className="flex items-center gap-3">
               <div style={iconWrap}><HelpCircle className="w-4 h-4" style={{ color: '#7A6690' }} /></div>
               <span style={{ fontSize: 15, fontWeight: 500, color: '#2A2030' }}>Contact Support</span>
             </div>
-            <ChevronRight className="w-4 h-4" style={{ color: '#8A8098' }} />
+            <ChevronRight className="w-4 h-4" style={{ color: '#695F7B' }} />
           </button>
         </div>
 
@@ -590,7 +590,7 @@ export function Settings() {
           Sign Out
         </button>
 
-        <p className="text-center mt-6" style={{ fontSize: 12, color: '#8A8098' }}>
+        <p className="text-center mt-6" style={{ fontSize: 12, color: '#695F7B' }}>
           Anchor v1.0.0 · Made with care for California families
         </p>
       </div>

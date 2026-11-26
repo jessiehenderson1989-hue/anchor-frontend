@@ -160,7 +160,7 @@ export function FosterCareIntro() {
           style={{
             background: 'none', border: 'none',
             fontFamily: 'DM Sans, sans-serif', fontSize: 14, fontWeight: 600,
-            color: '#9A90A8', cursor: 'pointer', padding: '8px 4px',
+            color: '#756B87', cursor: 'pointer', padding: '8px 4px',
           }}
         >
           Skip

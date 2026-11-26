@@ -14,7 +14,7 @@ export function PrivacyPolicy() {
       </div>
 
       <div style={{ maxWidth: 480, margin: '0 auto', padding: '28px 20px 60px' }}>
-        <p style={{ fontFamily: 'DM Sans, sans-serif', fontSize: 13, color: '#8A8098', marginBottom: 28 }}>Last updated: April 2026</p>
+        <p style={{ fontFamily: 'DM Sans, sans-serif', fontSize: 13, color: '#695F7B', marginBottom: 28 }}>Last updated: April 2026</p>
 
         <div style={{ background: '#F4EFF8', border: '1px solid rgba(122,102,144,0.15)', borderRadius: 16, padding: '14px 16px', marginBottom: 28 }}>
           <p style={{ fontFamily: 'DM Sans, sans-serif', fontSize: 14, color: '#4A4058', lineHeight: 1.6, margin: 0 }}>

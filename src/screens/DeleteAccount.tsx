@@ -103,7 +103,7 @@ export function DeleteAccount() {
                   border: '1.5px solid rgba(122,102,144,0.2)',
                   borderRadius: 16,
                   fontFamily: 'DM Sans, sans-serif', fontWeight: 600, fontSize: 15,
-                  color: '#9A90A8', cursor: 'pointer',
+                  color: '#756B87', cursor: 'pointer',
                 }}
               >
                 Skip — delete without export
@@ -136,7 +136,7 @@ export function DeleteAccount() {
                   Confirm your password
                 </label>
                 <div style={{ position: 'relative' }}>
-                  <Lock size={15} style={{ position: 'absolute', left: 14, top: '50%', transform: 'translateY(-50%)', color: '#9A90A8' }} />
+                  <Lock size={15} style={{ position: 'absolute', left: 14, top: '50%', transform: 'translateY(-50%)', color: '#756B87' }} />
                   <input
                     type="password"
                     value={password}

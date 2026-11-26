@@ -101,7 +101,7 @@ export function Auth() {
     fontWeight: 600,
     letterSpacing: '0.08em',
     textTransform: 'uppercase',
-    color: '#9A90A8',
+    color: '#756B87',
   }
 
   return (
@@ -139,7 +139,7 @@ export function Auth() {
               style={
                 mode === tab.id
                   ? { background: '#FAF7F4', color: '#7A6690', boxShadow: '0 2px 8px rgba(122,102,144,0.15)' }
-                  : { background: 'transparent', color: '#9A90A8' }
+                  : { background: 'transparent', color: '#756B87' }
               }
             >
               {tab.label}
@@ -160,7 +160,7 @@ export function Auth() {
                 <div>
                   <label style={labelStyle}>First Name</label>
                   <div className="relative">
-                    <User className="absolute left-3 top-1/2 -translate-y-1/2 w-4 h-4" style={{ color: '#9A90A8' }} />
+                    <User className="absolute left-3 top-1/2 -translate-y-1/2 w-4 h-4" style={{ color: '#756B87' }} />
                     <input
                       type="text"
                       placeholder="Your first name"
@@ -214,7 +214,7 @@ export function Auth() {
             <div>
               <label style={labelStyle}>Email</label>
               <div className="relative">
-                <Mail className="absolute left-3 top-1/2 -translate-y-1/2 w-4 h-4" style={{ color: '#9A90A8' }} />
+                <Mail className="absolute left-3 top-1/2 -translate-y-1/2 w-4 h-4" style={{ color: '#756B87' }} />
                 <input
                   type="email"
                   placeholder="your@email.com"
@@ -230,7 +230,7 @@ export function Auth() {
             <div>
               <label style={labelStyle}>Password</label>
               <div className="relative">
-                <Lock className="absolute left-3 top-1/2 -translate-y-1/2 w-4 h-4" style={{ color: '#9A90A8' }} />
+                <Lock className="absolute left-3 top-1/2 -translate-y-1/2 w-4 h-4" style={{ color: '#756B87' }} />
                 <input
                   type="password"
                   placeholder="At least 6 characters"
@@ -247,7 +247,7 @@ export function Auth() {
               <div>
                 <label style={labelStyle}>Confirm Password</label>
                 <div className="relative">
-                  <Lock className="absolute left-3 top-1/2 -translate-y-1/2 w-4 h-4" style={{ color: '#9A90A8' }} />
+                  <Lock className="absolute left-3 top-1/2 -translate-y-1/2 w-4 h-4" style={{ color: '#756B87' }} />
                   <input
                     type="password"
                     placeholder="Re-enter your password"

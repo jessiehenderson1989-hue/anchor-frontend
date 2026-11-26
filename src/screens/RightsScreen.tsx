@@ -206,7 +206,7 @@ export function RightsScreen() {
                   border: '1px solid rgba(122,102,144,0.15)',
                   borderRadius: 14, padding: '12px 14px',
                 }}>
-                  <p style={{ fontFamily: 'DM Sans, sans-serif', fontSize: 12, fontWeight: 700, textTransform: 'uppercase', letterSpacing: '0.05em', color: '#8A8098', margin: '0 0 4px' }}>
+                  <p style={{ fontFamily: 'DM Sans, sans-serif', fontSize: 12, fontWeight: 700, textTransform: 'uppercase', letterSpacing: '0.05em', color: '#695F7B', margin: '0 0 4px' }}>
                     Legal basis
                   </p>
                   <p style={{ fontFamily: 'DM Mono, monospace', fontSize: 12, color: '#4A4058', margin: 0 }}>
@@ -218,7 +218,7 @@ export function RightsScreen() {
                 const related = getRelatedTerms(item)
                 return related.length > 0 ? (
                   <div>
-                    <p style={{ fontFamily: 'DM Sans, sans-serif', fontSize: 12, fontWeight: 700, textTransform: 'uppercase', letterSpacing: '0.05em', color: '#8A8098', margin: '0 0 8px' }}>
+                    <p style={{ fontFamily: 'DM Sans, sans-serif', fontSize: 12, fontWeight: 700, textTransform: 'uppercase', letterSpacing: '0.05em', color: '#695F7B', margin: '0 0 8px' }}>
                       Related terms
                     </p>
                     <div style={{ display: 'flex', flexWrap: 'wrap', gap: 7 }}>
@@ -261,7 +261,7 @@ export function RightsScreen() {
         <div style={{ textAlign: 'center' }}>
           <div style={{ width: 44, height: 44, border: '3px solid #7A6690', borderTopColor: 'transparent', boxShadow: '0 0 12px rgba(122,102,144,0.2)', borderRadius: '50%', animation: 'spin 0.8s linear infinite', margin: '0 auto 16px' }} />
           <style>{`@keyframes spin { to { transform: rotate(360deg) } }`}</style>
-          <p style={{ fontFamily: 'DM Sans, sans-serif', color: '#8A8098', fontSize: 14 }}>Loading rights and responsibilities…</p>
+          <p style={{ fontFamily: 'DM Sans, sans-serif', color: '#695F7B', fontSize: 14 }}>Loading rights and responsibilities…</p>
         </div>
       </div>
     )
@@ -279,7 +279,7 @@ export function RightsScreen() {
             <h1 style={{ fontFamily: 'Fraunces, serif', fontSize: 28, fontWeight: 700, color: '#2A2030', margin: '0 0 4px' }}>
               Your Rights &amp; Responsibilities
             </h1>
-            <p style={{ fontFamily: 'DM Sans, sans-serif', fontSize: 14, color: '#8A8098', margin: 0 }}>
+            <p style={{ fontFamily: 'DM Sans, sans-serif', fontSize: 14, color: '#695F7B', margin: 0 }}>
               Know your rights in dependency court
             </p>
           </div>
@@ -293,7 +293,7 @@ export function RightsScreen() {
             <MapPin size={14} color="#7A6690" style={{ flexShrink: 0 }} />
             <div style={{ flex: 1 }}>
               <span style={{ fontFamily: 'DM Sans, sans-serif', fontSize: 12, fontWeight: 700, color: '#2A2030' }}>California</span>
-              <span style={{ fontFamily: 'DM Sans, sans-serif', fontSize: 12, color: '#8A8098', marginLeft: 6 }}>Currently available</span>
+              <span style={{ fontFamily: 'DM Sans, sans-serif', fontSize: 12, color: '#695F7B', marginLeft: 6 }}>Currently available</span>
             </div>
             <span style={{
               fontFamily: 'DM Sans, sans-serif', fontSize: 12, fontWeight: 700,
@@ -315,7 +315,7 @@ export function RightsScreen() {
                   transition: 'all 0.15s',
                   ...(activeTab === key
                     ? { background: '#FAF7F2', color: tabConfig[key].accentColor, boxShadow: '0 2px 8px rgba(122,102,144,0.15)' }
-                    : { background: 'transparent', color: '#8A8098' }
+                    : { background: 'transparent', color: '#695F7B' }
                   ),
                 }}
               >
@@ -438,7 +438,7 @@ export function RightsScreen() {
           {/* Empty state */}
           {visibleItems.length === 0 && (
             <div style={{ background: '#FAF7F2', borderRadius: 20, padding: '40px 24px', textAlign: 'center', border: '1px solid rgba(255,255,255,0.88)' }}>
-              <p style={{ fontFamily: 'DM Sans, sans-serif', fontSize: 14, color: '#8A8098', margin: 0 }}>
+              <p style={{ fontFamily: 'DM Sans, sans-serif', fontSize: 14, color: '#695F7B', margin: 0 }}>
                 No information available for this section yet.
               </p>
             </div>

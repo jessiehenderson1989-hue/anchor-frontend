@@ -657,7 +657,7 @@ export function Timeline() {
                   {stage.status === 'completed' ? '✓ ' : stage.status === 'in_progress' ? '● ' : ''}{S.label}
                 </span>
                 {total > 0 && (
-                  <span className="text-xs font-semibold" style={{ color: '#8A8098' }}>
+                  <span className="text-xs font-semibold" style={{ color: '#695F7B' }}>
                     {completed}/{total} tasks
                   </span>
                 )}
@@ -675,8 +675,8 @@ export function Timeline() {
 
             <div className="flex-shrink-0 mt-1">
               {isExpanded
-                ? <ChevronUp className="w-4 h-4" style={{ color: '#8A8098' }} />
-                : <ChevronDown className="w-4 h-4" style={{ color: '#8A8098' }} />
+                ? <ChevronUp className="w-4 h-4" style={{ color: '#695F7B' }} />
+                : <ChevronDown className="w-4 h-4" style={{ color: '#695F7B' }} />
               }
             </div>
           </div>
@@ -757,7 +757,7 @@ export function Timeline() {
                       Do Now
                     </h4>
                   </div>
-                  <span className="text-xs font-semibold" style={{ color: '#8A8098' }}>
+                  <span className="text-xs font-semibold" style={{ color: '#695F7B' }}>
                     {completed}/{total}
                   </span>
                 </div>
@@ -811,7 +811,7 @@ export function Timeline() {
                     <p style={{ fontFamily: 'DM Sans, sans-serif', fontSize: 12, fontWeight: 700, color: '#7A6690', textTransform: 'uppercase', letterSpacing: '0.06em', margin: 0 }}>
                       Your notes
                     </p>
-                    <span style={{ fontFamily: 'DM Sans, sans-serif', fontSize: 12, color: '#8A8098' }}>{linked.length} note{linked.length !== 1 ? 's' : ''}</span>
+                    <span style={{ fontFamily: 'DM Sans, sans-serif', fontSize: 12, color: '#695F7B' }}>{linked.length} note{linked.length !== 1 ? 's' : ''}</span>
                   </div>
                   <div style={{ display: 'flex', flexDirection: 'column', gap: 7 }}>
                     {linked.map(note => (
@@ -836,7 +836,7 @@ export function Timeline() {
             {/* Mark complete button */}
             {stage.status !== 'completed' && (
               <div style={{ marginTop: 4 }}>
-                <p style={{ fontFamily: 'DM Sans, sans-serif', fontSize: 12, color: '#8A8098', margin: '0 0 8px', lineHeight: 1.5, textAlign: 'center' }}>
+                <p style={{ fontFamily: 'DM Sans, sans-serif', fontSize: 12, color: '#695F7B', margin: '0 0 8px', lineHeight: 1.5, textAlign: 'center' }}>
                   When you've completed this stage, tap below to move forward on your journey.
                 </p>
                 <button
@@ -899,8 +899,8 @@ export function Timeline() {
               {stage.status === 'completed' ? 'DONE' : stage.status === 'in_progress' ? 'ACTIVE' : 'PENDING'}
             </span>
             {isExpanded
-              ? <ChevronUp className="w-4 h-4 flex-shrink-0" style={{ color: '#8A8098' }} />
-              : <ChevronDown className="w-4 h-4 flex-shrink-0" style={{ color: '#8A8098' }} />
+              ? <ChevronUp className="w-4 h-4 flex-shrink-0" style={{ color: '#695F7B' }} />
+              : <ChevronDown className="w-4 h-4 flex-shrink-0" style={{ color: '#695F7B' }} />
             }
           </button>
 
@@ -1004,7 +1004,7 @@ export function Timeline() {
             >
               {roleLabel[role]}
             </h1>
-            <p className="text-xs mt-0.5" style={{ color: '#8A8098' }}>
+            <p className="text-xs mt-0.5" style={{ color: '#695F7B' }}>
               {stages.filter(s => s.status === 'completed').length} of {stages.length} stages complete
             </p>
           </div>
@@ -1017,14 +1017,14 @@ export function Timeline() {
             <button
               onClick={() => setViewMode('cards')}
               className="p-1.5 rounded-lg transition-all"
-              style={viewMode === 'cards' ? { background: '#FAF7F2', color: '#7A6690' } : { color: '#8A8098' }}
+              style={viewMode === 'cards' ? { background: '#FAF7F2', color: '#7A6690' } : { color: '#695F7B' }}
             >
               <LayoutGrid className="w-4 h-4" />
             </button>
             <button
               onClick={() => setViewMode('list')}
               className="p-1.5 rounded-lg transition-all"
-              style={viewMode === 'list' ? { background: '#FAF7F2', color: '#7A6690' } : { color: '#8A8098' }}
+              style={viewMode === 'list' ? { background: '#FAF7F2', color: '#7A6690' } : { color: '#695F7B' }}
             >
               <List className="w-4 h-4" />
             </button>
