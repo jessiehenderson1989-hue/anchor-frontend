@@ -381,7 +381,7 @@ export function Dashboard() {
                     }} />
                     <div style={{
                       fontFamily: 'DM Sans, sans-serif',
-                      fontSize: isActive ? 13 : 11,
+                      fontSize: isActive ? 13 : 12,
                       fontWeight: isActive ? 800 : isDone ? 500 : 400,
                       color: isActive ? '#2A2030' : isDone ? jewel.color : '#8A8098',
                       textDecoration: isDone ? 'line-through' : 'none',
