@@ -17,16 +17,16 @@ interface TeamMember {
 
 // ─── JEWEL COLORS PER STAGE ──────────────────────────────────────────────────
 const STAGE_JEWELS = [
-  { color: '#7A6690', glow: 'rgba(122,102,144,0.5)',  bg: 'rgba(122,102,144,0.12)' }, // purple
+  { color: '#705987', glow: 'rgba(112,89,135,0.5)',  bg: 'rgba(112,89,135,0.12)' }, // purple
   { color: '#4A8878', glow: 'rgba(74,136,120,0.5)',   bg: 'rgba(74,136,120,0.12)'  }, // teal
   { color: '#C8883A', glow: 'rgba(200,136,58,0.5)',   bg: 'rgba(200,136,58,0.12)'  }, // amber
-  { color: '#A85878', glow: 'rgba(168,88,120,0.4)',   bg: 'rgba(168,88,120,0.1)'   }, // rose
+  { color: '#94445D', glow: 'rgba(148,68,93,0.4)',   bg: 'rgba(148,68,93,0.1)'   }, // rose
   { color: '#4A70A8', glow: 'rgba(74,112,168,0.4)',   bg: 'rgba(74,112,168,0.1)'   }, // blue
   { color: '#6A7A40', glow: 'rgba(106,122,64,0.4)',   bg: 'rgba(106,122,64,0.1)'   }, // olive
-  { color: '#7A6690', glow: 'rgba(122,102,144,0.4)',  bg: 'rgba(122,102,144,0.1)'  }, // purple
+  { color: '#705987', glow: 'rgba(112,89,135,0.4)',  bg: 'rgba(112,89,135,0.1)'  }, // purple
   { color: '#4A8878', glow: 'rgba(74,136,120,0.4)',   bg: 'rgba(74,136,120,0.1)'   }, // teal
   { color: '#C8883A', glow: 'rgba(200,136,58,0.4)',   bg: 'rgba(200,136,58,0.1)'   }, // amber
-  { color: '#A85878', glow: 'rgba(168,88,120,0.4)',   bg: 'rgba(168,88,120,0.1)'   }, // rose
+  { color: '#94445D', glow: 'rgba(148,68,93,0.4)',   bg: 'rgba(148,68,93,0.1)'   }, // rose
 ]
 
 // ─── PEER VOICES ─────────────────────────────────────────────────────────────
@@ -254,7 +254,7 @@ export function Dashboard() {
 
         {/* ── ORGANIC HERO ── */}
         <div style={{
-          background: 'linear-gradient(155deg, #7A6690 0%, #614E78 60%, #503D6A 100%)',
+          background: 'linear-gradient(155deg, #705987 0%, #5C4772 60%, #463259 100%)',
           padding: '20px 20px 52px',
           position: 'relative',
           overflow: 'hidden',
@@ -353,7 +353,7 @@ export function Dashboard() {
               {/* Connecting line */}
               <div style={{
                 position: 'absolute', left: 5, top: 6, width: 1, height: 'calc(100% - 12px)',
-                background: 'linear-gradient(to bottom, rgba(122,102,144,0.3), rgba(74,136,120,0.2), transparent)',
+                background: 'linear-gradient(to bottom, rgba(112,89,135,0.3), rgba(74,136,120,0.2), transparent)',
               }} />
 
               {(() => {
@@ -382,7 +382,7 @@ export function Dashboard() {
                       fontFamily: 'DM Sans, sans-serif',
                       fontSize: isActive ? 15 : 14,
                       fontWeight: isActive ? 800 : 500,
-                      color: isActive ? '#2A2030' : isDone ? jewel.color : '#5A5068',
+                      color: isActive ? '#291F32' : isDone ? jewel.color : '#5A5068',
                       textDecoration: isDone ? 'line-through' : 'none',
                       textDecorationColor: `${jewel.color}50`,
                       flex: 1,
@@ -426,7 +426,7 @@ export function Dashboard() {
             <div style={{ position: 'absolute', top: 0, left: '8%', right: '8%', height: 1, background: 'linear-gradient(90deg,transparent,rgba(255,255,255,0.9),transparent)' }} />
             <div style={{ display: 'flex', alignItems: 'center', gap: 7, marginBottom: 11 }}>
               <Sparkles size={13} color={activeJewel.color} />
-              <span style={{ fontFamily: 'DM Sans, sans-serif', fontSize: 12, fontWeight: 700, color: '#2A2030' }}>What matters right now</span>
+              <span style={{ fontFamily: 'DM Sans, sans-serif', fontSize: 12, fontWeight: 700, color: '#291F32' }}>What matters right now</span>
             </div>
             <div style={{ display: 'flex', flexDirection: 'column', gap: 9 }}>
               {actions.map((action, i) => {
@@ -435,7 +435,7 @@ export function Dashboard() {
                   <div key={i} style={{ display: 'flex', gap: 9, alignItems: 'flex-start' }}>
                     <div style={{ width: 6, height: 6, borderRadius: '50%', background: activeJewel.color, marginTop: 5, flexShrink: 0, boxShadow: `0 0 4px ${activeJewel.glow}` }} />
                     <p style={{ fontFamily: 'DM Sans, sans-serif', fontSize: 15, color: '#5A5065', margin: 0, lineHeight: 1.55 }}>
-                      <strong style={{ color: '#2A2030', fontWeight: 700 }}>{bold}</strong>
+                      <strong style={{ color: '#291F32', fontWeight: 700 }}>{bold}</strong>
                       {rest.length > 0 && ` — ${rest.join(' — ')}`}
                     </p>
                   </div>
@@ -509,7 +509,7 @@ export function Dashboard() {
           {/* Action chips */}
           <div style={{ display: 'flex', gap: 8 }}>
             {[
-              { label: 'Prepare', sub: 'Court guide', bg: 'linear-gradient(145deg,#F4EFF8,#EDE5F4)', text: '#7A5A98', sub2: '#4A3068', shadow: 'rgba(120,90,160,0.12)', path: '/preparation' },
+              { label: 'Prepare', sub: 'Court guide', bg: 'linear-gradient(145deg,#E9E0EF,#E1D6EA)', text: '#7A5A98', sub2: '#4A3068', shadow: 'rgba(120,90,160,0.12)', path: '/preparation' },
               { label: 'Legal',   sub: 'Forms & laws', bg: 'linear-gradient(145deg,#EAF0F8,#DCE6F2)', text: '#4A70A8', sub2: '#2A4870', shadow: 'rgba(74,112,168,0.1)',  path: '/legal' },
               { label: 'Rights',  sub: 'Know yours',  bg: 'linear-gradient(145deg,#EAF4F0,#DCECe6)', text: '#387868', sub2: '#1A4838', shadow: 'rgba(60,130,110,0.1)',  path: '/rights' },
               { label: 'Notes',   sub: notesCount > 0 ? `${notesCount} saved` : 'Add one', bg: 'linear-gradient(145deg,#FDF0E0,#F5E4CC)', text: '#A87830', sub2: '#6A4010', shadow: 'rgba(180,120,40,0.1)',  path: '/notes' },
@@ -536,8 +536,8 @@ export function Dashboard() {
           {teamMembers.length > 0 && (
             <div>
               <div style={{ display: 'flex', alignItems: 'center', justifyContent: 'space-between', marginBottom: 8 }}>
-                <p style={{ fontFamily: 'DM Sans, sans-serif', fontSize: 12, fontWeight: 700, color: '#756B87', textTransform: 'uppercase', letterSpacing: '0.06em', margin: 0 }}>Your team</p>
-                <button onClick={() => { haptics.light(); navigate('/contacts') }} style={{ background: 'none', border: 'none', fontFamily: 'DM Sans, sans-serif', fontSize: 12, fontWeight: 700, color: '#7A6690', cursor: 'pointer', padding: 0 }}>See all</button>
+                <p style={{ fontFamily: 'DM Sans, sans-serif', fontSize: 12, fontWeight: 700, color: '#62566B', textTransform: 'uppercase', letterSpacing: '0.06em', margin: 0 }}>Your team</p>
+                <button onClick={() => { haptics.light(); navigate('/contacts') }} style={{ background: 'none', border: 'none', fontFamily: 'DM Sans, sans-serif', fontSize: 12, fontWeight: 700, color: '#705987', cursor: 'pointer', padding: 0 }}>See all</button>
               </div>
               <div style={{
                 background: '#FAF7F2', borderRadius: 20,
@@ -548,17 +548,17 @@ export function Dashboard() {
                 {teamMembers.map((m, i) => (
                   <div key={i} style={{
                     padding: '11px 16px',
-                    borderBottom: i < teamMembers.length - 1 ? '1px solid rgba(122,102,144,0.08)' : 'none',
+                    borderBottom: i < teamMembers.length - 1 ? '1px solid rgba(112,89,135,0.08)' : 'none',
                     display: 'flex', alignItems: 'center', gap: 11,
                   }}>
-                    <div style={{ width: 32, height: 32, borderRadius: 10, background: 'linear-gradient(145deg,#F4EFF8,#EDE5F4)', display: 'flex', alignItems: 'center', justifyContent: 'center', flexShrink: 0, boxShadow: 'inset 0 1px 0 rgba(255,255,255,0.9)' }}>
-                      <span style={{ fontFamily: 'DM Sans, sans-serif', fontSize: 14, fontWeight: 700, color: '#7A6690' }}>{m.name.charAt(0).toUpperCase()}</span>
+                    <div style={{ width: 32, height: 32, borderRadius: 10, background: 'linear-gradient(145deg,#E9E0EF,#E1D6EA)', display: 'flex', alignItems: 'center', justifyContent: 'center', flexShrink: 0, boxShadow: 'inset 0 1px 0 rgba(255,255,255,0.9)' }}>
+                      <span style={{ fontFamily: 'DM Sans, sans-serif', fontSize: 14, fontWeight: 700, color: '#705987' }}>{m.name.charAt(0).toUpperCase()}</span>
                     </div>
                     <div style={{ flex: 1, minWidth: 0 }}>
-                      <p style={{ fontFamily: 'DM Sans, sans-serif', fontSize: 14, fontWeight: 600, color: '#2A2030', margin: 0, overflow: 'hidden', textOverflow: 'ellipsis', whiteSpace: 'nowrap' }}>{m.name}</p>
-                      <p style={{ fontFamily: 'DM Sans, sans-serif', fontSize: 12, color: '#756B87', margin: 0 }}>{m.role}</p>
+                      <p style={{ fontFamily: 'DM Sans, sans-serif', fontSize: 14, fontWeight: 600, color: '#291F32', margin: 0, overflow: 'hidden', textOverflow: 'ellipsis', whiteSpace: 'nowrap' }}>{m.name}</p>
+                      <p style={{ fontFamily: 'DM Sans, sans-serif', fontSize: 12, color: '#62566B', margin: 0 }}>{m.role}</p>
                     </div>
-                    {m.phone && <a href={`tel:${m.phone.replace(/[^0-9+]/g, '')}`} aria-label={`Call ${m.name}`} onClick={(e) => e.stopPropagation()} style={{ display: 'flex', alignItems: 'center', justifyContent: 'center' }}><Phone size={16} color="#7A6690" /></a>}
+                    {m.phone && <a href={`tel:${m.phone.replace(/[^0-9+]/g, '')}`} aria-label={`Call ${m.name}`} onClick={(e) => e.stopPropagation()} style={{ display: 'flex', alignItems: 'center', justifyContent: 'center' }}><Phone size={16} color="#705987" /></a>}
                   </div>
                 ))}
               </div>

@@ -74,11 +74,11 @@ const CALIFORNIA_COUNTIES = [
 const ROLE_COLORS: Record<RoleType, { bg: string; text: string; dot: string }> = {
   Attorney:       { bg: '#EAF0F8', text: '#3A5A80', dot: '#3A5A80' },
   Judge:          { bg: '#F5ECD8', text: '#7A5A2A', dot: '#C8883A' },
-  'Social Worker':{ bg: '#F4EFF8', text: '#7A6690', dot: '#7A6690' },
+  'Social Worker':{ bg: '#E9E0EF', text: '#705987', dot: '#705987' },
   'Case Manager': { bg: '#EAF4EE', text: '#4A7C59', dot: '#4A7C59' },
-  CASA:           { bg: '#F8EEF2', text: '#8A3A3A', dot: '#A85878' },
+  CASA:           { bg: '#F8EEF2', text: '#8A3A3A', dot: '#94445D' },
   Therapist:      { bg: '#F0F4F8', text: '#3A5A70', dot: '#4A7A9A' },
-  Supervisor:     { bg: '#F4EFF8', text: '#5A4A70', dot: '#7A6690' },
+  Supervisor:     { bg: '#E9E0EF', text: '#5A4A70', dot: '#705987' },
   Other:          { bg: '#F0EAE0', text: '#5A5065', dot: '#9A90A8' },
 }
 
@@ -99,9 +99,9 @@ const inputStyle: React.CSSProperties = {
   width: '100%', boxSizing: 'border-box',
   padding: '12px 16px',
   background: '#EDE6DB',
-  border: '1.5px solid rgba(122,102,144,0.2)',
+  border: '1.5px solid rgba(112,89,135,0.2)',
   borderRadius: 16,
-  fontFamily: 'DM Sans, sans-serif', fontSize: 15, color: '#2A2030',
+  fontFamily: 'DM Sans, sans-serif', fontSize: 15, color: '#291F32',
   outline: 'none',
 }
 
@@ -294,14 +294,14 @@ export function Contacts() {
 
   const modalHeader: React.CSSProperties = {
     padding: '20px 20px 16px',
-    borderBottom: '1px solid rgba(122,102,144,0.12)',
+    borderBottom: '1px solid rgba(112,89,135,0.12)',
     display: 'flex', alignItems: 'center', justifyContent: 'space-between',
     flexShrink: 0,
   }
 
   const modalFooter: React.CSSProperties = {
     padding: '16px 20px env(safe-area-inset-bottom, 32px)',
-    borderTop: '1px solid rgba(122,102,144,0.12)',
+    borderTop: '1px solid rgba(112,89,135,0.12)',
     display: 'flex', gap: 12,
     flexShrink: 0,
   }
@@ -315,7 +315,7 @@ export function Contacts() {
     return (
       <div style={{ minHeight: '100vh', background: '#EDE6DB', display: 'flex', alignItems: 'center', justifyContent: 'center' }}>
         <div style={{ textAlign: 'center' }}>
-          <div style={{ width: 48, height: 48, borderRadius: '50%', border: '3px solid #E8DDE8', borderTopColor: '#7A6690', animation: 'spin 0.8s linear infinite', margin: '0 auto' }} />
+          <div style={{ width: 48, height: 48, borderRadius: '50%', border: '3px solid #E8DDE8', borderTopColor: '#705987', animation: 'spin 0.8s linear infinite', margin: '0 auto' }} />
           <p style={{ marginTop: 16, color: '#4A4058', fontFamily: 'DM Sans, sans-serif' }}>Loading contacts…</p>
         </div>
         <style>{`@keyframes spin { to { transform: rotate(360deg); } }`}</style>
@@ -332,8 +332,8 @@ export function Contacts() {
         {/* Header */}
         <div style={{ display: 'flex', alignItems: 'flex-start', justifyContent: 'space-between', marginBottom: 24 }}>
           <div>
-            <h1 style={{ fontFamily: 'Fraunces, serif', fontSize: 28, fontWeight: 700, color: '#2A2030', margin: 0 }}>My Team</h1>
-            <p style={{ fontFamily: 'DM Sans, sans-serif', fontSize: 14, color: '#695F7B', marginTop: 4 }}>
+            <h1 style={{ fontFamily: 'Fraunces, serif', fontSize: 28, fontWeight: 700, color: '#291F32', margin: 0 }}>My Team</h1>
+            <p style={{ fontFamily: 'DM Sans, sans-serif', fontSize: 14, color: '#62566B', marginTop: 4 }}>
               Everyone working on your case
             </p>
           </div>
@@ -356,11 +356,11 @@ export function Contacts() {
               <div style={{ width: 36, height: 36, borderRadius: 12, background: '#F5ECD8', display: 'flex', alignItems: 'center', justifyContent: 'center' }}>
                 <Gavel size={18} color="#C8883A" />
               </div>
-              <span style={{ fontFamily: 'Fraunces, serif', fontSize: 17, fontWeight: 700, color: '#2A2030' }}>Court Info</span>
+              <span style={{ fontFamily: 'Fraunces, serif', fontSize: 17, fontWeight: 700, color: '#291F32' }}>Court Info</span>
             </div>
             <button
               onClick={openCourtModal}
-              style={{ fontFamily: 'DM Sans, sans-serif', fontSize: 14, fontWeight: 600, color: '#7A6690', background: 'none', border: 'none', cursor: 'pointer', padding: '4px 8px' }}
+              style={{ fontFamily: 'DM Sans, sans-serif', fontSize: 14, fontWeight: 600, color: '#705987', background: 'none', border: 'none', cursor: 'pointer', padding: '4px 8px' }}
             >
               Edit
             </button>
@@ -372,8 +372,8 @@ export function Contacts() {
               { label: 'Next date', value: formatDate(courtInfo?.next_court_date || profile?.next_court_date || null) },
             ].map(({ label, value }) => (
               <div key={label} style={{ display: 'flex', justifyContent: 'space-between', alignItems: 'center' }}>
-                <span style={{ fontFamily: 'DM Sans, sans-serif', fontSize: 14, color: '#695F7B' }}>{label}</span>
-                <span style={{ fontFamily: 'DM Sans, sans-serif', fontSize: 14, fontWeight: 600, color: value ? '#2A2030' : '#C8C0D0' }}>
+                <span style={{ fontFamily: 'DM Sans, sans-serif', fontSize: 14, color: '#62566B' }}>{label}</span>
+                <span style={{ fontFamily: 'DM Sans, sans-serif', fontSize: 14, fontWeight: 600, color: value ? '#291F32' : '#C8C0D0' }}>
                   {value || 'Not set'}
                 </span>
               </div>
@@ -384,15 +384,15 @@ export function Contacts() {
         {/* Contacts list */}
         {contacts.length === 0 ? (
           <div style={{ textAlign: 'center', padding: '48px 16px' }}>
-            <div style={{ width: 72, height: 72, borderRadius: '50%', background: 'linear-gradient(145deg,#F4EFF8,#EDE5F4)', display: 'flex', alignItems: 'center', justifyContent: 'center', margin: '0 auto 20px', boxShadow: '0 4px 16px rgba(122,102,144,0.15)' }}>
-              <Users size={32} color="#7A6690" />
+            <div style={{ width: 72, height: 72, borderRadius: '50%', background: 'linear-gradient(145deg,#E9E0EF,#E1D6EA)', display: 'flex', alignItems: 'center', justifyContent: 'center', margin: '0 auto 20px', boxShadow: '0 4px 16px rgba(112,89,135,0.15)' }}>
+              <Users size={32} color="#705987" />
             </div>
-            <h3 style={{ fontFamily: 'Fraunces, serif', fontSize: 20, fontWeight: 700, color: '#2A2030', marginBottom: 8 }}>Build your team</h3>
-            <p style={{ fontFamily: 'DM Sans, sans-serif', fontSize: 15, color: '#695F7B', lineHeight: 1.6, marginBottom: 20 }}>
+            <h3 style={{ fontFamily: 'Fraunces, serif', fontSize: 20, fontWeight: 700, color: '#291F32', marginBottom: 8 }}>Build your team</h3>
+            <p style={{ fontFamily: 'DM Sans, sans-serif', fontSize: 15, color: '#62566B', lineHeight: 1.6, marginBottom: 20 }}>
               Save the people supporting you through this process so you always have their info handy.
             </p>
             <div style={{ display: 'flex', flexDirection: 'column', gap: 8, textAlign: 'left', background: '#FAF7F2', borderRadius: 16, padding: '12px 16px', border: '1px solid rgba(255,255,255,0.88)' }}>
-              <p style={{ fontFamily: 'DM Sans, sans-serif', fontSize: 12, fontWeight: 700, color: '#695F7B', textTransform: 'uppercase', letterSpacing: '0.07em', margin: 0 }}>Who to add first</p>
+              <p style={{ fontFamily: 'DM Sans, sans-serif', fontSize: 12, fontWeight: 700, color: '#62566B', textTransform: 'uppercase', letterSpacing: '0.07em', margin: 0 }}>Who to add first</p>
               {['Your attorney — they work for you', 'Your social worker', 'A CASA volunteer if you have one', 'A trusted family member or friend'].map((person, i) => (
                 <div key={i} style={{ display: 'flex', gap: 8, alignItems: 'center' }}>
                   <div style={{ width: 5, height: 5, borderRadius: '50%', background: '#C8B8D0', flexShrink: 0 }} />
@@ -424,7 +424,7 @@ export function Contacts() {
                       <Icon size={20} color={colors.dot} />
                     </div>
                     <div style={{ flex: 1, minWidth: 0 }}>
-                      <div style={{ fontFamily: 'Fraunces, serif', fontSize: 16, fontWeight: 700, color: '#2A2030' }}>{contact.name}</div>
+                      <div style={{ fontFamily: 'Fraunces, serif', fontSize: 16, fontWeight: 700, color: '#291F32' }}>{contact.name}</div>
                       <div style={{ display: 'flex', alignItems: 'center', gap: 5, marginTop: 3 }}>
                         <span style={{ width: 6, height: 6, borderRadius: '50%', background: colors.dot, display: 'inline-block' }} />
                         <span style={{ fontFamily: 'DM Sans, sans-serif', fontSize: 12, fontWeight: 600, color: colors.text }}>{contact.role}</span>
@@ -435,7 +435,7 @@ export function Contacts() {
 
                   {/* Expanded details */}
                   {isExpanded && (
-                    <div style={{ padding: '0 16px 16px', borderTop: '1px solid rgba(122,102,144,0.08)' }}>
+                    <div style={{ padding: '0 16px 16px', borderTop: '1px solid rgba(112,89,135,0.08)' }}>
                       <div style={{ display: 'flex', flexDirection: 'column', gap: 10, paddingTop: 14 }}>
                         {contact.phone && (
                           <a href={`tel:${contact.phone.replace(/[^0-9+]/g, '')}`} style={{ display: 'flex', alignItems: 'center', gap: 10, textDecoration: 'none' }}>
@@ -468,7 +468,7 @@ export function Contacts() {
                           </button>
                           <button className="abtn abtn-sm abtn-tint"
                             onClick={() => setDeleteConfirm(contact.id)}
-                            style={{ flex: 1, background: '#F8EEF2', color: '#A85878' }}
+                            style={{ flex: 1, background: '#F8EEF2', color: '#94445D' }}
                           >
                             <Trash2 size={13} /> Delete
                           </button>
@@ -489,17 +489,17 @@ export function Contacts() {
           <div style={modalSheet}>
             <div style={modalHeader}>
               <div>
-                <h2 style={{ fontFamily: 'Fraunces, serif', fontSize: 22, fontWeight: 700, color: '#2A2030', margin: 0 }}>
+                <h2 style={{ fontFamily: 'Fraunces, serif', fontSize: 22, fontWeight: 700, color: '#291F32', margin: 0 }}>
                   {editingContact ? 'Edit Contact' : 'New Contact'}
                 </h2>
                 {!editingContact && (
-                  <p style={{ fontFamily: 'DM Sans, sans-serif', fontSize: 14, color: '#695F7B', marginTop: 4 }}>
+                  <p style={{ fontFamily: 'DM Sans, sans-serif', fontSize: 14, color: '#62566B', marginTop: 4 }}>
                     Saved securely in your Anchor account
                   </p>
                 )}
               </div>
               <button className="aedge" onClick={closeContactModal} style={{ width: 40, height: 40, borderRadius: 12, background: '#E8DDE8', border: 'none', display: 'flex', alignItems: 'center', justifyContent: 'center', cursor: 'pointer' }}>
-                <X size={16} color="#7A6690" />
+                <X size={16} color="#705987" />
               </button>
             </div>
 
@@ -555,9 +555,9 @@ export function Contacts() {
         <div style={{ ...overlay, paddingBottom: keyboardHeight }}>
           <div style={modalSheet}>
             <div style={modalHeader}>
-              <h2 style={{ fontFamily: 'Fraunces, serif', fontSize: 22, fontWeight: 700, color: '#2A2030', margin: 0 }}>Court Info</h2>
+              <h2 style={{ fontFamily: 'Fraunces, serif', fontSize: 22, fontWeight: 700, color: '#291F32', margin: 0 }}>Court Info</h2>
               <button className="aedge" onClick={() => setShowCourtModal(false)} style={{ width: 40, height: 40, borderRadius: 12, background: '#E8DDE8', border: 'none', display: 'flex', alignItems: 'center', justifyContent: 'center', cursor: 'pointer' }}>
-                <X size={16} color="#7A6690" />
+                <X size={16} color="#705987" />
               </button>
             </div>
 
@@ -596,7 +596,7 @@ export function Contacts() {
       {deleteConfirm && (
         <div style={{ ...overlay, alignItems: 'center', padding: '0 20px' }}>
           <div style={{ background: '#FAF7F2', borderRadius: 20, padding: '28px 24px', width: '100%', maxWidth: 360 }}>
-            <h2 style={{ fontFamily: 'Fraunces, serif', fontSize: 22, fontWeight: 700, color: '#2A2030', marginBottom: 8 }}>Remove this contact?</h2>
+            <h2 style={{ fontFamily: 'Fraunces, serif', fontSize: 22, fontWeight: 700, color: '#291F32', marginBottom: 8 }}>Remove this contact?</h2>
             <p style={{ fontFamily: 'DM Sans, sans-serif', fontSize: 14, color: '#4A4058', marginBottom: 24 }}>This can't be undone.</p>
             <div style={{ display: 'flex', gap: 12 }}>
               <button className="abtn abtn-soft" onClick={() => setDeleteConfirm(null)} style={{ flex: 1 }}>

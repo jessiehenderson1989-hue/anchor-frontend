@@ -9,8 +9,8 @@ const inputStyle: React.CSSProperties = {
   padding: '12px 16px',
   fontSize: 14,
   background: '#EDE6DB',
-  border: '1.5px solid rgba(122,102,144,0.2)',
-  color: '#2A2030',
+  border: '1.5px solid rgba(112,89,135,0.2)',
+  color: '#291F32',
   outline: 'none',
   fontFamily: "'DM Sans', sans-serif",
 }
@@ -22,7 +22,7 @@ const labelStyle: React.CSSProperties = {
   fontWeight: 600,
   letterSpacing: '0.08em',
   textTransform: 'uppercase' as const,
-  color: '#756B87',
+  color: '#62566B',
 }
 
 function LogoMark() {
@@ -103,7 +103,7 @@ export function ForgotPasswordScreen() {
             <LogoMark />
           </div>
 
-          <div className="rounded-3xl p-8 text-center" style={{ background: '#FAF7F2', border: '1px solid rgba(122,102,144,0.12)', boxShadow: '0 4px 20px rgba(90,78,110,0.08)' }}>
+          <div className="rounded-3xl p-8 text-center" style={{ background: '#FAF7F2', border: '1px solid rgba(112,89,135,0.12)', boxShadow: '0 4px 20px rgba(90,78,110,0.08)' }}>
             <div
               className="w-16 h-16 rounded-full flex items-center justify-center mx-auto mb-5"
               style={{ background: 'rgba(74,124,89,0.12)' }}
@@ -111,13 +111,13 @@ export function ForgotPasswordScreen() {
               <Check className="w-8 h-8" style={{ color: '#4A7C59' }} />
             </div>
 
-            <h1 className="text-2xl font-bold mb-2" style={{ fontFamily: "'Fraunces', Georgia, serif", color: '#2A2030' }}>
+            <h1 className="text-2xl font-bold mb-2" style={{ fontFamily: "'Fraunces', Georgia, serif", color: '#291F32' }}>
               Check Your Email
             </h1>
             <p className="text-sm mb-1" style={{ color: '#5A5065' }}>
               We've sent password reset instructions to
             </p>
-            <p className="text-sm font-semibold mb-6" style={{ color: '#7A6690' }}>{sentEmail}</p>
+            <p className="text-sm font-semibold mb-6" style={{ color: '#705987' }}>{sentEmail}</p>
 
             <p className="text-sm mb-4" style={{ color: '#5A5065' }}>
               Didn't receive it? Check your spam folder or try again.
@@ -127,7 +127,7 @@ export function ForgotPasswordScreen() {
               onClick={handleResend}
               disabled={loading}
               className="font-semibold text-sm mb-6 w-full disabled:opacity-50"
-              style={{ color: '#7A6690' }}
+              style={{ color: '#705987' }}
             >
               {loading ? 'Sending...' : 'Resend Email'}
             </button>
@@ -142,7 +142,7 @@ export function ForgotPasswordScreen() {
             <Link to="/login">
               <button
                 className="w-full py-3.5 rounded-2xl font-semibold transition-all active:scale-95"
-                style={{ background: 'transparent', border: '1.5px solid rgba(122,102,144,0.3)', color: '#7A6690', fontFamily: "'DM Sans', sans-serif" }}
+                style={{ background: 'transparent', border: '1.5px solid rgba(112,89,135,0.3)', color: '#705987', fontFamily: "'DM Sans', sans-serif" }}
               >
                 Back to Sign In
               </button>
@@ -160,8 +160,8 @@ export function ForgotPasswordScreen() {
           <LogoMark />
         </div>
 
-        <div className="rounded-3xl p-8" style={{ background: '#FAF7F2', border: '1px solid rgba(122,102,144,0.12)', boxShadow: '0 4px 20px rgba(90,78,110,0.08)' }}>
-          <h1 className="text-3xl font-bold text-center mb-2" style={{ fontFamily: "'Fraunces', Georgia, serif", color: '#2A2030' }}>
+        <div className="rounded-3xl p-8" style={{ background: '#FAF7F2', border: '1px solid rgba(112,89,135,0.12)', boxShadow: '0 4px 20px rgba(90,78,110,0.08)' }}>
+          <h1 className="text-3xl font-bold text-center mb-2" style={{ fontFamily: "'Fraunces', Georgia, serif", color: '#291F32' }}>
             Reset Your Password
           </h1>
           <p className="text-sm text-center mb-8" style={{ color: '#5A5065' }}>
@@ -172,7 +172,7 @@ export function ForgotPasswordScreen() {
             <div>
               <label style={labelStyle}>Email Address</label>
               <div className="relative">
-                <Mail className="absolute left-3 top-1/2 -translate-y-1/2 w-4 h-4" style={{ color: '#756B87' }} />
+                <Mail className="absolute left-3 top-1/2 -translate-y-1/2 w-4 h-4" style={{ color: '#62566B' }} />
                 <input
                   type="email"
                   value={email}
@@ -202,7 +202,7 @@ export function ForgotPasswordScreen() {
             </button>
 
             <div className="text-center">
-              <Link to="/login" className="text-sm font-semibold" style={{ color: '#7A6690' }}>
+              <Link to="/login" className="text-sm font-semibold" style={{ color: '#705987' }}>
                 Back to Sign In
               </Link>
             </div>

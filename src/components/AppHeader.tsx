@@ -29,7 +29,7 @@ export function AppHeader({ showBack = true }: AppHeaderProps) {
   const radius = 24
   const circumference = 2 * Math.PI * radius
   const dashLength = circumference * progress
-  const ringColor = '#7A6690'
+  const ringColor = '#705987'
 
   return (
     <>
@@ -52,10 +52,10 @@ export function AppHeader({ showBack = true }: AppHeaderProps) {
             {showBack && (
               <button className="aedge"
                 onClick={() => { haptics.light(); navigate(-1) }}
-                style={{ width: 40, height: 40, borderRadius: 12, background: 'linear-gradient(145deg,#F4EFF8,#EDE5F4)', border: '1px solid rgba(255,255,255,0.9)', display: 'flex', alignItems: 'center', justifyContent: 'center', cursor: 'pointer' }}
+                style={{ width: 40, height: 40, borderRadius: 12, background: 'linear-gradient(145deg,#E9E0EF,#E1D6EA)', border: '1px solid rgba(255,255,255,0.9)', display: 'flex', alignItems: 'center', justifyContent: 'center', cursor: 'pointer' }}
                 aria-label="Go back"
               >
-                <ArrowLeft size={17} color="#7A6690" />
+                <ArrowLeft size={17} color="#705987" />
               </button>
             )}
           </div>
@@ -69,7 +69,7 @@ export function AppHeader({ showBack = true }: AppHeaderProps) {
             {/* Badge behind the logo */}
             <div style={{
               position: 'absolute', top: 5, left: 5, width: 42, height: 42, borderRadius: '50%',
-              background: 'linear-gradient(160deg,#FFFFFF,#F4EFF8)',
+              background: 'linear-gradient(160deg,#FFFFFF,#E9E0EF)',
               boxShadow: '0 2px 8px rgba(94,77,116,0.22), inset 0 1px 0 rgba(255,255,255,1)',
             }} />
             {/* Progress ring SVG */}
@@ -82,7 +82,7 @@ export function AppHeader({ showBack = true }: AppHeaderProps) {
               <circle
                 cx="26" cy="26" r={radius}
                 fill="none"
-                stroke="rgba(122,102,144,0.2)"
+                stroke="rgba(112,89,135,0.2)"
                 strokeWidth="3"
               />
               {/* Progress arc */}
@@ -114,10 +114,10 @@ export function AppHeader({ showBack = true }: AppHeaderProps) {
           {onSettings ? <div style={{ width: 40, flexShrink: 0 }} /> : (
           <button className="aedge"
             onClick={() => { haptics.light(); navigate('/settings') }}
-            style={{ width: 40, height: 40, borderRadius: 12, background: 'linear-gradient(145deg,#F4EFF8,#EDE5F4)', border: '1px solid rgba(255,255,255,0.9)', display: 'flex', alignItems: 'center', justifyContent: 'center', cursor: 'pointer', flexShrink: 0 }}
+            style={{ width: 40, height: 40, borderRadius: 12, background: 'linear-gradient(145deg,#E9E0EF,#E1D6EA)', border: '1px solid rgba(255,255,255,0.9)', display: 'flex', alignItems: 'center', justifyContent: 'center', cursor: 'pointer', flexShrink: 0 }}
             aria-label="Settings"
           >
-            <Settings size={17} color="#7A6690" />
+            <Settings size={17} color="#705987" />
           </button>
           )}
         </div>

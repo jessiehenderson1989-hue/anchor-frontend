@@ -281,16 +281,16 @@ export function Preparation() {
   }
   const inputStyle: React.CSSProperties = {
     background: '#EDE6DB',
-    border: '1.5px solid rgba(122,102,144,0.2)',
+    border: '1.5px solid rgba(112,89,135,0.2)',
     borderRadius: 16,
     padding: '12px 16px',
-    color: '#2A2030',
+    color: '#291F32',
     outline: 'none',
     width: '100%',
     fontSize: 15,
   }
   const primaryBtn: React.CSSProperties = {
-    background: '#7A6690',
+    background: '#705987',
     color: 'white',
     border: 'none',
     borderRadius: 16,
@@ -303,12 +303,12 @@ export function Preparation() {
     alignItems: 'center',
     justifyContent: 'center',
     gap: 8,
-    boxShadow: '0 4px 16px rgba(122,102,144,0.3)',
+    boxShadow: '0 4px 16px rgba(112,89,135,0.3)',
   }
   const ghostBtn: React.CSSProperties = {
     background: 'transparent',
-    color: '#7A6690',
-    border: '1.5px solid rgba(122,102,144,0.35)',
+    color: '#705987',
+    border: '1.5px solid rgba(112,89,135,0.35)',
     borderRadius: 16,
     padding: '12px 24px',
     fontWeight: 600,
@@ -331,11 +331,11 @@ export function Preparation() {
         {!hasResponse && (
           <div>
             <h1
-              style={{ fontFamily: "Fraunces, serif", fontSize: 28, fontWeight: 700, color: '#2A2030', margin: '0 0 4px' }}
+              style={{ fontFamily: "Fraunces, serif", fontSize: 28, fontWeight: 700, color: '#291F32', margin: '0 0 4px' }}
             >
               {copy.heading}
             </h1>
-            <p style={{ fontFamily: 'DM Sans, sans-serif', fontSize: 14, color: '#695F7B', margin: 0 }}>{copy.subheading}</p>
+            <p style={{ fontFamily: 'DM Sans, sans-serif', fontSize: 14, color: '#62566B', margin: 0 }}>{copy.subheading}</p>
           </div>
         )}
 
@@ -344,9 +344,9 @@ export function Preparation() {
           <div
             style={{ background: '#FAF7F2', borderRadius: 16, padding: '12px 14px', display: 'flex', alignItems: 'flex-start', gap: 10, border: '1px solid rgba(255,255,255,0.88)' }}
           >
-            <Lock size={15} style={{ color: '#7A6690', flexShrink: 0, marginTop: 2 }} />
+            <Lock size={15} style={{ color: '#705987', flexShrink: 0, marginTop: 2 }} />
             <p style={{ fontFamily: 'DM Sans, sans-serif', fontSize: 13, color: '#4A4058', margin: 0, lineHeight: 1.6 }}>
-              <span style={{ fontWeight: 700, color: '#2A2030' }}>Private. </span>
+              <span style={{ fontWeight: 700, color: '#291F32' }}>Private. </span>
               {copy.privacyNote}
             </p>
           </div>
@@ -355,7 +355,7 @@ export function Preparation() {
         {/* ── STEP 1: CHOOSE TYPE ── */}
         {!selectedType && (
           <div style={{ display: 'flex', flexDirection: 'column', gap: 10 }}>
-            <p style={{ fontFamily: 'DM Sans, sans-serif', fontSize: 12, fontWeight: 700, color: '#695F7B', textTransform: 'uppercase', letterSpacing: '0.06em', margin: 0 }}>
+            <p style={{ fontFamily: 'DM Sans, sans-serif', fontSize: 12, fontWeight: 700, color: '#62566B', textTransform: 'uppercase', letterSpacing: '0.06em', margin: 0 }}>
               What do you need help with?
             </p>
             {copy.prepOptions.map(opt => {
@@ -368,10 +368,10 @@ export function Preparation() {
                 >
                   <div style={{ display: 'flex', alignItems: 'center', gap: 14 }}>
                     <div style={{ borderRadius: 12, padding: 10, flexShrink: 0, background: '#E8DDE8', display: 'flex', alignItems: 'center', justifyContent: 'center' }}>
-                      <Icon size={18} style={{ color: '#7A6690' }} />
+                      <Icon size={18} style={{ color: '#705987' }} />
                     </div>
                     <div>
-                      <p style={{ fontFamily: 'DM Sans, sans-serif', fontSize: 14, fontWeight: 700, color: '#2A2030', margin: 0 }}>{opt.title}</p>
+                      <p style={{ fontFamily: 'DM Sans, sans-serif', fontSize: 14, fontWeight: 700, color: '#291F32', margin: 0 }}>{opt.title}</p>
                       <p style={{ fontFamily: 'DM Sans, sans-serif', fontSize: 14, color: '#4A4058', margin: '3px 0 0' }}>{opt.description}</p>
                     </div>
                   </div>
@@ -385,10 +385,10 @@ export function Preparation() {
         {selectedType === 'meeting' && !meetingType && (
           <div style={{ ...card, padding: 20 }}>
             <div style={{ display: 'flex', alignItems: 'center', justifyContent: 'space-between', marginBottom: 14 }}>
-              <p style={{ fontFamily: 'DM Sans, sans-serif', fontSize: 12, fontWeight: 700, color: '#695F7B', textTransform: 'uppercase', letterSpacing: '0.06em', margin: 0 }}>
+              <p style={{ fontFamily: 'DM Sans, sans-serif', fontSize: 12, fontWeight: 700, color: '#62566B', textTransform: 'uppercase', letterSpacing: '0.06em', margin: 0 }}>
                 Who is this meeting with?
               </p>
-              <button onClick={reset} style={{ color: '#695F7B' }}>
+              <button onClick={reset} style={{ color: '#62566B' }}>
                 <X size={16} color="#9A90A8" />
               </button>
             </div>
@@ -399,8 +399,8 @@ export function Preparation() {
                   onClick={() => setMeetingType(mt.value as MeetingType)}
                   style={{ cursor: 'pointer',
                     background: '#EDE6DB',
-                    border: '1.5px solid rgba(122,102,144,0.15)',
-                    color: '#2A2030',
+                    border: '1.5px solid rgba(112,89,135,0.15)',
+                    color: '#291F32',
                     fontWeight: 600,
                     fontSize: 15,
                   }}
@@ -417,18 +417,18 @@ export function Preparation() {
           <div style={{ ...card, padding: 20 }}>
             <div style={{ display: 'flex', alignItems: 'center', justifyContent: 'space-between', marginBottom: 14 }}>
               <span
-                style={{ fontFamily: 'DM Sans, sans-serif', fontSize: 12, fontWeight: 700, textTransform: 'uppercase', letterSpacing: '0.05em', padding: '3px 12px', borderRadius: 20, background: '#E8DDE8', color: '#7A6690' }}
+                style={{ fontFamily: 'DM Sans, sans-serif', fontSize: 12, fontWeight: 700, textTransform: 'uppercase', letterSpacing: '0.05em', padding: '3px 12px', borderRadius: 20, background: '#E8DDE8', color: '#705987' }}
               >
                 {copy.prepOptions.find(o => o.type === selectedType)?.title}
                 {meetingType && ` · ${copy.meetingTypes.find(m => m.value === meetingType)?.label}`}
               </span>
-              <button onClick={reset} style={{ color: '#695F7B' }}>
+              <button onClick={reset} style={{ color: '#62566B' }}>
                 <X size={16} color="#9A90A8" />
               </button>
             </div>
 
             <label
-              style={{ fontFamily: 'DM Sans, sans-serif', fontSize: 14, fontWeight: 700, color: '#2A2030', display: 'block', marginBottom: 8 }}
+              style={{ fontFamily: 'DM Sans, sans-serif', fontSize: 14, fontWeight: 700, color: '#291F32', display: 'block', marginBottom: 8 }}
             >
               {copy.questionLabel(selectedType)}
             </label>
@@ -469,12 +469,12 @@ export function Preparation() {
             </button>
 
             {loading && (
-              <p style={{ fontFamily: 'DM Sans, sans-serif', fontSize: 12, textAlign: 'center', marginTop: 6, color: '#695F7B' }}>
+              <p style={{ fontFamily: 'DM Sans, sans-serif', fontSize: 12, textAlign: 'center', marginTop: 6, color: '#62566B' }}>
                 Usually ready in 5–10 seconds
               </p>
             )}
             {!concerns.trim() && !loading && (
-              <p style={{ fontFamily: 'DM Sans, sans-serif', fontSize: 13, textAlign: 'center', marginTop: 8, color: '#695F7B', lineHeight: 1.5 }}>
+              <p style={{ fontFamily: 'DM Sans, sans-serif', fontSize: 13, textAlign: 'center', marginTop: 8, color: '#62566B', lineHeight: 1.5 }}>
                 Type something above to get your personalized guide
               </p>
             )}
@@ -488,7 +488,7 @@ export function Preparation() {
             {/* Header row */}
             <div style={{ display: 'flex', alignItems: 'center', justifyContent: 'space-between' }}>
               <h2
-                style={{ fontFamily: 'Fraunces, serif', fontSize: 22, fontWeight: 700, color: '#2A2030', margin: 0 }}
+                style={{ fontFamily: 'Fraunces, serif', fontSize: 22, fontWeight: 700, color: '#291F32', margin: 0 }}
               >
                 Your Guide
               </h2>
@@ -505,23 +505,23 @@ export function Preparation() {
             <div
               style={{ background: '#E8DDE8', borderRadius: 16, padding: '12px 14px' }}
             >
-              <p style={{ fontFamily: 'DM Sans, sans-serif', fontSize: 12, fontWeight: 700, textTransform: 'uppercase', letterSpacing: '0.05em', color: '#695F7B', margin: '0 0 4px' }}>
+              <p style={{ fontFamily: 'DM Sans, sans-serif', fontSize: 12, fontWeight: 700, textTransform: 'uppercase', letterSpacing: '0.05em', color: '#62566B', margin: '0 0 4px' }}>
                 You said
               </p>
-              <p style={{ fontFamily: 'DM Sans, sans-serif', fontSize: 14, color: '#2A2030', margin: 0 }}>{concerns}</p>
+              <p style={{ fontFamily: 'DM Sans, sans-serif', fontSize: 14, color: '#291F32', margin: 0 }}>{concerns}</p>
             </div>
 
             {/* AI responses */}
             {assistantResponse.map((msg, i) => (
               <div key={i} style={{ ...card, padding: 20 }}>
                 <div style={{ display: 'flex', alignItems: 'center', gap: 8, marginBottom: 10 }}>
-                  <Sparkles size={15} color="#7A6690" />
-                  <p style={{ fontFamily: 'DM Sans, sans-serif', fontSize: 12, fontWeight: 700, textTransform: 'uppercase', letterSpacing: '0.05em', color: '#7A6690', margin: 0 }}>
+                  <Sparkles size={15} color="#705987" />
+                  <p style={{ fontFamily: 'DM Sans, sans-serif', fontSize: 12, fontWeight: 700, textTransform: 'uppercase', letterSpacing: '0.05em', color: '#705987', margin: 0 }}>
                     {i === 0 ? 'Your Preparation Guide · Written by AI' : 'Follow-up · Written by AI'}
                   </p>
                 </div>
                 <div
-                  style={{ fontFamily: 'DM Sans, sans-serif', fontSize: 15, color: '#2A2030', lineHeight: 1.7, whiteSpace: 'pre-wrap' }}
+                  style={{ fontFamily: 'DM Sans, sans-serif', fontSize: 15, color: '#291F32', lineHeight: 1.7, whiteSpace: 'pre-wrap' }}
                 >
                   {msg.content}
                 </div>
@@ -532,7 +532,7 @@ export function Preparation() {
             {chatHistory.filter(m => m.role === 'user').slice(1).map((msg, i) => (
               <div
                 key={i}
-                style={{ background: '#7A6690', borderRadius: 16, padding: '10px 14px', alignSelf: 'flex-end', marginLeft: 32 }}
+                style={{ background: '#705987', borderRadius: 16, padding: '10px 14px', alignSelf: 'flex-end', marginLeft: 32 }}
               >
                 <p style={{ fontFamily: 'DM Sans, sans-serif', fontSize: 14, color: '#fff', margin: 0 }}>{msg.content}</p>
               </div>
@@ -541,8 +541,8 @@ export function Preparation() {
             {/* Loading state */}
             {loading && (
               <div style={{ ...card, padding: 14, display: 'flex', alignItems: 'center', gap: 10 }}>
-                <Loader2 size={15} style={{ color: '#7A6690', animation: 'spin 1s linear infinite' }} />
-                <p style={{ fontFamily: 'DM Sans, sans-serif', fontSize: 14, color: '#695F7B', margin: 0 }}>Getting your answer...</p>
+                <Loader2 size={15} style={{ color: '#705987', animation: 'spin 1s linear infinite' }} />
+                <p style={{ fontFamily: 'DM Sans, sans-serif', fontSize: 14, color: '#62566B', margin: 0 }}>Getting your answer...</p>
               </div>
             )}
 
@@ -556,16 +556,16 @@ export function Preparation() {
             )}
 
             {/* Disclaimer */}
-            <p style={{ fontFamily: 'DM Sans, sans-serif', fontSize: 12, textAlign: 'center', padding: '0 16px', color: '#695F7B', margin: 0 }}>
+            <p style={{ fontFamily: 'DM Sans, sans-serif', fontSize: 12, textAlign: 'center', padding: '0 16px', color: '#62566B', margin: 0 }}>
               General information only — not legal advice. Talk to your attorney about your specific case.
             </p>
 
             {/* Follow-up input */}
             <div style={{ ...card, padding: 14 }}>
-              <p style={{ fontFamily: 'DM Sans, sans-serif', fontSize: 12, fontWeight: 700, color: '#2A2030', margin: '0 0 4px' }}>
+              <p style={{ fontFamily: 'DM Sans, sans-serif', fontSize: 12, fontWeight: 700, color: '#291F32', margin: '0 0 4px' }}>
                 Ask a follow-up question
               </p>
-              <p style={{ fontFamily: 'DM Sans, sans-serif', fontSize: 13, color: '#695F7B', margin: '0 0 10px', lineHeight: 1.5 }}>
+              <p style={{ fontFamily: 'DM Sans, sans-serif', fontSize: 13, color: '#62566B', margin: '0 0 10px', lineHeight: 1.5 }}>
                 Type your question and tap the arrow — the guide will respond.
               </p>
               <div style={{ display: 'flex', gap: 8 }}>
@@ -635,17 +635,17 @@ export function Preparation() {
             style={{ width: '100%', maxWidth: 480, borderRadius: '24px 24px 0 0', padding: 24, background: '#FAF7F2' }} onClick={e => e.stopPropagation()}
           >
             <div style={{ display: 'flex', alignItems: 'center', justifyContent: 'space-between', marginBottom: 16 }}>
-              <h3 style={{ fontFamily: 'Fraunces, serif', fontSize: 20, fontWeight: 700, color: '#2A2030', margin: 0 }}>
+              <h3 style={{ fontFamily: 'Fraunces, serif', fontSize: 20, fontWeight: 700, color: '#291F32', margin: 0 }}>
                 Save to Notes
               </h3>
               <button
                 onClick={() => setShowSaveModal(false)}
-                style={{ width: 40, height: 40, borderRadius: 10, background: 'rgba(122,102,144,0.1)', border: 'none', display: 'flex', alignItems: 'center', justifyContent: 'center', cursor: 'pointer', flexShrink: 0 }}
+                style={{ width: 40, height: 40, borderRadius: 10, background: 'rgba(112,89,135,0.1)', border: 'none', display: 'flex', alignItems: 'center', justifyContent: 'center', cursor: 'pointer', flexShrink: 0 }}
               >
                 <X size={16} color="#9A90A8" />
               </button>
             </div>
-            <label style={{ fontFamily: 'DM Sans, sans-serif', fontSize: 12, fontWeight: 700, textTransform: 'uppercase', letterSpacing: '0.05em', color: '#695F7B', display: 'block', marginBottom: 8 }}>
+            <label style={{ fontFamily: 'DM Sans, sans-serif', fontSize: 12, fontWeight: 700, textTransform: 'uppercase', letterSpacing: '0.05em', color: '#62566B', display: 'block', marginBottom: 8 }}>
               Title
             </label>
             <input

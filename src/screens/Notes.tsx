@@ -30,7 +30,7 @@ type CategoryType = 'Court' | 'Visit' | 'Meeting' | 'Personal' | 'Other'
 const CATEGORIES: CategoryType[] = ['Personal', 'Court', 'Visit', 'Meeting', 'Other']
 
 const CATEGORY_STYLES: Record<CategoryType, { bg: string; text: string; dot: string }> = {
-  Personal: { bg: '#F4EFF8', text: '#7A6690', dot: '#7A6690' },
+  Personal: { bg: '#E9E0EF', text: '#705987', dot: '#705987' },
   Court:    { bg: '#EAF0F8', text: '#3A5A80', dot: '#3A5A80' },
   Visit:    { bg: '#EAF4EE', text: '#4A7C59', dot: '#4A7C59' },
   Meeting:  { bg: '#F5ECD8', text: '#7A5A2A', dot: '#C8883A' },
@@ -210,7 +210,7 @@ export function Notes() {
         <div style={{ textAlign: 'center' }}>
           <div style={{
             width: 48, height: 48, borderRadius: '50%',
-            border: '3px solid #E8DDE8', borderTopColor: '#7A6690',
+            border: '3px solid #E8DDE8', borderTopColor: '#705987',
             animation: 'spin 0.8s linear infinite', margin: '0 auto'
           }} />
           <p style={{ marginTop: 16, color: '#4A4058', fontFamily: 'DM Sans, sans-serif' }}>Loading notes…</p>
@@ -229,10 +229,10 @@ export function Notes() {
         {/* Header row */}
         <div style={{ display: 'flex', alignItems: 'center', justifyContent: 'space-between', marginBottom: 8 }}>
           <div>
-            <h1 style={{ fontFamily: 'Fraunces, serif', fontSize: 28, fontWeight: 700, color: '#2A2030', margin: 0 }}>
+            <h1 style={{ fontFamily: 'Fraunces, serif', fontSize: 28, fontWeight: 700, color: '#291F32', margin: 0 }}>
               My Notes
             </h1>
-            <p style={{ fontFamily: 'DM Sans, sans-serif', fontSize: 14, color: '#695F7B', marginTop: 4 }}>
+            <p style={{ fontFamily: 'DM Sans, sans-serif', fontSize: 14, color: '#62566B', marginTop: 4 }}>
               Saved securely in your Anchor account
             </p>
           </div>
@@ -247,7 +247,7 @@ export function Notes() {
 
         {/* Search */}
         <div style={{ position: 'relative', marginBottom: 24, marginTop: 20 }}>
-          <Search size={16} style={{ position: 'absolute', left: 14, top: '50%', transform: 'translateY(-50%)', color: '#695F7B' }} />
+          <Search size={16} style={{ position: 'absolute', left: 14, top: '50%', transform: 'translateY(-50%)', color: '#62566B' }} />
           <input
             type="text"
             value={searchQuery}
@@ -257,9 +257,9 @@ export function Notes() {
               width: '100%', boxSizing: 'border-box',
               padding: '12px 16px 12px 40px',
               background: '#FAF7F2',
-              border: '1.5px solid rgba(122,102,144,0.2)',
+              border: '1.5px solid rgba(112,89,135,0.2)',
               borderRadius: 16,
-              fontFamily: 'DM Sans, sans-serif', fontSize: 15, color: '#2A2030',
+              fontFamily: 'DM Sans, sans-serif', fontSize: 15, color: '#291F32',
               outline: 'none',
             }}
           />
@@ -270,24 +270,24 @@ export function Notes() {
           <div style={{ textAlign: 'center', padding: '48px 16px' }}>
             <div style={{
               width: 72, height: 72, borderRadius: '50%',
-              background: 'linear-gradient(145deg,#F4EFF8,#EDE5F4)',
+              background: 'linear-gradient(145deg,#E9E0EF,#E1D6EA)',
               display: 'flex', alignItems: 'center',
               justifyContent: 'center', margin: '0 auto 20px',
-              boxShadow: '0 4px 16px rgba(122,102,144,0.15)',
+              boxShadow: '0 4px 16px rgba(112,89,135,0.15)',
             }}>
-              <FileText size={32} color="#7A6690" />
+              <FileText size={32} color="#705987" />
             </div>
-            <h3 style={{ fontFamily: 'Fraunces, serif', fontSize: 20, fontWeight: 700, color: '#2A2030', marginBottom: 8 }}>
+            <h3 style={{ fontFamily: 'Fraunces, serif', fontSize: 20, fontWeight: 700, color: '#291F32', marginBottom: 8 }}>
               {searchQuery ? 'No notes found' : 'Your notes live here'}
             </h3>
-            <p style={{ fontFamily: 'DM Sans, sans-serif', fontSize: 15, color: '#695F7B', lineHeight: 1.6, marginBottom: 20 }}>
+            <p style={{ fontFamily: 'DM Sans, sans-serif', fontSize: 15, color: '#62566B', lineHeight: 1.6, marginBottom: 20 }}>
               {searchQuery
                 ? 'Try a different search term'
                 : 'Use notes to track what happens at hearings, visits, and meetings. Tap + New to get started.'}
             </p>
             {!searchQuery && (
               <div style={{ display: 'flex', flexDirection: 'column', gap: 8, textAlign: 'left', background: '#FAF7F2', borderRadius: 16, padding: '12px 16px', border: '1px solid rgba(255,255,255,0.88)' }}>
-                <p style={{ fontFamily: 'DM Sans, sans-serif', fontSize: 12, fontWeight: 700, color: '#695F7B', textTransform: 'uppercase', letterSpacing: '0.07em', margin: 0 }}>Ideas to get started</p>
+                <p style={{ fontFamily: 'DM Sans, sans-serif', fontSize: 12, fontWeight: 700, color: '#62566B', textTransform: 'uppercase', letterSpacing: '0.07em', margin: 0 }}>Ideas to get started</p>
                 {["What happened at today's hearing", 'Questions to ask my attorney', 'What the judge said about my case plan', 'How my visit with my child went'].map((idea, i) => (
                   <div key={i} style={{ display: 'flex', gap: 8, alignItems: 'center' }}>
                     <div style={{ width: 5, height: 5, borderRadius: '50%', background: '#C8B8D0', flexShrink: 0 }} />
@@ -323,7 +323,7 @@ export function Notes() {
                       {note.category}
                     </span>
                   </div>
-                  <h3 style={{ fontFamily: 'Fraunces, serif', fontSize: 17, fontWeight: 700, color: '#2A2030', margin: '0 0 6px', paddingRight: 64 }}>
+                  <h3 style={{ fontFamily: 'Fraunces, serif', fontSize: 17, fontWeight: 700, color: '#291F32', margin: '0 0 6px', paddingRight: 64 }}>
                     {note.title}
                   </h3>
                   {note.content && (
@@ -331,14 +331,14 @@ export function Notes() {
                       {truncateContent(note.content)}
                     </p>
                   )}
-                  <p style={{ fontFamily: 'DM Sans, sans-serif', fontSize: 12, color: '#695F7B', margin: 0 }}>
+                  <p style={{ fontFamily: 'DM Sans, sans-serif', fontSize: 12, color: '#62566B', margin: 0 }}>
                     {formatDate(note.updated_at)}
                   </p>
                   <div style={{ position: 'absolute', top: 14, right: 14, display: 'flex', gap: 4 }}>
-                    <button onClick={() => openEditModal(note)} style={{ width: 40, height: 40, borderRadius: 10, background: 'transparent', border: 'none', display: 'flex', alignItems: 'center', justifyContent: 'center', cursor: 'pointer', color: '#695F7B' }}>
+                    <button onClick={() => openEditModal(note)} style={{ width: 40, height: 40, borderRadius: 10, background: 'transparent', border: 'none', display: 'flex', alignItems: 'center', justifyContent: 'center', cursor: 'pointer', color: '#62566B' }}>
                       <Pencil size={15} />
                     </button>
-                    <button onClick={() => setDeleteConfirm(note.id)} style={{ width: 40, height: 40, borderRadius: 10, background: 'transparent', border: 'none', display: 'flex', alignItems: 'center', justifyContent: 'center', cursor: 'pointer', color: '#695F7B' }}>
+                    <button onClick={() => setDeleteConfirm(note.id)} style={{ width: 40, height: 40, borderRadius: 10, background: 'transparent', border: 'none', display: 'flex', alignItems: 'center', justifyContent: 'center', cursor: 'pointer', color: '#62566B' }}>
                       <Trash2 size={15} />
                     </button>
                   </div>
@@ -368,15 +368,15 @@ export function Notes() {
             {/* HEADER — fixed height, never scrolls */}
             <div style={{
               padding: '20px 20px 16px',
-              borderBottom: '1px solid rgba(122,102,144,0.12)',
+              borderBottom: '1px solid rgba(112,89,135,0.12)',
               display: 'flex', alignItems: 'center', justifyContent: 'space-between',
               flexShrink: 0,
             }}>
-              <h2 style={{ fontFamily: 'Fraunces, serif', fontSize: 22, fontWeight: 700, color: '#2A2030', margin: 0 }}>
+              <h2 style={{ fontFamily: 'Fraunces, serif', fontSize: 22, fontWeight: 700, color: '#291F32', margin: 0 }}>
                 {editingNote ? 'Edit Note' : 'New Note'}
               </h2>
               <button className="aedge" onClick={closeModal} style={{ width: 40, height: 40, borderRadius: 12, background: '#E8DDE8', border: 'none', display: 'flex', alignItems: 'center', justifyContent: 'center', cursor: 'pointer' }}>
-                <X size={16} color="#7A6690" />
+                <X size={16} color="#705987" />
               </button>
             </div>
 
@@ -389,7 +389,7 @@ export function Notes() {
                   value={formData.title}
                   onChange={(e) => setFormData({ ...formData, title: e.target.value })}
                   placeholder="Give your note a title…"
-                  style={{ width: '100%', boxSizing: 'border-box', padding: '12px 16px', background: '#EDE6DB', border: '1.5px solid rgba(122,102,144,0.2)', borderRadius: 16, fontFamily: 'DM Sans, sans-serif', fontSize: 15, color: '#2A2030', outline: 'none' }}
+                  style={{ width: '100%', boxSizing: 'border-box', padding: '12px 16px', background: '#EDE6DB', border: '1.5px solid rgba(112,89,135,0.2)', borderRadius: 16, fontFamily: 'DM Sans, sans-serif', fontSize: 15, color: '#291F32', outline: 'none' }}
                 />
               </div>
               <div>
@@ -408,12 +408,12 @@ export function Notes() {
               </div>
               <div>
                 <label style={{ fontFamily: 'DM Sans, sans-serif', fontSize: 14, fontWeight: 600, color: '#4A4058', display: 'block', marginBottom: 6 }}>
-                  Link to a stage <span style={{ fontWeight: 400, color: '#695F7B' }}>(optional)</span>
+                  Link to a stage <span style={{ fontWeight: 400, color: '#62566B' }}>(optional)</span>
                 </label>
                 <select
                   value={formData.stage_key || ''}
                   onChange={(e) => setFormData({ ...formData, stage_key: e.target.value || null })}
-                  style={{ width: '100%', padding: '11px 14px', background: 'rgba(255,255,255,0.6)', border: '1px solid rgba(255,255,255,0.9)', borderRadius: 14, fontFamily: 'DM Sans, sans-serif', fontSize: 14, color: '#2A2030', outline: 'none', appearance: 'none', cursor: 'pointer' }}
+                  style={{ width: '100%', padding: '11px 14px', background: 'rgba(255,255,255,0.6)', border: '1px solid rgba(255,255,255,0.9)', borderRadius: 14, fontFamily: 'DM Sans, sans-serif', fontSize: 14, color: '#291F32', outline: 'none', appearance: 'none', cursor: 'pointer' }}
                 >
                   <option value="">No stage linked</option>
                   {STAGE_OPTIONS.map((s) => (
@@ -421,7 +421,7 @@ export function Notes() {
                   ))}
                 </select>
                 {formData.stage_key && (
-                  <p style={{ fontFamily: 'DM Sans, sans-serif', fontSize: 12, color: '#7A6690', margin: '5px 0 0', fontWeight: 600 }}>
+                  <p style={{ fontFamily: 'DM Sans, sans-serif', fontSize: 12, color: '#705987', margin: '5px 0 0', fontWeight: 600 }}>
                     This note will appear inside that stage on your Timeline
                   </p>
                 )}
@@ -433,7 +433,7 @@ export function Notes() {
                   onChange={(e) => setFormData({ ...formData, content: e.target.value })}
                   placeholder="Write your note here…"
                   rows={5}
-                  style={{ width: '100%', boxSizing: 'border-box', padding: '12px 16px', background: '#EDE6DB', border: '1.5px solid rgba(122,102,144,0.2)', borderRadius: 16, fontFamily: 'DM Sans, sans-serif', fontSize: 15, color: '#2A2030', outline: 'none', resize: 'vertical', lineHeight: 1.6 }}
+                  style={{ width: '100%', boxSizing: 'border-box', padding: '12px 16px', background: '#EDE6DB', border: '1.5px solid rgba(112,89,135,0.2)', borderRadius: 16, fontFamily: 'DM Sans, sans-serif', fontSize: 15, color: '#291F32', outline: 'none', resize: 'vertical', lineHeight: 1.6 }}
                 />
               </div>
             </div>
@@ -442,7 +442,7 @@ export function Notes() {
             <div style={{
               padding: '16px 20px',
               paddingBottom: `calc(16px + env(safe-area-inset-bottom, 0px))`,
-              borderTop: '1px solid rgba(122,102,144,0.12)',
+              borderTop: '1px solid rgba(112,89,135,0.12)',
               display: 'flex', gap: 12,
               flexShrink: 0,
               background: '#FAF7F2',
@@ -469,7 +469,7 @@ export function Notes() {
       {deleteConfirm && (
         <div style={{ position: 'fixed', inset: 0, background: 'rgba(42,32,48,0.5)', display: 'flex', alignItems: 'center', justifyContent: 'center', zIndex: 50, padding: '0 20px' }}>
           <div style={{ background: '#FAF7F2', borderRadius: 20, padding: '28px 24px', width: '100%', maxWidth: 360 }}>
-            <h2 style={{ fontFamily: 'Fraunces, serif', fontSize: 22, fontWeight: 700, color: '#2A2030', marginBottom: 8 }}>Delete this note?</h2>
+            <h2 style={{ fontFamily: 'Fraunces, serif', fontSize: 22, fontWeight: 700, color: '#291F32', marginBottom: 8 }}>Delete this note?</h2>
             <p style={{ fontFamily: 'DM Sans, sans-serif', fontSize: 14, color: '#4A4058', marginBottom: 24 }}>This can't be undone.</p>
             <div style={{ display: 'flex', gap: 12 }}>
               <button className="abtn abtn-soft" onClick={() => setDeleteConfirm(null)} style={{ flex: 1 }}>Cancel</button>

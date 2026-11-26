@@ -26,7 +26,7 @@ const CATEGORY_LABELS: Record<CategoryType, string> = {
 }
 
 const CATEGORY_COLORS: Record<string, { bg: string; text: string; dot: string }> = {
-  legal:   { bg: '#F4EFF8', text: '#7A6690', dot: '#7A6690' },
+  legal:   { bg: '#E9E0EF', text: '#705987', dot: '#705987' },
   acronym: { bg: '#EAF0F8', text: '#3A5A80', dot: '#3A5A80' },
   role:    { bg: '#EAF4EE', text: '#4A7C59', dot: '#4A7C59' },
   process: { bg: '#F5ECD8', text: '#7A5A2A', dot: '#C8883A' },
@@ -84,7 +84,7 @@ export function Glossary() {
   if (loading) return (
     <div style={{ minHeight: '100vh', background: '#EDE6DB', display: 'flex', alignItems: 'center', justifyContent: 'center' }}>
       <div style={{ textAlign: 'center' }}>
-        <div style={{ width: 48, height: 48, borderRadius: '50%', border: '3px solid #E8DDE8', borderTopColor: '#7A6690', animation: 'spin 0.8s linear infinite', margin: '0 auto' }} />
+        <div style={{ width: 48, height: 48, borderRadius: '50%', border: '3px solid #E8DDE8', borderTopColor: '#705987', animation: 'spin 0.8s linear infinite', margin: '0 auto' }} />
         <p style={{ marginTop: 16, color: '#4A4058', fontFamily: 'DM Sans, sans-serif' }}>Loading glossary…</p>
       </div>
       <style>{`@keyframes spin { to { transform: rotate(360deg); } }`}</style>
@@ -99,17 +99,17 @@ export function Glossary() {
 
         {/* Header */}
         <div style={{ marginBottom: 20 }}>
-          <h1 style={{ fontFamily: 'Fraunces, serif', fontSize: 28, fontWeight: 700, color: '#2A2030', margin: 0 }}>
+          <h1 style={{ fontFamily: 'Fraunces, serif', fontSize: 28, fontWeight: 700, color: '#291F32', margin: 0 }}>
             Glossary
           </h1>
-          <p style={{ fontFamily: 'DM Sans, sans-serif', fontSize: 14, color: '#695F7B', marginTop: 4 }}>
+          <p style={{ fontFamily: 'DM Sans, sans-serif', fontSize: 14, color: '#62566B', marginTop: 4 }}>
             Plain-language definitions for court and legal terms
           </p>
         </div>
 
         {/* Search */}
         <div style={{ position: 'relative', marginBottom: 14 }}>
-          <Search size={16} style={{ position: 'absolute', left: 14, top: '50%', transform: 'translateY(-50%)', color: '#695F7B' }} />
+          <Search size={16} style={{ position: 'absolute', left: 14, top: '50%', transform: 'translateY(-50%)', color: '#62566B' }} />
           <input
             type="text"
             value={searchQuery}
@@ -119,9 +119,9 @@ export function Glossary() {
               width: '100%', boxSizing: 'border-box',
               padding: '12px 16px 12px 40px',
               background: '#FAF7F2',
-              border: '1.5px solid rgba(122,102,144,0.2)',
+              border: '1.5px solid rgba(112,89,135,0.2)',
               borderRadius: 16,
-              fontFamily: 'DM Sans, sans-serif', fontSize: 15, color: '#2A2030',
+              fontFamily: 'DM Sans, sans-serif', fontSize: 15, color: '#291F32',
               outline: 'none',
             }}
           />
@@ -137,7 +137,7 @@ export function Glossary() {
                 <button className="aedge"
                   key={cat}
                   onClick={() => { setSelectedCategory(cat); setExpandedTermId(null) }}
-                  style={{ padding: '7px 14px', borderRadius: 20, whiteSpace: 'nowrap', flexShrink: 0, border: active && colors ? `1.5px solid ${colors.dot}` : active ? '1.5px solid #7A6690' : '1.5px solid transparent', background: active && colors ? colors.bg : active ? '#F4EFF8' : '#FAF7F4', color: active && colors ? colors.text : active ? '#7A6690' : '#9A90A8', fontFamily: 'DM Sans, sans-serif', fontSize: 14, fontWeight: 600, cursor: 'pointer' }}
+                  style={{ padding: '7px 14px', borderRadius: 20, whiteSpace: 'nowrap', flexShrink: 0, border: active && colors ? `1.5px solid ${colors.dot}` : active ? '1.5px solid #705987' : '1.5px solid transparent', background: active && colors ? colors.bg : active ? '#E9E0EF' : '#FAF7F4', color: active && colors ? colors.text : active ? '#705987' : '#9A90A8', fontFamily: 'DM Sans, sans-serif', fontSize: 14, fontWeight: 600, cursor: 'pointer' }}
                 >
                   {CATEGORY_LABELS[cat]}
                 </button>
@@ -147,7 +147,7 @@ export function Glossary() {
         </div>
 
         {/* Result count */}
-        <p style={{ fontFamily: 'DM Sans, sans-serif', fontSize: 14, color: '#695F7B', marginBottom: 14 }}>
+        <p style={{ fontFamily: 'DM Sans, sans-serif', fontSize: 14, color: '#62566B', marginBottom: 14 }}>
           {filteredTerms.length} {filteredTerms.length === 1 ? 'term' : 'terms'}
         </p>
 
@@ -155,12 +155,12 @@ export function Glossary() {
         {filteredTerms.length === 0 ? (
           <div style={{ textAlign: 'center', padding: '64px 0' }}>
             <div style={{ width: 72, height: 72, borderRadius: '50%', background: '#E8DDE8', display: 'flex', alignItems: 'center', justifyContent: 'center', margin: '0 auto 20px' }}>
-              <BookOpen size={32} color="#7A6690" />
+              <BookOpen size={32} color="#705987" />
             </div>
-            <h3 style={{ fontFamily: 'Fraunces, serif', fontSize: 20, fontWeight: 700, color: '#2A2030', marginBottom: 8 }}>
+            <h3 style={{ fontFamily: 'Fraunces, serif', fontSize: 20, fontWeight: 700, color: '#291F32', marginBottom: 8 }}>
               {searchQuery ? `No results for "${searchQuery}"` : 'No terms in this category'}
             </h3>
-            <p style={{ fontFamily: 'DM Sans, sans-serif', fontSize: 14, color: '#695F7B' }}>
+            <p style={{ fontFamily: 'DM Sans, sans-serif', fontSize: 14, color: '#62566B' }}>
               {searchQuery ? 'Try a different search term' : 'Select a different category'}
             </p>
           </div>
@@ -176,7 +176,7 @@ export function Glossary() {
                   onClick={() => setExpandedTermId(isExpanded ? null : term.id)}
                   style={{
                     background: '#FAF7F2',
-                    border: `1px solid ${isExpanded ? 'rgba(122,102,144,0.25)' : 'rgba(122,102,144,0.12)'}`,
+                    border: `1px solid ${isExpanded ? 'rgba(112,89,135,0.25)' : 'rgba(112,89,135,0.12)'}`,
                     borderRadius: 20,
                     padding: '16px',
                     cursor: 'pointer',
@@ -187,7 +187,7 @@ export function Glossary() {
                   <div style={{ display: 'flex', alignItems: 'flex-start', justifyContent: 'space-between', gap: 12 }}>
                     <div style={{ flex: 1, minWidth: 0 }}>
                       <div style={{ display: 'flex', alignItems: 'center', gap: 8, marginBottom: 6, flexWrap: 'wrap' }}>
-                        <h3 style={{ fontFamily: 'Fraunces, serif', fontSize: 17, fontWeight: 700, color: '#2A2030', margin: 0 }}>
+                        <h3 style={{ fontFamily: 'Fraunces, serif', fontSize: 17, fontWeight: 700, color: '#291F32', margin: 0 }}>
                           {term.term}
                         </h3>
                         {term.category && (
@@ -205,8 +205,8 @@ export function Glossary() {
 
                       {/* Definition — truncated when collapsed */}
                       {term.simple_text && (
-                        <p style={{ fontFamily: 'DM Sans, sans-serif', fontSize: 16, color: '#2A2030', lineHeight: 1.5, background: '#F4EFF8', borderRadius: 12, padding: '8px 12px', margin: '2px 0 8px' }}>
-                          <span style={{ display: 'block', fontSize: 12, fontWeight: 700, letterSpacing: '0.05em', textTransform: 'uppercase', color: '#5E4D74', marginBottom: 2 }}>Say it simpler</span>
+                        <p style={{ fontFamily: 'DM Sans, sans-serif', fontSize: 16, color: '#291F32', lineHeight: 1.5, background: '#E9E0EF', borderRadius: 12, padding: '8px 12px', margin: '2px 0 8px' }}>
+                          <span style={{ display: 'block', fontSize: 12, fontWeight: 700, letterSpacing: '0.05em', textTransform: 'uppercase', color: '#503C64', marginBottom: 2 }}>Say it simpler</span>
                           {term.simple_text}
                         </p>
                       )}
@@ -249,7 +249,7 @@ export function Glossary() {
                       {/* Related terms */}
                       {term.related_terms?.length > 0 && (
                         <div>
-                          <p style={{ fontFamily: 'DM Sans, sans-serif', fontSize: 12, fontWeight: 600, color: '#695F7B', marginBottom: 8, textTransform: 'uppercase', letterSpacing: '0.04em' }}>
+                          <p style={{ fontFamily: 'DM Sans, sans-serif', fontSize: 12, fontWeight: 600, color: '#62566B', marginBottom: 8, textTransform: 'uppercase', letterSpacing: '0.04em' }}>
                             Related Terms
                           </p>
                           <div style={{ display: 'flex', flexWrap: 'wrap', gap: 6 }}>
@@ -257,7 +257,7 @@ export function Glossary() {
                               <button className="aedge"
                                 key={rt}
                                 onClick={(e) => { e.stopPropagation(); handleRelatedTermClick(rt) }}
-                                style={{ padding: '5px 12px', borderRadius: 20, background: '#F4EFF8', border: 'none', fontFamily: 'DM Sans, sans-serif', fontSize: 12, fontWeight: 600, color: '#7A6690', cursor: 'pointer' }}
+                                style={{ padding: '5px 12px', borderRadius: 20, background: '#E9E0EF', border: 'none', fontFamily: 'DM Sans, sans-serif', fontSize: 12, fontWeight: 600, color: '#705987', cursor: 'pointer' }}
                               >
                                 {rt}
                               </button>
@@ -268,7 +268,7 @@ export function Glossary() {
 
                       {/* Source */}
                       {term.source && (
-                        <p style={{ fontFamily: 'DM Sans, sans-serif', fontSize: 12, color: '#695F7B', fontStyle: 'italic', margin: 0 }}>
+                        <p style={{ fontFamily: 'DM Sans, sans-serif', fontSize: 12, color: '#62566B', fontStyle: 'italic', margin: 0 }}>
                           Source: {term.source}
                         </p>
                       )}
@@ -281,7 +281,7 @@ export function Glossary() {
         )}
 
         {filteredTerms.length > 0 && (
-          <p style={{ fontFamily: 'DM Sans, sans-serif', fontSize: 14, color: '#695F7B', textAlign: 'center', marginTop: 24 }}>
+          <p style={{ fontFamily: 'DM Sans, sans-serif', fontSize: 14, color: '#62566B', textAlign: 'center', marginTop: 24 }}>
             {filteredTerms.length} {filteredTerms.length === 1 ? 'term' : 'terms'} shown
           </p>
         )}

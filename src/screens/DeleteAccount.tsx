@@ -44,9 +44,9 @@ export function DeleteAccount() {
     width: '100%', boxSizing: 'border-box',
     padding: '13px 16px 13px 44px',
     background: '#EDE6DB',
-    border: '1.5px solid rgba(122,102,144,0.2)',
+    border: '1.5px solid rgba(112,89,135,0.2)',
     borderRadius: 16,
-    fontFamily: 'DM Sans, sans-serif', fontSize: 15, color: '#2A2030',
+    fontFamily: 'DM Sans, sans-serif', fontSize: 15, color: '#291F32',
     outline: 'none',
   }
 
@@ -65,7 +65,7 @@ export function DeleteAccount() {
                   <AlertTriangle size={18} color="#fff" />
                 </div>
                 <div>
-                  <p style={{ fontFamily: 'Fraunces, serif', fontSize: 17, fontWeight: 700, color: '#2A2030', margin: '0 0 6px' }}>
+                  <p style={{ fontFamily: 'Fraunces, serif', fontSize: 17, fontWeight: 700, color: '#291F32', margin: '0 0 6px' }}>
                     Before you go
                   </p>
                   <p style={{ fontFamily: 'DM Sans, sans-serif', fontSize: 15, color: '#7A5A2A', margin: 0, lineHeight: 1.6 }}>
@@ -98,13 +98,13 @@ export function DeleteAccount() {
         ) : (
           <>
             {/* Danger warning */}
-            <div style={{ background: '#F8EEF2', border: '1px solid rgba(168,88,120,0.2)', borderRadius: 20, padding: '18px', marginBottom: 28 }}>
+            <div style={{ background: '#F8EEF2', border: '1px solid rgba(148,68,93,0.2)', borderRadius: 20, padding: '18px', marginBottom: 28 }}>
               <div style={{ display: 'flex', alignItems: 'flex-start', gap: 12 }}>
-                <div style={{ width: 36, height: 36, borderRadius: 12, background: '#A85878', display: 'flex', alignItems: 'center', justifyContent: 'center', flexShrink: 0 }}>
+                <div style={{ width: 36, height: 36, borderRadius: 12, background: '#94445D', display: 'flex', alignItems: 'center', justifyContent: 'center', flexShrink: 0 }}>
                   <Trash2 size={18} color="#fff" />
                 </div>
                 <div>
-                  <p style={{ fontFamily: 'Fraunces, serif', fontSize: 17, fontWeight: 700, color: '#2A2030', margin: '0 0 6px' }}>
+                  <p style={{ fontFamily: 'Fraunces, serif', fontSize: 17, fontWeight: 700, color: '#291F32', margin: '0 0 6px' }}>
                     This is permanent
                   </p>
                   <p style={{ fontFamily: 'DM Sans, sans-serif', fontSize: 15, color: '#8A3A3A', margin: 0, lineHeight: 1.6 }}>
@@ -121,7 +121,7 @@ export function DeleteAccount() {
                   Confirm your password
                 </label>
                 <div style={{ position: 'relative' }}>
-                  <Lock size={15} style={{ position: 'absolute', left: 14, top: '50%', transform: 'translateY(-50%)', color: '#756B87' }} />
+                  <Lock size={15} style={{ position: 'absolute', left: 14, top: '50%', transform: 'translateY(-50%)', color: '#62566B' }} />
                   <input
                     type="password"
                     value={password}
@@ -138,8 +138,8 @@ export function DeleteAccount() {
                   onClick={() => setConfirmed(!confirmed)}
                   style={{
                     width: 20, height: 20, borderRadius: 6, flexShrink: 0, marginTop: 1,
-                    background: confirmed ? '#A85878' : '#F0EAE0',
-                    border: confirmed ? '2px solid #A85878' : '2px solid rgba(122,102,144,0.3)',
+                    background: confirmed ? '#94445D' : '#F0EAE0',
+                    border: confirmed ? '2px solid #94445D' : '2px solid rgba(112,89,135,0.3)',
                     display: 'flex', alignItems: 'center', justifyContent: 'center',
                     cursor: 'pointer',
                   }}
@@ -157,8 +157,8 @@ export function DeleteAccount() {
 
               {/* Error */}
               {error && (
-                <div style={{ background: '#F8EEF2', border: '1px solid rgba(168,88,120,0.2)', borderRadius: 14, padding: '12px 14px' }}>
-                  <p style={{ fontFamily: 'DM Sans, sans-serif', fontSize: 14, color: '#A85878', margin: 0 }}>{error}</p>
+                <div style={{ background: '#F8EEF2', border: '1px solid rgba(148,68,93,0.2)', borderRadius: 14, padding: '12px 14px' }}>
+                  <p style={{ fontFamily: 'DM Sans, sans-serif', fontSize: 14, color: '#94445D', margin: 0 }}>{error}</p>
                 </div>
               )}
 

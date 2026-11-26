@@ -88,8 +88,8 @@ export function Auth() {
     padding: '12px 16px',
     fontSize: 14,
     background: '#F0EAE0',
-    border: '1.5px solid rgba(122,102,144,0.2)',
-    color: '#2A2030',
+    border: '1.5px solid rgba(112,89,135,0.2)',
+    color: '#291F32',
     outline: 'none',
     fontFamily: "'DM Sans', sans-serif",
   }
@@ -101,7 +101,7 @@ export function Auth() {
     fontWeight: 600,
     letterSpacing: '0.08em',
     textTransform: 'uppercase',
-    color: '#756B87',
+    color: '#62566B',
   }
 
   return (
@@ -115,7 +115,7 @@ export function Auth() {
         <div className="mb-6 mt-2">
           <h1
             className="text-3xl font-bold mb-2"
-            style={{ fontFamily: "'Fraunces', Georgia, serif", color: '#2A2030' }}
+            style={{ fontFamily: "'Fraunces', Georgia, serif", color: '#291F32' }}
           >
             {mode === 'signup' ? 'Create Your Account' : 'Welcome Back'}
           </h1>
@@ -138,8 +138,8 @@ export function Auth() {
               className="flex-1 py-2.5 rounded-xl text-sm font-semibold transition-all"
               style={
                 mode === tab.id
-                  ? { background: '#FAF7F4', color: '#7A6690', boxShadow: '0 2px 8px rgba(122,102,144,0.15)' }
-                  : { background: 'transparent', color: '#756B87' }
+                  ? { background: '#FAF7F4', color: '#705987', boxShadow: '0 2px 8px rgba(112,89,135,0.15)' }
+                  : { background: 'transparent', color: '#62566B' }
               }
             >
               {tab.label}
@@ -150,7 +150,7 @@ export function Auth() {
         {/* ── FORM CARD ── */}
         <div
           className="rounded-3xl p-6 mb-5"
-          style={{ background: '#FAF7F4', border: '1px solid rgba(122,102,144,0.12)', boxShadow: '0 4px 20px rgba(90,78,110,0.08)' }}
+          style={{ background: '#FAF7F4', border: '1px solid rgba(112,89,135,0.12)', boxShadow: '0 4px 20px rgba(90,78,110,0.08)' }}
         >
           <form onSubmit={handleSubmit} className="space-y-4">
 
@@ -160,7 +160,7 @@ export function Auth() {
                 <div>
                   <label style={labelStyle}>First Name</label>
                   <div className="relative">
-                    <User className="absolute left-3 top-1/2 -translate-y-1/2 w-4 h-4" style={{ color: '#756B87' }} />
+                    <User className="absolute left-3 top-1/2 -translate-y-1/2 w-4 h-4" style={{ color: '#62566B' }} />
                     <input
                       type="text"
                       placeholder="Your first name"
@@ -185,21 +185,21 @@ export function Auth() {
                         style={{
                           padding: '12px 16px',
                           borderRadius: 16,
-                          border: role === r.value ? '1.5px solid #7A6690' : '1.5px solid rgba(122,102,144,0.15)',
-                          background: role === r.value ? '#F4EFF8' : '#F0EAE0',
+                          border: role === r.value ? '1.5px solid #705987' : '1.5px solid rgba(112,89,135,0.15)',
+                          background: role === r.value ? '#E9E0EF' : '#F0EAE0',
                         }}
                       >
                         <div className="flex items-start gap-3">
                           <div
                             className="flex-shrink-0 mt-0.5 w-5 h-5 rounded-full border-2 flex items-center justify-center"
-                            style={{ borderColor: role === r.value ? '#7A6690' : '#C4BAD0' }}
+                            style={{ borderColor: role === r.value ? '#705987' : '#C4BAD0' }}
                           >
                             {role === r.value && (
-                              <div className="w-2.5 h-2.5 rounded-full" style={{ background: '#7A6690' }} />
+                              <div className="w-2.5 h-2.5 rounded-full" style={{ background: '#705987' }} />
                             )}
                           </div>
                           <div>
-                            <div className="text-sm font-semibold" style={{ color: '#2A2030' }}>{r.label}</div>
+                            <div className="text-sm font-semibold" style={{ color: '#291F32' }}>{r.label}</div>
                             <div className="text-xs" style={{ color: '#5A5065' }}>{r.description}</div>
                           </div>
                         </div>
@@ -214,7 +214,7 @@ export function Auth() {
             <div>
               <label style={labelStyle}>Email</label>
               <div className="relative">
-                <Mail className="absolute left-3 top-1/2 -translate-y-1/2 w-4 h-4" style={{ color: '#756B87' }} />
+                <Mail className="absolute left-3 top-1/2 -translate-y-1/2 w-4 h-4" style={{ color: '#62566B' }} />
                 <input
                   type="email"
                   placeholder="your@email.com"
@@ -230,7 +230,7 @@ export function Auth() {
             <div>
               <label style={labelStyle}>Password</label>
               <div className="relative">
-                <Lock className="absolute left-3 top-1/2 -translate-y-1/2 w-4 h-4" style={{ color: '#756B87' }} />
+                <Lock className="absolute left-3 top-1/2 -translate-y-1/2 w-4 h-4" style={{ color: '#62566B' }} />
                 <input
                   type="password"
                   placeholder="At least 6 characters"
@@ -247,7 +247,7 @@ export function Auth() {
               <div>
                 <label style={labelStyle}>Confirm Password</label>
                 <div className="relative">
-                  <Lock className="absolute left-3 top-1/2 -translate-y-1/2 w-4 h-4" style={{ color: '#756B87' }} />
+                  <Lock className="absolute left-3 top-1/2 -translate-y-1/2 w-4 h-4" style={{ color: '#62566B' }} />
                   <input
                     type="password"
                     placeholder="Re-enter your password"
@@ -278,7 +278,7 @@ export function Auth() {
               type="submit"
               disabled={loading}
               className="w-full py-3.5 rounded-2xl font-semibold text-white transition-all active:scale-95 disabled:opacity-50"
-              style={{ background: '#7A6690', boxShadow: '0 4px 16px rgba(122,102,144,0.3)', fontFamily: "'DM Sans', sans-serif" }}
+              style={{ background: '#705987', boxShadow: '0 4px 16px rgba(112,89,135,0.3)', fontFamily: "'DM Sans', sans-serif" }}
             >
               {loading
                 ? 'Please wait...'
@@ -296,7 +296,7 @@ export function Auth() {
             <button
               onClick={() => navigate('/forgot-password')}
               className="text-sm font-semibold"
-              style={{ color: '#7A6690' }}
+              style={{ color: '#705987' }}
             >
               Forgot your password?
             </button>

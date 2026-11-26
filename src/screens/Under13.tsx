@@ -7,9 +7,9 @@ import { Phone, ExternalLink } from 'lucide-react'
 
 const card: React.CSSProperties = {
   background: '#FAF7F2', borderRadius: 20, padding: '18px 20px', marginBottom: 14,
-  border: '1px solid rgba(122,102,144,0.12)', boxShadow: '0 3px 10px rgba(42,32,48,0.05)',
+  border: '1px solid rgba(112,89,135,0.12)', boxShadow: '0 3px 10px rgba(42,32,48,0.05)',
 }
-const h2: React.CSSProperties = { fontFamily: 'Fraunces, serif', fontSize: 18, fontWeight: 700, color: '#2A2030', margin: '0 0 6px' }
+const h2: React.CSSProperties = { fontFamily: 'Fraunces, serif', fontSize: 18, fontWeight: 700, color: '#291F32', margin: '0 0 6px' }
 const p: React.CSSProperties = { fontFamily: 'DM Sans, sans-serif', fontSize: 15, color: '#4A4058', lineHeight: 1.6, margin: 0 }
 
 export function Under13() {
@@ -19,7 +19,7 @@ export function Under13() {
   return (
     <div style={{ minHeight: '100vh', background: '#EDE6DB' }}>
       <div style={{ maxWidth: 480, margin: '0 auto', padding: '40px 20px 60px' }}>
-        <h1 style={{ fontFamily: 'Fraunces, serif', fontSize: 26, fontWeight: 700, color: '#2A2030', margin: '0 0 10px' }}>
+        <h1 style={{ fontFamily: 'Fraunces, serif', fontSize: 26, fontWeight: 700, color: '#291F32', margin: '0 0 10px' }}>
           Anchor accounts are for ages 13 and up
         </h1>
         <p style={{ ...p, marginBottom: 24 }}>
@@ -28,7 +28,7 @@ export function Under13() {
 
         <div style={card}>
           <h2 style={h2}>If you do not feel safe</h2>
-          <p style={{ ...p, fontSize: 16, lineHeight: '24px', fontWeight: 600, color: '#2A2030', marginBottom: 8 }}>
+          <p style={{ ...p, fontSize: 16, lineHeight: '24px', fontWeight: 600, color: '#291F32', marginBottom: 8 }}>
             Tell your lawyer, your social worker, or a grown-up you trust today.
           </p>
           <p style={p}>

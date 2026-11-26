@@ -21,7 +21,7 @@
 
 /* ── Accessibility: visible focus states ── */
 *:focus-visible {
-  outline: 2px solid #7A6690;
+  outline: 2px solid #705987;
   outline-offset: 2px;
   border-radius: 8px;
 }
@@ -62,7 +62,7 @@ button, a, input[type="checkbox"], input[type="radio"] {
    Soft, pressable buttons. The darker bottom edge makes it clear
    what can be tapped, and the button moves down when pressed.     */
 .abtn {
-  --edge: #58476E;
+  --edge: #503C64;
   display: inline-flex;
   align-items: center;
   justify-content: center;
@@ -91,10 +91,10 @@ button, a, input[type="checkbox"], input[type="radio"] {
   opacity: 0.5;
   cursor: not-allowed;
 }
-.abtn-primary { background: linear-gradient(180deg, #8672A0, #735F8C); color: #fff; }
-.abtn-soft    { --edge: #D3C6DD; background: #F4EFF8; color: #5E4D74; }
-.abtn-outline { --edge: #DCD2E2; background: #FAF7F2; color: #5E4D74; border: 1.5px solid rgba(122, 102, 144, 0.45); }
-.abtn-rose    { --edge: #8A4462; background: linear-gradient(180deg, #B5678A, #A85878); color: #fff; }
+.abtn-primary { background: linear-gradient(180deg, #7B6492, #68527E); color: #fff; }
+.abtn-soft    { --edge: #C9B9D6; background: #E9E0EF; color: #503C64; }
+.abtn-outline { --edge: #DCD2E2; background: #FAF7F2; color: #503C64; border: 1.5px solid rgba(112, 89, 135, 0.45); }
+.abtn-rose    { --edge: #6E2F44; background: linear-gradient(180deg, #A04E68, #94445D); color: #fff; }
 .abtn-sm      { min-height: 44px; padding: 0 16px; font-size: 15px; border-radius: 14px; }
 .abtn-block   { width: 100%; }
 .abtn-tint    { --edge: rgba(42, 32, 48, 0.16); }
@@ -114,8 +114,8 @@ button, a, input[type="checkbox"], input[type="radio"] {
 /* Light round badge behind the logo on sign-in style screens */
 .alogo-badge {
   border-radius: 50%;
-  background: linear-gradient(160deg, #FFFFFF, #F4EFF8);
-  box-shadow: 0 6px 20px rgba(94, 77, 116, 0.2), 0 0 0 3px rgba(122, 102, 144, 0.18), inset 0 1px 0 rgba(255, 255, 255, 1);
+  background: linear-gradient(160deg, #FFFFFF, #E9E0EF);
+  box-shadow: 0 6px 20px rgba(94, 77, 116, 0.2), 0 0 0 3px rgba(112, 89, 135, 0.18), inset 0 1px 0 rgba(255, 255, 255, 1);
   box-sizing: border-box;
 }
 

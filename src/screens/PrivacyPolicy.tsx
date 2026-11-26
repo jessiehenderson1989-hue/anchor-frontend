@@ -6,17 +6,17 @@ export function PrivacyPolicy() {
 
   return (
     <div style={{ minHeight: '100vh', background: '#EDE6DB' }}>
-      <div style={{ background: '#FAF7F2', borderBottom: '1px solid rgba(122,102,144,0.1)', padding: '14px 20px', display: 'flex', alignItems: 'center', gap: 12, position: 'sticky', top: 0, zIndex: 10 }}>
+      <div style={{ background: '#FAF7F2', borderBottom: '1px solid rgba(112,89,135,0.1)', padding: '14px 20px', display: 'flex', alignItems: 'center', gap: 12, position: 'sticky', top: 0, zIndex: 10 }}>
         <button className="aedge" onClick={() => navigate(-1)} style={{ background: '#E8DDE8', border: 'none', borderRadius: 10, width: 40, height: 40, display: 'flex', alignItems: 'center', justifyContent: 'center', cursor: 'pointer', flexShrink: 0 }}>
-          <ArrowLeft size={16} color="#7A6690" />
+          <ArrowLeft size={16} color="#705987" />
         </button>
-        <h1 style={{ fontFamily: 'Fraunces, serif', fontSize: 20, fontWeight: 700, color: '#2A2030', margin: 0 }}>Privacy Policy</h1>
+        <h1 style={{ fontFamily: 'Fraunces, serif', fontSize: 20, fontWeight: 700, color: '#291F32', margin: 0 }}>Privacy Policy</h1>
       </div>
 
       <div style={{ maxWidth: 480, margin: '0 auto', padding: '28px 20px 60px' }}>
-        <p style={{ fontFamily: 'DM Sans, sans-serif', fontSize: 14, color: '#695F7B', marginBottom: 28 }}>Last updated: April 2026</p>
+        <p style={{ fontFamily: 'DM Sans, sans-serif', fontSize: 14, color: '#62566B', marginBottom: 28 }}>Last updated: April 2026</p>
 
-        <div style={{ background: '#F4EFF8', border: '1px solid rgba(122,102,144,0.15)', borderRadius: 16, padding: '14px 16px', marginBottom: 28 }}>
+        <div style={{ background: '#E9E0EF', border: '1px solid rgba(112,89,135,0.15)', borderRadius: 16, padding: '14px 16px', marginBottom: 28 }}>
           <p style={{ fontFamily: 'DM Sans, sans-serif', fontSize: 15, color: '#4A4058', lineHeight: 1.6, margin: 0 }}>
             Your privacy matters to us. Anchor is built for people in vulnerable situations, and we take that seriously. We collect as little as possible and never sell your data.
           </p>
@@ -61,7 +61,7 @@ export function PrivacyPolicy() {
           },
         ].map((section) => (
           <div key={section.title} style={{ marginBottom: 28 }}>
-            <h2 style={{ fontFamily: 'Fraunces, serif', fontSize: 17, fontWeight: 700, color: '#2A2030', marginBottom: 8 }}>{section.title}</h2>
+            <h2 style={{ fontFamily: 'Fraunces, serif', fontSize: 17, fontWeight: 700, color: '#291F32', marginBottom: 8 }}>{section.title}</h2>
             <p style={{ fontFamily: 'DM Sans, sans-serif', fontSize: 15, color: '#4A4058', lineHeight: 1.7, margin: 0 }}>{section.body}</p>
           </div>
         ))}

@@ -62,17 +62,17 @@ const S = {
   } as React.CSSProperties,
   input: {
     background: '#EDE6DB',
-    border: '1.5px solid rgba(122,102,144,0.2)',
+    border: '1.5px solid rgba(112,89,135,0.2)',
     borderRadius: 16,
     padding: '14px 16px',
-    color: '#2A2030',
+    color: '#291F32',
     outline: 'none',
     width: '100%',
     fontSize: 16,
     fontFamily: 'inherit',
   } as React.CSSProperties,
   inputFocus: {
-    border: '1.5px solid #7A6690',
+    border: '1.5px solid #705987',
   } as React.CSSProperties,
   label: {
     display: 'block',
@@ -80,14 +80,14 @@ const S = {
     fontWeight: 700,
     letterSpacing: '0.07em',
     textTransform: 'uppercase' as const,
-    color: '#756B87',
+    color: '#62566B',
     marginBottom: 8,
   } as React.CSSProperties,
   heading: {
     fontFamily: "'Fraunces', Georgia, serif",
     fontWeight: 700,
     fontSize: 26,
-    color: '#2A2030',
+    color: '#291F32',
     lineHeight: 1.25,
     marginBottom: 8,
   } as React.CSSProperties,
@@ -98,7 +98,7 @@ const S = {
     marginBottom: 24,
   } as React.CSSProperties,
   primaryBtn: {
-    background: '#7A6690',
+    background: '#705987',
     color: 'white',
     border: 'none',
     borderRadius: 16,
@@ -111,12 +111,12 @@ const S = {
     alignItems: 'center',
     justifyContent: 'center',
     gap: 8,
-    boxShadow: '0 4px 16px rgba(122,102,144,0.3)',
+    boxShadow: '0 4px 16px rgba(112,89,135,0.3)',
     transition: 'opacity 0.15s',
   } as React.CSSProperties,
   backBtn: {
     background: '#E8DDE8',
-    color: '#7A6690',
+    color: '#705987',
     border: 'none',
     borderRadius: 16,
     padding: '15px 20px',
@@ -144,19 +144,19 @@ function OptionBtn({
       type="button"
       onClick={onClick}
       className="w-full text-left transition-all aedge"
-      style={{ background: selected ? '#F4EFF8' : '#FAF7F4', border: selected ? '2px solid #7A6690' : '1.5px solid rgba(122,102,144,0.15)', borderRadius: 20, padding: '16px 18px', marginBottom: 10, cursor: 'pointer' }}
+      style={{ background: selected ? '#E9E0EF' : '#FAF7F4', border: selected ? '2px solid #705987' : '1.5px solid rgba(112,89,135,0.15)', borderRadius: 20, padding: '16px 18px', marginBottom: 10, cursor: 'pointer' }}
     >
       <div className="flex items-center gap-3">
         <div
           className="w-5 h-5 rounded-full flex items-center justify-center flex-shrink-0"
           style={{
-            background: selected ? '#7A6690' : 'transparent',
-            border: selected ? '2px solid #7A6690' : '2px solid rgba(122,102,144,0.3)',
+            background: selected ? '#705987' : 'transparent',
+            border: selected ? '2px solid #705987' : '2px solid rgba(112,89,135,0.3)',
           }}
         >
           {selected && <Check className="w-3 h-3 text-white" />}
         </div>
-        <span style={{ color: '#2A2030', fontWeight: selected ? 600 : 400, fontSize: 15 }}>
+        <span style={{ color: '#291F32', fontWeight: selected ? 600 : 400, fontSize: 15 }}>
           {children}
         </span>
       </div>
@@ -181,7 +181,7 @@ function ContactFields({
   return (
     <div
       className="space-y-3 mt-3"
-      style={{ background: '#F4EFF8', borderRadius: 16, padding: 16 }}
+      style={{ background: '#E9E0EF', borderRadius: 16, padding: 16 }}
     >
       <div>
         <label style={S.label}>Name</label>
@@ -574,10 +574,10 @@ export function Onboarding() {
           >
             <div
               className="h-1.5 rounded-full transition-all duration-500"
-              style={{ width: `${progress}%`, background: '#7A6690' }}
+              style={{ width: `${progress}%`, background: '#705987' }}
             />
           </div>
-          <p className="text-xs font-semibold" style={{ color: '#756B87' }}>
+          <p className="text-xs font-semibold" style={{ color: '#62566B' }}>
             Step {step} of {totalSteps}
           </p>
         </div>
@@ -625,12 +625,12 @@ export function Onboarding() {
               style={{ ...S.input, marginBottom: 20 }}
             />
             {youthAge.trim() !== '' && parseInt(youthAge, 10) < 13 && (
-              <div style={{ background: '#F8EEF2', border: '1px solid rgba(168,88,120,0.25)', borderRadius: 16, padding: '14px 16px', marginBottom: 20 }}>
+              <div style={{ background: '#F8EEF2', border: '1px solid rgba(148,68,93,0.25)', borderRadius: 16, padding: '14px 16px', marginBottom: 20 }}>
                 <p style={{ fontFamily: 'DM Sans, sans-serif', fontSize: 15, color: '#4A4058', lineHeight: 1.55, margin: '0 0 10px' }}>
                   Anchor accounts are for ages 13 and up. If you typed the wrong age, you can fix it above. If you are under 13, please remove this account. A grown-up who helps you can use Anchor with you.
                 </p>
                 <button type="button" onClick={() => navigate('/delete-account')}
-                  style={{ background: 'transparent', border: 'none', padding: 0, fontFamily: 'DM Sans, sans-serif', fontSize: 14, fontWeight: 700, color: '#A85878', cursor: 'pointer', textDecoration: 'underline' }}>
+                  style={{ background: 'transparent', border: 'none', padding: 0, fontFamily: 'DM Sans, sans-serif', fontSize: 14, fontWeight: 700, color: '#94445D', cursor: 'pointer', textDecoration: 'underline' }}>
                   Remove my account
                 </button>
               </div>
@@ -773,22 +773,22 @@ export function Onboarding() {
                     setSelectedStages(isSelected ? selectedStages.filter(s => s !== id) : [...selectedStages, id])
                   }}
                   className="w-full text-left transition-all aedge"
-                  style={{ background: isSelected ? '#F4EFF8' : '#FAF7F4', border: isSelected ? '2px solid #7A6690' : '1.5px solid rgba(122,102,144,0.15)', borderRadius: 20, padding: '14px 18px', marginBottom: 10, cursor: 'pointer' }}
+                  style={{ background: isSelected ? '#E9E0EF' : '#FAF7F4', border: isSelected ? '2px solid #705987' : '1.5px solid rgba(112,89,135,0.15)', borderRadius: 20, padding: '14px 18px', marginBottom: 10, cursor: 'pointer' }}
                 >
                   <div className="flex items-start gap-3">
                     <div
                       className="w-5 h-5 rounded flex items-center justify-center flex-shrink-0 mt-0.5"
                       style={{
-                        background: isSelected ? '#7A6690' : 'transparent',
-                        border: isSelected ? '2px solid #7A6690' : '2px solid rgba(122,102,144,0.3)',
+                        background: isSelected ? '#705987' : 'transparent',
+                        border: isSelected ? '2px solid #705987' : '2px solid rgba(112,89,135,0.3)',
                         borderRadius: 6,
                       }}
                     >
                       {isSelected && <Check className="w-3 h-3 text-white" />}
                     </div>
                     <div>
-                      <p style={{ color: '#2A2030', fontWeight: isSelected ? 600 : 400, fontSize: 15 }}>{stage.label}</p>
-                      <p style={{ color: '#756B87', fontSize: 12, marginTop: 2 }}>{stage.sub}</p>
+                      <p style={{ color: '#291F32', fontWeight: isSelected ? 600 : 400, fontSize: 15 }}>{stage.label}</p>
+                      <p style={{ color: '#62566B', fontSize: 12, marginTop: 2 }}>{stage.sub}</p>
                     </div>
                   </div>
                 </button>
@@ -809,7 +809,7 @@ export function Onboarding() {
               onChange={e => setNextCourtDate(e.target.value)}
               style={S.input}
             />
-            <p style={{ fontSize: 14, color: '#756B87', marginTop: 8 }}>Leave blank if you do not know yet.</p>
+            <p style={{ fontSize: 14, color: '#62566B', marginTop: 8 }}>Leave blank if you do not know yet.</p>
           </div>
         )}
 
@@ -845,21 +845,21 @@ export function Onboarding() {
               type="button"
               onClick={() => setTextRemindersEnabled(!textRemindersEnabled)}
               className="w-full text-left transition-all aedge"
-              style={{ background: textRemindersEnabled ? '#F4EFF8' : '#FAF7F4', border: textRemindersEnabled ? '2px solid #7A6690' : '1.5px solid rgba(122,102,144,0.15)', borderRadius: 20, padding: '16px 18px', marginBottom: 16, cursor: 'pointer' }}
+              style={{ background: textRemindersEnabled ? '#E9E0EF' : '#FAF7F4', border: textRemindersEnabled ? '2px solid #705987' : '1.5px solid rgba(112,89,135,0.15)', borderRadius: 20, padding: '16px 18px', marginBottom: 16, cursor: 'pointer' }}
             >
               <div className="flex items-center justify-between">
                 <div className="flex items-center gap-3">
                   <div className="rounded-xl p-2" style={{ background: '#E8DDE8' }}>
-                    <Bell className="w-5 h-5" style={{ color: '#7A6690' }} />
+                    <Bell className="w-5 h-5" style={{ color: '#705987' }} />
                   </div>
                   <div>
-                    <p style={{ color: '#2A2030', fontWeight: 600, fontSize: 15 }}>Text Message Reminders</p>
+                    <p style={{ color: '#291F32', fontWeight: 600, fontSize: 15 }}>Text Message Reminders</p>
                     <p style={{ color: '#5A5065', fontSize: 14 }}>Court dates, appointments, deadlines</p>
                   </div>
                 </div>
                 <div
                   className="rounded-full transition-all flex-shrink-0"
-                  style={{ width: 44, height: 24, background: textRemindersEnabled ? '#7A6690' : '#D4C8D8', position: 'relative' }}
+                  style={{ width: 44, height: 24, background: textRemindersEnabled ? '#705987' : '#D4C8D8', position: 'relative' }}
                 >
                   <div
                     className="rounded-full transition-all"
@@ -928,17 +928,17 @@ export function Onboarding() {
                   >
                     <div className="flex items-center gap-3 mb-3">
                       <div className="rounded-xl p-2" style={{ background: '#E8DDE8' }}>
-                        <Icon className="w-4 h-4" style={{ color: '#7A6690' }} />
+                        <Icon className="w-4 h-4" style={{ color: '#705987' }} />
                       </div>
                       <div className="flex-1">
-                        <p style={{ color: '#2A2030', fontWeight: 600, fontSize: 14 }}>{cat.label}</p>
-                        <p style={{ color: '#756B87', fontSize: 12 }}>{cat.desc}</p>
+                        <p style={{ color: '#291F32', fontWeight: 600, fontSize: 14 }}>{cat.label}</p>
+                        <p style={{ color: '#62566B', fontSize: 12 }}>{cat.desc}</p>
                       </div>
                       <button
                         type="button"
                         onClick={() => setReminderSettings({ ...reminderSettings, [cat.key]: { ...setting, enabled: !setting.enabled } })}
                         className="rounded-full transition-all flex-shrink-0"
-                        style={{ width: 40, height: 22, background: setting.enabled ? '#7A6690' : '#D4C8D8', position: 'relative', border: 'none', cursor: 'pointer' }}
+                        style={{ width: 40, height: 22, background: setting.enabled ? '#705987' : '#D4C8D8', position: 'relative', border: 'none', cursor: 'pointer' }}
                       >
                         <div
                           className="rounded-full transition-all"
@@ -955,7 +955,7 @@ export function Onboarding() {
                               key={timing}
                               type="button"
                               onClick={() => setReminderSettings({ ...reminderSettings, [cat.key]: { ...setting, timing } })}
-                              style={{ padding: '6px 12px', borderRadius: 20, fontSize: 12, fontWeight: 600, border: 'none', cursor: 'pointer', background: setting.timing === timing ? '#7A6690' : '#E8DDE8', color: setting.timing === timing ? 'white' : '#7A6690' }}
+                              style={{ padding: '6px 12px', borderRadius: 20, fontSize: 12, fontWeight: 600, border: 'none', cursor: 'pointer', background: setting.timing === timing ? '#705987' : '#E8DDE8', color: setting.timing === timing ? 'white' : '#705987' }}
                             >
                               {labels[timing]}
                             </button>
@@ -1003,8 +1003,8 @@ export function Onboarding() {
 
         {/* Privacy note */}
         <div className="flex items-center justify-center gap-2 mt-6">
-          <Lock className="w-3 h-3" style={{ color: '#756B87' }} />
-          <p style={{ fontSize: 12, color: '#756B87' }}>
+          <Lock className="w-3 h-3" style={{ color: '#62566B' }} />
+          <p style={{ fontSize: 12, color: '#62566B' }}>
             Your answers are private and never shared with CPS or the court.
           </p>
         </div>

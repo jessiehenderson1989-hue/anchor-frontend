@@ -47,7 +47,7 @@ export function Welcome() {
         />
         <h1
           className="text-4xl font-bold mb-2"
-          style={{ fontFamily: "'Fraunces', Georgia, serif", color: '#7A6690', letterSpacing: '-0.3px' }}
+          style={{ fontFamily: "'Fraunces', Georgia, serif", color: '#705987', letterSpacing: '-0.3px' }}
         >
           Anchor
         </h1>
@@ -57,7 +57,7 @@ export function Welcome() {
       </div>
 
       {/* ── DIVIDER ── */}
-      <div className="mx-6 mb-6" style={{ height: 1, background: 'linear-gradient(90deg, transparent, rgba(122,102,144,0.18), transparent)' }} />
+      <div className="mx-6 mb-6" style={{ height: 1, background: 'linear-gradient(90deg, transparent, rgba(112,89,135,0.18), transparent)' }} />
 
       {/* ── FEATURE CARDS ── */}
       <div className="px-5 space-y-3 mb-6">
@@ -65,13 +65,13 @@ export function Welcome() {
           <div
             key={index}
             className="flex items-start gap-4 rounded-2xl px-5 py-4"
-            style={{ background: '#FAF7F2', border: '1px solid rgba(122,102,144,0.12)', boxShadow: '0 2px 8px rgba(90,78,110,0.06)' }}
+            style={{ background: '#FAF7F2', border: '1px solid rgba(112,89,135,0.12)', boxShadow: '0 2px 8px rgba(90,78,110,0.06)' }}
           >
             <div className={`p-3 rounded-xl flex-shrink-0 ${feature.iconBg}`}>
               <feature.icon className={`w-6 h-6 ${feature.iconColor}`} />
             </div>
             <div>
-              <h3 className="font-semibold mb-1" style={{ color: '#2A2030' }}>{feature.title}</h3>
+              <h3 className="font-semibold mb-1" style={{ color: '#291F32' }}>{feature.title}</h3>
               <p className="text-sm" style={{ color: '#5A5065' }}>{feature.description}</p>
             </div>
           </div>
@@ -104,11 +104,11 @@ export function Welcome() {
         <button
           onClick={() => navigate('/auth?mode=signin')}
           className="w-full py-4 rounded-2xl font-semibold text-base transition-all active:scale-95"
-          style={{ background: 'transparent', border: '1.5px solid rgba(122,102,144,0.4)', color: '#7A6690', fontFamily: "'DM Sans', sans-serif" }}
+          style={{ background: 'transparent', border: '1.5px solid rgba(112,89,135,0.4)', color: '#705987', fontFamily: "'DM Sans', sans-serif" }}
         >
           I Already Have an Account
         </button>
-        <p className="text-center text-xs pt-1" style={{ color: '#756B87' }}>
+        <p className="text-center text-xs pt-1" style={{ color: '#62566B' }}>
           Free and confidential support for families in California
         </p>
       </div>

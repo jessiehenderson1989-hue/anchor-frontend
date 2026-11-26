@@ -35,9 +35,9 @@ const tabConfig: Record<RoleTab, {
     icon: <Users size={14} />,
     billTitle: "Parent's Bill of Rights",
     billDesc: 'As a parent in dependency court, you have important rights protected by California law. Understanding these rights helps you advocate for yourself and your child.',
-    accentColor: '#7A6690',
+    accentColor: '#705987',
     accentBg: '#E8DDE8',
-    rightBadge: { background: '#E8DDE8', color: '#7A6690' },
+    rightBadge: { background: '#E8DDE8', color: '#705987' },
   },
   youth: {
     label: 'Youth',
@@ -140,7 +140,7 @@ export function RightsScreen() {
           background: '#FAF7F2',
           border: isExpanded
             ? `1.5px solid ${isDuty ? '#C8883A' : tab.accentColor}`
-            : '1px solid rgba(122,102,144,0.12)',
+            : '1px solid rgba(112,89,135,0.12)',
           borderRadius: 20,
           cursor: 'pointer',
           overflow: 'hidden',
@@ -159,12 +159,12 @@ export function RightsScreen() {
               }}>
                 {isDuty ? 'Responsibility' : 'Right'}
               </span>
-              <h3 style={{ fontFamily: 'Fraunces, serif', fontSize: 16, fontWeight: 700, color: '#2A2030', margin: '0 0 4px', lineHeight: 1.3 }}>
+              <h3 style={{ fontFamily: 'Fraunces, serif', fontSize: 16, fontWeight: 700, color: '#291F32', margin: '0 0 4px', lineHeight: 1.3 }}>
                 {item.title}
               </h3>
               {item.simple_text && (
-                <p style={{ fontFamily: 'DM Sans, sans-serif', fontSize: 16, color: '#2A2030', lineHeight: 1.5, background: '#F4EFF8', borderRadius: 12, padding: '8px 12px', margin: '2px 0 8px' }}>
-                  <span style={{ display: 'block', fontSize: 12, fontWeight: 700, letterSpacing: '0.05em', textTransform: 'uppercase', color: '#5E4D74', marginBottom: 2 }}>Say it simpler</span>
+                <p style={{ fontFamily: 'DM Sans, sans-serif', fontSize: 16, color: '#291F32', lineHeight: 1.5, background: '#E9E0EF', borderRadius: 12, padding: '8px 12px', margin: '2px 0 8px' }}>
+                  <span style={{ display: 'block', fontSize: 12, fontWeight: 700, letterSpacing: '0.05em', textTransform: 'uppercase', color: '#503C64', marginBottom: 2 }}>Say it simpler</span>
                   {item.simple_text}
                 </p>
               )}
@@ -192,8 +192,8 @@ export function RightsScreen() {
 
               {item.practical_tips && (
                 <div style={{
-                  background: isDuty ? '#FDF6EC' : '#F4EFF8',
-                  border: `1px solid ${isDuty ? 'rgba(200,136,58,0.2)' : 'rgba(122,102,144,0.15)'}`,
+                  background: isDuty ? '#FDF6EC' : '#E9E0EF',
+                  border: `1px solid ${isDuty ? 'rgba(200,136,58,0.2)' : 'rgba(112,89,135,0.15)'}`,
                   borderRadius: 14, padding: '12px 14px',
                 }}>
                   <p style={{
@@ -203,7 +203,7 @@ export function RightsScreen() {
                   }}>
                     What this means for you
                   </p>
-                  <p style={{ fontFamily: 'DM Sans, sans-serif', fontSize: 15, color: '#2A2030', margin: 0, lineHeight: 1.6, whiteSpace: 'pre-line' }}>
+                  <p style={{ fontFamily: 'DM Sans, sans-serif', fontSize: 15, color: '#291F32', margin: 0, lineHeight: 1.6, whiteSpace: 'pre-line' }}>
                     {item.practical_tips}
                   </p>
                 </div>
@@ -212,10 +212,10 @@ export function RightsScreen() {
               {showLegalBasis && item.legal_reference && (
                 <div style={{
                   background: '#EDE6DB',
-                  border: '1px solid rgba(122,102,144,0.15)',
+                  border: '1px solid rgba(112,89,135,0.15)',
                   borderRadius: 14, padding: '12px 14px',
                 }}>
-                  <p style={{ fontFamily: 'DM Sans, sans-serif', fontSize: 12, fontWeight: 700, textTransform: 'uppercase', letterSpacing: '0.05em', color: '#695F7B', margin: '0 0 4px' }}>
+                  <p style={{ fontFamily: 'DM Sans, sans-serif', fontSize: 12, fontWeight: 700, textTransform: 'uppercase', letterSpacing: '0.05em', color: '#62566B', margin: '0 0 4px' }}>
                     Legal basis
                   </p>
                   <p style={{ fontFamily: 'DM Mono, monospace', fontSize: 12, color: '#4A4058', margin: 0 }}>
@@ -227,7 +227,7 @@ export function RightsScreen() {
                 const related = getRelatedTerms(item)
                 return related.length > 0 ? (
                   <div>
-                    <p style={{ fontFamily: 'DM Sans, sans-serif', fontSize: 12, fontWeight: 700, textTransform: 'uppercase', letterSpacing: '0.05em', color: '#695F7B', margin: '0 0 8px' }}>
+                    <p style={{ fontFamily: 'DM Sans, sans-serif', fontSize: 12, fontWeight: 700, textTransform: 'uppercase', letterSpacing: '0.05em', color: '#62566B', margin: '0 0 8px' }}>
                       Related terms
                     </p>
                     <div style={{ display: 'flex', flexWrap: 'wrap', gap: 7 }}>
@@ -268,9 +268,9 @@ export function RightsScreen() {
     return (
       <div style={{ minHeight: '100vh', background: '#EDE6DB', display: 'flex', alignItems: 'center', justifyContent: 'center' }}>
         <div style={{ textAlign: 'center' }}>
-          <div style={{ width: 44, height: 44, border: '3px solid #7A6690', borderTopColor: 'transparent', boxShadow: '0 0 12px rgba(122,102,144,0.2)', borderRadius: '50%', animation: 'spin 0.8s linear infinite', margin: '0 auto 16px' }} />
+          <div style={{ width: 44, height: 44, border: '3px solid #705987', borderTopColor: 'transparent', boxShadow: '0 0 12px rgba(112,89,135,0.2)', borderRadius: '50%', animation: 'spin 0.8s linear infinite', margin: '0 auto 16px' }} />
           <style>{`@keyframes spin { to { transform: rotate(360deg) } }`}</style>
-          <p style={{ fontFamily: 'DM Sans, sans-serif', color: '#695F7B', fontSize: 14 }}>Loading rights and responsibilities…</p>
+          <p style={{ fontFamily: 'DM Sans, sans-serif', color: '#62566B', fontSize: 14 }}>Loading rights and responsibilities…</p>
         </div>
       </div>
     )
@@ -285,10 +285,10 @@ export function RightsScreen() {
 
           {/* Page title */}
           <div>
-            <h1 style={{ fontFamily: 'Fraunces, serif', fontSize: 28, fontWeight: 700, color: '#2A2030', margin: '0 0 4px' }}>
+            <h1 style={{ fontFamily: 'Fraunces, serif', fontSize: 28, fontWeight: 700, color: '#291F32', margin: '0 0 4px' }}>
               Your Rights &amp; Responsibilities
             </h1>
-            <p style={{ fontFamily: 'DM Sans, sans-serif', fontSize: 14, color: '#695F7B', margin: 0 }}>
+            <p style={{ fontFamily: 'DM Sans, sans-serif', fontSize: 14, color: '#62566B', margin: 0 }}>
               Know your rights in dependency court
             </p>
           </div>
@@ -299,14 +299,14 @@ export function RightsScreen() {
             display: 'flex', alignItems: 'center', gap: 8,
             border: '1px solid rgba(255,255,255,0.88)',
           }}>
-            <MapPin size={14} color="#7A6690" style={{ flexShrink: 0 }} />
+            <MapPin size={14} color="#705987" style={{ flexShrink: 0 }} />
             <div style={{ flex: 1 }}>
-              <span style={{ fontFamily: 'DM Sans, sans-serif', fontSize: 12, fontWeight: 700, color: '#2A2030' }}>California</span>
-              <span style={{ fontFamily: 'DM Sans, sans-serif', fontSize: 12, color: '#695F7B', marginLeft: 6 }}>Currently available</span>
+              <span style={{ fontFamily: 'DM Sans, sans-serif', fontSize: 12, fontWeight: 700, color: '#291F32' }}>California</span>
+              <span style={{ fontFamily: 'DM Sans, sans-serif', fontSize: 12, color: '#62566B', marginLeft: 6 }}>Currently available</span>
             </div>
             <span style={{
               fontFamily: 'DM Sans, sans-serif', fontSize: 12, fontWeight: 700,
-              background: '#E8DDE8', color: '#7A6690',
+              background: '#E8DDE8', color: '#705987',
               borderRadius: 20, padding: '2px 10px',
             }}>More states soon</span>
           </div>
@@ -323,8 +323,8 @@ export function RightsScreen() {
                   fontFamily: 'DM Sans, sans-serif', fontSize: 12, fontWeight: 700,
                   transition: 'all 0.15s',
                   ...(activeTab === key
-                    ? { background: '#FAF7F2', color: tabConfig[key].accentColor, boxShadow: '0 2px 8px rgba(122,102,144,0.15)' }
-                    : { background: 'transparent', color: '#695F7B' }
+                    ? { background: '#FAF7F2', color: tabConfig[key].accentColor, boxShadow: '0 2px 8px rgba(112,89,135,0.15)' }
+                    : { background: 'transparent', color: '#62566B' }
                   ),
                 }}
               >
@@ -341,7 +341,7 @@ export function RightsScreen() {
           }}>
             <div style={{ display: 'flex', alignItems: 'center', gap: 8, marginBottom: 8 }}>
               <BookOpen size={16} color={tab.accentColor} />
-              <h2 style={{ fontFamily: 'Fraunces, serif', fontSize: 18, fontWeight: 700, color: '#2A2030', margin: 0 }}>
+              <h2 style={{ fontFamily: 'Fraunces, serif', fontSize: 18, fontWeight: 700, color: '#291F32', margin: 0 }}>
                 {tab.billTitle}
               </h2>
             </div>
@@ -364,10 +364,10 @@ export function RightsScreen() {
             }}>
               <div onClick={() => { haptics.light(); setShowLegalBasis(!showLegalBasis) }} style={{ display: 'flex', alignItems: 'center', gap: 8, cursor: 'pointer', flex: 1 }}>
                 {showLegalBasis
-                  ? <Eye size={15} color="#7A6690" />
+                  ? <Eye size={15} color="#705987" />
                   : <EyeOff size={15} color="#9A90A8" />
                 }
-                <span style={{ fontFamily: 'DM Sans, sans-serif', fontSize: 14, fontWeight: 600, color: '#2A2030' }}>
+                <span style={{ fontFamily: 'DM Sans, sans-serif', fontSize: 14, fontWeight: 600, color: '#291F32' }}>
                   Show Legal Basis
                 </span>
               </div>
@@ -376,7 +376,7 @@ export function RightsScreen() {
                 onClick={() => { haptics.light(); setShowLegalBasis(!showLegalBasis) }}
                 style={{
                   width: 48, height: 28, minHeight: 28, padding: 0, borderRadius: 14, border: 'none', cursor: 'pointer',
-                  background: showLegalBasis ? '#7A6690' : '#D4CDD8',
+                  background: showLegalBasis ? '#705987' : '#D4CDD8',
                   position: 'relative', transition: 'background 0.2s', flexShrink: 0,
                 }}
               >
@@ -398,7 +398,7 @@ export function RightsScreen() {
               }}>
                 <div style={{ display: 'flex', alignItems: 'center', gap: 8 }}>
                   <ListChecks size={15} color="#C8883A" />
-                  <span style={{ fontFamily: 'DM Sans, sans-serif', fontSize: 14, fontWeight: 600, color: '#2A2030' }}>
+                  <span style={{ fontFamily: 'DM Sans, sans-serif', fontSize: 14, fontWeight: 600, color: '#291F32' }}>
                     Show Responsibilities Only
                   </span>
                 </div>
@@ -449,7 +449,7 @@ export function RightsScreen() {
           {/* Empty state */}
           {visibleItems.length === 0 && (
             <div style={{ background: '#FAF7F2', borderRadius: 20, padding: '40px 24px', textAlign: 'center', border: '1px solid rgba(255,255,255,0.88)' }}>
-              <p style={{ fontFamily: 'DM Sans, sans-serif', fontSize: 14, color: '#695F7B', margin: 0 }}>
+              <p style={{ fontFamily: 'DM Sans, sans-serif', fontSize: 14, color: '#62566B', margin: 0 }}>
                 No information available for this section yet.
               </p>
             </div>

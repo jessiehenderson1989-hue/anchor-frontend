@@ -9,8 +9,8 @@ const inputStyle: React.CSSProperties = {
   padding: '12px 16px',
   fontSize: 14,
   background: '#EDE6DB',
-  border: '1.5px solid rgba(122,102,144,0.2)',
-  color: '#2A2030',
+  border: '1.5px solid rgba(112,89,135,0.2)',
+  color: '#291F32',
   outline: 'none',
   fontFamily: "'DM Sans', sans-serif",
 }
@@ -22,7 +22,7 @@ const labelStyle: React.CSSProperties = {
   fontWeight: 600,
   letterSpacing: '0.08em',
   textTransform: 'uppercase' as const,
-  color: '#756B87',
+  color: '#62566B',
 }
 
 function LogoMark() {
@@ -49,7 +49,7 @@ function PageShell({ children }: { children: React.ReactNode }) {
         <div className="flex flex-col items-center mb-6">
           <LogoMark />
         </div>
-        <div className="rounded-3xl p-8" style={{ background: '#FAF7F2', border: '1px solid rgba(122,102,144,0.12)', boxShadow: '0 4px 20px rgba(90,78,110,0.08)' }}>
+        <div className="rounded-3xl p-8" style={{ background: '#FAF7F2', border: '1px solid rgba(112,89,135,0.12)', boxShadow: '0 4px 20px rgba(90,78,110,0.08)' }}>
           {children}
         </div>
       </div>
@@ -129,7 +129,7 @@ export function ResetPasswordScreen() {
   if (validSession === null) {
     return (
       <div className="min-h-screen flex items-center justify-center" style={{ background: '#EDE6DB' }}>
-        <div className="w-10 h-10 rounded-full border-2 border-t-transparent animate-spin" style={{ borderColor: '#7A6690', borderTopColor: 'transparent' }} />
+        <div className="w-10 h-10 rounded-full border-2 border-t-transparent animate-spin" style={{ borderColor: '#705987', borderTopColor: 'transparent' }} />
       </div>
     )
   }
@@ -146,7 +146,7 @@ export function ResetPasswordScreen() {
             <AlertCircle className="w-8 h-8" style={{ color: '#C8883A' }} />
           </div>
 
-          <h1 className="text-2xl font-bold mb-2" style={{ fontFamily: "'Fraunces', Georgia, serif", color: '#2A2030' }}>
+          <h1 className="text-2xl font-bold mb-2" style={{ fontFamily: "'Fraunces', Georgia, serif", color: '#291F32' }}>
             Link Expired
           </h1>
           <p className="text-sm mb-8" style={{ color: '#5A5065' }}>{error}</p>
@@ -162,7 +162,7 @@ export function ResetPasswordScreen() {
           <button
             onClick={handleSignIn}
             className="w-full py-3.5 rounded-2xl font-semibold transition-all active:scale-95"
-            style={{ background: 'transparent', border: '1.5px solid rgba(122,102,144,0.3)', color: '#7A6690', fontFamily: "'DM Sans', sans-serif" }}
+            style={{ background: 'transparent', border: '1.5px solid rgba(112,89,135,0.3)', color: '#705987', fontFamily: "'DM Sans', sans-serif" }}
           >
             Back to Sign In
           </button>
@@ -183,7 +183,7 @@ export function ResetPasswordScreen() {
             <Check className="w-8 h-8" style={{ color: '#4A7C59' }} />
           </div>
 
-          <h1 className="text-2xl font-bold mb-2" style={{ fontFamily: "'Fraunces', Georgia, serif", color: '#2A2030' }}>
+          <h1 className="text-2xl font-bold mb-2" style={{ fontFamily: "'Fraunces', Georgia, serif", color: '#291F32' }}>
             Password Updated!
           </h1>
           <p className="text-sm mb-8" style={{ color: '#5A5065' }}>
@@ -205,7 +205,7 @@ export function ResetPasswordScreen() {
   // Main form
   return (
     <PageShell>
-      <h1 className="text-3xl font-bold text-center mb-2" style={{ fontFamily: "'Fraunces', Georgia, serif", color: '#2A2030' }}>
+      <h1 className="text-3xl font-bold text-center mb-2" style={{ fontFamily: "'Fraunces', Georgia, serif", color: '#291F32' }}>
         Create New Password
       </h1>
       <p className="text-sm text-center mb-8" style={{ color: '#5A5065' }}>
@@ -216,7 +216,7 @@ export function ResetPasswordScreen() {
         <div>
           <label style={labelStyle}>New Password</label>
           <div className="relative">
-            <Lock className="absolute left-3 top-1/2 -translate-y-1/2 w-4 h-4" style={{ color: '#756B87' }} />
+            <Lock className="absolute left-3 top-1/2 -translate-y-1/2 w-4 h-4" style={{ color: '#62566B' }} />
             <input
               type={showPassword ? 'text' : 'password'}
               value={password}
@@ -230,18 +230,18 @@ export function ResetPasswordScreen() {
               type="button"
               onClick={() => setShowPassword(!showPassword)}
               className="absolute right-3 top-1/2 -translate-y-1/2"
-              style={{ color: '#756B87' }}
+              style={{ color: '#62566B' }}
             >
               {showPassword ? <EyeOff className="w-4 h-4" /> : <Eye className="w-4 h-4" />}
             </button>
           </div>
-          <p className="text-xs mt-1" style={{ color: '#756B87' }}>At least 6 characters</p>
+          <p className="text-xs mt-1" style={{ color: '#62566B' }}>At least 6 characters</p>
         </div>
 
         <div>
           <label style={labelStyle}>Confirm Password</label>
           <div className="relative">
-            <Lock className="absolute left-3 top-1/2 -translate-y-1/2 w-4 h-4" style={{ color: '#756B87' }} />
+            <Lock className="absolute left-3 top-1/2 -translate-y-1/2 w-4 h-4" style={{ color: '#62566B' }} />
             <input
               type={showConfirmPassword ? 'text' : 'password'}
               value={confirmPassword}
@@ -255,7 +255,7 @@ export function ResetPasswordScreen() {
               type="button"
               onClick={() => setShowConfirmPassword(!showConfirmPassword)}
               className="absolute right-3 top-1/2 -translate-y-1/2"
-              style={{ color: '#756B87' }}
+              style={{ color: '#62566B' }}
             >
               {showConfirmPassword ? <EyeOff className="w-4 h-4" /> : <Eye className="w-4 h-4" />}
             </button>

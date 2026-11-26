@@ -193,13 +193,13 @@ export function LoginScreen() {
   const inputClass = "w-full rounded-2xl px-4 py-3 text-sm outline-none transition-all"
   const inputStyle = {
     background: '#FAF7F2',
-    border: '1.5px solid rgba(122,102,144,0.2)',
-    color: '#2A2030',
+    border: '1.5px solid rgba(112,89,135,0.2)',
+    color: '#291F32',
     fontFamily: "'DM Sans', sans-serif",
   }
   const inputFocusStyle = "focus:ring-2 focus:ring-purple-200"
   const labelClass = "block mb-1.5 text-xs font-semibold tracking-wide uppercase"
-  const labelStyle = { color: '#756B87' }
+  const labelStyle = { color: '#62566B' }
 
   return (
     <div className="min-h-screen flex flex-col" style={{ background: '#EDE6DB' }}>
@@ -221,11 +221,11 @@ export function LoginScreen() {
           />
           <h1
             className="text-3xl font-bold mb-1"
-            style={{ fontFamily: "'Fraunces', Georgia, serif", color: '#7A6690' }}
+            style={{ fontFamily: "'Fraunces', Georgia, serif", color: '#705987' }}
           >
             Anchor
           </h1>
-          <p className="text-sm" style={{ color: '#756B87' }}>Find your footing.</p>
+          <p className="text-sm" style={{ color: '#62566B' }}>Find your footing.</p>
         </div>
 
         {/* ── TAB SWITCHER ── */}
@@ -237,8 +237,8 @@ export function LoginScreen() {
             onClick={() => { setMode('signin'); setError('') }}
             className="flex-1 py-2.5 rounded-xl text-sm font-semibold transition-all"
             style={mode === 'signin'
-              ? { background: '#FAF7F2', color: '#7A6690', boxShadow: '0 2px 8px rgba(122,102,144,0.15)' }
-              : { background: 'transparent', color: '#756B87' }}
+              ? { background: '#FAF7F2', color: '#705987', boxShadow: '0 2px 8px rgba(112,89,135,0.15)' }
+              : { background: 'transparent', color: '#62566B' }}
           >
             Sign In
           </button>
@@ -246,8 +246,8 @@ export function LoginScreen() {
             onClick={() => { setMode('signup'); setError('') }}
             className="flex-1 py-2.5 rounded-xl text-sm font-semibold transition-all"
             style={mode === 'signup'
-              ? { background: '#FAF7F2', color: '#7A6690', boxShadow: '0 2px 8px rgba(122,102,144,0.15)' }
-              : { background: 'transparent', color: '#756B87' }}
+              ? { background: '#FAF7F2', color: '#705987', boxShadow: '0 2px 8px rgba(112,89,135,0.15)' }
+              : { background: 'transparent', color: '#62566B' }}
           >
             Create Account
           </button>
@@ -256,18 +256,18 @@ export function LoginScreen() {
         {/* ── CARD ── */}
         <div
           className="rounded-3xl p-6 mb-5"
-          style={{ background: '#FAF7F2', border: '1px solid rgba(122,102,144,0.12)', boxShadow: '0 4px 20px rgba(90,78,110,0.08)' }}
+          style={{ background: '#FAF7F2', border: '1px solid rgba(112,89,135,0.12)', boxShadow: '0 4px 20px rgba(90,78,110,0.08)' }}
         >
           {mode === 'signin' ? (
             <>
-              <h2 className="text-xl font-bold mb-1" style={{ fontFamily: "'Fraunces', Georgia, serif", color: '#2A2030' }}>Welcome Back</h2>
+              <h2 className="text-xl font-bold mb-1" style={{ fontFamily: "'Fraunces', Georgia, serif", color: '#291F32' }}>Welcome Back</h2>
               <p className="text-sm mb-6" style={{ color: '#5A5065' }}>Access your personal court journey safely.</p>
 
               <form onSubmit={handleSignIn} className="space-y-4">
                 <div>
                   <label className={labelClass} style={labelStyle}>Email</label>
                   <div className="relative">
-                    <User className="absolute left-3 top-1/2 -translate-y-1/2 w-4 h-4" style={{ color: '#756B87' }} />
+                    <User className="absolute left-3 top-1/2 -translate-y-1/2 w-4 h-4" style={{ color: '#62566B' }} />
                     <input
                       type="email"
                       value={email}
@@ -283,7 +283,7 @@ export function LoginScreen() {
                 <div>
                   <label className={labelClass} style={labelStyle}>Password</label>
                   <div className="relative">
-                    <Lock className="absolute left-3 top-1/2 -translate-y-1/2 w-4 h-4" style={{ color: '#756B87' }} />
+                    <Lock className="absolute left-3 top-1/2 -translate-y-1/2 w-4 h-4" style={{ color: '#62566B' }} />
                     <input
                       type={showPassword ? 'text' : 'password'}
                       value={password}
@@ -297,7 +297,7 @@ export function LoginScreen() {
                       type="button"
                       onClick={() => setShowPassword(!showPassword)}
                       className="absolute right-3 top-1/2 -translate-y-1/2"
-                      style={{ color: '#756B87' }}
+                      style={{ color: '#62566B' }}
                     >
                       {showPassword ? <EyeOff className="w-4 h-4" /> : <Eye className="w-4 h-4" />}
                     </button>
@@ -328,7 +328,7 @@ export function LoginScreen() {
                     type="button"
                     onClick={() => navigate('/forgot-password')}
                     className="text-xs font-semibold tracking-wide uppercase"
-                    style={{ color: '#7A6690' }}
+                    style={{ color: '#705987' }}
                   >
                     Forgot Password?
                   </button>
@@ -337,7 +337,7 @@ export function LoginScreen() {
             </>
           ) : (
             <>
-              <h2 className="text-xl font-bold mb-1" style={{ fontFamily: "'Fraunces', Georgia, serif", color: '#2A2030' }}>Create Account</h2>
+              <h2 className="text-xl font-bold mb-1" style={{ fontFamily: "'Fraunces', Georgia, serif", color: '#291F32' }}>Create Account</h2>
               <p className="text-sm mb-6" style={{ color: '#5A5065' }}>Join Anchor and start finding your footing today.</p>
 
               <form onSubmit={handleSignUp} noValidate className="space-y-4">
@@ -367,18 +367,18 @@ export function LoginScreen() {
                           onClick={() => setSelectedRole(role.id)}
                           className="w-full flex items-center gap-3 p-3.5 rounded-2xl aedge"
                           style={isSelected
-                            ? { background: '#F4EFF8', border: '1.5px solid #7A6690' }
+                            ? { background: '#E9E0EF', border: '1.5px solid #705987' }
                             : { background: '#EDE6DB', border: '1.5px solid transparent' }}
                         >
                           <div
                             className="p-2 rounded-xl flex-shrink-0"
-                            style={{ background: isSelected ? 'rgba(122,102,144,0.15)' : 'rgba(122,102,144,0.08)' }}
+                            style={{ background: isSelected ? 'rgba(112,89,135,0.15)' : 'rgba(112,89,135,0.08)' }}
                           >
-                            <Icon className="w-4 h-4" style={{ color: '#7A6690' }} />
+                            <Icon className="w-4 h-4" style={{ color: '#705987' }} />
                           </div>
                           <div className="text-left">
-                            <div className="text-sm font-semibold" style={{ color: isSelected ? '#7A6690' : '#2A2030' }}>{role.label}</div>
-                            <div className="text-xs" style={{ color: '#756B87' }}>{role.description}</div>
+                            <div className="text-sm font-semibold" style={{ color: isSelected ? '#705987' : '#291F32' }}>{role.label}</div>
+                            <div className="text-xs" style={{ color: '#62566B' }}>{role.description}</div>
                           </div>
                         </button>
                       )
@@ -427,7 +427,7 @@ export function LoginScreen() {
                     style={inputStyle}
                     required
                   />
-                  <p className="mt-1 text-xs" style={{ color: '#756B87' }}>
+                  <p className="mt-1 text-xs" style={{ color: '#62566B' }}>
                     This email is only used for password recovery and won't be shared.
                   </p>
                 </div>
@@ -486,13 +486,13 @@ export function LoginScreen() {
         <button
           onClick={() => navigate('/contact-support')}
           className="w-full py-3.5 rounded-2xl font-semibold mb-5 flex items-center justify-center gap-2 transition-all active:scale-95"
-          style={{ background: 'transparent', border: '1.5px solid rgba(122,102,144,0.3)', color: '#7A6690' }}
+          style={{ background: 'transparent', border: '1.5px solid rgba(112,89,135,0.3)', color: '#705987' }}
         >
           <LifeBuoy className="w-5 h-5" />
           Contact Support
         </button>
 
-        <p className="text-center text-xs px-4" style={{ color: '#756B87' }}>
+        <p className="text-center text-xs px-4" style={{ color: '#62566B' }}>
           Your privacy is our priority. Anchor data is encrypted and never shared with court officials.
         </p>
 

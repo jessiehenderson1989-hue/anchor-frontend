@@ -3,10 +3,10 @@ import { List, FileText, Compass, Users } from 'lucide-react'
 import { haptics } from '../lib/haptics'
 
 const tabs = [
-  { id: 'home',      label: 'Home',     icon: null,     path: '/dashboard', color: '#7A6690', bg: 'rgba(122,102,144,0.12)', border: 'rgba(122,102,144,0.22)' },
+  { id: 'home',      label: 'Home',     icon: null,     path: '/dashboard', color: '#705987', bg: 'rgba(112,89,135,0.12)', border: 'rgba(112,89,135,0.22)' },
   { id: 'timeline',  label: 'Timeline', icon: List,     path: '/timeline',  color: '#4A8878', bg: 'rgba(74,136,120,0.1)',   border: 'rgba(74,136,120,0.18)'  },
-  { id: 'contacts',  label: 'Team',     icon: Users,    path: '/contacts',  color: '#A85878', bg: 'rgba(168,88,120,0.08)',  border: 'rgba(168,88,120,0.14)'  },
-  { id: 'notes',     label: 'Notes',    icon: FileText, path: '/notes',     color: '#7A6690', bg: 'rgba(122,102,144,0.08)', border: 'rgba(122,102,144,0.14)' },
+  { id: 'contacts',  label: 'Team',     icon: Users,    path: '/contacts',  color: '#94445D', bg: 'rgba(148,68,93,0.08)',  border: 'rgba(148,68,93,0.14)'  },
+  { id: 'notes',     label: 'Notes',    icon: FileText, path: '/notes',     color: '#705987', bg: 'rgba(112,89,135,0.08)', border: 'rgba(112,89,135,0.14)' },
   { id: 'resources', label: 'Resources', icon: Compass, path: '/resources', color: '#4A70A8', bg: 'rgba(74,112,168,0.08)',  border: 'rgba(74,112,168,0.14)'  },
 ]
 

@@ -58,7 +58,7 @@ export function InstallPrompt() {
       className="animate-slide-up"
       style={{ position: 'fixed', left: 16, right: 16, bottom: 'calc(88px + env(safe-area-inset-bottom, 0px))', zIndex: 50, maxWidth: 460, margin: '0 auto' }}
     >
-      <div style={{ position: 'relative', background: '#FAF7F2', border: '1px solid rgba(122,102,144,0.18)', borderRadius: 20, padding: 16, boxShadow: '0 10px 30px rgba(60,40,80,0.16)' }}>
+      <div style={{ position: 'relative', background: '#FAF7F2', border: '1px solid rgba(112,89,135,0.18)', borderRadius: 20, padding: 16, boxShadow: '0 10px 30px rgba(60,40,80,0.16)' }}>
         <button
           onClick={handleDismiss}
           aria-label="Dismiss"
@@ -68,11 +68,11 @@ export function InstallPrompt() {
         </button>
 
         <div style={{ display: 'flex', alignItems: 'flex-start', gap: 12, paddingRight: 28 }}>
-          <div style={{ flexShrink: 0, width: 40, height: 40, borderRadius: 12, background: 'rgba(122,102,144,0.1)', display: 'flex', alignItems: 'center', justifyContent: 'center' }}>
-            <Download size={18} color="#7A6690" />
+          <div style={{ flexShrink: 0, width: 40, height: 40, borderRadius: 12, background: 'rgba(112,89,135,0.1)', display: 'flex', alignItems: 'center', justifyContent: 'center' }}>
+            <Download size={18} color="#705987" />
           </div>
           <div style={{ flex: 1, minWidth: 0 }}>
-            <h3 style={{ fontFamily: 'Fraunces, serif', fontSize: 17, fontWeight: 700, color: '#2A2030', margin: '0 0 2px' }}>Install Anchor</h3>
+            <h3 style={{ fontFamily: 'Fraunces, serif', fontSize: 17, fontWeight: 700, color: '#291F32', margin: '0 0 2px' }}>Install Anchor</h3>
             <p style={{ fontFamily: font, fontSize: 15, lineHeight: 1.45, color: '#4A4058', margin: '0 0 12px' }}>
               Add Anchor to your home screen for quick access anytime
             </p>

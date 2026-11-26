@@ -39,7 +39,7 @@ const CATEGORY_MAP: Record<string, string> = {
 }
 
 const CATEGORY_STYLES: Record<string, { bg: string; text: string; dot: string }> = {
-  statutes:   { bg: '#F4EFF8', text: '#7A6690', dot: '#7A6690' },
+  statutes:   { bg: '#E9E0EF', text: '#705987', dot: '#705987' },
   rights:     { bg: '#F5ECD8', text: '#7A5A2A', dot: '#C8883A' },
   procedures: { bg: '#EAF4EE', text: '#4A7C59', dot: '#4A7C59' },
   forms:      { bg: '#EAF0F8', text: '#3A5A80', dot: '#3A5A80' },
@@ -121,9 +121,9 @@ export function Legal() {
     return (
       <div style={{ minHeight: '100vh', background: '#EDE6DB', display: 'flex', alignItems: 'center', justifyContent: 'center' }}>
         <div style={{ textAlign: 'center' }}>
-          <div style={{ width: 44, height: 44, border: '3px solid #7A6690', borderTopColor: 'transparent', boxShadow: '0 0 12px rgba(122,102,144,0.2)', borderRadius: '50%', animation: 'spin 0.8s linear infinite', margin: '0 auto 16px' }} />
+          <div style={{ width: 44, height: 44, border: '3px solid #705987', borderTopColor: 'transparent', boxShadow: '0 0 12px rgba(112,89,135,0.2)', borderRadius: '50%', animation: 'spin 0.8s linear infinite', margin: '0 auto 16px' }} />
           <style>{`@keyframes spin { to { transform: rotate(360deg) } }`}</style>
-          <p style={{ fontFamily: 'DM Sans, sans-serif', color: '#695F7B', fontSize: 14 }}>Loading legal library…</p>
+          <p style={{ fontFamily: 'DM Sans, sans-serif', color: '#62566B', fontSize: 14 }}>Loading legal library…</p>
         </div>
       </div>
     )
@@ -138,10 +138,10 @@ export function Legal() {
 
           {/* Header */}
           <div>
-            <h1 style={{ fontFamily: 'Fraunces, serif', fontSize: 28, fontWeight: 700, color: '#2A2030', margin: '0 0 4px' }}>
+            <h1 style={{ fontFamily: 'Fraunces, serif', fontSize: 28, fontWeight: 700, color: '#291F32', margin: '0 0 4px' }}>
               Legal Library
             </h1>
-            <p style={{ fontFamily: 'DM Sans, sans-serif', fontSize: 14, color: '#695F7B', margin: 0 }}>
+            <p style={{ fontFamily: 'DM Sans, sans-serif', fontSize: 14, color: '#62566B', margin: 0 }}>
               California dependency law and your rights
             </p>
           </div>
@@ -161,8 +161,8 @@ export function Legal() {
                 <Search size={18} color="#3A5A80" />
               </div>
               <div style={{ flex: 1 }}>
-                <p style={{ fontFamily: 'DM Sans, sans-serif', fontSize: 14, fontWeight: 700, color: '#2A2030', margin: '0 0 2px' }}>Glossary</p>
-                <p style={{ fontFamily: 'DM Sans, sans-serif', fontSize: 12, color: '#695F7B', margin: 0 }}>Look up legal terms and definitions</p>
+                <p style={{ fontFamily: 'DM Sans, sans-serif', fontSize: 14, fontWeight: 700, color: '#291F32', margin: '0 0 2px' }}>Glossary</p>
+                <p style={{ fontFamily: 'DM Sans, sans-serif', fontSize: 12, color: '#62566B', margin: 0 }}>Look up legal terms and definitions</p>
               </div>
               <ChevronDown size={16} color="#9A90A8" />
             </div>
@@ -189,8 +189,8 @@ export function Legal() {
                 <FileText size={18} color="#C8883A" />
               </div>
               <div style={{ flex: 1 }}>
-                <p style={{ fontFamily: 'DM Sans, sans-serif', fontSize: 14, fontWeight: 700, color: '#2A2030', margin: '0 0 2px' }}>Forms & Templates</p>
-                <p style={{ fontFamily: 'DM Sans, sans-serif', fontSize: 12, color: '#695F7B', margin: 0 }}>Court forms, templates, and how to use them</p>
+                <p style={{ fontFamily: 'DM Sans, sans-serif', fontSize: 14, fontWeight: 700, color: '#291F32', margin: '0 0 2px' }}>Forms & Templates</p>
+                <p style={{ fontFamily: 'DM Sans, sans-serif', fontSize: 12, color: '#62566B', margin: 0 }}>Court forms, templates, and how to use them</p>
               </div>
               <ChevronDown size={16} color="#9A90A8" />
             </div>
@@ -205,11 +205,11 @@ export function Legal() {
               }}
             >
               <div style={{ width: 40, height: 40, borderRadius: 12, background: '#E8DDE8', display: 'flex', alignItems: 'center', justifyContent: 'center', flexShrink: 0 }}>
-                <Sparkles size={18} color="#7A6690" />
+                <Sparkles size={18} color="#705987" />
               </div>
               <div style={{ flex: 1 }}>
-                <p style={{ fontFamily: 'DM Sans, sans-serif', fontSize: 14, fontWeight: 700, color: '#2A2030', margin: '0 0 2px' }}>Your Rights & Responsibilities</p>
-                <p style={{ fontFamily: 'DM Sans, sans-serif', fontSize: 12, color: '#695F7B', margin: 0 }}>Know your rights in dependency court</p>
+                <p style={{ fontFamily: 'DM Sans, sans-serif', fontSize: 14, fontWeight: 700, color: '#291F32', margin: '0 0 2px' }}>Your Rights & Responsibilities</p>
+                <p style={{ fontFamily: 'DM Sans, sans-serif', fontSize: 12, color: '#62566B', margin: 0 }}>Know your rights in dependency court</p>
               </div>
               <ChevronDown size={16} color="#9A90A8" />
             </div>
@@ -251,19 +251,19 @@ export function Legal() {
           </div>
 
           {/* From the California Courts */}
-          <div style={{ background: '#FAF7F2', borderRadius: 16, padding: '14px 16px', border: '1px solid rgba(122,102,144,0.12)', boxShadow: '0 3px 10px rgba(42,32,48,0.05)' }}>
-            <p style={{ fontFamily: 'DM Sans, sans-serif', fontSize: 12, fontWeight: 700, letterSpacing: '0.06em', textTransform: 'uppercase', color: '#695F7B', margin: '0 0 8px' }}>From the California Courts</p>
+          <div style={{ background: '#FAF7F2', borderRadius: 16, padding: '14px 16px', border: '1px solid rgba(112,89,135,0.12)', boxShadow: '0 3px 10px rgba(42,32,48,0.05)' }}>
+            <p style={{ fontFamily: 'DM Sans, sans-serif', fontSize: 12, fontWeight: 700, letterSpacing: '0.06em', textTransform: 'uppercase', color: '#62566B', margin: '0 0 8px' }}>From the California Courts</p>
             {[
               { href: 'https://youtu.be/Y7Xz4QdNoEY', title: 'Watch the court orientation video', sub: 'A short video from the courts on how dependency court works.' },
               { href: 'https://selfhelp.courts.ca.gov/juvenile-dependency/guide-parents', title: 'Chat with court self-help staff', sub: 'When chat is open, a Chat Now button shows in the bottom corner of the page. They answer general questions. For advice about your case, ask your lawyer.' },
             ].map((l, i) => (
               <a key={l.href} href={l.href} target="_blank" rel="noopener noreferrer"
-                style={{ display: 'flex', alignItems: 'flex-start', justifyContent: 'space-between', gap: 12, padding: '10px 0', minHeight: 44, textDecoration: 'none', borderTop: i === 0 ? 'none' : '1px solid rgba(122,102,144,0.1)' }}>
+                style={{ display: 'flex', alignItems: 'flex-start', justifyContent: 'space-between', gap: 12, padding: '10px 0', minHeight: 44, textDecoration: 'none', borderTop: i === 0 ? 'none' : '1px solid rgba(112,89,135,0.1)' }}>
                 <span>
-                  <span style={{ display: 'block', fontFamily: 'DM Sans, sans-serif', fontSize: 14, fontWeight: 700, color: '#2A2030' }}>{l.title}</span>
+                  <span style={{ display: 'block', fontFamily: 'DM Sans, sans-serif', fontSize: 14, fontWeight: 700, color: '#291F32' }}>{l.title}</span>
                   <span style={{ display: 'block', fontFamily: 'DM Sans, sans-serif', fontSize: 15, color: '#4A4058', lineHeight: 1.5, marginTop: 2 }}>{l.sub}</span>
                 </span>
-                <ExternalLink size={16} color="#7A6690" style={{ flexShrink: 0, marginTop: 3 }} />
+                <ExternalLink size={16} color="#705987" style={{ flexShrink: 0, marginTop: 3 }} />
               </a>
             ))}
           </div>
@@ -280,9 +280,9 @@ export function Legal() {
                 width: '100%', boxSizing: 'border-box',
                 padding: '12px 16px 12px 40px',
                 background: '#FAF7F2',
-                border: '1.5px solid rgba(122,102,144,0.2)',
+                border: '1.5px solid rgba(112,89,135,0.2)',
                 borderRadius: 16,
-                fontFamily: 'DM Sans, sans-serif', fontSize: 14, color: '#2A2030',
+                fontFamily: 'DM Sans, sans-serif', fontSize: 14, color: '#291F32',
                 outline: 'none',
               }}
             />
@@ -297,7 +297,7 @@ export function Legal() {
                   <button className="aedge"
                     key={cat}
                     onClick={() => { haptics.light(); setSelectedCategory(cat); setExpandedContentId(null) }}
-                    style={{ padding: '7px 16px', borderRadius: 20, whiteSpace: 'nowrap', flexShrink: 0, border: selected ? '1.5px solid #7A6690' : '1.5px solid rgba(122,102,144,0.2)', background: selected ? '#7A6690' : '#FAF7F4', fontFamily: 'DM Sans, sans-serif', fontSize: 14, fontWeight: 600, color: selected ? '#fff' : '#5A5065', cursor: 'pointer' }}
+                    style={{ padding: '7px 16px', borderRadius: 20, whiteSpace: 'nowrap', flexShrink: 0, border: selected ? '1.5px solid #705987' : '1.5px solid rgba(112,89,135,0.2)', background: selected ? '#705987' : '#FAF7F4', fontFamily: 'DM Sans, sans-serif', fontSize: 14, fontWeight: 600, color: selected ? '#fff' : '#5A5065', cursor: 'pointer' }}
                   >
                     {cat}
                   </button>
@@ -310,10 +310,10 @@ export function Legal() {
           {filteredContents.length === 0 ? (
             <div style={{ textAlign: 'center', padding: '48px 0' }}>
               <BookOpen size={40} color="#D0C8D8" style={{ margin: '0 auto 12px' }} />
-              <p style={{ fontFamily: 'Fraunces, serif', fontSize: 18, fontWeight: 700, color: '#2A2030', margin: '0 0 6px' }}>
+              <p style={{ fontFamily: 'Fraunces, serif', fontSize: 18, fontWeight: 700, color: '#291F32', margin: '0 0 6px' }}>
                 {searchQuery ? `No results for "${searchQuery}"` : 'Nothing in this category'}
               </p>
-              <p style={{ fontFamily: 'DM Sans, sans-serif', fontSize: 14, color: '#695F7B', margin: 0 }}>
+              <p style={{ fontFamily: 'DM Sans, sans-serif', fontSize: 14, color: '#62566B', margin: 0 }}>
                 {searchQuery ? 'Try a different search term' : 'Select a different category'}
               </p>
             </div>
@@ -329,7 +329,7 @@ export function Legal() {
                     onClick={() => toggleExpanded(content.id)}
                     style={{
                       background: '#FAF7F2', borderRadius: 20,
-                      border: `1px solid ${isExpanded ? 'rgba(122,102,144,0.25)' : 'rgba(122,102,144,0.12)'}`,
+                      border: `1px solid ${isExpanded ? 'rgba(112,89,135,0.25)' : 'rgba(112,89,135,0.12)'}`,
                       overflow: 'hidden', cursor: 'pointer',
                     }}
                   >
@@ -347,7 +347,7 @@ export function Legal() {
                             {getCategoryDisplayName(content.category)}
                           </span>
                         </div>
-                        <h3 style={{ fontFamily: 'Fraunces, serif', fontSize: 16, fontWeight: 700, color: '#2A2030', margin: '0 0 4px', lineHeight: 1.3 }}>
+                        <h3 style={{ fontFamily: 'Fraunces, serif', fontSize: 16, fontWeight: 700, color: '#291F32', margin: '0 0 4px', lineHeight: 1.3 }}>
                           {content.title}
                         </h3>
                         <p style={{ fontFamily: 'DM Sans, sans-serif', fontSize: 15, color: '#4A4058', margin: 0, lineHeight: 1.5 }}>
@@ -365,19 +365,19 @@ export function Legal() {
                     {/* Expanded content */}
                     {isExpanded && (
                       <div style={{ padding: '0 16px 16px', display: 'flex', flexDirection: 'column', gap: 14 }} onClick={(e) => e.stopPropagation()}>
-                        <div style={{ height: 1, background: 'rgba(122,102,144,0.12)' }} />
+                        <div style={{ height: 1, background: 'rgba(112,89,135,0.12)' }} />
 
                         {/* Subsections */}
                         {content.subsections && content.subsections.length > 0 && (
                           <div>
-                            <p style={{ fontFamily: 'DM Sans, sans-serif', fontSize: 12, fontWeight: 700, color: '#695F7B', textTransform: 'uppercase', letterSpacing: '0.05em', margin: '0 0 8px' }}>
+                            <p style={{ fontFamily: 'DM Sans, sans-serif', fontSize: 12, fontWeight: 700, color: '#62566B', textTransform: 'uppercase', letterSpacing: '0.05em', margin: '0 0 8px' }}>
                               Key sections
                             </p>
                             <div style={{ display: 'flex', flexDirection: 'column', gap: 8 }}>
                               {content.subsections.map((sub, i) => (
                                 <div key={i} style={{ background: '#EDE6DB', borderRadius: 12, padding: '10px 12px' }}>
-                                  <p style={{ fontFamily: 'DM Sans, sans-serif', fontSize: 12, fontWeight: 700, color: '#7A6690', margin: '0 0 2px' }}>{sub.section}</p>
-                                  <p style={{ fontFamily: 'DM Sans, sans-serif', fontSize: 14, fontWeight: 600, color: '#2A2030', margin: '0 0 4px' }}>{sub.title}</p>
+                                  <p style={{ fontFamily: 'DM Sans, sans-serif', fontSize: 12, fontWeight: 700, color: '#705987', margin: '0 0 2px' }}>{sub.section}</p>
+                                  <p style={{ fontFamily: 'DM Sans, sans-serif', fontSize: 14, fontWeight: 600, color: '#291F32', margin: '0 0 4px' }}>{sub.title}</p>
                                   <p style={{ fontFamily: 'DM Sans, sans-serif', fontSize: 13, color: '#4A4058', margin: 0, lineHeight: 1.5 }}>{sub.summary}</p>
                                 </div>
                               ))}
@@ -406,7 +406,7 @@ export function Legal() {
 
                         {/* Legal reference */}
                         {content.legal_reference && (
-                          <p style={{ fontFamily: 'DM Sans, sans-serif', fontSize: 12, color: '#695F7B', fontStyle: 'italic', margin: 0 }}>
+                          <p style={{ fontFamily: 'DM Sans, sans-serif', fontSize: 12, color: '#62566B', fontStyle: 'italic', margin: 0 }}>
                             Reference: {content.legal_reference}
                           </p>
                         )}
@@ -414,7 +414,7 @@ export function Legal() {
                         {/* Related topics */}
                         {content.related_topics && content.related_topics.length > 0 && (
                           <div>
-                            <p style={{ fontFamily: 'DM Sans, sans-serif', fontSize: 12, fontWeight: 700, color: '#695F7B', textTransform: 'uppercase', letterSpacing: '0.05em', margin: '0 0 8px' }}>
+                            <p style={{ fontFamily: 'DM Sans, sans-serif', fontSize: 12, fontWeight: 700, color: '#62566B', textTransform: 'uppercase', letterSpacing: '0.05em', margin: '0 0 8px' }}>
                               Related topics
                             </p>
                             <div style={{ display: 'flex', flexWrap: 'wrap', gap: 8 }}>
@@ -422,7 +422,7 @@ export function Legal() {
                                 <button className="aedge"
                                   key={topic}
                                   onClick={(e) => { e.stopPropagation(); handleRelatedTopicClick(topic) }}
-                                  style={{ padding: '5px 14px', borderRadius: 20, background: '#E8DDE8', color: '#7A6690', border: 'none', fontFamily: 'DM Sans, sans-serif', fontSize: 12, fontWeight: 600, cursor: 'pointer' }}
+                                  style={{ padding: '5px 14px', borderRadius: 20, background: '#E8DDE8', color: '#705987', border: 'none', fontFamily: 'DM Sans, sans-serif', fontSize: 12, fontWeight: 600, cursor: 'pointer' }}
                                 >
                                   {topic}
                                 </button>
@@ -454,14 +454,14 @@ export function Legal() {
 
           {/* Result count */}
           {filteredContents.length > 0 && (
-            <p style={{ fontFamily: 'DM Sans, sans-serif', fontSize: 12, color: '#695F7B', textAlign: 'center', margin: 0 }}>
+            <p style={{ fontFamily: 'DM Sans, sans-serif', fontSize: 12, color: '#62566B', textAlign: 'center', margin: 0 }}>
               Showing {filteredContents.length} {filteredContents.length === 1 ? 'topic' : 'topics'}
             </p>
           )}
 
           {/* Need more help */}
           <div style={{ background: '#FAF7F2', borderRadius: 20, padding: '16px 18px', border: '1px solid rgba(255,255,255,0.88)' }}>
-            <h3 style={{ fontFamily: 'Fraunces, serif', fontSize: 18, fontWeight: 700, color: '#2A2030', margin: '0 0 14px' }}>
+            <h3 style={{ fontFamily: 'Fraunces, serif', fontSize: 18, fontWeight: 700, color: '#291F32', margin: '0 0 14px' }}>
               Need more help?
             </h3>
             <div style={{ display: 'flex', flexDirection: 'column', gap: 10 }}>
@@ -472,8 +472,8 @@ export function Legal() {
                 style={{ display: 'flex', alignItems: 'center', justifyContent: 'space-between', padding: '12px 14px', background: '#EDE6DB', borderRadius: 14, textDecoration: 'none', border: '1px solid rgba(255,255,255,0.88)' }}
               >
                 <div>
-                  <p style={{ fontFamily: 'DM Sans, sans-serif', fontSize: 14, fontWeight: 700, color: '#2A2030', margin: '0 0 2px' }}>California Courts Self-Help Center</p>
-                  <p style={{ fontFamily: 'DM Sans, sans-serif', fontSize: 12, color: '#695F7B', margin: 0 }}>Official court resources and forms</p>
+                  <p style={{ fontFamily: 'DM Sans, sans-serif', fontSize: 14, fontWeight: 700, color: '#291F32', margin: '0 0 2px' }}>California Courts Self-Help Center</p>
+                  <p style={{ fontFamily: 'DM Sans, sans-serif', fontSize: 12, color: '#62566B', margin: 0 }}>Official court resources and forms</p>
                 </div>
                 <ExternalLink size={14} color="#9A90A8" style={{ flexShrink: 0, marginLeft: 8 }} />
               </a>
@@ -484,8 +484,8 @@ export function Legal() {
                 style={{ display: 'flex', alignItems: 'center', justifyContent: 'space-between', padding: '12px 14px', background: '#EDE6DB', borderRadius: 14, textDecoration: 'none', border: '1px solid rgba(255,255,255,0.88)' }}
               >
                 <div>
-                  <p style={{ fontFamily: 'DM Sans, sans-serif', fontSize: 14, fontWeight: 700, color: '#2A2030', margin: '0 0 2px' }}>California Legislative Information</p>
-                  <p style={{ fontFamily: 'DM Sans, sans-serif', fontSize: 12, color: '#695F7B', margin: 0 }}>Full text of California laws</p>
+                  <p style={{ fontFamily: 'DM Sans, sans-serif', fontSize: 14, fontWeight: 700, color: '#291F32', margin: '0 0 2px' }}>California Legislative Information</p>
+                  <p style={{ fontFamily: 'DM Sans, sans-serif', fontSize: 12, color: '#62566B', margin: 0 }}>Full text of California laws</p>
                 </div>
                 <ExternalLink size={14} color="#9A90A8" style={{ flexShrink: 0, marginLeft: 8 }} />
               </a>

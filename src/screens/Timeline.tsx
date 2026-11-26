@@ -392,19 +392,19 @@ const STAGE_ICONS = {
 // ─── STATUS STYLE HELPERS ────────────────────────────────────────────────────
 const STATUS_STYLES = {
   not_started: {
-    border: 'rgba(122,102,144,0.15)',
+    border: 'rgba(112,89,135,0.15)',
     iconBg: '#E8DDE8',
     iconColor: '#9A90A8',
     badgeBg: '#E8DDE8',
-    badgeColor: '#7A6690',
+    badgeColor: '#705987',
     label: 'NOT STARTED',
   },
   in_progress: {
-    border: '#7A6690',
-    iconBg: '#F4EFF8',
-    iconColor: '#7A6690',
-    badgeBg: '#F4EFF8',
-    badgeColor: '#7A6690',
+    border: '#705987',
+    iconBg: '#E9E0EF',
+    iconColor: '#705987',
+    badgeBg: '#E9E0EF',
+    badgeColor: '#705987',
     label: 'IN PROGRESS',
   },
   completed: {
@@ -630,7 +630,7 @@ export function Timeline() {
         className="rounded-3xl mb-4 overflow-hidden"
         style={{
           background: '#FAF7F2',
-          border: `1.5px solid ${isExpanded ? S.border : 'rgba(122,102,144,0.12)'}`,
+          border: `1.5px solid ${isExpanded ? S.border : 'rgba(112,89,135,0.12)'}`,
           boxShadow: isExpanded ? '0 4px 20px rgba(90,78,110,0.12)' : '0 1px 6px rgba(90,78,110,0.06)',
         }}
       >
@@ -647,7 +647,7 @@ export function Timeline() {
             <div className="flex-1 min-w-0">
               <h3
                 className="text-base font-bold mb-2 leading-tight"
-                style={{ fontFamily: "'Fraunces', Georgia, serif", color: '#2A2030' }}
+                style={{ fontFamily: "'Fraunces', Georgia, serif", color: '#291F32' }}
               >
                 {content.name}
               </h3>
@@ -660,7 +660,7 @@ export function Timeline() {
                   {stage.status === 'completed' ? '✓ ' : stage.status === 'in_progress' ? '● ' : ''}{S.label}
                 </span>
                 {total > 0 && (
-                  <span className="text-xs font-semibold" style={{ color: '#695F7B' }}>
+                  <span className="text-xs font-semibold" style={{ color: '#62566B' }}>
                     {completed}/{total} tasks
                   </span>
                 )}
@@ -678,8 +678,8 @@ export function Timeline() {
 
             <div className="flex-shrink-0 mt-1">
               {isExpanded
-                ? <ChevronUp className="w-4 h-4" style={{ color: '#695F7B' }} />
-                : <ChevronDown className="w-4 h-4" style={{ color: '#695F7B' }} />
+                ? <ChevronUp className="w-4 h-4" style={{ color: '#62566B' }} />
+                : <ChevronDown className="w-4 h-4" style={{ color: '#62566B' }} />
               }
             </div>
           </div>
@@ -713,7 +713,7 @@ export function Timeline() {
                 style={{
                   background: '#EDE6DB',
                   border: '1.5px solid rgba(200,136,58,0.3)',
-                  color: '#2A2030',
+                  color: '#291F32',
                 }}
               />
             </div>
@@ -721,12 +721,12 @@ export function Timeline() {
             {/* What happens */}
             <div>
               <div className="flex items-center gap-2 mb-2">
-                <FileText className="w-4 h-4" style={{ color: '#7A6690' }} />
-                <h4 className="text-xs font-bold uppercase tracking-wide" style={{ color: '#7A6690' }}>
+                <FileText className="w-4 h-4" style={{ color: '#705987' }} />
+                <h4 className="text-xs font-bold uppercase tracking-wide" style={{ color: '#705987' }}>
                   What Happens
                 </h4>
               </div>
-              <p className="text-sm leading-relaxed" style={{ color: '#2A2030' }}>
+              <p className="text-sm leading-relaxed" style={{ color: '#291F32' }}>
                 {content.whatHappens}
               </p>
             </div>
@@ -735,8 +735,8 @@ export function Timeline() {
             {content.yourRights.length > 0 && (
               <div>
                 <div className="flex items-center gap-2 mb-3">
-                  <Star className="w-4 h-4" style={{ color: '#7A6690' }} />
-                  <h4 className="text-xs font-bold uppercase tracking-wide" style={{ color: '#7A6690' }}>
+                  <Star className="w-4 h-4" style={{ color: '#705987' }} />
+                  <h4 className="text-xs font-bold uppercase tracking-wide" style={{ color: '#705987' }}>
                     Your Rights
                   </h4>
                 </div>
@@ -746,7 +746,7 @@ export function Timeline() {
                       key={i}
                       onClick={() => { haptics.light(); navigate('/rights') }}
                       className="px-3 py-1.5 rounded-full text-xs font-semibold transition-all aedge"
-                      style={{ background: 'linear-gradient(145deg,#F0EBF8,#E8DDF0)', color: '#7A6690' }}
+                      style={{ background: 'linear-gradient(145deg,#EBE3F1,#E8DDF0)', color: '#705987' }}
                     >
                       {right}
                     </button>
@@ -760,23 +760,23 @@ export function Timeline() {
               <div>
                 <div className="flex items-center justify-between mb-2">
                   <div className="flex items-center gap-2">
-                    <CheckSquare className="w-4 h-4" style={{ color: '#7A6690' }} />
-                    <h4 className="text-xs font-bold uppercase tracking-wide" style={{ color: '#7A6690' }}>
+                    <CheckSquare className="w-4 h-4" style={{ color: '#705987' }} />
+                    <h4 className="text-xs font-bold uppercase tracking-wide" style={{ color: '#705987' }}>
                       Do Now
                     </h4>
                   </div>
-                  <span className="text-xs font-semibold" style={{ color: '#695F7B' }}>
+                  <span className="text-xs font-semibold" style={{ color: '#62566B' }}>
                     {completed}/{total}
                   </span>
                 </div>
 
                 {/* Progress bar */}
-                <div className="h-1.5 rounded-full mb-4" style={{ background: 'linear-gradient(145deg,#F0EBF8,#E8DDF0)' }}>
+                <div className="h-1.5 rounded-full mb-4" style={{ background: 'linear-gradient(145deg,#EBE3F1,#E8DDF0)' }}>
                   <div
                     className="h-1.5 rounded-full transition-all"
                     style={{
                       width: `${total > 0 ? (completed / total) * 100 : 0}%`,
-                      background: '#7A6690',
+                      background: '#705987',
                     }}
                   />
                 </div>
@@ -788,8 +788,8 @@ export function Timeline() {
                         onClick={(e) => { e.stopPropagation(); toggleTaskCompletion(stage.id, i) }}
                         className="w-5 h-5 rounded-lg flex-shrink-0 mt-0.5 flex items-center justify-center cursor-pointer transition-all"
                         style={{
-                          background: task.completed ? '#7A6690' : 'transparent',
-                          border: `2px solid ${task.completed ? '#7A6690' : 'rgba(122,102,144,0.3)'}`,
+                          background: task.completed ? '#705987' : 'transparent',
+                          border: `2px solid ${task.completed ? '#705987' : 'rgba(112,89,135,0.3)'}`,
                         }}
                       >
                         {task.completed && <Check className="w-3 h-3 text-white" />}
@@ -797,7 +797,7 @@ export function Timeline() {
                       <span
                         className="text-sm leading-relaxed"
                         style={{
-                          color: task.completed ? '#9A90A8' : '#2A2030',
+                          color: task.completed ? '#9A90A8' : '#291F32',
                           textDecoration: task.completed ? 'line-through' : 'none',
                         }}
                       >
@@ -816,19 +816,19 @@ export function Timeline() {
               return (
                 <div style={{ marginTop: 4 }}>
                   <div style={{ display: 'flex', alignItems: 'center', justifyContent: 'space-between', marginBottom: 8 }}>
-                    <p style={{ fontFamily: 'DM Sans, sans-serif', fontSize: 12, fontWeight: 700, color: '#7A6690', textTransform: 'uppercase', letterSpacing: '0.06em', margin: 0 }}>
+                    <p style={{ fontFamily: 'DM Sans, sans-serif', fontSize: 12, fontWeight: 700, color: '#705987', textTransform: 'uppercase', letterSpacing: '0.06em', margin: 0 }}>
                       Your notes
                     </p>
-                    <span style={{ fontFamily: 'DM Sans, sans-serif', fontSize: 12, color: '#695F7B' }}>{linked.length} note{linked.length !== 1 ? 's' : ''}</span>
+                    <span style={{ fontFamily: 'DM Sans, sans-serif', fontSize: 12, color: '#62566B' }}>{linked.length} note{linked.length !== 1 ? 's' : ''}</span>
                   </div>
                   <div style={{ display: 'flex', flexDirection: 'column', gap: 7 }}>
                     {linked.map(note => (
                       <div key={note.id} style={{
-                        background: 'rgba(122,102,144,0.06)',
+                        background: 'rgba(112,89,135,0.06)',
                         borderRadius: 12, padding: '9px 12px',
-                        border: '1px solid rgba(122,102,144,0.12)',
+                        border: '1px solid rgba(112,89,135,0.12)',
                       }}>
-                        <p style={{ fontFamily: 'DM Sans, sans-serif', fontSize: 14, fontWeight: 700, color: '#2A2030', margin: '0 0 2px' }}>{note.title}</p>
+                        <p style={{ fontFamily: 'DM Sans, sans-serif', fontSize: 14, fontWeight: 700, color: '#291F32', margin: '0 0 2px' }}>{note.title}</p>
                         {note.content ? (
                           <p style={{ fontFamily: 'DM Sans, sans-serif', fontSize: 13, color: '#4A4058', margin: 0, lineHeight: 1.5, overflow: 'hidden', display: '-webkit-box', WebkitLineClamp: 2, WebkitBoxOrient: 'vertical' as const }}>
                             {note.content}
@@ -844,7 +844,7 @@ export function Timeline() {
             {/* Mark complete button */}
             {stage.status !== 'completed' && (
               <div style={{ marginTop: 4 }}>
-                <p style={{ fontFamily: 'DM Sans, sans-serif', fontSize: 13, color: '#695F7B', margin: '0 0 8px', lineHeight: 1.5, textAlign: 'center' }}>
+                <p style={{ fontFamily: 'DM Sans, sans-serif', fontSize: 13, color: '#62566B', margin: '0 0 8px', lineHeight: 1.5, textAlign: 'center' }}>
                   When you've completed this stage, tap below to move forward on your journey.
                 </p>
                 <button className="abtn abtn-outline abtn-block"
@@ -877,7 +877,7 @@ export function Timeline() {
           className="rounded-2xl overflow-hidden"
           style={{
             background: '#FAF7F2',
-            border: `1px solid ${isExpanded ? S.border : 'rgba(122,102,144,0.12)'}`,
+            border: `1px solid ${isExpanded ? S.border : 'rgba(112,89,135,0.12)'}`,
           }}
         >
           <button
@@ -888,7 +888,7 @@ export function Timeline() {
               <Icon className="w-4 h-4" style={{ color: S.iconColor }} />
             </div>
             <div className="flex-1 min-w-0">
-              <p className="text-sm font-bold leading-tight" style={{ color: '#2A2030' }}>{content.name}</p>
+              <p className="text-sm font-bold leading-tight" style={{ color: '#291F32' }}>{content.name}</p>
               {stage.court_date && (
                 <p className="text-xs mt-0.5" style={{ color: '#C8883A' }}>{formatDate(stage.court_date)}</p>
               )}
@@ -900,15 +900,15 @@ export function Timeline() {
               {stage.status === 'completed' ? 'DONE' : stage.status === 'in_progress' ? 'ACTIVE' : 'PENDING'}
             </span>
             {isExpanded
-              ? <ChevronUp className="w-4 h-4 flex-shrink-0" style={{ color: '#695F7B' }} />
-              : <ChevronDown className="w-4 h-4 flex-shrink-0" style={{ color: '#695F7B' }} />
+              ? <ChevronUp className="w-4 h-4 flex-shrink-0" style={{ color: '#62566B' }} />
+              : <ChevronDown className="w-4 h-4 flex-shrink-0" style={{ color: '#62566B' }} />
             }
           </button>
 
           {isExpanded && (
-            <div className="px-4 pb-4 space-y-4 border-t" style={{ borderColor: 'rgba(122,102,144,0.1)' }}>
+            <div className="px-4 pb-4 space-y-4 border-t" style={{ borderColor: 'rgba(112,89,135,0.1)' }}>
               <div className="pt-4">
-                <p className="text-sm leading-relaxed" style={{ color: '#2A2030' }}>{content.whatHappens}</p>
+                <p className="text-sm leading-relaxed" style={{ color: '#291F32' }}>{content.whatHappens}</p>
               </div>
 
               {content.yourRights.length > 0 && (
@@ -918,7 +918,7 @@ export function Timeline() {
                       key={i}
                       onClick={() => navigate('/rights')}
                       className="px-3 py-1 rounded-full text-xs font-semibold aedge"
-                      style={{ background: 'linear-gradient(145deg,#F0EBF8,#E8DDF0)', color: '#7A6690' }}
+                      style={{ background: 'linear-gradient(145deg,#EBE3F1,#E8DDF0)', color: '#705987' }}
                     >
                       {right}
                     </button>
@@ -928,7 +928,7 @@ export function Timeline() {
 
               {stageTasks.length > 0 && (
                 <div className="space-y-2">
-                  <p className="text-xs font-bold uppercase tracking-wide" style={{ color: '#7A6690' }}>
+                  <p className="text-xs font-bold uppercase tracking-wide" style={{ color: '#705987' }}>
                     Tasks ({completed}/{total})
                   </p>
                   {stageTasks.map((task, i) => (
@@ -937,14 +937,14 @@ export function Timeline() {
                         onClick={(e) => { e.stopPropagation(); toggleTaskCompletion(stage.id, i) }}
                         className="w-4 h-4 rounded flex-shrink-0 mt-0.5 flex items-center justify-center"
                         style={{
-                          background: task.completed ? '#7A6690' : 'transparent',
-                          border: `1.5px solid ${task.completed ? '#7A6690' : 'rgba(122,102,144,0.3)'}`,
+                          background: task.completed ? '#705987' : 'transparent',
+                          border: `1.5px solid ${task.completed ? '#705987' : 'rgba(112,89,135,0.3)'}`,
                         }}
                       >
                         {task.completed && <Check className="w-2.5 h-2.5 text-white" />}
                       </div>
                       <span className="text-xs leading-relaxed" style={{
-                        color: task.completed ? '#9A90A8' : '#2A2030',
+                        color: task.completed ? '#9A90A8' : '#291F32',
                         textDecoration: task.completed ? 'line-through' : 'none',
                       }}>
                         {task.task}
@@ -966,7 +966,7 @@ export function Timeline() {
         <div className="text-center">
           <div
             className="w-10 h-10 rounded-full border-2 border-t-transparent animate-spin mx-auto mb-3"
-            style={{ borderColor: '#7A6690', borderTopColor: 'transparent' }}
+            style={{ borderColor: '#705987', borderTopColor: 'transparent' }}
           />
           <p className="text-sm" style={{ color: '#4A4058' }}>Loading your timeline...</p>
         </div>
@@ -1001,11 +1001,11 @@ export function Timeline() {
           <div>
             <h1
               className="text-2xl font-bold"
-              style={{ fontFamily: "'Fraunces', Georgia, serif", color: '#2A2030' }}
+              style={{ fontFamily: "'Fraunces', Georgia, serif", color: '#291F32' }}
             >
               {roleLabel[role]}
             </h1>
-            <p className="text-xs mt-0.5" style={{ color: '#695F7B' }}>
+            <p className="text-xs mt-0.5" style={{ color: '#62566B' }}>
               {stages.filter(s => s.status === 'completed').length} of {stages.length} stages complete
             </p>
           </div>
@@ -1013,19 +1013,19 @@ export function Timeline() {
           {/* View toggle */}
           <div
             className="flex rounded-xl p-1"
-            style={{ background: 'linear-gradient(145deg,#F0EBF8,#E8DDF0)' }}
+            style={{ background: 'linear-gradient(145deg,#EBE3F1,#E8DDF0)' }}
           >
             <button
               onClick={() => setViewMode('cards')}
               className="p-1.5 rounded-lg transition-all"
-              style={viewMode === 'cards' ? { background: '#FAF7F2', color: '#7A6690' } : { color: '#695F7B' }}
+              style={viewMode === 'cards' ? { background: '#FAF7F2', color: '#705987' } : { color: '#62566B' }}
             >
               <LayoutGrid className="w-4 h-4" />
             </button>
             <button
               onClick={() => setViewMode('list')}
               className="p-1.5 rounded-lg transition-all"
-              style={viewMode === 'list' ? { background: '#FAF7F2', color: '#7A6690' } : { color: '#695F7B' }}
+              style={viewMode === 'list' ? { background: '#FAF7F2', color: '#705987' } : { color: '#62566B' }}
             >
               <List className="w-4 h-4" />
             </button>
@@ -1036,15 +1036,15 @@ export function Timeline() {
         {/* How-to explainer — shown only until first stage is completed */}
         {stages.filter(s => s.status === 'completed').length === 0 && (
           <div style={{
-            background: 'linear-gradient(145deg,#F4EFF8,#EDE5F4)',
+            background: 'linear-gradient(145deg,#E9E0EF,#E1D6EA)',
             borderRadius: 20, padding: '12px 16px', marginBottom: 12,
             border: '1px solid rgba(255,255,255,0.88)',
-            boxShadow: '0 3px 10px rgba(122,102,144,0.1)',
+            boxShadow: '0 3px 10px rgba(112,89,135,0.1)',
             display: 'flex', gap: 10, alignItems: 'flex-start',
           }}>
             <span style={{ fontSize: 16, flexShrink: 0, marginTop: 1 }}>💡</span>
             <div>
-              <p style={{ fontFamily: 'DM Sans, sans-serif', fontSize: 14, fontWeight: 700, color: '#2A2030', margin: '0 0 3px' }}>
+              <p style={{ fontFamily: 'DM Sans, sans-serif', fontSize: 14, fontWeight: 700, color: '#291F32', margin: '0 0 3px' }}>
                 How to use your timeline
               </p>
               <p style={{ fontFamily: 'DM Sans, sans-serif', fontSize: 13, color: '#4A4058', margin: 0, lineHeight: 1.6 }}>

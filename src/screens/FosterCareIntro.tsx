@@ -134,7 +134,7 @@ export function FosterCareIntro() {
   }
 
   const roleColors: Record<string, { accent: string; bg: string; dot: string }> = {
-    parent:    { accent: '#7A6690', bg: '#F4EFF8', dot: '#7A6690' },
+    parent:    { accent: '#705987', bg: '#E9E0EF', dot: '#705987' },
     youth:     { accent: '#3A5A80', bg: '#EAF0F8', dot: '#3A5A80' },
     supporter: { accent: '#4A7C59', bg: '#EAF4EE', dot: '#4A7C59' },
   }
@@ -146,7 +146,7 @@ export function FosterCareIntro() {
       {/* Header */}
       <div style={{
         background: '#FAF7F2',
-        borderBottom: '1px solid rgba(122,102,144,0.12)',
+        borderBottom: '1px solid rgba(112,89,135,0.12)',
         padding: '16px 20px',
         display: 'flex', alignItems: 'center', justifyContent: 'space-between',
       }}>
@@ -160,7 +160,7 @@ export function FosterCareIntro() {
           style={{
             background: 'none', border: 'none',
             fontFamily: 'DM Sans, sans-serif', fontSize: 14, fontWeight: 600,
-            color: '#756B87', cursor: 'pointer', padding: '8px 4px',
+            color: '#62566B', cursor: 'pointer', padding: '8px 4px',
           }}
         >
           Skip
@@ -187,7 +187,7 @@ export function FosterCareIntro() {
         {/* Headline */}
         <h1 style={{
           fontFamily: 'Fraunces, serif', fontSize: 28, fontWeight: 700,
-          color: '#2A2030', margin: '0 0 10px', lineHeight: 1.2,
+          color: '#291F32', margin: '0 0 10px', lineHeight: 1.2,
         }}>
           {content.headline}
         </h1>
@@ -207,7 +207,7 @@ export function FosterCareIntro() {
                 key={i}
                 style={{
                   background: '#FAF7F2',
-                  border: `1px solid ${isOpen ? colors.dot + '40' : 'rgba(122,102,144,0.12)'}`,
+                  border: `1px solid ${isOpen ? colors.dot + '40' : 'rgba(112,89,135,0.12)'}`,
                   borderRadius: 20,
                   overflow: 'hidden',
                   transition: 'border-color 0.15s',
@@ -234,7 +234,7 @@ export function FosterCareIntro() {
                     </div>
                     <span style={{
                       fontFamily: 'DM Sans, sans-serif', fontSize: 14, fontWeight: 700,
-                      color: isOpen ? '#2A2030' : '#5A5065',
+                      color: isOpen ? '#291F32' : '#5A5065',
                     }}>
                       {section.title}
                     </span>
@@ -264,7 +264,7 @@ export function FosterCareIntro() {
       {/* Footer CTA */}
       <div style={{
         background: '#FAF7F2',
-        borderTop: '1px solid rgba(122,102,144,0.12)',
+        borderTop: '1px solid rgba(112,89,135,0.12)',
         padding: '16px 20px env(safe-area-inset-bottom, 24px)',
         maxWidth: 480, margin: '0 auto', width: '100%', boxSizing: 'border-box',
       }}>

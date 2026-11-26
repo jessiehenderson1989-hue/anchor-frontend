@@ -8,19 +8,19 @@ export const DS = {
   headerBg: 'rgba(250,247,242,0.96)',
 
   // Core palette
-  purple:  '#7A6690',
-  purpleBg:'rgba(122,102,144,0.1)',
+  purple:  '#705987',
+  purpleBg:'rgba(112,89,135,0.1)',
   teal:    '#4A8878',
   tealBg:  'rgba(74,136,120,0.1)',
   amber:   '#C8883A',
   amberBg: 'rgba(200,136,58,0.1)',
-  rose:    '#A85878',
-  roseBg:  'rgba(168,88,120,0.1)',
+  rose:    '#94445D',
+  roseBg:  'rgba(148,68,93,0.1)',
   blue:    '#4A70A8',
   blueBg:  'rgba(74,112,168,0.1)',
 
   // Text
-  ink:     '#2A2030',
+  ink:     '#291F32',
   muted:   '#5A5065',
   subtle:  '#9A90A8',
 
@@ -98,14 +98,14 @@ export const sectionLabel = (color = DS.subtle) => ({
 
 // Jewel colors matched to stage index
 export const STAGE_JEWELS = [
-  { color: '#7A6690', glow: 'rgba(122,102,144,0.5)', bg: 'rgba(122,102,144,0.12)' },
+  { color: '#705987', glow: 'rgba(112,89,135,0.5)', bg: 'rgba(112,89,135,0.12)' },
   { color: '#4A8878', glow: 'rgba(74,136,120,0.5)',  bg: 'rgba(74,136,120,0.12)'  },
   { color: '#C8883A', glow: 'rgba(200,136,58,0.5)',  bg: 'rgba(200,136,58,0.12)'  },
-  { color: '#A85878', glow: 'rgba(168,88,120,0.4)',  bg: 'rgba(168,88,120,0.1)'   },
+  { color: '#94445D', glow: 'rgba(148,68,93,0.4)',  bg: 'rgba(148,68,93,0.1)'   },
   { color: '#4A70A8', glow: 'rgba(74,112,168,0.4)',  bg: 'rgba(74,112,168,0.1)'   },
   { color: '#6A7A40', glow: 'rgba(106,122,64,0.4)',  bg: 'rgba(106,122,64,0.1)'   },
-  { color: '#7A6690', glow: 'rgba(122,102,144,0.4)', bg: 'rgba(122,102,144,0.1)'  },
+  { color: '#705987', glow: 'rgba(112,89,135,0.4)', bg: 'rgba(112,89,135,0.1)'  },
   { color: '#4A8878', glow: 'rgba(74,136,120,0.4)',  bg: 'rgba(74,136,120,0.1)'   },
   { color: '#C8883A', glow: 'rgba(200,136,58,0.4)',  bg: 'rgba(200,136,58,0.1)'   },
-  { color: '#A85878', glow: 'rgba(168,88,120,0.4)',  bg: 'rgba(168,88,120,0.1)'   },
+  { color: '#94445D', glow: 'rgba(148,68,93,0.4)',  bg: 'rgba(148,68,93,0.1)'   },
 ]

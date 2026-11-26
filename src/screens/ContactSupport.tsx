@@ -50,7 +50,7 @@ export function ContactSupport() {
           <div style={{ width: 64, height: 64, borderRadius: '50%', background: 'linear-gradient(145deg,#EAF4EE,#D4EDD8)', display: 'flex', alignItems: 'center', justifyContent: 'center', margin: '0 auto 20px', boxShadow: '0 4px 16px rgba(74,124,89,0.2)' }}>
             <Check size={28} color="#4A7C59" />
           </div>
-          <h2 style={{ fontFamily: 'Fraunces, serif', fontSize: 24, fontWeight: 700, color: '#2A2030', marginBottom: 10 }}>Message sent</h2>
+          <h2 style={{ fontFamily: 'Fraunces, serif', fontSize: 24, fontWeight: 700, color: '#291F32', marginBottom: 10 }}>Message sent</h2>
           <p style={{ fontFamily: 'DM Sans, sans-serif', fontSize: 15, color: '#4A4058', lineHeight: 1.6, marginBottom: 28 }}>
             We got your message and will follow up within a few days. Thank you for reaching out.
           </p>
@@ -67,11 +67,11 @@ export function ContactSupport() {
 
   return (
     <div style={{ minHeight: '100vh', background: '#EDE6DB' }}>
-      <div style={{ background: '#FAF7F2', borderBottom: '1px solid rgba(122,102,144,0.1)', padding: '14px 20px', display: 'flex', alignItems: 'center', gap: 12, position: 'sticky', top: 0, zIndex: 10 }}>
+      <div style={{ background: '#FAF7F2', borderBottom: '1px solid rgba(112,89,135,0.1)', padding: '14px 20px', display: 'flex', alignItems: 'center', gap: 12, position: 'sticky', top: 0, zIndex: 10 }}>
         <button className="aedge" onClick={() => navigate(-1)} style={{ background: '#E8DDE8', border: 'none', borderRadius: 10, width: 40, height: 40, display: 'flex', alignItems: 'center', justifyContent: 'center', cursor: 'pointer', flexShrink: 0 }}>
-          <ArrowLeft size={16} color="#7A6690" />
+          <ArrowLeft size={16} color="#705987" />
         </button>
-        <h1 style={{ fontFamily: 'Fraunces, serif', fontSize: 20, fontWeight: 700, color: '#2A2030', margin: 0 }}>Contact Support</h1>
+        <h1 style={{ fontFamily: 'Fraunces, serif', fontSize: 20, fontWeight: 700, color: '#291F32', margin: 0 }}>Contact Support</h1>
       </div>
 
       <div style={{ maxWidth: 480, margin: '0 auto', padding: '28px 20px 60px' }}>
@@ -81,7 +81,7 @@ export function ContactSupport() {
 
         {/* Topic */}
         <div style={{ marginBottom: 20 }}>
-          <label style={{ display: 'block', fontFamily: 'DM Sans, sans-serif', fontSize: 12, fontWeight: 700, letterSpacing: '0.07em', textTransform: 'uppercase', color: '#695F7B', marginBottom: 10 }}>
+          <label style={{ display: 'block', fontFamily: 'DM Sans, sans-serif', fontSize: 12, fontWeight: 700, letterSpacing: '0.07em', textTransform: 'uppercase', color: '#62566B', marginBottom: 10 }}>
             What's this about? <span style={{ fontWeight: 400, textTransform: 'none', letterSpacing: 0 }}>(optional)</span>
           </label>
           <div style={{ display: 'flex', flexDirection: 'column', gap: 8 }}>
@@ -89,7 +89,7 @@ export function ContactSupport() {
               <button className="aedge"
                 key={t}
                 onClick={() => { haptics.light(); setTopic(t === topic ? '' : t) }}
-                style={{ textAlign: 'left', padding: '12px 16px', background: topic === t ? '#F4EFF8' : '#FAF7F2', border: topic === t ? '1.5px solid #7A6690' : '1.5px solid rgba(122,102,144,0.15)', borderRadius: 14, cursor: 'pointer', fontFamily: 'DM Sans, sans-serif', fontSize: 14, color: topic === t ? '#7A6690' : '#4A4058', fontWeight: topic === t ? 600 : 400 }}
+                style={{ textAlign: 'left', padding: '12px 16px', background: topic === t ? '#E9E0EF' : '#FAF7F2', border: topic === t ? '1.5px solid #705987' : '1.5px solid rgba(112,89,135,0.15)', borderRadius: 14, cursor: 'pointer', fontFamily: 'DM Sans, sans-serif', fontSize: 14, color: topic === t ? '#705987' : '#4A4058', fontWeight: topic === t ? 600 : 400 }}
               >
                 {t}
               </button>
@@ -99,7 +99,7 @@ export function ContactSupport() {
 
         {/* Message */}
         <div style={{ marginBottom: 20 }}>
-          <label style={{ display: 'block', fontFamily: 'DM Sans, sans-serif', fontSize: 12, fontWeight: 700, letterSpacing: '0.07em', textTransform: 'uppercase', color: '#695F7B', marginBottom: 8 }}>
+          <label style={{ display: 'block', fontFamily: 'DM Sans, sans-serif', fontSize: 12, fontWeight: 700, letterSpacing: '0.07em', textTransform: 'uppercase', color: '#62566B', marginBottom: 8 }}>
             Your message
           </label>
           <textarea
@@ -107,7 +107,7 @@ export function ContactSupport() {
             onChange={(e) => setMessage(e.target.value)}
             placeholder="Tell us what's on your mind…"
             rows={6}
-            style={{ width: '100%', boxSizing: 'border-box', padding: '14px 16px', background: '#FAF7F2', border: '1.5px solid rgba(122,102,144,0.2)', borderRadius: 16, fontFamily: 'DM Sans, sans-serif', fontSize: 15, color: '#2A2030', outline: 'none', resize: 'vertical', lineHeight: 1.6 }}
+            style={{ width: '100%', boxSizing: 'border-box', padding: '14px 16px', background: '#FAF7F2', border: '1.5px solid rgba(112,89,135,0.2)', borderRadius: 16, fontFamily: 'DM Sans, sans-serif', fontSize: 15, color: '#291F32', outline: 'none', resize: 'vertical', lineHeight: 1.6 }}
           />
         </div>
 
@@ -125,7 +125,7 @@ export function ContactSupport() {
           {loading ? 'Sending…' : 'Send Message'}
         </button>
 
-        <p style={{ fontFamily: 'DM Sans, sans-serif', fontSize: 13, color: '#695F7B', textAlign: 'center', marginTop: 16, lineHeight: 1.5 }}>
+        <p style={{ fontFamily: 'DM Sans, sans-serif', fontSize: 13, color: '#62566B', textAlign: 'center', marginTop: 16, lineHeight: 1.5 }}>
           We typically respond within 2–3 business days.{'\n'}For urgent legal questions, please contact your attorney.
         </p>
       </div>

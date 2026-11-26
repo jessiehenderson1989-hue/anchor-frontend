@@ -35,7 +35,7 @@ export function ConfirmDialog({
             }`}
           >
             <AlertTriangle
-              className={`w-8 h-8 ${destructive ? 'text-[#A85878]' : 'text-purple-600'}`}
+              className={`w-8 h-8 ${destructive ? 'text-[#94445D]' : 'text-purple-600'}`}
             />
           </div>
         </div>

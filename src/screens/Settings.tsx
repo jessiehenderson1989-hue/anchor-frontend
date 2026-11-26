@@ -27,10 +27,10 @@ import { haptics } from '../lib/haptics'
 // ── STYLES ────────────────────────────────────────────────────────────────────
 const input: React.CSSProperties = {
   background: '#EDE6DB',
-  border: '1.5px solid rgba(122,102,144,0.2)',
+  border: '1.5px solid rgba(112,89,135,0.2)',
   borderRadius: 14,
   padding: '12px 16px',
-  color: '#2A2030',
+  color: '#291F32',
   outline: 'none',
   width: '100%',
   fontSize: 15,
@@ -42,11 +42,11 @@ const label: React.CSSProperties = {
   fontWeight: 700,
   letterSpacing: '0.07em',
   textTransform: 'uppercase',
-  color: '#695F7B',
+  color: '#62566B',
   marginBottom: 6,
 }
 const primaryBtn: React.CSSProperties = {
-  background: '#7A6690',
+  background: '#705987',
   color: 'white',
   border: 'none',
   borderRadius: 14,
@@ -59,12 +59,12 @@ const primaryBtn: React.CSSProperties = {
   alignItems: 'center',
   justifyContent: 'center',
   gap: 8,
-  boxShadow: '0 4px 16px rgba(122,102,144,0.25)',
+  boxShadow: '0 4px 16px rgba(112,89,135,0.25)',
 }
 const ghostBtn: React.CSSProperties = {
   background: 'transparent',
-  color: '#7A6690',
-  border: '1.5px solid rgba(122,102,144,0.3)',
+  color: '#705987',
+  border: '1.5px solid rgba(112,89,135,0.3)',
   borderRadius: 14,
   padding: '12px 20px',
   fontWeight: 600,
@@ -77,9 +77,9 @@ const ghostBtn: React.CSSProperties = {
   gap: 8,
 }
 const dangerBtn: React.CSSProperties = {
-  background: 'rgba(168,88,120,0.08)',
-  color: '#A85878',
-  border: '1.5px solid rgba(168,88,120,0.2)',
+  background: 'rgba(148,68,93,0.08)',
+  color: '#94445D',
+  border: '1.5px solid rgba(148,68,93,0.2)',
   borderRadius: 14,
   padding: '13px 20px',
   fontWeight: 700,
@@ -104,7 +104,7 @@ const row: React.CSSProperties = {
   justifyContent: 'space-between',
   padding: '14px 16px',
   cursor: 'pointer',
-  borderBottom: '1px solid rgba(122,102,144,0.08)',
+  borderBottom: '1px solid rgba(112,89,135,0.08)',
 }
 const rowLast: React.CSSProperties = {
   ...row,
@@ -130,10 +130,10 @@ function Modal({ title, onClose, children }: { title: string; onClose: () => voi
     >
       <div className="w-full max-w-md rounded-3xl p-6" style={{ background: '#FAF7F2' }} onClick={e => e.stopPropagation()}>
         <div className="flex items-center justify-between mb-5">
-          <h2 style={{ fontFamily: "'Fraunces', Georgia, serif", fontWeight: 700, fontSize: 20, color: '#2A2030' }}>
+          <h2 style={{ fontFamily: "'Fraunces', Georgia, serif", fontWeight: 700, fontSize: 20, color: '#291F32' }}>
             {title}
           </h2>
-          <button onClick={onClose} style={{ color: '#695F7B', background: 'none', border: 'none', cursor: 'pointer' }}>
+          <button onClick={onClose} style={{ color: '#62566B', background: 'none', border: 'none', cursor: 'pointer' }}>
             <X className="w-5 h-5" />
           </button>
         </div>
@@ -385,23 +385,23 @@ export function Settings() {
           <div className="flex items-center gap-4 mb-4">
             <div
               className="w-14 h-14 rounded-2xl flex items-center justify-center flex-shrink-0"
-              style={{ background: 'linear-gradient(135deg, #7A6690, #9A7CB0)' }}
+              style={{ background: 'linear-gradient(135deg, #705987, #9A7CB0)' }}
             >
               <span style={{ color: 'white', fontSize: 22, fontWeight: 700, fontFamily: "'Fraunces', Georgia, serif" }}>
                 {getInitials()}
               </span>
             </div>
             <div className="flex-1 min-w-0">
-              <p style={{ fontFamily: "'Fraunces', Georgia, serif", fontWeight: 700, fontSize: 18, color: '#2A2030' }}>
+              <p style={{ fontFamily: "'Fraunces', Georgia, serif", fontWeight: 700, fontSize: 18, color: '#291F32' }}>
                 {profile?.first_name || profile?.username || 'Your Account'}
               </p>
               {profile?.username && (
-                <p style={{ fontSize: 14, color: '#695F7B' }}>@{profile.username}</p>
+                <p style={{ fontSize: 14, color: '#62566B' }}>@{profile.username}</p>
               )}
               {profile?.role && (
                 <span
                   className="inline-block mt-1 px-2.5 py-0.5 rounded-full text-xs font-bold"
-                  style={{ background: '#E8DDE8', color: '#7A6690' }}
+                  style={{ background: '#E8DDE8', color: '#705987' }}
                 >
                   {roleLabel[profile.role] || profile.role}
                 </span>
@@ -418,23 +418,23 @@ export function Settings() {
         </div>
 
         {/* ── ACCOUNT ── */}
-        <p style={{ fontSize: 12, fontWeight: 700, letterSpacing: '0.07em', textTransform: 'uppercase', color: '#695F7B', marginBottom: 8, paddingLeft: 4 }}>
+        <p style={{ fontSize: 12, fontWeight: 700, letterSpacing: '0.07em', textTransform: 'uppercase', color: '#62566B', marginBottom: 8, paddingLeft: 4 }}>
           Account
         </p>
         <div style={{ ...sectionCard, marginBottom: 20 }}>
           <button style={row} onClick={() => { haptics.light(); setShowChangePassword(true) }} className="w-full hover:bg-purple-50 transition-colors">
             <div className="flex items-center gap-3">
-              <div style={iconWrap}><Lock className="w-4 h-4" style={{ color: '#7A6690' }} /></div>
-              <span style={{ fontSize: 15, fontWeight: 500, color: '#2A2030' }}>Change Password</span>
+              <div style={iconWrap}><Lock className="w-4 h-4" style={{ color: '#705987' }} /></div>
+              <span style={{ fontSize: 15, fontWeight: 500, color: '#291F32' }}>Change Password</span>
             </div>
-            <ChevronRight className="w-4 h-4" style={{ color: '#695F7B' }} />
+            <ChevronRight className="w-4 h-4" style={{ color: '#62566B' }} />
           </button>
           <div style={row}>
             <div className="flex items-center gap-3">
-              <div style={iconWrap}><Mail className="w-4 h-4" style={{ color: '#7A6690' }} /></div>
+              <div style={iconWrap}><Mail className="w-4 h-4" style={{ color: '#705987' }} /></div>
               <div>
-                <p style={{ fontSize: 15, fontWeight: 500, color: '#2A2030' }}>Email</p>
-                <p style={{ fontSize: 12, color: '#695F7B' }}>{maskEmail(user?.email || '')}</p>
+                <p style={{ fontSize: 15, fontWeight: 500, color: '#291F32' }}>Email</p>
+                <p style={{ fontSize: 12, color: '#62566B' }}>{maskEmail(user?.email || '')}</p>
               </div>
             </div>
             <button className="abtn abtn-soft abtn-sm"
@@ -447,45 +447,45 @@ export function Settings() {
           {/* ── CHANGE ROLE ROW ── */}
           <button style={row} onClick={() => { haptics.light(); setSelectedRole(profile?.role || 'parent'); setError(''); setShowChangeRole(true) }} className="w-full hover:bg-purple-50 transition-colors">
             <div className="flex items-center gap-3">
-              <div style={iconWrap}><RefreshCw className="w-4 h-4" style={{ color: '#7A6690' }} /></div>
+              <div style={iconWrap}><RefreshCw className="w-4 h-4" style={{ color: '#705987' }} /></div>
               <div>
-                <p style={{ fontSize: 15, fontWeight: 500, color: '#2A2030' }}>Change Role</p>
-                <p style={{ fontSize: 12, color: '#695F7B' }}>Currently: {roleLabel[profile?.role || ''] || '—'}</p>
+                <p style={{ fontSize: 15, fontWeight: 500, color: '#291F32' }}>Change Role</p>
+                <p style={{ fontSize: 12, color: '#62566B' }}>Currently: {roleLabel[profile?.role || ''] || '—'}</p>
               </div>
             </div>
-            <ChevronRight className="w-4 h-4" style={{ color: '#695F7B' }} />
+            <ChevronRight className="w-4 h-4" style={{ color: '#62566B' }} />
           </button>
           {SPANISH_READY && <button style={rowLast} onClick={() => { haptics.light(); setShowLanguageModal(true) }} className="w-full hover:bg-purple-50 transition-colors">
             <div className="flex items-center gap-3">
-              <div style={iconWrap}><Globe className="w-4 h-4" style={{ color: '#7A6690' }} /></div>
+              <div style={iconWrap}><Globe className="w-4 h-4" style={{ color: '#705987' }} /></div>
               <div>
-                <p style={{ fontSize: 15, fontWeight: 500, color: '#2A2030' }}>Language</p>
-                <p style={{ fontSize: 12, color: '#695F7B' }}>{language === 'en' ? 'English' : 'Español'}</p>
+                <p style={{ fontSize: 15, fontWeight: 500, color: '#291F32' }}>Language</p>
+                <p style={{ fontSize: 12, color: '#62566B' }}>{language === 'en' ? 'English' : 'Español'}</p>
               </div>
             </div>
-            <ChevronRight className="w-4 h-4" style={{ color: '#695F7B' }} />
+            <ChevronRight className="w-4 h-4" style={{ color: '#62566B' }} />
           </button>}
         </div>
 
         {TEXT_REMINDERS_READY && (<>
         {/* ── NOTIFICATIONS ── */}
-        <p style={{ fontSize: 12, fontWeight: 700, letterSpacing: '0.07em', textTransform: 'uppercase', color: '#695F7B', marginBottom: 8, paddingLeft: 4 }}>
+        <p style={{ fontSize: 12, fontWeight: 700, letterSpacing: '0.07em', textTransform: 'uppercase', color: '#62566B', marginBottom: 8, paddingLeft: 4 }}>
           Notifications
         </p>
         <div style={{ ...sectionCard, marginBottom: 20 }}>
           <div style={row}>
             <div className="flex items-center gap-3">
-              <div style={iconWrap}><Bell className="w-4 h-4" style={{ color: '#7A6690' }} /></div>
+              <div style={iconWrap}><Bell className="w-4 h-4" style={{ color: '#705987' }} /></div>
               <div>
-                <p style={{ fontSize: 15, fontWeight: 500, color: '#2A2030' }}>Text Reminders</p>
-                <p style={{ fontSize: 12, color: '#695F7B' }}>Court dates and appointments</p>
+                <p style={{ fontSize: 15, fontWeight: 500, color: '#291F32' }}>Text Reminders</p>
+                <p style={{ fontSize: 12, color: '#62566B' }}>Court dates and appointments</p>
               </div>
             </div>
             <button
               onClick={handleToggleNotifications}
               style={{
                 width: 44, height: 24, borderRadius: 12,
-                background: profile?.text_reminders_enabled ? '#7A6690' : '#D4C8D8',
+                background: profile?.text_reminders_enabled ? '#705987' : '#D4C8D8',
                 border: 'none', cursor: 'pointer', position: 'relative', flexShrink: 0,
               }}
             >
@@ -499,10 +499,10 @@ export function Settings() {
           </div>
           <div style={rowLast}>
             <div className="flex items-center gap-3">
-              <div style={iconWrap}><Phone className="w-4 h-4" style={{ color: '#7A6690' }} /></div>
+              <div style={iconWrap}><Phone className="w-4 h-4" style={{ color: '#705987' }} /></div>
               <div>
-                <p style={{ fontSize: 15, fontWeight: 500, color: '#2A2030' }}>Phone Number</p>
-                <p style={{ fontSize: 12, color: '#695F7B' }}>{maskPhone(profile?.phone_number)}</p>
+                <p style={{ fontSize: 15, fontWeight: 500, color: '#291F32' }}>Phone Number</p>
+                <p style={{ fontSize: 12, color: '#62566B' }}>{maskPhone(profile?.phone_number)}</p>
               </div>
             </div>
             <button className="abtn abtn-soft abtn-sm"
@@ -516,7 +516,7 @@ export function Settings() {
         </>)}
 
         {/* ── PRIVACY & DATA ── */}
-        <p style={{ fontSize: 12, fontWeight: 700, letterSpacing: '0.07em', textTransform: 'uppercase', color: '#695F7B', marginBottom: 8, paddingLeft: 4 }}>
+        <p style={{ fontSize: 12, fontWeight: 700, letterSpacing: '0.07em', textTransform: 'uppercase', color: '#62566B', marginBottom: 8, paddingLeft: 4 }}>
           Privacy & Data
         </p>
         <div style={{ ...sectionCard, marginBottom: 20 }}>
@@ -527,13 +527,13 @@ export function Settings() {
             className="w-full hover:bg-purple-50 transition-colors"
           >
             <div className="flex items-center gap-3">
-              <div style={iconWrap}><Download className="w-4 h-4" style={{ color: '#7A6690' }} /></div>
+              <div style={iconWrap}><Download className="w-4 h-4" style={{ color: '#705987' }} /></div>
               <div className="text-left">
-                <p style={{ fontSize: 15, fontWeight: 500, color: '#2A2030' }}>Export My Data</p>
-                <p style={{ fontSize: 12, color: '#695F7B' }}>Download a copy of your information</p>
+                <p style={{ fontSize: 15, fontWeight: 500, color: '#291F32' }}>Export My Data</p>
+                <p style={{ fontSize: 12, color: '#62566B' }}>Download a copy of your information</p>
               </div>
             </div>
-            <ChevronRight className="w-4 h-4" style={{ color: '#695F7B' }} />
+            <ChevronRight className="w-4 h-4" style={{ color: '#62566B' }} />
           </button>
           <button
             style={rowLast}
@@ -541,43 +541,43 @@ export function Settings() {
             className="w-full hover:bg-[#F8EEF2] transition-colors"
           >
             <div className="flex items-center gap-3">
-              <div style={{ ...iconWrap, background: 'rgba(168,88,120,0.08)' }}>
-                <Trash2 className="w-4 h-4" style={{ color: '#A85878' }} />
+              <div style={{ ...iconWrap, background: 'rgba(148,68,93,0.08)' }}>
+                <Trash2 className="w-4 h-4" style={{ color: '#94445D' }} />
               </div>
               <div className="text-left">
-                <p style={{ fontSize: 15, fontWeight: 500, color: '#A85878' }}>Delete Account</p>
-                <p style={{ fontSize: 12, color: '#695F7B' }}>Permanently remove all your data</p>
+                <p style={{ fontSize: 15, fontWeight: 500, color: '#94445D' }}>Delete Account</p>
+                <p style={{ fontSize: 12, color: '#62566B' }}>Permanently remove all your data</p>
               </div>
             </div>
-            <ChevronRight className="w-4 h-4" style={{ color: '#A85878', opacity: 0.5 }} />
+            <ChevronRight className="w-4 h-4" style={{ color: '#94445D', opacity: 0.5 }} />
           </button>
         </div>
 
         {/* ── ABOUT ── */}
-        <p style={{ fontSize: 12, fontWeight: 700, letterSpacing: '0.07em', textTransform: 'uppercase', color: '#695F7B', marginBottom: 8, paddingLeft: 4 }}>
+        <p style={{ fontSize: 12, fontWeight: 700, letterSpacing: '0.07em', textTransform: 'uppercase', color: '#62566B', marginBottom: 8, paddingLeft: 4 }}>
           About
         </p>
         <div style={{ ...sectionCard, marginBottom: 20 }}>
           <button style={row} onClick={() => { haptics.light(); navigate('/terms') }} className="w-full hover:bg-purple-50 transition-colors">
             <div className="flex items-center gap-3">
-              <div style={iconWrap}><FileText className="w-4 h-4" style={{ color: '#7A6690' }} /></div>
-              <span style={{ fontSize: 15, fontWeight: 500, color: '#2A2030' }}>Terms of Service</span>
+              <div style={iconWrap}><FileText className="w-4 h-4" style={{ color: '#705987' }} /></div>
+              <span style={{ fontSize: 15, fontWeight: 500, color: '#291F32' }}>Terms of Service</span>
             </div>
-            <ChevronRight className="w-4 h-4" style={{ color: '#695F7B' }} />
+            <ChevronRight className="w-4 h-4" style={{ color: '#62566B' }} />
           </button>
           <button style={row} onClick={() => { haptics.light(); navigate('/privacy') }} className="w-full hover:bg-purple-50 transition-colors">
             <div className="flex items-center gap-3">
-              <div style={iconWrap}><Shield className="w-4 h-4" style={{ color: '#7A6690' }} /></div>
-              <span style={{ fontSize: 15, fontWeight: 500, color: '#2A2030' }}>Privacy Policy</span>
+              <div style={iconWrap}><Shield className="w-4 h-4" style={{ color: '#705987' }} /></div>
+              <span style={{ fontSize: 15, fontWeight: 500, color: '#291F32' }}>Privacy Policy</span>
             </div>
-            <ChevronRight className="w-4 h-4" style={{ color: '#695F7B' }} />
+            <ChevronRight className="w-4 h-4" style={{ color: '#62566B' }} />
           </button>
           <button style={rowLast} onClick={() => { haptics.light(); navigate('/contact-support') }} className="w-full hover:bg-purple-50 transition-colors">
             <div className="flex items-center gap-3">
-              <div style={iconWrap}><HelpCircle className="w-4 h-4" style={{ color: '#7A6690' }} /></div>
-              <span style={{ fontSize: 15, fontWeight: 500, color: '#2A2030' }}>Contact Support</span>
+              <div style={iconWrap}><HelpCircle className="w-4 h-4" style={{ color: '#705987' }} /></div>
+              <span style={{ fontSize: 15, fontWeight: 500, color: '#291F32' }}>Contact Support</span>
             </div>
-            <ChevronRight className="w-4 h-4" style={{ color: '#695F7B' }} />
+            <ChevronRight className="w-4 h-4" style={{ color: '#62566B' }} />
           </button>
         </div>
 
@@ -590,7 +590,7 @@ export function Settings() {
           Sign Out
         </button>
 
-        <p className="text-center mt-6" style={{ fontSize: 12, color: '#695F7B' }}>
+        <p className="text-center mt-6" style={{ fontSize: 12, color: '#62566B' }}>
           Anchor v1.0.0 · Made with care for California families
         </p>
       </div>
@@ -634,14 +634,14 @@ export function Settings() {
                   key={r.value}
                   onClick={() => { haptics.light(); setSelectedRole(r.value) }}
                   className="w-full text-left aedge"
-                  style={{ background: isSelected ? '#F4EFF8' : '#F0EAE0', border: isSelected ? '2px solid #7A6690' : '1.5px solid rgba(122,102,144,0.15)', borderRadius: 16, padding: '14px 16px', cursor: 'pointer', display: 'flex', alignItems: 'flex-start', gap: 12 }}
+                  style={{ background: isSelected ? '#E9E0EF' : '#F0EAE0', border: isSelected ? '2px solid #705987' : '1.5px solid rgba(112,89,135,0.15)', borderRadius: 16, padding: '14px 16px', cursor: 'pointer', display: 'flex', alignItems: 'flex-start', gap: 12 }}
                 >
                   <span style={{ fontSize: 22, flexShrink: 0, lineHeight: 1 }}>{r.emoji}</span>
                   <div style={{ flex: 1, minWidth: 0 }}>
                     <div style={{ display: 'flex', alignItems: 'center', gap: 8 }}>
-                      <span style={{ fontSize: 15, fontWeight: 700, color: '#2A2030' }}>{r.label}</span>
+                      <span style={{ fontSize: 15, fontWeight: 700, color: '#291F32' }}>{r.label}</span>
                       {isCurrent && (
-                        <span style={{ fontSize: 12, fontWeight: 700, color: '#7A6690', background: '#E8DDE8', borderRadius: 20, padding: '2px 8px', letterSpacing: '0.04em' }}>
+                        <span style={{ fontSize: 12, fontWeight: 700, color: '#705987', background: '#E8DDE8', borderRadius: 20, padding: '2px 8px', letterSpacing: '0.04em' }}>
                           Current
                         </span>
                       )}
@@ -650,8 +650,8 @@ export function Settings() {
                   </div>
                   <div style={{
                     width: 20, height: 20, borderRadius: '50%', flexShrink: 0, marginTop: 2,
-                    background: isSelected ? '#7A6690' : 'transparent',
-                    border: isSelected ? '2px solid #7A6690' : '2px solid rgba(122,102,144,0.3)',
+                    background: isSelected ? '#705987' : 'transparent',
+                    border: isSelected ? '2px solid #705987' : '2px solid rgba(112,89,135,0.3)',
                     display: 'flex', alignItems: 'center', justifyContent: 'center',
                   }}>
                     {isSelected && <Check className="w-3 h-3 text-white" />}
@@ -749,17 +749,17 @@ export function Settings() {
                 key={lang.value}
                 onClick={() => { haptics.light(); setLanguage(lang.value) }}
                 className="w-full text-left transition-all aedge"
-                style={{ background: language === lang.value ? '#F4EFF8' : '#F0EAE0', border: language === lang.value ? '2px solid #7A6690' : '1.5px solid rgba(122,102,144,0.15)', borderRadius: 16, padding: '14px 16px', cursor: 'pointer', display: 'flex', alignItems: 'center', gap: 12 }}
+                style={{ background: language === lang.value ? '#E9E0EF' : '#F0EAE0', border: language === lang.value ? '2px solid #705987' : '1.5px solid rgba(112,89,135,0.15)', borderRadius: 16, padding: '14px 16px', cursor: 'pointer', display: 'flex', alignItems: 'center', gap: 12 }}
               >
                 <div style={{
                   width: 20, height: 20, borderRadius: '50%', flexShrink: 0,
-                  background: language === lang.value ? '#7A6690' : 'transparent',
-                  border: language === lang.value ? '2px solid #7A6690' : '2px solid rgba(122,102,144,0.3)',
+                  background: language === lang.value ? '#705987' : 'transparent',
+                  border: language === lang.value ? '2px solid #705987' : '2px solid rgba(112,89,135,0.3)',
                   display: 'flex', alignItems: 'center', justifyContent: 'center',
                 }}>
                   {language === lang.value && <Check className="w-3 h-3 text-white" />}
                 </div>
-                <span style={{ fontSize: 15, fontWeight: language === lang.value ? 600 : 400, color: '#2A2030' }}>{lang.label}</span>
+                <span style={{ fontSize: 15, fontWeight: language === lang.value ? 600 : 400, color: '#291F32' }}>{lang.label}</span>
               </button>
             ))}
           </div>
@@ -777,9 +777,9 @@ export function Settings() {
         <Modal title="Delete Account?" onClose={() => { setShowDeleteConfirm(false); setDeletePassword(''); setDeleteError('') }}>
           <div
             className="rounded-2xl p-4 mb-5 text-center"
-            style={{ background: 'rgba(168,88,120,0.06)', border: '1px solid rgba(168,88,120,0.15)' }}
+            style={{ background: 'rgba(148,68,93,0.06)', border: '1px solid rgba(148,68,93,0.15)' }}
           >
-            <Trash2 className="w-8 h-8 mx-auto mb-2" style={{ color: '#A85878' }} />
+            <Trash2 className="w-8 h-8 mx-auto mb-2" style={{ color: '#94445D' }} />
             <p style={{ fontSize: 14, color: '#7A5A2A' }}>
               This cannot be undone. All your notes, timeline progress, and contacts will be permanently deleted.
             </p>
@@ -815,7 +815,7 @@ export function Settings() {
             style={{ background: '#FAF7F2', borderRadius: 20, padding: '28px 24px', width: '100%', maxWidth: 360 }}
             onClick={e => e.stopPropagation()}
           >
-            <h3 style={{ fontFamily: 'Fraunces, serif', fontSize: 20, fontWeight: 700, color: '#2A2030', margin: '0 0 10px' }}>Export your data?</h3>
+            <h3 style={{ fontFamily: 'Fraunces, serif', fontSize: 20, fontWeight: 700, color: '#291F32', margin: '0 0 10px' }}>Export your data?</h3>
             <p style={{ fontFamily: 'DM Sans, sans-serif', fontSize: 15, color: '#4A4058', margin: '0 0 24px', lineHeight: 1.6 }}>
               This will download a file containing your notes, contacts, timeline progress and profile information.
             </p>
