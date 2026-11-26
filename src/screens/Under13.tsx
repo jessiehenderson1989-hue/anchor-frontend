@@ -32,16 +32,12 @@ export function Under13() {
         </p>
 
         <div style={card}>
-          <h2 style={h2}>You have a lawyer</h2>
-          <p style={p}>
-            Most kids in foster care have their own lawyer. Your lawyer works for you. You can ask them anything, like where you will live, when you can see your family, and whether you can go to court or talk to the judge.
-          </p>
-        </div>
-
-        <div style={card}>
           <h2 style={h2}>If you do not feel safe</h2>
+          <p style={{ ...p, fontSize: 16, lineHeight: '24px', fontWeight: 600, color: '#2A2030', marginBottom: 8 }}>
+            Tell your lawyer, your social worker, or a grown-up you trust today.
+          </p>
           <p style={p}>
-            Tell your lawyer, your social worker, or another grown-up you trust today. You can also call the California Foster Care Ombudsperson. It is free, and they help kids in foster care.
+            There is also a free state office that helps kids in foster care when something is wrong. It is called the Foster Care Ombudsperson. You can call them.
           </p>
           <a href="tel:18778461602" style={callBtn}><Phone size={16} /> 1-877-846-1602</a>
         </div>
@@ -52,6 +48,13 @@ export function Under13() {
             If you feel like hurting yourself, call or text 988. Someone answers day or night. If you are in danger, call 911.
           </p>
           <a href="tel:988" style={callBtn}><Phone size={16} /> Call or text 988</a>
+        </div>
+
+        <div style={card}>
+          <h2 style={h2}>You have a lawyer</h2>
+          <p style={p}>
+            Most kids in foster care have their own lawyer. Your lawyer works for you. You can ask them anything, like where you will live, when you can see your family, and whether you can go to court or talk to the judge.
+          </p>
         </div>
 
         <div style={card}>

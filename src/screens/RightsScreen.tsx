@@ -372,6 +372,7 @@ export function RightsScreen() {
                 </span>
               </div>
               <button
+                role="switch" aria-checked={showLegalBasis} aria-label="Show legal basis"
                 onClick={() => { haptics.light(); setShowLegalBasis(!showLegalBasis) }}
                 style={{
                   width: 48, height: 28, minHeight: 28, padding: 0, borderRadius: 14, border: 'none', cursor: 'pointer',
@@ -402,6 +403,7 @@ export function RightsScreen() {
                   </span>
                 </div>
                 <button
+                  role="switch" aria-checked={showDutiesOnly} aria-label="Show responsibilities only"
                   onClick={() => { haptics.light(); setShowDutiesOnly(!showDutiesOnly) }}
                   style={{
                     width: 48, height: 28, minHeight: 28, padding: 0, borderRadius: 14, border: 'none', cursor: 'pointer',
