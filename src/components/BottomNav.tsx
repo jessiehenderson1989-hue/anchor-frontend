@@ -34,11 +34,11 @@ export function BottomNav() {
               key={tab.id}
               onClick={() => { haptics.light(); navigate(tab.path) }}
               style={{
-                flex: 1,
+                flex: 1, minWidth: 0,
                 display: 'flex', flexDirection: 'column', alignItems: 'center',
-                padding: '10px 4px 9px',
+                padding: '10px 2px 9px',
                 background: 'none', border: 'none', cursor: 'pointer',
-                opacity: active ? 1 : 0.6,
+                opacity: active ? 1 : 0.9,
                 transition: 'opacity 0.15s',
               }}
             >
@@ -61,15 +61,15 @@ export function BottomNav() {
                     }}
                   />
                 ) : Icon ? (
-                  <Icon size={14} color={active ? tab.color : '#9A90A8'} strokeWidth={active ? 2.2 : 1.8} />
+                  <Icon size={14} color={active ? tab.color : '#7E7490'} strokeWidth={active ? 2.2 : 1.8} />
                 ) : null}
               </div>
               <span style={{
                 fontFamily: 'DM Sans, sans-serif',
                 fontSize: 12,
                 fontWeight: active ? 700 : 500,
-                color: active ? tab.color : '#9A90A8',
-                letterSpacing: '0.01em',
+                color: active ? tab.color : '#6E6480',
+                letterSpacing: 0, whiteSpace: 'nowrap',
               }}>
                 {tab.label}
               </span>
