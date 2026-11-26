@@ -1,7 +1,7 @@
 import { trackEvent } from '../lib/analytics'
 import { useState, useEffect } from 'react'
 import { useNavigate } from 'react-router-dom'
-import { ChevronRight, Sparkles, Calendar, MapPin } from 'lucide-react'
+import { ChevronRight, Sparkles, Calendar, Phone } from 'lucide-react'
 import { BottomNav, AppHeader } from '../components'
 import { useAuth } from '../contexts/AuthContext'
 import { haptics } from '../lib/haptics'
@@ -559,7 +559,7 @@ export function Dashboard() {
                       <p style={{ fontFamily: 'DM Sans, sans-serif', fontSize: 13, fontWeight: 600, color: '#2A2030', margin: 0, overflow: 'hidden', textOverflow: 'ellipsis', whiteSpace: 'nowrap' }}>{m.name}</p>
                       <p style={{ fontFamily: 'DM Sans, sans-serif', fontSize: 12, color: '#756B87', margin: 0 }}>{m.role}</p>
                     </div>
-                    {m.phone && <a href={`tel:${m.phone}`} onClick={(e) => e.stopPropagation()}><MapPin size={14} color="#7A6690" /></a>}
+                    {m.phone && <a href={`tel:${m.phone.replace(/[^0-9+]/g, '')}`} aria-label={`Call ${m.name}`} onClick={(e) => e.stopPropagation()} style={{ display: 'flex', alignItems: 'center', justifyContent: 'center' }}><Phone size={16} color="#7A6690" /></a>}
                   </div>
                 ))}
               </div>

@@ -353,7 +353,7 @@ export function RightsScreen() {
               display: 'flex', alignItems: 'center', justifyContent: 'space-between',
               border: '1px solid rgba(255,255,255,0.88)',
             }}>
-              <div style={{ display: 'flex', alignItems: 'center', gap: 8 }}>
+              <div onClick={() => { haptics.light(); setShowLegalBasis(!showLegalBasis) }} style={{ display: 'flex', alignItems: 'center', gap: 8, cursor: 'pointer', flex: 1 }}>
                 {showLegalBasis
                   ? <Eye size={15} color="#7A6690" />
                   : <EyeOff size={15} color="#9A90A8" />

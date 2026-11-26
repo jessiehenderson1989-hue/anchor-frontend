@@ -563,13 +563,16 @@ export function Timeline() {
   }
 
   const updateCourtDate = async (stageId: string, date: string) => {
+    // Show the change right away, so a date typed by hand is never wiped mid-way
+    setStages(prev => prev.map(s => s.id === stageId ? { ...s, court_date: date || null } : s))
+    // While the year is still being typed the browser reports years like 0002. Save only a real date.
+    if (date && !/^(19|20)\d\d-\d\d-\d\d$/.test(date)) return
     try {
       const { error } = await supabase
         .from('timeline_stages')
         .update({ court_date: date || null })
         .eq('id', stageId)
       if (error) throw error
-      setStages(prev => prev.map(s => s.id === stageId ? { ...s, court_date: date } : s))
       // Sync to profile so Dashboard court date stays current
       if (user) {
         await updateProfile({ next_court_date: date || null })
@@ -775,7 +778,7 @@ export function Timeline() {
 
                 <div className="space-y-3">
                   {stageTasks.map((task, i) => (
-                    <label key={i} className="flex items-start gap-3 cursor-pointer">
+                    <label key={i} className="flex items-start gap-3 cursor-pointer" onClick={(e) => { e.stopPropagation(); toggleTaskCompletion(stage.id, i) }}>
                       <div
                         onClick={(e) => { e.stopPropagation(); toggleTaskCompletion(stage.id, i) }}
                         className="w-5 h-5 rounded-lg flex-shrink-0 mt-0.5 flex items-center justify-center cursor-pointer transition-all"
@@ -931,7 +934,7 @@ export function Timeline() {
                     Tasks ({completed}/{total})
                   </p>
                   {stageTasks.map((task, i) => (
-                    <label key={i} className="flex items-start gap-2.5 cursor-pointer">
+                    <label key={i} className="flex items-start gap-2.5 cursor-pointer" onClick={(e) => { e.stopPropagation(); toggleTaskCompletion(stage.id, i) }}>
                       <div
                         onClick={(e) => { e.stopPropagation(); toggleTaskCompletion(stage.id, i) }}
                         className="w-4 h-4 rounded flex-shrink-0 mt-0.5 flex items-center justify-center"

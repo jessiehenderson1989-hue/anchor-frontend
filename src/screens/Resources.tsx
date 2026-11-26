@@ -34,8 +34,8 @@ interface Resource {
   updated_at: string
 }
 
-type ParentCategory = 'All' | 'Classes & Workshops' | 'Housing Assistance' | 'Counseling & Support' | 'Legal Services' | 'Parenting Programs'
-const PARENT_CATEGORIES: ParentCategory[] = ['All', 'Classes & Workshops', 'Housing Assistance', 'Counseling & Support', 'Legal Services', 'Parenting Programs']
+type ParentCategory = 'All' | 'Classes & Workshops' | 'Housing Assistance' | 'Counseling & Support' | 'Legal Services' | 'Parenting Programs' | 'Food & Basic Needs' | 'Employment & Education' | 'Other'
+const PARENT_CATEGORIES: ParentCategory[] = ['All', 'Classes & Workshops', 'Housing Assistance', 'Counseling & Support', 'Legal Services', 'Parenting Programs', 'Food & Basic Needs', 'Employment & Education', 'Other']
 
 type YouthCategory = 'All' | 'Rights in Foster Care' | 'Court Process for Youth' | 'Education Rights' | 'Mental Health Resources' | 'Legal Representation and CASA' | 'Emancipation / Aging Out' | 'Crisis and Hotline Resources' | 'General Foster Youth Resources'
 const YOUTH_CATEGORIES: YouthCategory[] = ['All', 'Crisis and Hotline Resources', 'Rights in Foster Care', 'Court Process for Youth', 'Education Rights', 'Mental Health Resources', 'Legal Representation and CASA', 'Emancipation / Aging Out', 'General Foster Youth Resources']
@@ -111,7 +111,7 @@ export function Resources() {
       if (selectedYouthCategory !== 'All') filtered = filtered.filter((r) => r.topic_category === selectedYouthCategory)
     } else {
       if (selectedParentCategory !== 'All') filtered = filtered.filter((r) => r.category === selectedParentCategory)
-      if (selectedCounty !== 'All Counties') filtered = filtered.filter((r) => r.county === selectedCounty)
+      if (selectedCounty !== 'All Counties') filtered = filtered.filter((r) => r.county === selectedCounty || r.county === 'Statewide')
     }
     if (searchQuery.trim()) {
       const q = searchQuery.toLowerCase()
@@ -145,11 +145,11 @@ export function Resources() {
   }
 
   const handleWebsiteClick = async (resourceId: string, website: string) => {
+    window.open(website, '_blank', 'noopener,noreferrer')
     try {
       const current = resources.find((r) => r.id === resourceId)
       await supabase.from('resources').update({ click_count: (current?.click_count || 0) + 1 }).eq('id', resourceId)
     } catch (_) {}
-    window.open(website, '_blank', 'noopener,noreferrer')
   }
 
   const pillBtn = (active: boolean, colors?: { bg: string; text: string; dot: string }): React.CSSProperties => ({
@@ -222,7 +222,7 @@ export function Resources() {
                 </a>
               </div>
               <div style={{ background: '#FAF7F2', borderRadius: 14, padding: '14px', display: 'flex', flexDirection: 'column', gap: 6 }}>
-                {[['988 Crisis Line', 'tel:988', '988'],['Crisis Text Line', 'sms:741741', 'Text HOME to 741741'],['CA Youth Crisis', 'tel:1-800-843-5200', '1-800-843-5200'],['Foster Care Ombudsperson', 'tel:1-877-846-1602', '1-877-846-1602']].map(([label, href, display]) => (
+                {[['988 Crisis Line', 'tel:988', '988'],['Crisis Text Line', 'sms:741741', 'Text HOME to 741741'],['CA Youth Crisis', 'tel:1-800-843-5200', '1-800-843-5200'],['Foster Care Ombudsperson (weekdays 8-5)', 'tel:1-877-846-1602', '1-877-846-1602']].map(([label, href, display]) => (
                   <div key={label} style={{ display: 'flex', justifyContent: 'space-between', alignItems: 'center' }}>
                     <span style={{ fontFamily: 'DM Sans, sans-serif', fontSize: 13, color: '#4A4058' }}>{label}</span>
                     <a href={href} style={{ fontFamily: 'DM Sans, sans-serif', fontSize: 13, fontWeight: 700, color: '#A85878', textDecoration: 'none', display: 'flex', alignItems: 'center', justifyContent: 'flex-end' }}>{display}</a>
@@ -240,7 +240,7 @@ export function Resources() {
                 </a>
               </div>
               <div style={{ background: '#FAF7F2', borderRadius: 14, padding: '14px', display: 'flex', flexDirection: 'column', gap: 6 }}>
-                {[['CA Parent Warmline', 'tel:1-855-627-6437', '1-855-627-6437'],['Crisis Text Line', 'sms:741741', 'Text HOME to 741741'],['988 Suicide & Crisis', 'tel:988', '988'],['Domestic Violence', 'tel:1-800-799-7233', '1-800-799-7233']].map(([label, href, display]) => (
+                {[['CA Parent & Youth Helpline', 'tel:1-855-427-2736', '1-855-427-2736'],['Crisis Text Line', 'sms:741741', 'Text HOME to 741741'],['988 Suicide & Crisis', 'tel:988', '988'],['Domestic Violence', 'tel:1-800-799-7233', '1-800-799-7233']].map(([label, href, display]) => (
                   <div key={label} style={{ display: 'flex', justifyContent: 'space-between', alignItems: 'center' }}>
                     <span style={{ fontFamily: 'DM Sans, sans-serif', fontSize: 13, color: '#4A4058' }}>{label}</span>
                     <a href={href} style={{ fontFamily: 'DM Sans, sans-serif', fontSize: 13, fontWeight: 700, color: '#A85878', textDecoration: 'none', display: 'flex', alignItems: 'center', justifyContent: 'flex-end' }}>{display}</a>
@@ -403,7 +403,7 @@ export function Resources() {
                   {/* Action buttons */}
                   <div style={{ display: 'flex', flexWrap: 'wrap', gap: 8 }}>
                     {resource.phone && (
-                      <a href={`tel:${resource.phone}`}
+                      <a href={`tel:${resource.phone.replace(/[^0-9+]/g, '')}`}
                         style={{ display: 'inline-flex', alignItems: 'center', gap: 6, background: '#EAF4EE', color: '#4A7C59', borderRadius: 12, padding: '8px 14px', fontFamily: 'DM Sans, sans-serif', fontWeight: 600, fontSize: 13, textDecoration: 'none' }}>
                         <Phone size={13} /> {resource.phone}
                       </a>
@@ -411,7 +411,7 @@ export function Resources() {
                     {resource.text_line && (
                       <a href={`sms:${resource.text_line.replace(/\D/g, '') || resource.text_line.split(' ')[0]}`}
                         style={{ display: 'inline-flex', alignItems: 'center', gap: 6, background: '#EAF0F8', color: '#3A5A80', borderRadius: 12, padding: '8px 14px', fontFamily: 'DM Sans, sans-serif', fontWeight: 600, fontSize: 13, textDecoration: 'none' }}>
-                        <MessageSquare size={13} /> Text
+                        <MessageSquare size={13} /> {/^text/i.test(resource.text_line) ? resource.text_line : `Text ${resource.text_line}`}
                       </a>
                     )}
                     {resource.website && (

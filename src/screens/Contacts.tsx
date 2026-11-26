@@ -444,7 +444,7 @@ export function Contacts() {
                     <div style={{ padding: '0 16px 16px', borderTop: '1px solid rgba(122,102,144,0.08)' }}>
                       <div style={{ display: 'flex', flexDirection: 'column', gap: 10, paddingTop: 14 }}>
                         {contact.phone && (
-                          <a href={`tel:${contact.phone}`} style={{ display: 'flex', alignItems: 'center', gap: 10, textDecoration: 'none' }}>
+                          <a href={`tel:${contact.phone.replace(/[^0-9+]/g, '')}`} style={{ display: 'flex', alignItems: 'center', gap: 10, textDecoration: 'none' }}>
                             <div style={{ width: 32, height: 32, borderRadius: 10, background: '#EAF4EE', display: 'flex', alignItems: 'center', justifyContent: 'center' }}>
                               <Phone size={14} color="#4A7C59" />
                             </div>

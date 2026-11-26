@@ -22,7 +22,7 @@ export function BottomNav() {
       borderTop: '1px solid rgba(255,255,255,0.82)',
       boxShadow: '0 -4px 20px rgba(90,70,110,0.08)',
       paddingBottom: 'env(safe-area-inset-bottom, 0px)',
-      zIndex: 50,
+      zIndex: 40,
     }}>
       <div style={{ maxWidth: 480, margin: '0 auto', display: 'flex', alignItems: 'center', justifyContent: 'space-around' }}>
         {tabs.map((tab) => {
