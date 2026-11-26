@@ -229,7 +229,7 @@ export function Dashboard() {
           aria-hidden="true"
           style={{
             width: 340, height: 340, objectFit: 'contain',
-            opacity: 0.055,
+            opacity: 0.045,
             animation: 'wmBreathe 7s ease-in-out infinite',
           }}
         />
