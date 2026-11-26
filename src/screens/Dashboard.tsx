@@ -327,7 +327,7 @@ export function Dashboard() {
                 {PEER_DESCRIPTOR[role]}
               </span>
             </div>
-            <p style={{ fontFamily: 'DM Sans, sans-serif', fontSize: 12, color: '#4A4058', lineHeight: 1.68, fontStyle: 'italic', margin: 0 }}>
+            <p style={{ fontFamily: 'DM Sans, sans-serif', fontSize: 15, color: '#3A3048', lineHeight: 1.55, margin: 0 }}>
               "{quote}"
             </p>
           </div>
@@ -368,7 +368,7 @@ export function Dashboard() {
                 const label = stageLabels[stageKey] || stageKey
 
                 return (
-                  <div key={stageKey} style={{ display: 'flex', alignItems: 'center', gap: 9, marginBottom: idx < (end - start - 1) ? 10 : 0, opacity: isDone ? 0.65 : isActive ? 1 : 0.32 }}>
+                  <div key={stageKey} style={{ display: 'flex', alignItems: 'center', gap: 9, marginBottom: idx < (end - start - 1) ? 10 : 0, opacity: isDone ? 0.75 : isActive ? 1 : 0.85 }}>
                     <div style={{
                       width: isActive ? 12 : 9,
                       height: isActive ? 12 : 9,
@@ -381,9 +381,9 @@ export function Dashboard() {
                     }} />
                     <div style={{
                       fontFamily: 'DM Sans, sans-serif',
-                      fontSize: isActive ? 13 : 12,
-                      fontWeight: isActive ? 800 : isDone ? 500 : 400,
-                      color: isActive ? '#2A2030' : isDone ? jewel.color : '#8A8098',
+                      fontSize: isActive ? 15 : 14,
+                      fontWeight: isActive ? 800 : 500,
+                      color: isActive ? '#2A2030' : isDone ? jewel.color : '#5A5068',
                       textDecoration: isDone ? 'line-through' : 'none',
                       textDecorationColor: `${jewel.color}50`,
                       flex: 1,

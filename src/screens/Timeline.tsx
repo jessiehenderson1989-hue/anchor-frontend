@@ -668,8 +668,8 @@ export function Timeline() {
 
               {stage.court_date && (
                 <div className="flex items-center gap-1.5 mt-2">
-                  <Calendar className="w-3.5 h-3.5" style={{ color: '#C8883A' }} />
-                  <span className="text-xs font-semibold" style={{ color: '#C8883A' }}>
+                  <Calendar className="w-4 h-4" style={{ color: '#A86A1E' }} />
+                  <span style={{ fontSize: 15, lineHeight: '22px', fontWeight: 600, color: '#A86A1E' }}>
                     {formatDate(stage.court_date)}
                   </span>
                 </div>

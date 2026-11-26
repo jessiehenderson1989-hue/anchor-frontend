@@ -298,7 +298,7 @@ export function Legal() {
                     key={cat}
                     onClick={() => { haptics.light(); setSelectedCategory(cat); setExpandedContentId(null) }}
                     style={{
-                      padding: '7px 16px', borderRadius: 20, whiteSpace: 'nowrap',
+                      padding: '7px 16px', borderRadius: 20, whiteSpace: 'nowrap', flexShrink: 0,
                       border: selected ? '1.5px solid #7A6690' : '1.5px solid rgba(122,102,144,0.2)',
                       background: selected ? '#7A6690' : '#FAF7F4',
                       fontFamily: 'DM Sans, sans-serif', fontSize: 13, fontWeight: 600,

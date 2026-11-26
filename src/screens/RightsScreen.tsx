@@ -163,7 +163,7 @@ export function RightsScreen() {
                 {item.title}
               </h3>
               {item.simple_text && (
-                <p style={{ fontFamily: 'DM Sans, sans-serif', fontSize: 14, color: '#2A2030', lineHeight: 1.5, background: '#F4EFF8', borderRadius: 12, padding: '8px 12px', margin: '2px 0 8px' }}>
+                <p style={{ fontFamily: 'DM Sans, sans-serif', fontSize: 16, color: '#2A2030', lineHeight: 1.5, background: '#F4EFF8', borderRadius: 12, padding: '8px 12px', margin: '2px 0 8px' }}>
                   <span style={{ display: 'block', fontSize: 12, fontWeight: 700, letterSpacing: '0.05em', textTransform: 'uppercase', color: '#5E4D74', marginBottom: 2 }}>Say it simpler</span>
                   {item.simple_text}
                 </p>
@@ -374,13 +374,13 @@ export function RightsScreen() {
               <button
                 onClick={() => { haptics.light(); setShowLegalBasis(!showLegalBasis) }}
                 style={{
-                  width: 44, height: 24, borderRadius: 12, border: 'none', cursor: 'pointer',
+                  width: 48, height: 28, minHeight: 28, padding: 0, borderRadius: 14, border: 'none', cursor: 'pointer',
                   background: showLegalBasis ? '#7A6690' : '#D4CDD8',
                   position: 'relative', transition: 'background 0.2s', flexShrink: 0,
                 }}
               >
                 <span style={{
-                  position: 'absolute', top: 4, width: 16, height: 16,
+                  position: 'absolute', top: 4, width: 20, height: 20,
                   borderRadius: '50%', background: '#fff',
                   transition: 'left 0.2s',
                   left: showLegalBasis ? 24 : 4,
@@ -404,13 +404,13 @@ export function RightsScreen() {
                 <button
                   onClick={() => { haptics.light(); setShowDutiesOnly(!showDutiesOnly) }}
                   style={{
-                    width: 44, height: 24, borderRadius: 12, border: 'none', cursor: 'pointer',
+                    width: 48, height: 28, minHeight: 28, padding: 0, borderRadius: 14, border: 'none', cursor: 'pointer',
                     background: showDutiesOnly ? '#C8883A' : '#D4CDD8',
                     position: 'relative', transition: 'background 0.2s', flexShrink: 0,
                   }}
                 >
                   <span style={{
-                    position: 'absolute', top: 4, width: 16, height: 16,
+                    position: 'absolute', top: 4, width: 20, height: 20,
                     borderRadius: '50%', background: '#fff',
                     transition: 'left 0.2s',
                     left: showDutiesOnly ? 24 : 4,

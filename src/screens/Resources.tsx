@@ -223,9 +223,9 @@ export function Resources() {
               </div>
               <div style={{ background: '#FAF7F2', borderRadius: 14, padding: '14px', display: 'flex', flexDirection: 'column', gap: 6 }}>
                 {[['988 Crisis Line', 'tel:988', '988'],['Crisis Text Line', 'sms:741741', 'Text HOME to 741741'],['CA Youth Crisis', 'tel:1-800-843-5200', '1-800-843-5200'],['Foster Care Ombudsperson (weekdays 8-5)', 'tel:1-877-846-1602', '1-877-846-1602']].map(([label, href, display]) => (
-                  <div key={label} style={{ display: 'flex', justifyContent: 'space-between', alignItems: 'center' }}>
+                  <div key={label} style={{ display: 'flex', justifyContent: 'space-between', alignItems: 'center', gap: 12 }}>
                     <span style={{ fontFamily: 'DM Sans, sans-serif', fontSize: 13, color: '#4A4058' }}>{label}</span>
-                    <a href={href} style={{ fontFamily: 'DM Sans, sans-serif', fontSize: 13, fontWeight: 700, color: '#A85878', textDecoration: 'none', display: 'flex', alignItems: 'center', justifyContent: 'flex-end' }}>{display}</a>
+                    <a href={href} style={{ fontFamily: 'DM Sans, sans-serif', fontSize: 13, fontWeight: 700, color: '#A85878', textDecoration: 'none', display: 'flex', alignItems: 'center', justifyContent: 'flex-end', whiteSpace: 'nowrap', flexShrink: 0 }}>{display}</a>
                   </div>
                 ))}
               </div>
@@ -241,9 +241,9 @@ export function Resources() {
               </div>
               <div style={{ background: '#FAF7F2', borderRadius: 14, padding: '14px', display: 'flex', flexDirection: 'column', gap: 6 }}>
                 {[['CA Parent & Youth Helpline', 'tel:1-855-427-2736', '1-855-427-2736'],['Crisis Text Line', 'sms:741741', 'Text HOME to 741741'],['988 Suicide & Crisis', 'tel:988', '988'],['Domestic Violence', 'tel:1-800-799-7233', '1-800-799-7233']].map(([label, href, display]) => (
-                  <div key={label} style={{ display: 'flex', justifyContent: 'space-between', alignItems: 'center' }}>
+                  <div key={label} style={{ display: 'flex', justifyContent: 'space-between', alignItems: 'center', gap: 12 }}>
                     <span style={{ fontFamily: 'DM Sans, sans-serif', fontSize: 13, color: '#4A4058' }}>{label}</span>
-                    <a href={href} style={{ fontFamily: 'DM Sans, sans-serif', fontSize: 13, fontWeight: 700, color: '#A85878', textDecoration: 'none', display: 'flex', alignItems: 'center', justifyContent: 'flex-end' }}>{display}</a>
+                    <a href={href} style={{ fontFamily: 'DM Sans, sans-serif', fontSize: 13, fontWeight: 700, color: '#A85878', textDecoration: 'none', display: 'flex', alignItems: 'center', justifyContent: 'flex-end', whiteSpace: 'nowrap', flexShrink: 0 }}>{display}</a>
                   </div>
                 ))}
               </div>
@@ -257,9 +257,9 @@ export function Resources() {
             <p style={{ fontFamily: 'Fraunces, serif', fontSize: 16, fontWeight: 700, color: '#2A2030', margin: '0 0 10px' }}>County Mental Health Lines</p>
             <div style={{ display: 'flex', flexDirection: 'column', gap: 7 }}>
               {[['Los Angeles','800-854-7771'],['Orange County','855-625-4657'],['San Diego','888-724-7240'],['Sacramento','916-875-1055']].map(([county, num]) => (
-                <div key={county} style={{ display: 'flex', justifyContent: 'space-between', alignItems: 'center' }}>
+                <div key={county} style={{ display: 'flex', justifyContent: 'space-between', alignItems: 'center', gap: 12 }}>
                   <span style={{ fontFamily: 'DM Sans, sans-serif', fontSize: 13, color: '#4A4058' }}>{county}</span>
-                  <a href={`tel:${num}`} style={{ fontFamily: 'DM Sans, sans-serif', fontSize: 13, fontWeight: 700, color: '#3A5A80', textDecoration: 'none', display: 'flex', alignItems: 'center', justifyContent: 'flex-end' }}>{num}</a>
+                  <a href={`tel:${num}`} style={{ fontFamily: 'DM Sans, sans-serif', fontSize: 13, fontWeight: 700, color: '#3A5A80', textDecoration: 'none', display: 'flex', alignItems: 'center', justifyContent: 'flex-end', whiteSpace: 'nowrap', flexShrink: 0 }}>{num}</a>
                 </div>
               ))}
             </div>

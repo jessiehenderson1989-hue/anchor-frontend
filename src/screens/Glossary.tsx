@@ -138,7 +138,7 @@ export function Glossary() {
                   key={cat}
                   onClick={() => { setSelectedCategory(cat); setExpandedTermId(null) }}
                   style={{
-                    padding: '7px 14px', borderRadius: 20, whiteSpace: 'nowrap',
+                    padding: '7px 14px', borderRadius: 20, whiteSpace: 'nowrap', flexShrink: 0,
                     border: active && colors ? `1.5px solid ${colors.dot}` : active ? '1.5px solid #7A6690' : '1.5px solid transparent',
                     background: active && colors ? colors.bg : active ? '#F4EFF8' : '#FAF7F4',
                     color: active && colors ? colors.text : active ? '#7A6690' : '#9A90A8',
@@ -212,7 +212,7 @@ export function Glossary() {
 
                       {/* Definition — truncated when collapsed */}
                       {term.simple_text && (
-                        <p style={{ fontFamily: 'DM Sans, sans-serif', fontSize: 14, color: '#2A2030', lineHeight: 1.5, background: '#F4EFF8', borderRadius: 12, padding: '8px 12px', margin: '2px 0 8px' }}>
+                        <p style={{ fontFamily: 'DM Sans, sans-serif', fontSize: 16, color: '#2A2030', lineHeight: 1.5, background: '#F4EFF8', borderRadius: 12, padding: '8px 12px', margin: '2px 0 8px' }}>
                           <span style={{ display: 'block', fontSize: 12, fontWeight: 700, letterSpacing: '0.05em', textTransform: 'uppercase', color: '#5E4D74', marginBottom: 2 }}>Say it simpler</span>
                           {term.simple_text}
                         </p>
