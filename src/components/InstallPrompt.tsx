@@ -77,15 +77,15 @@ export function InstallPrompt() {
               Add Anchor to your home screen for quick access anytime
             </p>
             <div style={{ display: 'flex', gap: 8 }}>
-              <button
+              <button className="abtn abtn-primary abtn-sm"
                 onClick={handleInstall}
-                style={{ flex: 1, minHeight: 44, padding: '10px 14px', background: 'linear-gradient(160deg,#8A74A0 0%,#6A5588 100%)', color: '#fff', border: 'none', borderRadius: 14, fontFamily: font, fontSize: 14, fontWeight: 600, cursor: 'pointer' }}
+                style={{ flex: 1 }}
               >
                 Add to Home Screen
               </button>
-              <button
+              <button className="abtn abtn-soft abtn-sm"
                 onClick={handleDismiss}
-                style={{ minHeight: 44, padding: '10px 14px', background: '#EDE6DB', color: '#4A4058', border: '1.5px solid rgba(122,102,144,0.18)', borderRadius: 14, fontFamily: font, fontSize: 14, fontWeight: 500, cursor: 'pointer' }}
+                
               >
                 Maybe Later
               </button>

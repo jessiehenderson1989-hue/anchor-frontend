@@ -410,7 +410,7 @@ export function Settings() {
           </div>
           <button
             onClick={() => { haptics.light(); setEditedFirstName(profile?.first_name || ''); setEditedUsername(profile?.username || ''); setShowEditProfile(true) }}
-            style={ghostBtn}
+            className="abtn abtn-outline abtn-block"
           >
             <Edit2 className="w-4 h-4" />
             Edit Profile
@@ -437,9 +437,9 @@ export function Settings() {
                 <p style={{ fontSize: 12, color: '#695F7B' }}>{maskEmail(user?.email || '')}</p>
               </div>
             </div>
-            <button
+            <button className="abtn abtn-soft abtn-sm"
               onClick={() => { haptics.light(); setNewEmail(user?.email || ''); setShowUpdateEmail(true) }}
-              style={{ fontSize: 12, fontWeight: 700, color: '#7A6690', background: 'rgba(122,102,144,0.1)', border: 'none', borderRadius: 20, padding: '6px 14px', cursor: 'pointer' }}
+              
             >
               Update
             </button>
@@ -505,9 +505,9 @@ export function Settings() {
                 <p style={{ fontSize: 12, color: '#695F7B' }}>{maskPhone(profile?.phone_number)}</p>
               </div>
             </div>
-            <button
+            <button className="abtn abtn-soft abtn-sm"
               onClick={() => { haptics.light(); setNewPhone(profile?.phone_number || ''); setShowUpdatePhone(true) }}
-              style={{ fontSize: 12, fontWeight: 700, color: '#7A6690', background: 'rgba(122,102,144,0.1)', border: 'none', borderRadius: 20, padding: '6px 14px', cursor: 'pointer' }}
+              
             >
               Update
             </button>
@@ -584,7 +584,7 @@ export function Settings() {
         {/* ── SIGN OUT ── */}
         <button
           onClick={async () => { haptics.light(); await signOut(); navigate('/auth') }}
-          style={ghostBtn}
+          className="abtn abtn-outline abtn-block"
         >
           <LogOut className="w-4 h-4" />
           Sign Out
@@ -610,10 +610,10 @@ export function Settings() {
             </div>
           </div>
           <div className="space-y-2">
-            <button onClick={handleSaveProfile} disabled={loading} style={{ ...primaryBtn, opacity: loading ? 0.6 : 1 }}>
+            <button onClick={handleSaveProfile} disabled={loading} className="abtn abtn-primary abtn-block">
               {loading ? 'Saving...' : <><Check className="w-4 h-4" />Save Changes</>}
             </button>
-            <button onClick={() => { setShowEditProfile(false); setError('') }} style={ghostBtn}>Cancel</button>
+            <button onClick={() => { setShowEditProfile(false); setError('') }} className="abtn abtn-outline abtn-block">Cancel</button>
           </div>
         </Modal>
       )}
@@ -633,13 +633,8 @@ export function Settings() {
                 <button
                   key={r.value}
                   onClick={() => { haptics.light(); setSelectedRole(r.value) }}
-                  className="w-full text-left"
-                  style={{
-                    background: isSelected ? '#F4EFF8' : '#F0EAE0',
-                    border: isSelected ? '2px solid #7A6690' : '1.5px solid rgba(122,102,144,0.15)',
-                    borderRadius: 16, padding: '14px 16px', cursor: 'pointer',
-                    display: 'flex', alignItems: 'flex-start', gap: 12,
-                  }}
+                  className="w-full text-left aedge"
+                  style={{ background: isSelected ? '#F4EFF8' : '#F0EAE0', border: isSelected ? '2px solid #7A6690' : '1.5px solid rgba(122,102,144,0.15)', borderRadius: 16, padding: '14px 16px', cursor: 'pointer', display: 'flex', alignItems: 'flex-start', gap: 12 }}
                 >
                   <span style={{ fontSize: 22, flexShrink: 0, lineHeight: 1 }}>{r.emoji}</span>
                   <div style={{ flex: 1, minWidth: 0 }}>
@@ -669,11 +664,11 @@ export function Settings() {
             <button
               onClick={handleChangeRole}
               disabled={loading || selectedRole === profile?.role}
-              style={{ ...primaryBtn, opacity: (loading || selectedRole === profile?.role) ? 0.5 : 1 }}
+              className="abtn abtn-primary abtn-block"
             >
               {loading ? 'Saving...' : 'Save Role'}
             </button>
-            <button onClick={() => { setShowChangeRole(false); setError('') }} style={ghostBtn}>Cancel</button>
+            <button onClick={() => { setShowChangeRole(false); setError('') }} className="abtn abtn-outline abtn-block">Cancel</button>
           </div>
         </Modal>
       )}
@@ -697,10 +692,10 @@ export function Settings() {
             </div>
           </div>
           <div className="space-y-2">
-            <button onClick={handleChangePassword} disabled={loading} style={{ ...primaryBtn, opacity: loading ? 0.6 : 1 }}>
+            <button onClick={handleChangePassword} disabled={loading} className="abtn abtn-primary abtn-block">
               {loading ? 'Updating...' : 'Update Password'}
             </button>
-            <button onClick={() => { setShowChangePassword(false); setError(''); setCurrentPassword(''); setNewPassword(''); setConfirmPassword('') }} style={ghostBtn}>Cancel</button>
+            <button onClick={() => { setShowChangePassword(false); setError(''); setCurrentPassword(''); setNewPassword(''); setConfirmPassword('') }} className="abtn abtn-outline abtn-block">Cancel</button>
           </div>
         </Modal>
       )}
@@ -720,10 +715,10 @@ export function Settings() {
             </div>
           </div>
           <div className="space-y-2">
-            <button onClick={handleUpdateEmail} disabled={loading} style={{ ...primaryBtn, opacity: loading ? 0.6 : 1 }}>
+            <button onClick={handleUpdateEmail} disabled={loading} className="abtn abtn-primary abtn-block">
               {loading ? 'Updating...' : 'Update Email'}
             </button>
-            <button onClick={() => { setShowUpdateEmail(false); setError(''); setCurrentEmailPassword('') }} style={ghostBtn}>Cancel</button>
+            <button onClick={() => { setShowUpdateEmail(false); setError(''); setCurrentEmailPassword('') }} className="abtn abtn-outline abtn-block">Cancel</button>
           </div>
         </Modal>
       )}
@@ -737,10 +732,10 @@ export function Settings() {
             <input type="tel" value={newPhone} onChange={e => setNewPhone(e.target.value)} placeholder="(555) 123-4567" style={input} />
           </div>
           <div className="space-y-2">
-            <button onClick={handleUpdatePhone} disabled={loading} style={{ ...primaryBtn, opacity: loading ? 0.6 : 1 }}>
+            <button onClick={handleUpdatePhone} disabled={loading} className="abtn abtn-primary abtn-block">
               {loading ? 'Updating...' : 'Update Phone'}
             </button>
-            <button onClick={() => { setShowUpdatePhone(false); setError('') }} style={ghostBtn}>Cancel</button>
+            <button onClick={() => { setShowUpdatePhone(false); setError('') }} className="abtn abtn-outline abtn-block">Cancel</button>
           </div>
         </Modal>
       )}
@@ -753,13 +748,8 @@ export function Settings() {
               <button
                 key={lang.value}
                 onClick={() => { haptics.light(); setLanguage(lang.value) }}
-                className="w-full text-left transition-all"
-                style={{
-                  background: language === lang.value ? '#F4EFF8' : '#F0EAE0',
-                  border: language === lang.value ? '2px solid #7A6690' : '1.5px solid rgba(122,102,144,0.15)',
-                  borderRadius: 16, padding: '14px 16px', cursor: 'pointer',
-                  display: 'flex', alignItems: 'center', gap: 12,
-                }}
+                className="w-full text-left transition-all aedge"
+                style={{ background: language === lang.value ? '#F4EFF8' : '#F0EAE0', border: language === lang.value ? '2px solid #7A6690' : '1.5px solid rgba(122,102,144,0.15)', borderRadius: 16, padding: '14px 16px', cursor: 'pointer', display: 'flex', alignItems: 'center', gap: 12 }}
               >
                 <div style={{
                   width: 20, height: 20, borderRadius: '50%', flexShrink: 0,
@@ -774,10 +764,10 @@ export function Settings() {
             ))}
           </div>
           <div className="space-y-2">
-            <button onClick={handleUpdateLanguage} disabled={loading} style={{ ...primaryBtn, opacity: loading ? 0.6 : 1 }}>
+            <button onClick={handleUpdateLanguage} disabled={loading} className="abtn abtn-primary abtn-block">
               {loading ? 'Saving...' : 'Save'}
             </button>
-            <button onClick={() => setShowLanguageModal(false)} style={ghostBtn}>Cancel</button>
+            <button onClick={() => setShowLanguageModal(false)} className="abtn abtn-outline abtn-block">Cancel</button>
           </div>
         </Modal>
       )}
@@ -806,10 +796,10 @@ export function Settings() {
             />
           </div>
           <div className="space-y-2">
-            <button onClick={handleDeleteAccount} disabled={loading} style={{ ...dangerBtn, opacity: loading ? 0.6 : 1 }}>
+            <button onClick={handleDeleteAccount} disabled={loading} className="abtn abtn-rose abtn-block">
               {loading ? 'Deleting...' : 'Yes, Delete My Account'}
             </button>
-            <button onClick={() => { setShowDeleteConfirm(false); setDeletePassword(''); setDeleteError('') }} style={ghostBtn}>
+            <button onClick={() => { setShowDeleteConfirm(false); setDeletePassword(''); setDeleteError('') }} className="abtn abtn-outline abtn-block">
               Cancel
             </button>
           </div>
@@ -830,15 +820,15 @@ export function Settings() {
               This will download a file containing your notes, contacts, timeline progress and profile information.
             </p>
             <div style={{ display: 'flex', gap: 10 }}>
-              <button
+              <button className="abtn abtn-soft"
                 onClick={() => setShowExportConfirm(false)}
-                style={{ flex: 1, padding: '13px', background: 'linear-gradient(145deg,#F4EFF8,#EDE5F4)', border: '1px solid rgba(255,255,255,0.9)', borderRadius: 16, fontFamily: 'DM Sans, sans-serif', fontWeight: 600, fontSize: 14, color: '#7A6690', cursor: 'pointer' }}
+                style={{ flex: 1 }}
               >
                 Cancel
               </button>
-              <button
+              <button className="abtn abtn-primary"
                 onClick={() => { setShowExportConfirm(false); handleExportData() }}
-                style={{ flex: 1, padding: '13px', background: 'linear-gradient(160deg,#8A74A0 0%,#6A5588 100%)', border: 'none', borderRadius: 16, fontFamily: 'DM Sans, sans-serif', fontWeight: 700, fontSize: 14, color: '#fff', cursor: 'pointer', boxShadow: '0 6px 24px rgba(100,75,140,0.3)' }}
+                style={{ flex: 1 }}
               >
                 Download
               </button>

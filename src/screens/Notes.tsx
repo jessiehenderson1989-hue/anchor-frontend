@@ -375,7 +375,7 @@ export function Notes() {
               <h2 style={{ fontFamily: 'Fraunces, serif', fontSize: 22, fontWeight: 700, color: '#2A2030', margin: 0 }}>
                 {editingNote ? 'Edit Note' : 'New Note'}
               </h2>
-              <button onClick={closeModal} style={{ width: 40, height: 40, borderRadius: 12, background: '#E8DDE8', border: 'none', display: 'flex', alignItems: 'center', justifyContent: 'center', cursor: 'pointer' }}>
+              <button className="aedge" onClick={closeModal} style={{ width: 40, height: 40, borderRadius: 12, background: '#E8DDE8', border: 'none', display: 'flex', alignItems: 'center', justifyContent: 'center', cursor: 'pointer' }}>
                 <X size={16} color="#7A6690" />
               </button>
             </div>
@@ -399,7 +399,7 @@ export function Notes() {
                     const s = CATEGORY_STYLES[cat]
                     const selected = formData.category === cat
                     return (
-                      <button key={cat} onClick={() => setFormData({ ...formData, category: cat })} style={{ padding: '6px 14px', borderRadius: 20, border: selected ? `1.5px solid ${s.dot}` : '1.5px solid transparent', background: selected ? s.bg : '#F0EAE0', color: selected ? s.text : '#9A90A8', fontFamily: 'DM Sans, sans-serif', fontSize: 13, fontWeight: 600, cursor: 'pointer' }}>
+                      <button className="aedge" key={cat} onClick={() => setFormData({ ...formData, category: cat })} style={{ padding: '6px 14px', borderRadius: 20, border: selected ? `1.5px solid ${s.dot}` : '1.5px solid transparent', background: selected ? s.bg : '#F0EAE0', color: selected ? s.text : '#9A90A8', fontFamily: 'DM Sans, sans-serif', fontSize: 13, fontWeight: 600, cursor: 'pointer' }}>
                         {cat}
                       </button>
                     )
@@ -472,8 +472,8 @@ export function Notes() {
             <h2 style={{ fontFamily: 'Fraunces, serif', fontSize: 22, fontWeight: 700, color: '#2A2030', marginBottom: 8 }}>Delete this note?</h2>
             <p style={{ fontFamily: 'DM Sans, sans-serif', fontSize: 14, color: '#4A4058', marginBottom: 24 }}>This can't be undone.</p>
             <div style={{ display: 'flex', gap: 12 }}>
-              <button onClick={() => setDeleteConfirm(null)} style={{ flex: 1, padding: '13px', background: '#EDE6DB', border: '1.5px solid rgba(122,102,144,0.2)', borderRadius: 16, fontFamily: 'DM Sans, sans-serif', fontWeight: 600, fontSize: 15, color: '#7A6690', cursor: 'pointer' }}>Cancel</button>
-              <button onClick={() => handleDelete(deleteConfirm)} style={{ flex: 1, padding: '13px', background: '#A85878', border: 'none', borderRadius: 16, fontFamily: 'DM Sans, sans-serif', fontWeight: 600, fontSize: 15, color: '#fff', cursor: 'pointer' }}>Delete</button>
+              <button className="abtn abtn-soft" onClick={() => setDeleteConfirm(null)} style={{ flex: 1 }}>Cancel</button>
+              <button className="abtn abtn-rose" onClick={() => handleDelete(deleteConfirm)} style={{ flex: 1 }}>Delete</button>
             </div>
           </div>
         </div>

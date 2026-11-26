@@ -143,15 +143,8 @@ function OptionBtn({
     <button
       type="button"
       onClick={onClick}
-      className="w-full text-left transition-all"
-      style={{
-        background: selected ? '#F4EFF8' : '#FAF7F4',
-        border: selected ? '2px solid #7A6690' : '1.5px solid rgba(122,102,144,0.15)',
-        borderRadius: 20,
-        padding: '16px 18px',
-        marginBottom: 10,
-        cursor: 'pointer',
-      }}
+      className="w-full text-left transition-all aedge"
+      style={{ background: selected ? '#F4EFF8' : '#FAF7F4', border: selected ? '2px solid #7A6690' : '1.5px solid rgba(122,102,144,0.15)', borderRadius: 20, padding: '16px 18px', marginBottom: 10, cursor: 'pointer' }}
     >
       <div className="flex items-center gap-3">
         <div
@@ -779,15 +772,8 @@ export function Onboarding() {
                     const id = stage.id as Stage
                     setSelectedStages(isSelected ? selectedStages.filter(s => s !== id) : [...selectedStages, id])
                   }}
-                  className="w-full text-left transition-all"
-                  style={{
-                    background: isSelected ? '#F4EFF8' : '#FAF7F4',
-                    border: isSelected ? '2px solid #7A6690' : '1.5px solid rgba(122,102,144,0.15)',
-                    borderRadius: 20,
-                    padding: '14px 18px',
-                    marginBottom: 10,
-                    cursor: 'pointer',
-                  }}
+                  className="w-full text-left transition-all aedge"
+                  style={{ background: isSelected ? '#F4EFF8' : '#FAF7F4', border: isSelected ? '2px solid #7A6690' : '1.5px solid rgba(122,102,144,0.15)', borderRadius: 20, padding: '14px 18px', marginBottom: 10, cursor: 'pointer' }}
                 >
                   <div className="flex items-start gap-3">
                     <div
@@ -858,15 +844,8 @@ export function Onboarding() {
             <button
               type="button"
               onClick={() => setTextRemindersEnabled(!textRemindersEnabled)}
-              className="w-full text-left transition-all"
-              style={{
-                background: textRemindersEnabled ? '#F4EFF8' : '#FAF7F4',
-                border: textRemindersEnabled ? '2px solid #7A6690' : '1.5px solid rgba(122,102,144,0.15)',
-                borderRadius: 20,
-                padding: '16px 18px',
-                marginBottom: 16,
-                cursor: 'pointer',
-              }}
+              className="w-full text-left transition-all aedge"
+              style={{ background: textRemindersEnabled ? '#F4EFF8' : '#FAF7F4', border: textRemindersEnabled ? '2px solid #7A6690' : '1.5px solid rgba(122,102,144,0.15)', borderRadius: 20, padding: '16px 18px', marginBottom: 16, cursor: 'pointer' }}
             >
               <div className="flex items-center justify-between">
                 <div className="flex items-center gap-3">
@@ -972,20 +951,11 @@ export function Onboarding() {
                         {['2_hours', '1_day', '3_days', '1_week'].map(timing => {
                           const labels: Record<string, string> = { '2_hours': '2 hrs before', '1_day': '1 day before', '3_days': '3 days before', '1_week': '1 week before' }
                           return (
-                            <button
+                            <button className="aedge"
                               key={timing}
                               type="button"
                               onClick={() => setReminderSettings({ ...reminderSettings, [cat.key]: { ...setting, timing } })}
-                              style={{
-                                padding: '6px 12px',
-                                borderRadius: 20,
-                                fontSize: 12,
-                                fontWeight: 600,
-                                border: 'none',
-                                cursor: 'pointer',
-                                background: setting.timing === timing ? '#7A6690' : '#E8DDE8',
-                                color: setting.timing === timing ? 'white' : '#7A6690',
-                              }}
+                              style={{ padding: '6px 12px', borderRadius: 20, fontSize: 12, fontWeight: 600, border: 'none', cursor: 'pointer', background: setting.timing === timing ? '#7A6690' : '#E8DDE8', color: setting.timing === timing ? 'white' : '#7A6690' }}
                             >
                               {labels[timing]}
                             </button>

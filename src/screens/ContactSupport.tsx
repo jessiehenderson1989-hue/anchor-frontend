@@ -68,7 +68,7 @@ export function ContactSupport() {
   return (
     <div style={{ minHeight: '100vh', background: '#EDE6DB' }}>
       <div style={{ background: '#FAF7F2', borderBottom: '1px solid rgba(122,102,144,0.1)', padding: '14px 20px', display: 'flex', alignItems: 'center', gap: 12, position: 'sticky', top: 0, zIndex: 10 }}>
-        <button onClick={() => navigate(-1)} style={{ background: '#E8DDE8', border: 'none', borderRadius: 10, width: 40, height: 40, display: 'flex', alignItems: 'center', justifyContent: 'center', cursor: 'pointer', flexShrink: 0 }}>
+        <button className="aedge" onClick={() => navigate(-1)} style={{ background: '#E8DDE8', border: 'none', borderRadius: 10, width: 40, height: 40, display: 'flex', alignItems: 'center', justifyContent: 'center', cursor: 'pointer', flexShrink: 0 }}>
           <ArrowLeft size={16} color="#7A6690" />
         </button>
         <h1 style={{ fontFamily: 'Fraunces, serif', fontSize: 20, fontWeight: 700, color: '#2A2030', margin: 0 }}>Contact Support</h1>
@@ -86,18 +86,10 @@ export function ContactSupport() {
           </label>
           <div style={{ display: 'flex', flexDirection: 'column', gap: 8 }}>
             {TOPICS.map((t) => (
-              <button
+              <button className="aedge"
                 key={t}
                 onClick={() => { haptics.light(); setTopic(t === topic ? '' : t) }}
-                style={{
-                  textAlign: 'left', padding: '12px 16px',
-                  background: topic === t ? '#F4EFF8' : '#FAF7F2',
-                  border: topic === t ? '1.5px solid #7A6690' : '1.5px solid rgba(122,102,144,0.15)',
-                  borderRadius: 14, cursor: 'pointer',
-                  fontFamily: 'DM Sans, sans-serif', fontSize: 14,
-                  color: topic === t ? '#7A6690' : '#4A4058',
-                  fontWeight: topic === t ? 600 : 400,
-                }}
+                style={{ textAlign: 'left', padding: '12px 16px', background: topic === t ? '#F4EFF8' : '#FAF7F2', border: topic === t ? '1.5px solid #7A6690' : '1.5px solid rgba(122,102,144,0.15)', borderRadius: 14, cursor: 'pointer', fontFamily: 'DM Sans, sans-serif', fontSize: 14, color: topic === t ? '#7A6690' : '#4A4058', fontWeight: topic === t ? 600 : 400 }}
               >
                 {t}
               </button>

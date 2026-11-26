@@ -151,8 +151,8 @@ export function ResetPasswordScreen() {
 
           <button
             onClick={() => navigate('/forgot-password')}
-            className="w-full py-3.5 rounded-2xl font-semibold text-white mb-3 transition-all active:scale-95"
-            style={{ background: '#7A6690', boxShadow: '0 4px 16px rgba(122,102,144,0.3)', fontFamily: "'DM Sans', sans-serif" }}
+            className="abtn abtn-primary abtn-block mb-3"
+            
           >
             Request New Link
           </button>
@@ -190,8 +190,8 @@ export function ResetPasswordScreen() {
 
           <button
             onClick={handleSignIn}
-            className="w-full py-3.5 rounded-2xl font-semibold text-white transition-all active:scale-95"
-            style={{ background: '#7A6690', boxShadow: '0 4px 16px rgba(122,102,144,0.3)', fontFamily: "'DM Sans', sans-serif" }}
+            className="abtn abtn-primary abtn-block"
+            
           >
             Sign In
           </button>
@@ -270,8 +270,8 @@ export function ResetPasswordScreen() {
         <button
           type="submit"
           disabled={loading || !password || !confirmPassword}
-          className="w-full py-3.5 rounded-2xl font-semibold text-white transition-all active:scale-95 disabled:opacity-50"
-          style={{ background: '#7A6690', boxShadow: '0 4px 16px rgba(122,102,144,0.3)', fontFamily: "'DM Sans', sans-serif" }}
+          className="abtn abtn-primary abtn-block"
+          
         >
           {loading ? 'Resetting...' : 'Reset Password'}
         </button>

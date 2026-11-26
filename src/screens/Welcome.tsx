@@ -94,8 +94,8 @@ export function Welcome() {
       <div className="px-5 space-y-3 pb-12">
         <button
           onClick={() => navigate('/auth?mode=signup')}
-          className="w-full py-4 rounded-2xl font-semibold text-white text-base transition-all active:scale-95"
-          style={{ background: '#7A6690', boxShadow: '0 6px 20px rgba(122,102,144,0.35)', fontFamily: "'DM Sans', sans-serif" }}
+          className="w-full py-4 rounded-2xl font-semibold text-white text-base transition-all active:scale-95 abtn abtn-primary abtn-block"
+          
         >
           Get Started
         </button>

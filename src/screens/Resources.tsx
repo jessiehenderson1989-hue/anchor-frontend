@@ -283,6 +283,7 @@ export function Resources() {
             <div style={{ display: 'flex', gap: 8, paddingBottom: 4 }}>
               {YOUTH_CATEGORIES.map((cat) => (
                 <button key={cat} onClick={() => setSelectedYouthCategory(cat)}
+                  className="aedge"
                   style={pillBtn(selectedYouthCategory === cat, YOUTH_TOPIC_COLORS[cat])}>
                   {cat}
                 </button>
@@ -301,6 +302,7 @@ export function Resources() {
               <div style={{ display: 'flex', gap: 8, paddingBottom: 4 }}>
                 {PARENT_CATEGORIES.map((cat) => (
                   <button key={cat} onClick={() => setSelectedParentCategory(cat)}
+                    className="aedge"
                     style={pillBtn(selectedParentCategory === cat, PARENT_CAT_COLORS[cat])}>
                     {cat}
                   </button>
@@ -403,20 +405,20 @@ export function Resources() {
                   {/* Action buttons */}
                   <div style={{ display: 'flex', flexWrap: 'wrap', gap: 8 }}>
                     {resource.phone && (
-                      <a href={`tel:${resource.phone.replace(/[^0-9+]/g, '')}`}
-                        style={{ display: 'inline-flex', alignItems: 'center', gap: 6, background: '#EAF4EE', color: '#4A7C59', borderRadius: 12, padding: '8px 14px', fontFamily: 'DM Sans, sans-serif', fontWeight: 600, fontSize: 13, textDecoration: 'none' }}>
+                      <a className="abtn abtn-sm abtn-tint" href={`tel:${resource.phone.replace(/[^0-9+]/g, '')}`}
+                        style={{ background: '#EAF4EE', color: '#4A7C59' }}>
                         <Phone size={13} /> {resource.phone}
                       </a>
                     )}
                     {resource.text_line && (
-                      <a href={`sms:${resource.text_line.replace(/\D/g, '') || resource.text_line.split(' ')[0]}`}
-                        style={{ display: 'inline-flex', alignItems: 'center', gap: 6, background: '#EAF0F8', color: '#3A5A80', borderRadius: 12, padding: '8px 14px', fontFamily: 'DM Sans, sans-serif', fontWeight: 600, fontSize: 13, textDecoration: 'none' }}>
+                      <a className="abtn abtn-sm abtn-tint" href={`sms:${resource.text_line.replace(/\D/g, '') || resource.text_line.split(' ')[0]}`}
+                        style={{ background: '#EAF0F8', color: '#3A5A80' }}>
                         <MessageSquare size={13} /> {/^text/i.test(resource.text_line) ? resource.text_line : `Text ${resource.text_line}`}
                       </a>
                     )}
                     {resource.website && (
-                      <button onClick={() => handleWebsiteClick(resource.id, resource.website)}
-                        style={{ display: 'inline-flex', alignItems: 'center', gap: 6, background: '#F4EFF8', color: '#7A6690', border: 'none', borderRadius: 12, padding: '8px 14px', fontFamily: 'DM Sans, sans-serif', fontWeight: 600, fontSize: 13, cursor: 'pointer' }}>
+                      <button className="abtn abtn-sm abtn-tint" onClick={() => handleWebsiteClick(resource.id, resource.website)}
+                        style={{ background: '#F4EFF8', color: '#7A6690' }}>
                         <ExternalLink size={13} /> {resource.type?.includes('PDF') ? 'Open PDF' : 'Website'}
                       </button>
                     )}

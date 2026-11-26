@@ -745,7 +745,7 @@ export function Timeline() {
                     <button
                       key={i}
                       onClick={() => { haptics.light(); navigate('/rights') }}
-                      className="px-3 py-1.5 rounded-full text-xs font-semibold transition-all"
+                      className="px-3 py-1.5 rounded-full text-xs font-semibold transition-all aedge"
                       style={{ background: 'linear-gradient(145deg,#F0EBF8,#E8DDF0)', color: '#7A6690' }}
                     >
                       {right}
@@ -847,16 +847,9 @@ export function Timeline() {
                 <p style={{ fontFamily: 'DM Sans, sans-serif', fontSize: 12, color: '#695F7B', margin: '0 0 8px', lineHeight: 1.5, textAlign: 'center' }}>
                   When you've completed this stage, tap below to move forward on your journey.
                 </p>
-                <button
+                <button className="abtn abtn-outline abtn-block"
                   onClick={() => markStageComplete(stage.id, stage.order_index)}
-                  style={{
-                    width: '100%', padding: '13px',
-                    background: 'transparent',
-                    border: '1.5px solid rgba(122,102,144,0.35)',
-                    borderRadius: 20,
-                    fontFamily: 'DM Sans, sans-serif', fontSize: 14, fontWeight: 700,
-                    color: '#7A6690', cursor: 'pointer',
-                  }}
+                  style={{ width: '100%' }}
                 >
                   ✓ Mark {content.name} as Complete
                 </button>
@@ -924,7 +917,7 @@ export function Timeline() {
                     <button
                       key={i}
                       onClick={() => navigate('/rights')}
-                      className="px-3 py-1 rounded-full text-xs font-semibold"
+                      className="px-3 py-1 rounded-full text-xs font-semibold aedge"
                       style={{ background: 'linear-gradient(145deg,#F0EBF8,#E8DDF0)', color: '#7A6690' }}
                     >
                       {right}

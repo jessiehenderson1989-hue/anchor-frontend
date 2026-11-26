@@ -460,23 +460,15 @@ export function Contacts() {
                         )}
                         {/* Edit / Delete */}
                         <div style={{ display: 'flex', gap: 8, paddingTop: 4 }}>
-                          <button
+                          <button className="abtn abtn-soft abtn-sm"
                             onClick={() => openEditContactModal(contact)}
-                            style={{
-                              flex: 1, display: 'flex', alignItems: 'center', justifyContent: 'center', gap: 6,
-                              padding: '9px', background: '#F4EFF8', border: 'none', borderRadius: 12,
-                              fontFamily: 'DM Sans, sans-serif', fontSize: 13, fontWeight: 600, color: '#7A6690', cursor: 'pointer',
-                            }}
+                            style={{ flex: 1 }}
                           >
                             <Pencil size={13} /> Edit
                           </button>
-                          <button
+                          <button className="abtn abtn-sm abtn-tint"
                             onClick={() => setDeleteConfirm(contact.id)}
-                            style={{
-                              flex: 1, display: 'flex', alignItems: 'center', justifyContent: 'center', gap: 6,
-                              padding: '9px', background: '#F8EEF2', border: 'none', borderRadius: 12,
-                              fontFamily: 'DM Sans, sans-serif', fontSize: 13, fontWeight: 600, color: '#A85878', cursor: 'pointer',
-                            }}
+                            style={{ flex: 1, background: '#F8EEF2', color: '#A85878' }}
                           >
                             <Trash2 size={13} /> Delete
                           </button>
@@ -506,7 +498,7 @@ export function Contacts() {
                   </p>
                 )}
               </div>
-              <button onClick={closeContactModal} style={{ width: 40, height: 40, borderRadius: 12, background: '#E8DDE8', border: 'none', display: 'flex', alignItems: 'center', justifyContent: 'center', cursor: 'pointer' }}>
+              <button className="aedge" onClick={closeContactModal} style={{ width: 40, height: 40, borderRadius: 12, background: '#E8DDE8', border: 'none', display: 'flex', alignItems: 'center', justifyContent: 'center', cursor: 'pointer' }}>
                 <X size={16} color="#7A6690" />
               </button>
             </div>
@@ -523,14 +515,8 @@ export function Contacts() {
                     const c = ROLE_COLORS[role]
                     const sel = contactForm.role === role
                     return (
-                      <button key={role} onClick={() => setContactForm({ ...contactForm, role })}
-                        style={{
-                          padding: '6px 14px', borderRadius: 20,
-                          border: sel ? `1.5px solid ${c.dot}` : '1.5px solid transparent',
-                          background: sel ? c.bg : '#F0EAE0',
-                          color: sel ? c.text : '#9A90A8',
-                          fontFamily: 'DM Sans, sans-serif', fontSize: 13, fontWeight: 600, cursor: 'pointer',
-                        }}
+                      <button className="aedge" key={role} onClick={() => setContactForm({ ...contactForm, role })}
+                        style={{ padding: '6px 14px', borderRadius: 20, border: sel ? `1.5px solid ${c.dot}` : '1.5px solid transparent', background: sel ? c.bg : '#F0EAE0', color: sel ? c.text : '#9A90A8', fontFamily: 'DM Sans, sans-serif', fontSize: 13, fontWeight: 600, cursor: 'pointer' }}
                       >{role}</button>
                     )
                   })}
@@ -570,7 +556,7 @@ export function Contacts() {
           <div style={modalSheet}>
             <div style={modalHeader}>
               <h2 style={{ fontFamily: 'Fraunces, serif', fontSize: 22, fontWeight: 700, color: '#2A2030', margin: 0 }}>Court Info</h2>
-              <button onClick={() => setShowCourtModal(false)} style={{ width: 40, height: 40, borderRadius: 12, background: '#E8DDE8', border: 'none', display: 'flex', alignItems: 'center', justifyContent: 'center', cursor: 'pointer' }}>
+              <button className="aedge" onClick={() => setShowCourtModal(false)} style={{ width: 40, height: 40, borderRadius: 12, background: '#E8DDE8', border: 'none', display: 'flex', alignItems: 'center', justifyContent: 'center', cursor: 'pointer' }}>
                 <X size={16} color="#7A6690" />
               </button>
             </div>
@@ -596,8 +582,8 @@ export function Contacts() {
                 <button onClick={() => setShowCourtModal(false)} className="abtn abtn-soft" style={{ flex: 1 }}>
                   Cancel
                 </button>
-                <button onClick={handleSaveCourtInfo}
-                  style={{ flex: 1, padding: '14px', background: 'linear-gradient(160deg,#8A74A0 0%,#6A5588 100%)', border: 'none', borderRadius: 16, fontFamily: 'DM Sans, sans-serif', fontWeight: 600, fontSize: 15, color: '#fff', cursor: 'pointer', boxShadow: '0 4px 16px rgba(122,102,144,0.3)' }}>
+                <button className="abtn abtn-primary" onClick={handleSaveCourtInfo}
+                  style={{ flex: 1 }}>
                   Save Court Info
                 </button>
               </div>
@@ -613,10 +599,10 @@ export function Contacts() {
             <h2 style={{ fontFamily: 'Fraunces, serif', fontSize: 22, fontWeight: 700, color: '#2A2030', marginBottom: 8 }}>Remove this contact?</h2>
             <p style={{ fontFamily: 'DM Sans, sans-serif', fontSize: 14, color: '#4A4058', marginBottom: 24 }}>This can't be undone.</p>
             <div style={{ display: 'flex', gap: 12 }}>
-              <button onClick={() => setDeleteConfirm(null)} style={{ flex: 1, padding: '13px', background: '#EDE6DB', border: '1.5px solid rgba(122,102,144,0.2)', borderRadius: 16, fontFamily: 'DM Sans, sans-serif', fontWeight: 600, fontSize: 15, color: '#7A6690', cursor: 'pointer' }}>
+              <button className="abtn abtn-soft" onClick={() => setDeleteConfirm(null)} style={{ flex: 1 }}>
                 Cancel
               </button>
-              <button onClick={() => handleDeleteContact(deleteConfirm)} style={{ flex: 1, padding: '13px', background: '#A85878', border: 'none', borderRadius: 16, fontFamily: 'DM Sans, sans-serif', fontWeight: 600, fontSize: 15, color: '#fff', cursor: 'pointer' }}>
+              <button className="abtn abtn-rose" onClick={() => handleDeleteContact(deleteConfirm)} style={{ flex: 1 }}>
                 Remove
               </button>
             </div>

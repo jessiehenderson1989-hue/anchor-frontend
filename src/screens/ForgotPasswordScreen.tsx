@@ -193,8 +193,8 @@ export function ForgotPasswordScreen() {
             <button
               type="submit"
               disabled={loading || !email}
-              className="w-full py-3.5 rounded-2xl font-semibold text-white transition-all active:scale-95 disabled:opacity-50"
-              style={{ background: '#7A6690', boxShadow: '0 4px 16px rgba(122,102,144,0.3)', fontFamily: "'DM Sans', sans-serif" }}
+              className="abtn abtn-primary abtn-block"
+              
             >
               {loading ? 'Sending...' : 'Send Reset Link'}
             </button>

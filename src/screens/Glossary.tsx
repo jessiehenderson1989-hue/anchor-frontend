@@ -134,17 +134,10 @@ export function Glossary() {
               const active = selectedCategory === cat
               const colors = CATEGORY_COLORS[cat]
               return (
-                <button
+                <button className="aedge"
                   key={cat}
                   onClick={() => { setSelectedCategory(cat); setExpandedTermId(null) }}
-                  style={{
-                    padding: '7px 14px', borderRadius: 20, whiteSpace: 'nowrap', flexShrink: 0,
-                    border: active && colors ? `1.5px solid ${colors.dot}` : active ? '1.5px solid #7A6690' : '1.5px solid transparent',
-                    background: active && colors ? colors.bg : active ? '#F4EFF8' : '#FAF7F4',
-                    color: active && colors ? colors.text : active ? '#7A6690' : '#9A90A8',
-                    fontFamily: 'DM Sans, sans-serif', fontSize: 13, fontWeight: 600,
-                    cursor: 'pointer',
-                  }}
+                  style={{ padding: '7px 14px', borderRadius: 20, whiteSpace: 'nowrap', flexShrink: 0, border: active && colors ? `1.5px solid ${colors.dot}` : active ? '1.5px solid #7A6690' : '1.5px solid transparent', background: active && colors ? colors.bg : active ? '#F4EFF8' : '#FAF7F4', color: active && colors ? colors.text : active ? '#7A6690' : '#9A90A8', fontFamily: 'DM Sans, sans-serif', fontSize: 13, fontWeight: 600, cursor: 'pointer' }}
                 >
                   {CATEGORY_LABELS[cat]}
                 </button>
@@ -261,15 +254,10 @@ export function Glossary() {
                           </p>
                           <div style={{ display: 'flex', flexWrap: 'wrap', gap: 6 }}>
                             {term.related_terms.map((rt) => (
-                              <button
+                              <button className="aedge"
                                 key={rt}
                                 onClick={(e) => { e.stopPropagation(); handleRelatedTermClick(rt) }}
-                                style={{
-                                  padding: '5px 12px', borderRadius: 20,
-                                  background: '#F4EFF8', border: 'none',
-                                  fontFamily: 'DM Sans, sans-serif', fontSize: 12, fontWeight: 600,
-                                  color: '#7A6690', cursor: 'pointer',
-                                }}
+                                style={{ padding: '5px 12px', borderRadius: 20, background: '#F4EFF8', border: 'none', fontFamily: 'DM Sans, sans-serif', fontSize: 12, fontWeight: 600, color: '#7A6690', cursor: 'pointer' }}
                               >
                                 {rt}
                               </button>

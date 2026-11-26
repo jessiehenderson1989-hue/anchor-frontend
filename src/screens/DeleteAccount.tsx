@@ -95,16 +95,9 @@ export function DeleteAccount() {
                 {exportSent ? 'Export sent ✓' : 'Email me my data'}
               </button>
 
-              <button
+              <button className="abtn abtn-outline"
                 onClick={() => { haptics.light(); setStep('confirm') }}
-                style={{
-                  width: '100%', padding: '14px',
-                  background: '#FAF7F2',
-                  border: '1.5px solid rgba(122,102,144,0.2)',
-                  borderRadius: 16,
-                  fontFamily: 'DM Sans, sans-serif', fontWeight: 600, fontSize: 15,
-                  color: '#756B87', cursor: 'pointer',
-                }}
+                style={{ width: '100%' }}
               >
                 Skip — delete without export
               </button>
@@ -178,33 +171,18 @@ export function DeleteAccount() {
               )}
 
               {/* Delete button */}
-              <button
+              <button className="abtn abtn-rose"
                 onClick={handleDelete}
                 disabled={!password || !confirmed || loading}
-                style={{
-                  width: '100%', padding: '14px',
-                  background: password && confirmed && !loading ? '#A85878' : '#C8C0D0',
-                  border: 'none', borderRadius: 16,
-                  fontFamily: 'DM Sans, sans-serif', fontWeight: 600, fontSize: 15,
-                  color: '#fff',
-                  cursor: password && confirmed && !loading ? 'pointer' : 'not-allowed',
-                  boxShadow: password && confirmed && !loading ? '0 4px 16px rgba(168,88,120,0.3)' : 'none',
-                }}
+                style={{ width: '100%' }}
               >
                 {loading ? 'Deleting…' : 'Delete my account permanently'}
               </button>
 
               {/* Cancel */}
-              <button
+              <button className="abtn abtn-outline"
                 onClick={() => navigate('/settings')}
-                style={{
-                  width: '100%', padding: '14px',
-                  background: '#FAF7F2',
-                  border: '1.5px solid rgba(122,102,144,0.2)',
-                  borderRadius: 16,
-                  fontFamily: 'DM Sans, sans-serif', fontWeight: 600, fontSize: 15,
-                  color: '#7A6690', cursor: 'pointer',
-                }}
+                style={{ width: '100%' }}
               >
                 Cancel
               </button>

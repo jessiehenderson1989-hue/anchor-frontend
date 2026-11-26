@@ -294,17 +294,10 @@ export function Legal() {
               {CATEGORIES.map((cat) => {
                 const selected = selectedCategory === cat
                 return (
-                  <button
+                  <button className="aedge"
                     key={cat}
                     onClick={() => { haptics.light(); setSelectedCategory(cat); setExpandedContentId(null) }}
-                    style={{
-                      padding: '7px 16px', borderRadius: 20, whiteSpace: 'nowrap', flexShrink: 0,
-                      border: selected ? '1.5px solid #7A6690' : '1.5px solid rgba(122,102,144,0.2)',
-                      background: selected ? '#7A6690' : '#FAF7F4',
-                      fontFamily: 'DM Sans, sans-serif', fontSize: 13, fontWeight: 600,
-                      color: selected ? '#fff' : '#5A5065',
-                      cursor: 'pointer',
-                    }}
+                    style={{ padding: '7px 16px', borderRadius: 20, whiteSpace: 'nowrap', flexShrink: 0, border: selected ? '1.5px solid #7A6690' : '1.5px solid rgba(122,102,144,0.2)', background: selected ? '#7A6690' : '#FAF7F4', fontFamily: 'DM Sans, sans-serif', fontSize: 13, fontWeight: 600, color: selected ? '#fff' : '#5A5065', cursor: 'pointer' }}
                   >
                     {cat}
                   </button>
@@ -426,15 +419,10 @@ export function Legal() {
                             </p>
                             <div style={{ display: 'flex', flexWrap: 'wrap', gap: 8 }}>
                               {content.related_topics.map((topic) => (
-                                <button
+                                <button className="aedge"
                                   key={topic}
                                   onClick={(e) => { e.stopPropagation(); handleRelatedTopicClick(topic) }}
-                                  style={{
-                                    padding: '5px 14px', borderRadius: 20,
-                                    background: '#E8DDE8', color: '#7A6690',
-                                    border: 'none', fontFamily: 'DM Sans, sans-serif',
-                                    fontSize: 12, fontWeight: 600, cursor: 'pointer',
-                                  }}
+                                  style={{ padding: '5px 14px', borderRadius: 20, background: '#E8DDE8', color: '#7A6690', border: 'none', fontFamily: 'DM Sans, sans-serif', fontSize: 12, fontWeight: 600, cursor: 'pointer' }}
                                 >
                                   {topic}
                                 </button>
@@ -445,19 +433,12 @@ export function Legal() {
 
                         {/* External link */}
                         {content.external_link && (
-                          <a
+                          <a className="abtn abtn-primary abtn-sm"
                             href={content.external_link}
                             target="_blank"
                             rel="noopener noreferrer"
                             onClick={(e) => e.stopPropagation()}
-                            style={{
-                              display: 'flex', alignItems: 'center', justifyContent: 'center', gap: 8,
-                              padding: '13px', borderRadius: 16,
-                              background: '#7A6690', color: '#fff',
-                              fontFamily: 'DM Sans, sans-serif', fontSize: 14, fontWeight: 700,
-                              textDecoration: 'none',
-                              boxShadow: '0 4px 16px rgba(122,102,144,0.3)',
-                            }}
+                            
                           >
                             <ExternalLink size={16} />
                             View Official Form
@@ -484,16 +465,11 @@ export function Legal() {
               Need more help?
             </h3>
             <div style={{ display: 'flex', flexDirection: 'column', gap: 10 }}>
-              <a
+              <a className="aedge"
                 href="https://www.courts.ca.gov/selfhelp.htm"
                 target="_blank"
                 rel="noopener noreferrer"
-                style={{
-                  display: 'flex', alignItems: 'center', justifyContent: 'space-between',
-                  padding: '12px 14px', background: '#EDE6DB', borderRadius: 14,
-                  textDecoration: 'none',
-                  border: '1px solid rgba(255,255,255,0.88)',
-                }}
+                style={{ display: 'flex', alignItems: 'center', justifyContent: 'space-between', padding: '12px 14px', background: '#EDE6DB', borderRadius: 14, textDecoration: 'none', border: '1px solid rgba(255,255,255,0.88)' }}
               >
                 <div>
                   <p style={{ fontFamily: 'DM Sans, sans-serif', fontSize: 13, fontWeight: 700, color: '#2A2030', margin: '0 0 2px' }}>California Courts Self-Help Center</p>
@@ -501,16 +477,11 @@ export function Legal() {
                 </div>
                 <ExternalLink size={14} color="#9A90A8" style={{ flexShrink: 0, marginLeft: 8 }} />
               </a>
-              <a
+              <a className="aedge"
                 href="https://leginfo.legislature.ca.gov/"
                 target="_blank"
                 rel="noopener noreferrer"
-                style={{
-                  display: 'flex', alignItems: 'center', justifyContent: 'space-between',
-                  padding: '12px 14px', background: '#EDE6DB', borderRadius: 14,
-                  textDecoration: 'none',
-                  border: '1px solid rgba(255,255,255,0.88)',
-                }}
+                style={{ display: 'flex', alignItems: 'center', justifyContent: 'space-between', padding: '12px 14px', background: '#EDE6DB', borderRadius: 14, textDecoration: 'none', border: '1px solid rgba(255,255,255,0.88)' }}
               >
                 <div>
                   <p style={{ fontFamily: 'DM Sans, sans-serif', fontSize: 13, fontWeight: 700, color: '#2A2030', margin: '0 0 2px' }}>California Legislative Information</p>

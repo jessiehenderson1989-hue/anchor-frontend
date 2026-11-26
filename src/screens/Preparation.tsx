@@ -361,7 +361,7 @@ export function Preparation() {
             {copy.prepOptions.map(opt => {
               const Icon = opt.icon
               return (
-                <button
+                <button className="aedge"
                   key={opt.type}
                   onClick={() => setSelectedType(opt.type)}
                   style={{ ...card, cursor: 'pointer', padding: 16, textAlign: 'left', width: '100%' }}
@@ -492,9 +492,9 @@ export function Preparation() {
               >
                 Your Guide
               </h2>
-              <button
+              <button className="abtn abtn-soft abtn-sm"
                 onClick={reset}
-                style={{ display: 'flex', alignItems: 'center', gap: 6, fontFamily: 'DM Sans, sans-serif', fontSize: 12, fontWeight: 700, borderRadius: 12, padding: '7px 12px', background: '#E8DDE8', color: '#7A6690', border: 'none', cursor: 'pointer' }}
+                
               >
                 <RotateCcw size={12} />
                 Start Over
