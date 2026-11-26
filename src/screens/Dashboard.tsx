@@ -275,12 +275,12 @@ export function Dashboard() {
 
           {/* Top meta row */}
           <div style={{ display: 'flex', alignItems: 'center', justifyContent: 'space-between', marginBottom: 16 }}>
-            <div style={{ fontSize: 9, color: 'rgba(255,255,255,0.42)', fontWeight: 700, letterSpacing: '0.1em', textTransform: 'uppercase' }}>
+            <div style={{ fontSize: 12, color: 'rgba(255,255,255,0.42)', fontWeight: 700, letterSpacing: '0.1em', textTransform: 'uppercase' }}>
               Stage {currentStageIndex + 1} of 10
             </div>
             <div style={{ display: 'flex', alignItems: 'center', gap: 5 }}>
               <div style={{ width: 5, height: 5, borderRadius: '50%', background: '#8ADCC8', boxShadow: '0 0 5px rgba(138,220,200,0.7)' }} />
-              <div style={{ fontSize: 9, color: 'rgba(138,220,200,0.75)', fontWeight: 600 }}>Active</div>
+              <div style={{ fontSize: 12, color: 'rgba(138,220,200,0.75)', fontWeight: 600 }}>Active</div>
             </div>
           </div>
 
@@ -293,7 +293,7 @@ export function Dashboard() {
               You're still here.
             </div>
           </div>
-          <div style={{ fontFamily: 'DM Sans, sans-serif', fontSize: 11, color: 'rgba(255,255,255,0.35)', lineHeight: 1.5 }}>
+          <div style={{ fontFamily: 'DM Sans, sans-serif', fontSize: 12, color: 'rgba(255,255,255,0.35)', lineHeight: 1.5 }}>
             That matters more than you know.
           </div>
 
@@ -323,7 +323,7 @@ export function Dashboard() {
             <div style={{ position: 'absolute', top: 0, left: '8%', right: '8%', height: 1, background: 'linear-gradient(90deg,transparent,rgba(255,255,255,0.9),transparent)' }} />
             <div style={{ display: 'flex', alignItems: 'center', gap: 8, marginBottom: 8 }}>
               <div style={{ width: 6, height: 6, borderRadius: '50%', background: activeJewel.color, boxShadow: `0 0 5px ${activeJewel.glow}`, flexShrink: 0 }} />
-              <span style={{ fontFamily: 'DM Sans, sans-serif', fontSize: 9, fontWeight: 700, color: activeJewel.color, textTransform: 'uppercase', letterSpacing: '0.07em' }}>
+              <span style={{ fontFamily: 'DM Sans, sans-serif', fontSize: 12, fontWeight: 700, color: activeJewel.color, textTransform: 'uppercase', letterSpacing: '0.07em' }}>
                 {PEER_DESCRIPTOR[role]}
               </span>
             </div>
@@ -347,7 +347,7 @@ export function Dashboard() {
             cursor: 'pointer',
           }}>
             <div style={{ position: 'absolute', top: 0, left: '8%', right: '8%', height: 1, background: 'linear-gradient(90deg,transparent,rgba(255,255,255,0.9),transparent)' }} />
-            <div style={{ fontFamily: 'DM Sans, sans-serif', fontSize: 9, color: '#4A8878', fontWeight: 700, textTransform: 'uppercase', letterSpacing: '0.07em', marginBottom: 12 }}>
+            <div style={{ fontFamily: 'DM Sans, sans-serif', fontSize: 12, color: '#4A8878', fontWeight: 700, textTransform: 'uppercase', letterSpacing: '0.07em', marginBottom: 12 }}>
               Your journey
             </div>
             <div style={{ position: 'relative', paddingLeft: 20 }}>
@@ -390,10 +390,10 @@ export function Dashboard() {
                     }}>
                       {label}
                     </div>
-                    {isDone && <span style={{ fontSize: 10, color: jewel.color, fontWeight: 700 }}>✓</span>}
+                    {isDone && <span style={{ fontSize: 12, color: jewel.color, fontWeight: 700 }}>✓</span>}
                     {isActive && (
                       <span style={{
-                        fontSize: 8, padding: '2px 9px',
+                        fontSize: 12, padding: '2px 9px',
                         background: jewel.bg,
                         color: jewel.color,
                         borderRadius: 20,
@@ -408,7 +408,7 @@ export function Dashboard() {
               }
             </div>
             <div style={{ marginTop: 10, paddingTop: 8, borderTop: '1px solid rgba(74,136,120,0.1)', display: 'flex', justifyContent: 'flex-end' }}>
-              <span style={{ fontFamily: 'DM Sans, sans-serif', fontSize: 11, fontWeight: 700, color: '#4A8878' }}>See full timeline →</span>
+              <span style={{ fontFamily: 'DM Sans, sans-serif', fontSize: 12, fontWeight: 700, color: '#4A8878' }}>See full timeline →</span>
             </div>
           </div>
 
@@ -444,7 +444,7 @@ export function Dashboard() {
               })}
             </div>
             <div style={{ marginTop: 10, paddingTop: 8, borderTop: `1px solid ${activeJewel.bg}`, display: 'flex', justifyContent: 'flex-end' }}>
-              <span style={{ fontFamily: 'DM Sans, sans-serif', fontSize: 11, fontWeight: 700, color: activeJewel.color }}>Prepare for court →</span>
+              <span style={{ fontFamily: 'DM Sans, sans-serif', fontSize: 12, fontWeight: 700, color: activeJewel.color }}>Prepare for court →</span>
             </div>
           </div>
 
@@ -467,18 +467,18 @@ export function Dashboard() {
               <div style={{ position: 'absolute', top: 0, left: '10%', right: '10%', height: 1, background: 'linear-gradient(90deg,transparent,rgba(255,255,255,0.95),transparent)' }} />
               <div style={{ display: 'flex', alignItems: 'center', gap: 5, marginBottom: 4 }}>
                 <Calendar size={10} color="rgba(160,100,30,0.65)" />
-                <span style={{ fontFamily: 'DM Sans, sans-serif', fontSize: 8, color: 'rgba(160,100,30,0.65)', fontWeight: 700, textTransform: 'uppercase', letterSpacing: '0.07em' }}>Next court</span>
+                <span style={{ fontFamily: 'DM Sans, sans-serif', fontSize: 12, color: 'rgba(160,100,30,0.65)', fontWeight: 700, textTransform: 'uppercase', letterSpacing: '0.07em' }}>Next court</span>
               </div>
               <div style={{ fontFamily: 'DM Sans, sans-serif', fontSize: 14, color: '#7A4A18', fontWeight: 800, marginBottom: 3 }}>
                 {courtDate ? formatCourtDate(courtDate) : 'Not set'}
               </div>
               {days !== null && (
-                <div style={{ fontFamily: 'DM Sans, sans-serif', fontSize: 10, color: 'rgba(160,100,30,0.55)', fontWeight: 600 }}>
+                <div style={{ fontFamily: 'DM Sans, sans-serif', fontSize: 12, color: 'rgba(160,100,30,0.55)', fontWeight: 600 }}>
                   {days > 0 ? `${days} days away` : days === 0 ? 'Today' : `${Math.abs(days)} days ago`}
                 </div>
               )}
               {!courtDate && (
-                <div style={{ fontFamily: 'DM Sans, sans-serif', fontSize: 10, color: 'rgba(160,100,30,0.5)', fontWeight: 600 }}>Tap to prepare →</div>
+                <div style={{ fontFamily: 'DM Sans, sans-serif', fontSize: 12, color: 'rgba(160,100,30,0.5)', fontWeight: 600 }}>Tap to prepare →</div>
               )}
             </div>
 
@@ -497,11 +497,11 @@ export function Dashboard() {
               }}
             >
               <div style={{ position: 'absolute', top: 0, left: '10%', right: '10%', height: 1, background: 'linear-gradient(90deg,transparent,rgba(255,255,255,0.95),transparent)' }} />
-              <div style={{ fontFamily: 'DM Sans, sans-serif', fontSize: 8, color: 'rgba(140,60,90,0.65)', fontWeight: 700, textTransform: 'uppercase', letterSpacing: '0.07em', marginBottom: 4 }}>Your team</div>
+              <div style={{ fontFamily: 'DM Sans, sans-serif', fontSize: 12, color: 'rgba(140,60,90,0.65)', fontWeight: 700, textTransform: 'uppercase', letterSpacing: '0.07em', marginBottom: 4 }}>Your team</div>
               <div style={{ fontFamily: 'DM Sans, sans-serif', fontSize: 14, color: '#6A2848', fontWeight: 800, marginBottom: 3 }}>
                 {teamMembers.length > 0 ? `${teamMembers.length} added` : '0 people'}
               </div>
-              <div style={{ fontFamily: 'DM Sans, sans-serif', fontSize: 10, color: 'rgba(140,60,90,0.5)', fontWeight: 600 }}>
+              <div style={{ fontFamily: 'DM Sans, sans-serif', fontSize: 12, color: 'rgba(140,60,90,0.5)', fontWeight: 600 }}>
                 {teamMembers.length > 0 ? 'View team →' : 'Add now →'}
               </div>
             </div>
@@ -527,8 +527,8 @@ export function Dashboard() {
                 }}
               >
                 <div style={{ position: 'absolute', top: 0, left: '5%', right: '5%', height: 1, background: 'linear-gradient(90deg,transparent,rgba(255,255,255,0.95),transparent)' }} />
-                <div style={{ fontFamily: 'DM Sans, sans-serif', fontSize: 8, color: chip.text, fontWeight: 700, marginBottom: 3, textTransform: 'uppercase', letterSpacing: '0.05em' }}>{chip.label}</div>
-                <div style={{ fontFamily: 'DM Sans, sans-serif', fontSize: 10, color: chip.sub2 }}>{chip.sub}</div>
+                <div style={{ fontFamily: 'DM Sans, sans-serif', fontSize: 12, color: chip.text, fontWeight: 700, marginBottom: 3, textTransform: 'uppercase', letterSpacing: '0.05em' }}>{chip.label}</div>
+                <div style={{ fontFamily: 'DM Sans, sans-serif', fontSize: 12, color: chip.sub2 }}>{chip.sub}</div>
               </div>
             ))}
           </div>
@@ -537,7 +537,7 @@ export function Dashboard() {
           {teamMembers.length > 0 && (
             <div>
               <div style={{ display: 'flex', alignItems: 'center', justifyContent: 'space-between', marginBottom: 8 }}>
-                <p style={{ fontFamily: 'DM Sans, sans-serif', fontSize: 10, fontWeight: 700, color: '#9A90A8', textTransform: 'uppercase', letterSpacing: '0.06em', margin: 0 }}>Your team</p>
+                <p style={{ fontFamily: 'DM Sans, sans-serif', fontSize: 12, fontWeight: 700, color: '#9A90A8', textTransform: 'uppercase', letterSpacing: '0.06em', margin: 0 }}>Your team</p>
                 <button onClick={() => { haptics.light(); navigate('/contacts') }} style={{ background: 'none', border: 'none', fontFamily: 'DM Sans, sans-serif', fontSize: 12, fontWeight: 700, color: '#7A6690', cursor: 'pointer', padding: 0 }}>See all</button>
               </div>
               <div style={{
@@ -557,7 +557,7 @@ export function Dashboard() {
                     </div>
                     <div style={{ flex: 1, minWidth: 0 }}>
                       <p style={{ fontFamily: 'DM Sans, sans-serif', fontSize: 13, fontWeight: 600, color: '#2A2030', margin: 0, overflow: 'hidden', textOverflow: 'ellipsis', whiteSpace: 'nowrap' }}>{m.name}</p>
-                      <p style={{ fontFamily: 'DM Sans, sans-serif', fontSize: 11, color: '#9A90A8', margin: 0 }}>{m.role}</p>
+                      <p style={{ fontFamily: 'DM Sans, sans-serif', fontSize: 12, color: '#9A90A8', margin: 0 }}>{m.role}</p>
                     </div>
                     {m.phone && <a href={`tel:${m.phone}`} onClick={(e) => e.stopPropagation()}><MapPin size={14} color="#7A6690" /></a>}
                   </div>

@@ -808,10 +808,10 @@ export function Timeline() {
               return (
                 <div style={{ marginTop: 4 }}>
                   <div style={{ display: 'flex', alignItems: 'center', justifyContent: 'space-between', marginBottom: 8 }}>
-                    <p style={{ fontFamily: 'DM Sans, sans-serif', fontSize: 11, fontWeight: 700, color: '#7A6690', textTransform: 'uppercase', letterSpacing: '0.06em', margin: 0 }}>
+                    <p style={{ fontFamily: 'DM Sans, sans-serif', fontSize: 12, fontWeight: 700, color: '#7A6690', textTransform: 'uppercase', letterSpacing: '0.06em', margin: 0 }}>
                       Your notes
                     </p>
-                    <span style={{ fontFamily: 'DM Sans, sans-serif', fontSize: 10, color: '#8A8098' }}>{linked.length} note{linked.length !== 1 ? 's' : ''}</span>
+                    <span style={{ fontFamily: 'DM Sans, sans-serif', fontSize: 12, color: '#8A8098' }}>{linked.length} note{linked.length !== 1 ? 's' : ''}</span>
                   </div>
                   <div style={{ display: 'flex', flexDirection: 'column', gap: 7 }}>
                     {linked.map(note => (
@@ -836,7 +836,7 @@ export function Timeline() {
             {/* Mark complete button */}
             {stage.status !== 'completed' && (
               <div style={{ marginTop: 4 }}>
-                <p style={{ fontFamily: 'DM Sans, sans-serif', fontSize: 11, color: '#8A8098', margin: '0 0 8px', lineHeight: 1.5, textAlign: 'center' }}>
+                <p style={{ fontFamily: 'DM Sans, sans-serif', fontSize: 12, color: '#8A8098', margin: '0 0 8px', lineHeight: 1.5, textAlign: 'center' }}>
                   When you've completed this stage, tap below to move forward on your journey.
                 </p>
                 <button

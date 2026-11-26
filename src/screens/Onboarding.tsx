@@ -76,7 +76,7 @@ const S = {
   } as React.CSSProperties,
   label: {
     display: 'block',
-    fontSize: 11,
+    fontSize: 12,
     fontWeight: 700,
     letterSpacing: '0.07em',
     textTransform: 'uppercase' as const,

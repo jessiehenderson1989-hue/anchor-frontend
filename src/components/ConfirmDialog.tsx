@@ -31,11 +31,11 @@ export function ConfirmDialog({
         <div className="flex justify-center mb-4">
           <div
             className={`w-16 h-16 rounded-full flex items-center justify-center ${
-              destructive ? 'bg-red-100' : 'bg-purple-100'
+              destructive ? 'bg-[#F8EEF2]' : 'bg-purple-100'
             }`}
           >
             <AlertTriangle
-              className={`w-8 h-8 ${destructive ? 'text-red-600' : 'text-purple-600'}`}
+              className={`w-8 h-8 ${destructive ? 'text-[#A85878]' : 'text-purple-600'}`}
             />
           </div>
         </div>
@@ -47,7 +47,7 @@ export function ConfirmDialog({
           <Button
             onClick={onConfirm}
             disabled={loading}
-            className={`w-full ${destructive ? 'bg-red-600 hover:bg-red-700' : ''}`}
+            className={`w-full ${destructive ? 'bg-[#A85878] hover:bg-[#93486A]' : ''}`}
           >
             {loading ? 'Processing...' : confirmLabel}
           </Button>

@@ -66,7 +66,7 @@ export function BottomNav() {
               </div>
               <span style={{
                 fontFamily: 'DM Sans, sans-serif',
-                fontSize: 9,
+                fontSize: 12,
                 fontWeight: active ? 700 : 500,
                 color: active ? tab.color : '#9A90A8',
                 letterSpacing: '0.01em',

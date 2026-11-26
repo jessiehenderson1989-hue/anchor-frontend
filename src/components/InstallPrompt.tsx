@@ -1,4 +1,5 @@
 import { useState, useEffect } from 'react'
+import { useLocation } from 'react-router-dom'
 import { Download, X } from 'lucide-react'
 
 interface BeforeInstallPromptEvent extends Event {
@@ -6,7 +7,12 @@ interface BeforeInstallPromptEvent extends Event {
   userChoice: Promise<{ outcome: 'accepted' | 'dismissed' }>
 }
 
+// The banner waits until a person is inside the app. On these screens it
+// would sit on top of the form they are trying to fill in.
+const QUIET_SCREENS = ['/', '/auth', '/onboarding', '/foster-care-intro', '/forgot-password', '/reset-password', '/contact-support']
+
 export function InstallPrompt() {
+  const { pathname } = useLocation()
   const [deferredPrompt, setDeferredPrompt] = useState<BeforeInstallPromptEvent | null>(null)
   const [showPrompt, setShowPrompt] = useState(false)
 
@@ -31,12 +37,7 @@ export function InstallPrompt() {
     if (!deferredPrompt) return
 
     deferredPrompt.prompt()
-
-    const { outcome } = await deferredPrompt.userChoice
-
-    if (outcome === 'accepted') {
-      console.log('User accepted the install prompt')
-    }
+    await deferredPrompt.userChoice
 
     setDeferredPrompt(null)
     setShowPrompt(false)
@@ -48,38 +49,43 @@ export function InstallPrompt() {
     sessionStorage.setItem('pwa-install-dismissed', 'true')
   }
 
-  if (!showPrompt || !deferredPrompt) return null
+  if (!showPrompt || !deferredPrompt || QUIET_SCREENS.includes(pathname)) return null
+
+  const font = 'DM Sans, sans-serif'
 
   return (
-    <div className="fixed bottom-20 left-4 right-4 z-50 animate-slide-up">
-      <div className="bg-gradient-to-r from-purple-600 to-blue-600 rounded-xl shadow-2xl p-4 text-white">
+    <div
+      className="animate-slide-up"
+      style={{ position: 'fixed', left: 16, right: 16, bottom: 'calc(88px + env(safe-area-inset-bottom, 0px))', zIndex: 50, maxWidth: 460, margin: '0 auto' }}
+    >
+      <div style={{ position: 'relative', background: '#FAF7F2', border: '1px solid rgba(122,102,144,0.18)', borderRadius: 20, padding: 16, boxShadow: '0 10px 30px rgba(60,40,80,0.16)' }}>
         <button
           onClick={handleDismiss}
-          className="absolute top-2 right-2 p-1 hover:bg-white/20 rounded-full transition-colors"
           aria-label="Dismiss"
+          style={{ position: 'absolute', top: 6, right: 6, width: 36, height: 36, display: 'flex', alignItems: 'center', justifyContent: 'center', background: 'transparent', border: 'none', borderRadius: 12, cursor: 'pointer' }}
         >
-          <X className="w-4 h-4" />
+          <X size={16} color="#8A8098" />
         </button>
 
-        <div className="flex items-start gap-3 pr-6">
-          <div className="flex-shrink-0 w-10 h-10 bg-white/20 rounded-lg flex items-center justify-center">
-            <Download className="w-5 h-5" />
+        <div style={{ display: 'flex', alignItems: 'flex-start', gap: 12, paddingRight: 28 }}>
+          <div style={{ flexShrink: 0, width: 40, height: 40, borderRadius: 12, background: 'rgba(122,102,144,0.1)', display: 'flex', alignItems: 'center', justifyContent: 'center' }}>
+            <Download size={18} color="#7A6690" />
           </div>
-          <div className="flex-1">
-            <h3 className="font-bold text-lg mb-1">Install Anchor</h3>
-            <p className="text-sm text-white/90 mb-3">
+          <div style={{ flex: 1, minWidth: 0 }}>
+            <h3 style={{ fontFamily: 'Fraunces, serif', fontSize: 17, fontWeight: 700, color: '#2A2030', margin: '0 0 2px' }}>Install Anchor</h3>
+            <p style={{ fontFamily: font, fontSize: 13, lineHeight: 1.45, color: '#4A4058', margin: '0 0 12px' }}>
               Add Anchor to your home screen for quick access anytime
             </p>
-            <div className="flex gap-2">
+            <div style={{ display: 'flex', gap: 8 }}>
               <button
                 onClick={handleInstall}
-                className="flex-1 px-4 py-2 bg-white text-purple-600 rounded-lg font-semibold hover:bg-white/90 transition-colors"
+                style={{ flex: 1, minHeight: 44, padding: '10px 14px', background: 'linear-gradient(160deg,#8A74A0 0%,#6A5588 100%)', color: '#fff', border: 'none', borderRadius: 14, fontFamily: font, fontSize: 14, fontWeight: 600, cursor: 'pointer' }}
               >
                 Add to Home Screen
               </button>
               <button
                 onClick={handleDismiss}
-                className="px-4 py-2 bg-white/20 rounded-lg font-medium hover:bg-white/30 transition-colors"
+                style={{ minHeight: 44, padding: '10px 14px', background: '#EDE6DB', color: '#4A4058', border: '1.5px solid rgba(122,102,144,0.18)', borderRadius: 14, fontFamily: font, fontSize: 14, fontWeight: 500, cursor: 'pointer' }}
               >
                 Maybe Later
               </button>

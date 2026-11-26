@@ -76,7 +76,7 @@ const ROLE_COLORS: Record<RoleType, { bg: string; text: string; dot: string }> =
   Judge:          { bg: '#F5ECD8', text: '#7A5A2A', dot: '#C8883A' },
   'Social Worker':{ bg: '#F4EFF8', text: '#7A6690', dot: '#7A6690' },
   'Case Manager': { bg: '#EAF4EE', text: '#4A7C59', dot: '#4A7C59' },
-  CASA:           { bg: '#FDF0F0', text: '#8A3A3A', dot: '#C84A4A' },
+  CASA:           { bg: '#F8EEF2', text: '#8A3A3A', dot: '#A85878' },
   Therapist:      { bg: '#F0F4F8', text: '#3A5A70', dot: '#4A7A9A' },
   Supervisor:     { bg: '#F4EFF8', text: '#5A4A70', dot: '#7A6690' },
   Other:          { bg: '#F0EAE0', text: '#5A5065', dot: '#9A90A8' },
@@ -398,7 +398,7 @@ export function Contacts() {
               Save the people supporting you through this process so you always have their info handy.
             </p>
             <div style={{ display: 'flex', flexDirection: 'column', gap: 8, textAlign: 'left', background: '#FAF7F2', borderRadius: 16, padding: '12px 16px', border: '1px solid rgba(255,255,255,0.88)' }}>
-              <p style={{ fontFamily: 'DM Sans, sans-serif', fontSize: 11, fontWeight: 700, color: '#8A8098', textTransform: 'uppercase', letterSpacing: '0.07em', margin: 0 }}>Who to add first</p>
+              <p style={{ fontFamily: 'DM Sans, sans-serif', fontSize: 12, fontWeight: 700, color: '#8A8098', textTransform: 'uppercase', letterSpacing: '0.07em', margin: 0 }}>Who to add first</p>
               {['Your attorney — they work for you', 'Your social worker', 'A CASA volunteer if you have one', 'A trusted family member or friend'].map((person, i) => (
                 <div key={i} style={{ display: 'flex', gap: 8, alignItems: 'center' }}>
                   <div style={{ width: 5, height: 5, borderRadius: '50%', background: '#C8B8D0', flexShrink: 0 }} />
@@ -480,8 +480,8 @@ export function Contacts() {
                             onClick={() => setDeleteConfirm(contact.id)}
                             style={{
                               flex: 1, display: 'flex', alignItems: 'center', justifyContent: 'center', gap: 6,
-                              padding: '9px', background: '#FDF0F0', border: 'none', borderRadius: 12,
-                              fontFamily: 'DM Sans, sans-serif', fontSize: 13, fontWeight: 600, color: '#C84A4A', cursor: 'pointer',
+                              padding: '9px', background: '#F8EEF2', border: 'none', borderRadius: 12,
+                              fontFamily: 'DM Sans, sans-serif', fontSize: 13, fontWeight: 600, color: '#A85878', cursor: 'pointer',
                             }}
                           >
                             <Trash2 size={13} /> Delete
@@ -622,7 +622,7 @@ export function Contacts() {
               <button onClick={() => setDeleteConfirm(null)} style={{ flex: 1, padding: '13px', background: '#EDE6DB', border: '1.5px solid rgba(122,102,144,0.2)', borderRadius: 16, fontFamily: 'DM Sans, sans-serif', fontWeight: 600, fontSize: 15, color: '#7A6690', cursor: 'pointer' }}>
                 Cancel
               </button>
-              <button onClick={() => handleDeleteContact(deleteConfirm)} style={{ flex: 1, padding: '13px', background: '#C0392B', border: 'none', borderRadius: 16, fontFamily: 'DM Sans, sans-serif', fontWeight: 600, fontSize: 15, color: '#fff', cursor: 'pointer' }}>
+              <button onClick={() => handleDeleteContact(deleteConfirm)} style={{ flex: 1, padding: '13px', background: '#A85878', border: 'none', borderRadius: 16, fontFamily: 'DM Sans, sans-serif', fontWeight: 600, fontSize: 15, color: '#fff', cursor: 'pointer' }}>
                 Remove
               </button>
             </div>

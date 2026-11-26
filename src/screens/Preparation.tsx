@@ -343,7 +343,7 @@ export function Preparation() {
         {/* ── STEP 1: CHOOSE TYPE ── */}
         {!selectedType && (
           <div style={{ display: 'flex', flexDirection: 'column', gap: 10 }}>
-            <p style={{ fontFamily: 'DM Sans, sans-serif', fontSize: 11, fontWeight: 700, color: '#8A8098', textTransform: 'uppercase', letterSpacing: '0.06em', margin: 0 }}>
+            <p style={{ fontFamily: 'DM Sans, sans-serif', fontSize: 12, fontWeight: 700, color: '#8A8098', textTransform: 'uppercase', letterSpacing: '0.06em', margin: 0 }}>
               What do you need help with?
             </p>
             {copy.prepOptions.map(opt => {
@@ -373,7 +373,7 @@ export function Preparation() {
         {selectedType === 'meeting' && !meetingType && (
           <div style={{ ...card, padding: 20 }}>
             <div style={{ display: 'flex', alignItems: 'center', justifyContent: 'space-between', marginBottom: 14 }}>
-              <p style={{ fontFamily: 'DM Sans, sans-serif', fontSize: 11, fontWeight: 700, color: '#8A8098', textTransform: 'uppercase', letterSpacing: '0.06em', margin: 0 }}>
+              <p style={{ fontFamily: 'DM Sans, sans-serif', fontSize: 12, fontWeight: 700, color: '#8A8098', textTransform: 'uppercase', letterSpacing: '0.06em', margin: 0 }}>
                 Who is this meeting with?
               </p>
               <button onClick={reset} style={{ color: '#8A8098' }}>
@@ -405,7 +405,7 @@ export function Preparation() {
           <div style={{ ...card, padding: 20 }}>
             <div style={{ display: 'flex', alignItems: 'center', justifyContent: 'space-between', marginBottom: 14 }}>
               <span
-                style={{ fontFamily: 'DM Sans, sans-serif', fontSize: 10, fontWeight: 700, textTransform: 'uppercase', letterSpacing: '0.05em', padding: '3px 12px', borderRadius: 20, background: '#E8DDE8', color: '#7A6690' }}
+                style={{ fontFamily: 'DM Sans, sans-serif', fontSize: 12, fontWeight: 700, textTransform: 'uppercase', letterSpacing: '0.05em', padding: '3px 12px', borderRadius: 20, background: '#E8DDE8', color: '#7A6690' }}
               >
                 {copy.prepOptions.find(o => o.type === selectedType)?.title}
                 {meetingType && ` · ${copy.meetingTypes.find(m => m.value === meetingType)?.label}`}
@@ -460,7 +460,7 @@ export function Preparation() {
             </button>
 
             {loading && (
-              <p style={{ fontFamily: 'DM Sans, sans-serif', fontSize: 11, textAlign: 'center', marginTop: 6, color: '#8A8098' }}>
+              <p style={{ fontFamily: 'DM Sans, sans-serif', fontSize: 12, textAlign: 'center', marginTop: 6, color: '#8A8098' }}>
                 Usually ready in 5–10 seconds
               </p>
             )}
@@ -496,7 +496,7 @@ export function Preparation() {
             <div
               style={{ background: '#E8DDE8', borderRadius: 16, padding: '12px 14px' }}
             >
-              <p style={{ fontFamily: 'DM Sans, sans-serif', fontSize: 10, fontWeight: 700, textTransform: 'uppercase', letterSpacing: '0.05em', color: '#8A8098', margin: '0 0 4px' }}>
+              <p style={{ fontFamily: 'DM Sans, sans-serif', fontSize: 12, fontWeight: 700, textTransform: 'uppercase', letterSpacing: '0.05em', color: '#8A8098', margin: '0 0 4px' }}>
                 You said
               </p>
               <p style={{ fontFamily: 'DM Sans, sans-serif', fontSize: 13, color: '#2A2030', margin: 0 }}>{concerns}</p>
@@ -507,7 +507,7 @@ export function Preparation() {
               <div key={i} style={{ ...card, padding: 20 }}>
                 <div style={{ display: 'flex', alignItems: 'center', gap: 8, marginBottom: 10 }}>
                   <Sparkles size={15} color="#7A6690" />
-                  <p style={{ fontFamily: 'DM Sans, sans-serif', fontSize: 10, fontWeight: 700, textTransform: 'uppercase', letterSpacing: '0.05em', color: '#7A6690', margin: 0 }}>
+                  <p style={{ fontFamily: 'DM Sans, sans-serif', fontSize: 12, fontWeight: 700, textTransform: 'uppercase', letterSpacing: '0.05em', color: '#7A6690', margin: 0 }}>
                     {i === 0 ? 'Your Preparation Guide · Written by AI' : 'Follow-up · Written by AI'}
                   </p>
                 </div>
@@ -547,7 +547,7 @@ export function Preparation() {
             )}
 
             {/* Disclaimer */}
-            <p style={{ fontFamily: 'DM Sans, sans-serif', fontSize: 11, textAlign: 'center', padding: '0 16px', color: '#8A8098', margin: 0 }}>
+            <p style={{ fontFamily: 'DM Sans, sans-serif', fontSize: 12, textAlign: 'center', padding: '0 16px', color: '#8A8098', margin: 0 }}>
               General information only — not legal advice. Talk to your attorney about your specific case.
             </p>
 
@@ -556,7 +556,7 @@ export function Preparation() {
               <p style={{ fontFamily: 'DM Sans, sans-serif', fontSize: 12, fontWeight: 700, color: '#2A2030', margin: '0 0 4px' }}>
                 Ask a follow-up question
               </p>
-              <p style={{ fontFamily: 'DM Sans, sans-serif', fontSize: 11, color: '#8A8098', margin: '0 0 10px', lineHeight: 1.5 }}>
+              <p style={{ fontFamily: 'DM Sans, sans-serif', fontSize: 12, color: '#8A8098', margin: '0 0 10px', lineHeight: 1.5 }}>
                 Type your question and tap the arrow — the guide will respond.
               </p>
               <div style={{ display: 'flex', gap: 8 }}>
@@ -635,7 +635,7 @@ export function Preparation() {
                 <X size={16} color="#9A90A8" />
               </button>
             </div>
-            <label style={{ fontFamily: 'DM Sans, sans-serif', fontSize: 10, fontWeight: 700, textTransform: 'uppercase', letterSpacing: '0.05em', color: '#8A8098', display: 'block', marginBottom: 8 }}>
+            <label style={{ fontFamily: 'DM Sans, sans-serif', fontSize: 12, fontWeight: 700, textTransform: 'uppercase', letterSpacing: '0.05em', color: '#8A8098', display: 'block', marginBottom: 8 }}>
               Title
             </label>
             <input

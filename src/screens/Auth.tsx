@@ -97,7 +97,7 @@ export function Auth() {
   const labelStyle: React.CSSProperties = {
     display: 'block',
     marginBottom: 6,
-    fontSize: 11,
+    fontSize: 12,
     fontWeight: 600,
     letterSpacing: '0.08em',
     textTransform: 'uppercase',

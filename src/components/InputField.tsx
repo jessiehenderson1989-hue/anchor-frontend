@@ -33,7 +33,7 @@ export function InputField({
 
   const baseClasses = `w-full rounded-xl border-2 px-4 py-3 focus:outline-none transition-colors ${
     Icon ? 'pl-12' : ''
-  } ${error ? 'border-red-300 focus:border-red-600 focus:ring-4 focus:ring-red-100' : 'border-gray-200 focus:border-purple-600 focus:ring-4 focus:ring-purple-100'} ${disabled ? 'bg-gray-100 cursor-not-allowed' : ''}`
+  } ${error ? 'border-[#A85878] focus:border-[#A85878] focus:ring-4 focus:ring-[#F8EEF2]' : 'border-gray-200 focus:border-purple-600 focus:ring-4 focus:ring-purple-100'} ${disabled ? 'bg-gray-100 cursor-not-allowed' : ''}`
 
   return (
     <div className="w-full">
@@ -76,7 +76,7 @@ export function InputField({
         )}
       </div>
 
-      {error && <p className="mt-2 text-sm text-red-600">{error}</p>}
+      {error && <p className="mt-2 text-sm text-[#A85878]">{error}</p>}
     </div>
   )
 }

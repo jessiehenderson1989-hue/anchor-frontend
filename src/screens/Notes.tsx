@@ -295,7 +295,7 @@ export function Notes() {
             </p>
             {!searchQuery && (
               <div style={{ display: 'flex', flexDirection: 'column', gap: 8, textAlign: 'left', background: '#FAF7F2', borderRadius: 16, padding: '12px 16px', border: '1px solid rgba(255,255,255,0.88)' }}>
-                <p style={{ fontFamily: 'DM Sans, sans-serif', fontSize: 11, fontWeight: 700, color: '#8A8098', textTransform: 'uppercase', letterSpacing: '0.07em', margin: 0 }}>Ideas to get started</p>
+                <p style={{ fontFamily: 'DM Sans, sans-serif', fontSize: 12, fontWeight: 700, color: '#8A8098', textTransform: 'uppercase', letterSpacing: '0.07em', margin: 0 }}>Ideas to get started</p>
                 {["What happened at today's hearing", 'Questions to ask my attorney', 'What the judge said about my case plan', 'How my visit with my child went'].map((idea, i) => (
                   <div key={i} style={{ display: 'flex', gap: 8, alignItems: 'center' }}>
                     <div style={{ width: 5, height: 5, borderRadius: '50%', background: '#C8B8D0', flexShrink: 0 }} />
@@ -429,7 +429,7 @@ export function Notes() {
                   ))}
                 </select>
                 {formData.stage_key && (
-                  <p style={{ fontFamily: 'DM Sans, sans-serif', fontSize: 11, color: '#7A6690', margin: '5px 0 0', fontWeight: 600 }}>
+                  <p style={{ fontFamily: 'DM Sans, sans-serif', fontSize: 12, color: '#7A6690', margin: '5px 0 0', fontWeight: 600 }}>
                     This note will appear inside that stage on your Timeline
                   </p>
                 )}
@@ -481,7 +481,7 @@ export function Notes() {
             <p style={{ fontFamily: 'DM Sans, sans-serif', fontSize: 14, color: '#4A4058', marginBottom: 24 }}>This can't be undone.</p>
             <div style={{ display: 'flex', gap: 12 }}>
               <button onClick={() => setDeleteConfirm(null)} style={{ flex: 1, padding: '13px', background: '#EDE6DB', border: '1.5px solid rgba(122,102,144,0.2)', borderRadius: 16, fontFamily: 'DM Sans, sans-serif', fontWeight: 600, fontSize: 15, color: '#7A6690', cursor: 'pointer' }}>Cancel</button>
-              <button onClick={() => handleDelete(deleteConfirm)} style={{ flex: 1, padding: '13px', background: '#C0392B', border: 'none', borderRadius: 16, fontFamily: 'DM Sans, sans-serif', fontWeight: 600, fontSize: 15, color: '#fff', cursor: 'pointer' }}>Delete</button>
+              <button onClick={() => handleDelete(deleteConfirm)} style={{ flex: 1, padding: '13px', background: '#A85878', border: 'none', borderRadius: 16, fontFamily: 'DM Sans, sans-serif', fontWeight: 600, fontSize: 15, color: '#fff', cursor: 'pointer' }}>Delete</button>
             </div>
           </div>
         </div>

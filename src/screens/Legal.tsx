@@ -245,7 +245,7 @@ export function Legal() {
           >
             <div>
               <p style={{ fontFamily: 'DM Sans, sans-serif', fontSize: 13, fontWeight: 700, color: '#2A3A50', margin: '0 0 2px' }}>Don't know a term?</p>
-              <p style={{ fontFamily: 'DM Sans, sans-serif', fontSize: 11, color: '#4A6A88', margin: 0 }}>Look it up in the Glossary</p>
+              <p style={{ fontFamily: 'DM Sans, sans-serif', fontSize: 12, color: '#4A6A88', margin: 0 }}>Look it up in the Glossary</p>
             </div>
             <span style={{ fontFamily: 'DM Sans, sans-serif', fontSize: 12, fontWeight: 700, color: '#3A5A80' }}>Open →</span>
           </div>
@@ -327,7 +327,7 @@ export function Legal() {
                       <div style={{ flex: 1, minWidth: 0 }}>
                         <div style={{ display: 'flex', alignItems: 'center', gap: 8, marginBottom: 6, flexWrap: 'wrap' }}>
                           <span style={{
-                            fontFamily: 'DM Sans, sans-serif', fontSize: 10, fontWeight: 700,
+                            fontFamily: 'DM Sans, sans-serif', fontSize: 12, fontWeight: 700,
                             background: catStyles.bg, color: catStyles.text,
                             borderRadius: 20, padding: '2px 10px',
                             display: 'flex', alignItems: 'center', gap: 4,
@@ -384,7 +384,7 @@ export function Legal() {
                         {/* Plain language */}
                         {content.plain_language && (
                           <div style={{ background: '#EAF4EE', borderRadius: 12, padding: '12px 14px' }}>
-                            <p style={{ fontFamily: 'DM Sans, sans-serif', fontSize: 11, fontWeight: 700, color: '#4A7C59', textTransform: 'uppercase', letterSpacing: '0.05em', margin: '0 0 6px' }}>
+                            <p style={{ fontFamily: 'DM Sans, sans-serif', fontSize: 12, fontWeight: 700, color: '#4A7C59', textTransform: 'uppercase', letterSpacing: '0.05em', margin: '0 0 6px' }}>
                               In plain language
                             </p>
                             <p style={{ fontFamily: 'DM Sans, sans-serif', fontSize: 13, color: '#2A3A30', margin: 0, lineHeight: 1.6, whiteSpace: 'pre-line' }}>
@@ -395,7 +395,7 @@ export function Legal() {
 
                         {/* Legal reference */}
                         {content.legal_reference && (
-                          <p style={{ fontFamily: 'DM Sans, sans-serif', fontSize: 11, color: '#8A8098', fontStyle: 'italic', margin: 0 }}>
+                          <p style={{ fontFamily: 'DM Sans, sans-serif', fontSize: 12, color: '#8A8098', fontStyle: 'italic', margin: 0 }}>
                             Reference: {content.legal_reference}
                           </p>
                         )}

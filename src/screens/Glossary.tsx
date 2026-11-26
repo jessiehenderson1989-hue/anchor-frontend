@@ -200,7 +200,7 @@ export function Glossary() {
                             display: 'inline-flex', alignItems: 'center', gap: 4,
                             background: colors.bg, color: colors.text,
                             borderRadius: 20, padding: '2px 8px',
-                            fontFamily: 'DM Sans, sans-serif', fontSize: 11, fontWeight: 600,
+                            fontFamily: 'DM Sans, sans-serif', fontSize: 12, fontWeight: 600,
                           }}>
                             <span style={{ width: 5, height: 5, borderRadius: '50%', background: colors.dot, display: 'inline-block' }} />
                             {CATEGORY_LABELS[term.category as CategoryType] || term.category}
@@ -272,7 +272,7 @@ export function Glossary() {
 
                       {/* Source */}
                       {term.source && (
-                        <p style={{ fontFamily: 'DM Sans, sans-serif', fontSize: 11, color: '#8A8098', fontStyle: 'italic', margin: 0 }}>
+                        <p style={{ fontFamily: 'DM Sans, sans-serif', fontSize: 12, color: '#8A8098', fontStyle: 'italic', margin: 0 }}>
                           Source: {term.source}
                         </p>
                       )}

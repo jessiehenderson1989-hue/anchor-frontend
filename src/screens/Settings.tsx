@@ -38,7 +38,7 @@ const input: React.CSSProperties = {
 }
 const label: React.CSSProperties = {
   display: 'block',
-  fontSize: 11,
+  fontSize: 12,
   fontWeight: 700,
   letterSpacing: '0.07em',
   textTransform: 'uppercase',
@@ -77,9 +77,9 @@ const ghostBtn: React.CSSProperties = {
   gap: 8,
 }
 const dangerBtn: React.CSSProperties = {
-  background: 'rgba(220,38,38,0.08)',
-  color: '#DC2626',
-  border: '1.5px solid rgba(220,38,38,0.2)',
+  background: 'rgba(168,88,120,0.08)',
+  color: '#A85878',
+  border: '1.5px solid rgba(168,88,120,0.2)',
   borderRadius: 14,
   padding: '13px 20px',
   fontWeight: 700,
@@ -418,7 +418,7 @@ export function Settings() {
         </div>
 
         {/* ── ACCOUNT ── */}
-        <p style={{ fontSize: 11, fontWeight: 700, letterSpacing: '0.07em', textTransform: 'uppercase', color: '#8A8098', marginBottom: 8, paddingLeft: 4 }}>
+        <p style={{ fontSize: 12, fontWeight: 700, letterSpacing: '0.07em', textTransform: 'uppercase', color: '#8A8098', marginBottom: 8, paddingLeft: 4 }}>
           Account
         </p>
         <div style={{ ...sectionCard, marginBottom: 20 }}>
@@ -469,7 +469,7 @@ export function Settings() {
 
         {TEXT_REMINDERS_READY && (<>
         {/* ── NOTIFICATIONS ── */}
-        <p style={{ fontSize: 11, fontWeight: 700, letterSpacing: '0.07em', textTransform: 'uppercase', color: '#8A8098', marginBottom: 8, paddingLeft: 4 }}>
+        <p style={{ fontSize: 12, fontWeight: 700, letterSpacing: '0.07em', textTransform: 'uppercase', color: '#8A8098', marginBottom: 8, paddingLeft: 4 }}>
           Notifications
         </p>
         <div style={{ ...sectionCard, marginBottom: 20 }}>
@@ -516,7 +516,7 @@ export function Settings() {
         </>)}
 
         {/* ── PRIVACY & DATA ── */}
-        <p style={{ fontSize: 11, fontWeight: 700, letterSpacing: '0.07em', textTransform: 'uppercase', color: '#8A8098', marginBottom: 8, paddingLeft: 4 }}>
+        <p style={{ fontSize: 12, fontWeight: 700, letterSpacing: '0.07em', textTransform: 'uppercase', color: '#8A8098', marginBottom: 8, paddingLeft: 4 }}>
           Privacy & Data
         </p>
         <div style={{ ...sectionCard, marginBottom: 20 }}>
@@ -538,23 +538,23 @@ export function Settings() {
           <button
             style={rowLast}
             onClick={() => { haptics.light(); setShowDeleteConfirm(true) }}
-            className="w-full hover:bg-red-50 transition-colors"
+            className="w-full hover:bg-[#F8EEF2] transition-colors"
           >
             <div className="flex items-center gap-3">
-              <div style={{ ...iconWrap, background: 'rgba(220,38,38,0.08)' }}>
-                <Trash2 className="w-4 h-4" style={{ color: '#DC2626' }} />
+              <div style={{ ...iconWrap, background: 'rgba(168,88,120,0.08)' }}>
+                <Trash2 className="w-4 h-4" style={{ color: '#A85878' }} />
               </div>
               <div className="text-left">
-                <p style={{ fontSize: 15, fontWeight: 500, color: '#DC2626' }}>Delete Account</p>
+                <p style={{ fontSize: 15, fontWeight: 500, color: '#A85878' }}>Delete Account</p>
                 <p style={{ fontSize: 12, color: '#8A8098' }}>Permanently remove all your data</p>
               </div>
             </div>
-            <ChevronRight className="w-4 h-4" style={{ color: '#DC2626', opacity: 0.5 }} />
+            <ChevronRight className="w-4 h-4" style={{ color: '#A85878', opacity: 0.5 }} />
           </button>
         </div>
 
         {/* ── ABOUT ── */}
-        <p style={{ fontSize: 11, fontWeight: 700, letterSpacing: '0.07em', textTransform: 'uppercase', color: '#8A8098', marginBottom: 8, paddingLeft: 4 }}>
+        <p style={{ fontSize: 12, fontWeight: 700, letterSpacing: '0.07em', textTransform: 'uppercase', color: '#8A8098', marginBottom: 8, paddingLeft: 4 }}>
           About
         </p>
         <div style={{ ...sectionCard, marginBottom: 20 }}>
@@ -646,7 +646,7 @@ export function Settings() {
                     <div style={{ display: 'flex', alignItems: 'center', gap: 8 }}>
                       <span style={{ fontSize: 15, fontWeight: 700, color: '#2A2030' }}>{r.label}</span>
                       {isCurrent && (
-                        <span style={{ fontSize: 11, fontWeight: 700, color: '#7A6690', background: '#E8DDE8', borderRadius: 20, padding: '2px 8px', letterSpacing: '0.04em' }}>
+                        <span style={{ fontSize: 12, fontWeight: 700, color: '#7A6690', background: '#E8DDE8', borderRadius: 20, padding: '2px 8px', letterSpacing: '0.04em' }}>
                           Current
                         </span>
                       )}
@@ -787,9 +787,9 @@ export function Settings() {
         <Modal title="Delete Account?" onClose={() => { setShowDeleteConfirm(false); setDeletePassword(''); setDeleteError('') }}>
           <div
             className="rounded-2xl p-4 mb-5 text-center"
-            style={{ background: 'rgba(220,38,38,0.06)', border: '1px solid rgba(220,38,38,0.15)' }}
+            style={{ background: 'rgba(168,88,120,0.06)', border: '1px solid rgba(168,88,120,0.15)' }}
           >
-            <Trash2 className="w-8 h-8 mx-auto mb-2" style={{ color: '#DC2626' }} />
+            <Trash2 className="w-8 h-8 mx-auto mb-2" style={{ color: '#A85878' }} />
             <p style={{ fontSize: 14, color: '#7A5A2A' }}>
               This cannot be undone. All your notes, timeline progress, and contacts will be permanently deleted.
             </p>

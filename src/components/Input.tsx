@@ -23,11 +23,11 @@ export function Input({ label, icon, error, className = '', ...props }: InputPro
         <input
           className={`w-full rounded-xl border-2 border-gray-200 px-4 py-3 focus:border-purple-600 focus:ring-4 focus:ring-purple-100 focus:outline-none ${
             icon ? 'pl-10' : ''
-          } ${error ? 'border-red-500' : ''} ${className}`}
+          } ${error ? 'border-[#A85878]' : ''} ${className}`}
           {...props}
         />
       </div>
-      {error && <p className="mt-1 text-sm text-red-600">{error}</p>}
+      {error && <p className="mt-1 text-sm text-[#A85878]">{error}</p>}
     </div>
   )
 }

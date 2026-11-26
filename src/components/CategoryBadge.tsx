@@ -20,7 +20,7 @@ export function CategoryBadge({ category, size = 'md' }: CategoryBadgeProps) {
       return 'bg-coral-100 text-coral-700'
     }
     if (normalized.includes('important') || normalized.includes('urgent')) {
-      return 'bg-red-100 text-red-700'
+      return 'bg-[#F8EEF2] text-[#A85878]'
     }
     if (normalized.includes('question') || normalized.includes('ask')) {
       return 'bg-teal-100 text-teal-700'

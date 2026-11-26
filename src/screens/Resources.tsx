@@ -78,7 +78,7 @@ const YOUTH_TOPIC_COLORS: Record<string, { bg: string; text: string; dot: string
   'Mental Health Resources':      { bg: '#E8F4F4', text: '#3A6A6A', dot: '#4A8A8A' },
   'Legal Representation and CASA':{ bg: '#EAF0F8', text: '#3A4A80', dot: '#4A5AA0' },
   'Emancipation / Aging Out':     { bg: '#F5ECD8', text: '#7A5A2A', dot: '#C8883A' },
-  'Crisis and Hotline Resources': { bg: '#FDF0F0', text: '#8A3A3A', dot: '#C84A4A' },
+  'Crisis and Hotline Resources': { bg: '#F8EEF2', text: '#8A3A3A', dot: '#A85878' },
   'General Foster Youth Resources':{ bg: '#F0EAE0', text: '#5A5065', dot: '#9A90A8' },
 }
 
@@ -174,8 +174,8 @@ export function Resources() {
   if (error) return (
     <div style={{ minHeight: '100vh', background: '#EDE6DB', display: 'flex', alignItems: 'center', justifyContent: 'center', padding: '0 24px' }}>
       <div style={{ textAlign: 'center' }}>
-        <div style={{ width: 64, height: 64, borderRadius: '50%', background: '#FDF0F0', display: 'flex', alignItems: 'center', justifyContent: 'center', margin: '0 auto 16px' }}>
-          <AlertCircle size={28} color="#C84A4A" />
+        <div style={{ width: 64, height: 64, borderRadius: '50%', background: '#F8EEF2', display: 'flex', alignItems: 'center', justifyContent: 'center', margin: '0 auto 16px' }}>
+          <AlertCircle size={28} color="#A85878" />
         </div>
         <h2 style={{ fontFamily: 'Fraunces, serif', fontSize: 22, fontWeight: 700, color: '#2A2030', marginBottom: 8 }}>Couldn't load resources</h2>
         <p style={{ fontFamily: 'DM Sans, sans-serif', fontSize: 14, color: '#4A4058', marginBottom: 20 }}>{error}</p>
@@ -204,9 +204,9 @@ export function Resources() {
         </div>
 
         {/* Crisis card */}
-        <div style={{ background: '#FDF0F0', border: '1px solid rgba(200,74,74,0.2)', borderRadius: 20, padding: '18px', marginBottom: 16 }}>
+        <div style={{ background: '#F8EEF2', border: '1px solid rgba(168,88,120,0.2)', borderRadius: 20, padding: '18px', marginBottom: 16 }}>
           <div style={{ display: 'flex', alignItems: 'center', gap: 10, marginBottom: 14 }}>
-            <div style={{ width: 36, height: 36, borderRadius: 12, background: '#C84A4A', display: 'flex', alignItems: 'center', justifyContent: 'center' }}>
+            <div style={{ width: 36, height: 36, borderRadius: 12, background: '#A85878', display: 'flex', alignItems: 'center', justifyContent: 'center' }}>
               <Heart size={18} color="#fff" />
             </div>
             <span style={{ fontFamily: 'Fraunces, serif', fontSize: 17, fontWeight: 700, color: '#2A2030' }}>Need Help Right Now?</span>
@@ -217,7 +217,7 @@ export function Resources() {
               <div style={{ background: '#FAF7F2', borderRadius: 14, padding: '14px' }}>
                 <p style={{ fontFamily: 'DM Sans, sans-serif', fontSize: 13, fontWeight: 700, color: '#2A2030', margin: '0 0 4px' }}>Cal-FURS — Foster Youth Crisis Line</p>
                 <p style={{ fontFamily: 'DM Sans, sans-serif', fontSize: 13, color: '#4A4058', margin: '0 0 10px', lineHeight: 1.5 }}>24/7 crisis support for foster youth. Mobile response teams available.</p>
-                <a href="tel:1-833-939-3877" style={{ display: 'inline-flex', alignItems: 'center', gap: 6, background: '#C84A4A', color: '#fff', borderRadius: 12, padding: '8px 14px', fontFamily: 'DM Sans, sans-serif', fontWeight: 600, fontSize: 13, textDecoration: 'none' }}>
+                <a href="tel:1-833-939-3877" style={{ display: 'inline-flex', alignItems: 'center', gap: 6, background: '#A85878', color: '#fff', borderRadius: 12, padding: '8px 14px', fontFamily: 'DM Sans, sans-serif', fontWeight: 600, fontSize: 13, textDecoration: 'none' }}>
                   <Phone size={13} /> Call or Text 1-833-939-3877
                 </a>
               </div>
@@ -225,7 +225,7 @@ export function Resources() {
                 {[['988 Crisis Line', 'tel:988', '988'],['Crisis Text Line', 'sms:741741', 'Text HOME to 741741'],['CA Youth Crisis', 'tel:1-800-843-5200', '1-800-843-5200'],['Foster Care Ombudsperson', 'tel:1-877-846-1602', '1-877-846-1602']].map(([label, href, display]) => (
                   <div key={label} style={{ display: 'flex', justifyContent: 'space-between', alignItems: 'center' }}>
                     <span style={{ fontFamily: 'DM Sans, sans-serif', fontSize: 13, color: '#4A4058' }}>{label}</span>
-                    <a href={href} style={{ fontFamily: 'DM Sans, sans-serif', fontSize: 13, fontWeight: 700, color: '#C84A4A', textDecoration: 'none' }}>{display}</a>
+                    <a href={href} style={{ fontFamily: 'DM Sans, sans-serif', fontSize: 13, fontWeight: 700, color: '#A85878', textDecoration: 'none' }}>{display}</a>
                   </div>
                 ))}
               </div>
@@ -235,7 +235,7 @@ export function Resources() {
               <div style={{ background: '#FAF7F2', borderRadius: 14, padding: '14px' }}>
                 <p style={{ fontFamily: 'DM Sans, sans-serif', fontSize: 13, fontWeight: 700, color: '#2A2030', margin: '0 0 4px' }}>Dial 211</p>
                 <p style={{ fontFamily: 'DM Sans, sans-serif', fontSize: 13, color: '#4A4058', margin: '0 0 10px', lineHeight: 1.5 }}>Free, confidential 24/7 help. Food, housing, healthcare, childcare, and more.</p>
-                <a href="tel:211" style={{ display: 'inline-flex', alignItems: 'center', gap: 6, background: '#C84A4A', color: '#fff', borderRadius: 12, padding: '8px 14px', fontFamily: 'DM Sans, sans-serif', fontWeight: 600, fontSize: 13, textDecoration: 'none' }}>
+                <a href="tel:211" style={{ display: 'inline-flex', alignItems: 'center', gap: 6, background: '#A85878', color: '#fff', borderRadius: 12, padding: '8px 14px', fontFamily: 'DM Sans, sans-serif', fontWeight: 600, fontSize: 13, textDecoration: 'none' }}>
                   <Phone size={13} /> Call 211 Now
                 </a>
               </div>
@@ -243,7 +243,7 @@ export function Resources() {
                 {[['CA Parent Warmline', 'tel:1-855-627-6437', '1-855-627-6437'],['Crisis Text Line', 'sms:741741', 'Text HOME to 741741'],['988 Suicide & Crisis', 'tel:988', '988'],['Domestic Violence', 'tel:1-800-799-7233', '1-800-799-7233']].map(([label, href, display]) => (
                   <div key={label} style={{ display: 'flex', justifyContent: 'space-between', alignItems: 'center' }}>
                     <span style={{ fontFamily: 'DM Sans, sans-serif', fontSize: 13, color: '#4A4058' }}>{label}</span>
-                    <a href={href} style={{ fontFamily: 'DM Sans, sans-serif', fontSize: 13, fontWeight: 700, color: '#C84A4A', textDecoration: 'none' }}>{display}</a>
+                    <a href={href} style={{ fontFamily: 'DM Sans, sans-serif', fontSize: 13, fontWeight: 700, color: '#A85878', textDecoration: 'none' }}>{display}</a>
                   </div>
                 ))}
               </div>
@@ -347,7 +347,7 @@ export function Resources() {
                     <div style={{ flex: 1 }}>
                       <h3 style={{ fontFamily: 'Fraunces, serif', fontSize: 16, fontWeight: 700, color: '#2A2030', margin: '0 0 4px' }}>{resource.name}</h3>
                       {/* Category pill */}
-                      <span style={{ display: 'inline-flex', alignItems: 'center', gap: 4, background: colors.bg, color: colors.text, borderRadius: 20, padding: '2px 8px', fontFamily: 'DM Sans, sans-serif', fontSize: 11, fontWeight: 600 }}>
+                      <span style={{ display: 'inline-flex', alignItems: 'center', gap: 4, background: colors.bg, color: colors.text, borderRadius: 20, padding: '2px 8px', fontFamily: 'DM Sans, sans-serif', fontSize: 12, fontWeight: 600 }}>
                         <span style={{ width: 5, height: 5, borderRadius: '50%', background: colors.dot, display: 'inline-block' }} />
                         {isYouth ? resource.topic_category : resource.category}
                       </span>
@@ -360,13 +360,13 @@ export function Resources() {
                   {/* Tags row */}
                   <div style={{ display: 'flex', flexWrap: 'wrap', gap: 6, marginBottom: 12 }}>
                     {resource.target_age_range && (
-                      <span style={{ background: '#EDE6DB', color: '#4A4058', borderRadius: 20, padding: '2px 8px', fontFamily: 'DM Sans, sans-serif', fontSize: 11, fontWeight: 600 }}>{resource.target_age_range}</span>
+                      <span style={{ background: '#EDE6DB', color: '#4A4058', borderRadius: 20, padding: '2px 8px', fontFamily: 'DM Sans, sans-serif', fontSize: 12, fontWeight: 600 }}>{resource.target_age_range}</span>
                     )}
                     {resource.geographic_scope && !['Statewide','National'].includes(resource.geographic_scope) && (
-                      <span style={{ background: '#EAF0F8', color: '#3A5A80', borderRadius: 20, padding: '2px 8px', fontFamily: 'DM Sans, sans-serif', fontSize: 11, fontWeight: 600 }}>{resource.geographic_scope}</span>
+                      <span style={{ background: '#EAF0F8', color: '#3A5A80', borderRadius: 20, padding: '2px 8px', fontFamily: 'DM Sans, sans-serif', fontSize: 12, fontWeight: 600 }}>{resource.geographic_scope}</span>
                     )}
                     {!isYouth && resource.cost && (
-                      <span style={{ background: resource.cost === 'Free' ? '#EAF4EE' : resource.cost === 'Sliding Scale' ? '#EAF0F8' : '#F0EAE0', color: resource.cost === 'Free' ? '#4A7C59' : resource.cost === 'Sliding Scale' ? '#3A5A80' : '#5A5065', borderRadius: 20, padding: '2px 8px', fontFamily: 'DM Sans, sans-serif', fontSize: 11, fontWeight: 600 }}>{resource.cost}</span>
+                      <span style={{ background: resource.cost === 'Free' ? '#EAF4EE' : resource.cost === 'Sliding Scale' ? '#EAF0F8' : '#F0EAE0', color: resource.cost === 'Free' ? '#4A7C59' : resource.cost === 'Sliding Scale' ? '#3A5A80' : '#5A5065', borderRadius: 20, padding: '2px 8px', fontFamily: 'DM Sans, sans-serif', fontSize: 12, fontWeight: 600 }}>{resource.cost}</span>
                     )}
                   </div>
 

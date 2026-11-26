@@ -150,7 +150,7 @@ export function RightsScreen() {
             <div style={{ flex: 1, minWidth: 0 }}>
               <span style={{
                 display: 'inline-block',
-                fontFamily: 'DM Sans, sans-serif', fontSize: 10, fontWeight: 700,
+                fontFamily: 'DM Sans, sans-serif', fontSize: 12, fontWeight: 700,
                 padding: '2px 10px', borderRadius: 20,
                 textTransform: 'uppercase', letterSpacing: '0.05em',
                 marginBottom: 6,
@@ -188,7 +188,7 @@ export function RightsScreen() {
                   borderRadius: 14, padding: '12px 14px',
                 }}>
                   <p style={{
-                    fontFamily: 'DM Sans, sans-serif', fontSize: 11, fontWeight: 700,
+                    fontFamily: 'DM Sans, sans-serif', fontSize: 12, fontWeight: 700,
                     textTransform: 'uppercase', letterSpacing: '0.05em', margin: '0 0 6px',
                     color: isDuty ? '#C8883A' : tab.accentColor,
                   }}>
@@ -206,7 +206,7 @@ export function RightsScreen() {
                   border: '1px solid rgba(122,102,144,0.15)',
                   borderRadius: 14, padding: '12px 14px',
                 }}>
-                  <p style={{ fontFamily: 'DM Sans, sans-serif', fontSize: 11, fontWeight: 700, textTransform: 'uppercase', letterSpacing: '0.05em', color: '#8A8098', margin: '0 0 4px' }}>
+                  <p style={{ fontFamily: 'DM Sans, sans-serif', fontSize: 12, fontWeight: 700, textTransform: 'uppercase', letterSpacing: '0.05em', color: '#8A8098', margin: '0 0 4px' }}>
                     Legal basis
                   </p>
                   <p style={{ fontFamily: 'DM Mono, monospace', fontSize: 12, color: '#4A4058', margin: 0 }}>
@@ -218,7 +218,7 @@ export function RightsScreen() {
                 const related = getRelatedTerms(item)
                 return related.length > 0 ? (
                   <div>
-                    <p style={{ fontFamily: 'DM Sans, sans-serif', fontSize: 11, fontWeight: 700, textTransform: 'uppercase', letterSpacing: '0.05em', color: '#8A8098', margin: '0 0 8px' }}>
+                    <p style={{ fontFamily: 'DM Sans, sans-serif', fontSize: 12, fontWeight: 700, textTransform: 'uppercase', letterSpacing: '0.05em', color: '#8A8098', margin: '0 0 8px' }}>
                       Related terms
                     </p>
                     <div style={{ display: 'flex', flexWrap: 'wrap', gap: 7 }}>
@@ -293,10 +293,10 @@ export function RightsScreen() {
             <MapPin size={14} color="#7A6690" style={{ flexShrink: 0 }} />
             <div style={{ flex: 1 }}>
               <span style={{ fontFamily: 'DM Sans, sans-serif', fontSize: 12, fontWeight: 700, color: '#2A2030' }}>California</span>
-              <span style={{ fontFamily: 'DM Sans, sans-serif', fontSize: 11, color: '#8A8098', marginLeft: 6 }}>Currently available</span>
+              <span style={{ fontFamily: 'DM Sans, sans-serif', fontSize: 12, color: '#8A8098', marginLeft: 6 }}>Currently available</span>
             </div>
             <span style={{
-              fontFamily: 'DM Sans, sans-serif', fontSize: 10, fontWeight: 700,
+              fontFamily: 'DM Sans, sans-serif', fontSize: 12, fontWeight: 700,
               background: '#E8DDE8', color: '#7A6690',
               borderRadius: 20, padding: '2px 10px',
             }}>More states soon</span>
@@ -414,7 +414,7 @@ export function RightsScreen() {
           {/* Rights list */}
           {!showDutiesOnly && rightsItems.length > 0 && (
             <div>
-              <p style={{ fontFamily: 'DM Sans, sans-serif', fontSize: 11, fontWeight: 700, color: tab.accentColor, textTransform: 'uppercase', letterSpacing: '0.06em', margin: '0 0 10px' }}>
+              <p style={{ fontFamily: 'DM Sans, sans-serif', fontSize: 12, fontWeight: 700, color: tab.accentColor, textTransform: 'uppercase', letterSpacing: '0.06em', margin: '0 0 10px' }}>
                 Rights ({rightsItems.length})
               </p>
               <div style={{ display: 'flex', flexDirection: 'column', gap: 8 }}>
@@ -426,7 +426,7 @@ export function RightsScreen() {
           {/* Duties list */}
           {dutiesItems.length > 0 && (
             <div>
-              <p style={{ fontFamily: 'DM Sans, sans-serif', fontSize: 11, fontWeight: 700, color: '#C8883A', textTransform: 'uppercase', letterSpacing: '0.06em', margin: '0 0 10px' }}>
+              <p style={{ fontFamily: 'DM Sans, sans-serif', fontSize: 12, fontWeight: 700, color: '#C8883A', textTransform: 'uppercase', letterSpacing: '0.06em', margin: '0 0 10px' }}>
                 Responsibilities ({dutiesItems.length})
               </p>
               <div style={{ display: 'flex', flexDirection: 'column', gap: 8 }}>

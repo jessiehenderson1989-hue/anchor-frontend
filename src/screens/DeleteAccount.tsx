@@ -113,9 +113,9 @@ export function DeleteAccount() {
         ) : (
           <>
             {/* Danger warning */}
-            <div style={{ background: '#FDF0F0', border: '1px solid rgba(200,74,74,0.2)', borderRadius: 20, padding: '18px', marginBottom: 28 }}>
+            <div style={{ background: '#F8EEF2', border: '1px solid rgba(168,88,120,0.2)', borderRadius: 20, padding: '18px', marginBottom: 28 }}>
               <div style={{ display: 'flex', alignItems: 'flex-start', gap: 12 }}>
-                <div style={{ width: 36, height: 36, borderRadius: 12, background: '#C84A4A', display: 'flex', alignItems: 'center', justifyContent: 'center', flexShrink: 0 }}>
+                <div style={{ width: 36, height: 36, borderRadius: 12, background: '#A85878', display: 'flex', alignItems: 'center', justifyContent: 'center', flexShrink: 0 }}>
                   <Trash2 size={18} color="#fff" />
                 </div>
                 <div>
@@ -153,8 +153,8 @@ export function DeleteAccount() {
                   onClick={() => setConfirmed(!confirmed)}
                   style={{
                     width: 20, height: 20, borderRadius: 6, flexShrink: 0, marginTop: 1,
-                    background: confirmed ? '#C84A4A' : '#F0EAE0',
-                    border: confirmed ? '2px solid #C84A4A' : '2px solid rgba(122,102,144,0.3)',
+                    background: confirmed ? '#A85878' : '#F0EAE0',
+                    border: confirmed ? '2px solid #A85878' : '2px solid rgba(122,102,144,0.3)',
                     display: 'flex', alignItems: 'center', justifyContent: 'center',
                     cursor: 'pointer',
                   }}
@@ -172,8 +172,8 @@ export function DeleteAccount() {
 
               {/* Error */}
               {error && (
-                <div style={{ background: '#FDF0F0', border: '1px solid rgba(200,74,74,0.2)', borderRadius: 14, padding: '12px 14px' }}>
-                  <p style={{ fontFamily: 'DM Sans, sans-serif', fontSize: 13, color: '#C84A4A', margin: 0 }}>{error}</p>
+                <div style={{ background: '#F8EEF2', border: '1px solid rgba(168,88,120,0.2)', borderRadius: 14, padding: '12px 14px' }}>
+                  <p style={{ fontFamily: 'DM Sans, sans-serif', fontSize: 13, color: '#A85878', margin: 0 }}>{error}</p>
                 </div>
               )}
 
@@ -183,12 +183,12 @@ export function DeleteAccount() {
                 disabled={!password || !confirmed || loading}
                 style={{
                   width: '100%', padding: '14px',
-                  background: password && confirmed && !loading ? '#C84A4A' : '#C8C0D0',
+                  background: password && confirmed && !loading ? '#A85878' : '#C8C0D0',
                   border: 'none', borderRadius: 16,
                   fontFamily: 'DM Sans, sans-serif', fontWeight: 600, fontSize: 15,
                   color: '#fff',
                   cursor: password && confirmed && !loading ? 'pointer' : 'not-allowed',
-                  boxShadow: password && confirmed && !loading ? '0 4px 16px rgba(200,74,74,0.3)' : 'none',
+                  boxShadow: password && confirmed && !loading ? '0 4px 16px rgba(168,88,120,0.3)' : 'none',
                 }}
               >
                 {loading ? 'Deleting…' : 'Delete my account permanently'}
