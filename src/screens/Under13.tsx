@@ -1,3 +1,4 @@
+import { useEffect } from 'react'
 import { useNavigate } from 'react-router-dom'
 import { Phone, ExternalLink } from 'lucide-react'
 
@@ -18,6 +19,7 @@ const callBtn: React.CSSProperties = {
 
 export function Under13() {
   const navigate = useNavigate()
+  useEffect(() => { window.scrollTo(0, 0) }, [])
 
   return (
     <div style={{ minHeight: '100vh', background: '#EDE6DB' }}>
