@@ -7,6 +7,7 @@ interface Profile {
   first_name?: string
   username?: string
   role?: string
+  youth_age?: string | null
   current_stage?: string | null
   language?: string
   children_status?: string

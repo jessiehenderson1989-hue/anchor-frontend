@@ -18,6 +18,7 @@ export function LoginScreen() {
 
   const [firstName, setFirstName] = useState('')
   const [selectedRole, setSelectedRole] = useState<Role | null>(null)
+  const [youthAge, setYouthAge] = useState('')
   const [username, setUsername] = useState('')
   const [recoveryEmail, setRecoveryEmail] = useState('')
   const [signupPassword, setSignupPassword] = useState('')
@@ -81,6 +82,22 @@ export function LoginScreen() {
       return
     }
 
+    // Accounts are for ages 13 and up. Under 13: no account is made and nothing is saved.
+    if (selectedRole === 'youth') {
+      const age = parseInt(youthAge, 10)
+      let alreadyTurnedAway = false
+      try { alreadyTurnedAway = sessionStorage.getItem('anchor_age_check') === 'under' } catch { /* storage unavailable */ }
+      if (!youthAge.trim() || Number.isNaN(age) || age < 1 || age > 25) {
+        setError('Please enter your age.')
+        return
+      }
+      if (age < 13 || alreadyTurnedAway) {
+        try { sessionStorage.setItem('anchor_age_check', 'under') } catch { /* storage unavailable */ }
+        navigate('/under-13')
+        return
+      }
+    }
+
     const usernameError = validateUsername(username)
     if (usernameError) {
       setError(usernameError)
@@ -137,7 +154,11 @@ export function LoginScreen() {
       } else {
         // Safety net: write role to profile in case DB trigger missed it
         if (selectedRole) {
-          await updateProfile({ role: selectedRole, first_name: firstName })
+          await updateProfile({
+            role: selectedRole,
+            first_name: firstName,
+            ...(selectedRole === 'youth' ? { youth_age: String(parseInt(youthAge, 10)) } : {}),
+          })
         }
         navigate('/onboarding')
       }
@@ -364,6 +385,23 @@ export function LoginScreen() {
                     })}
                   </div>
                 </div>
+
+                {selectedRole === 'youth' && (
+                  <div>
+                    <label className={labelClass} style={labelStyle}>How old are you?</label>
+                    <input
+                      type="number"
+                      inputMode="numeric"
+                      value={youthAge}
+                      onChange={(e) => setYouthAge(e.target.value)}
+                      placeholder="Your age"
+                      min={1}
+                      max={25}
+                      className={`${inputClass} ${inputFocusStyle}`}
+                      style={inputStyle}
+                    />
+                  </div>
+                )}
 
                 <div>
                   <label className={labelClass} style={labelStyle}>Choose Username</label>

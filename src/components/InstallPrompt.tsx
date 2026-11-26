@@ -9,7 +9,7 @@ interface BeforeInstallPromptEvent extends Event {
 
 // The banner waits until a person is inside the app. On these screens it
 // would sit on top of the form they are trying to fill in.
-const QUIET_SCREENS = ['/', '/auth', '/onboarding', '/foster-care-intro', '/forgot-password', '/reset-password', '/contact-support']
+const QUIET_SCREENS = ['/', '/auth', '/onboarding', '/foster-care-intro', '/forgot-password', '/reset-password', '/contact-support', '/under-13']
 
 export function InstallPrompt() {
   const { pathname } = useLocation()

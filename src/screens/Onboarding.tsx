@@ -396,6 +396,7 @@ export function Onboarding() {
 
   useEffect(() => {
     if (profile?.first_name) setFirstName(profile.first_name)
+    if (profile?.youth_age) setYouthAge(prev => prev || String(profile.youth_age))
     if (profile?.intake_completed) {
       navigate(profile?.onboarding_foster_care_seen ? '/dashboard' : '/foster-care-intro')
       return
@@ -539,7 +540,7 @@ export function Onboarding() {
     }
     if (role === 'youth') {
       switch (step) {
-        case 2: return youthPlacement !== null && youthAge.trim().length > 0
+        case 2: return youthPlacement !== null && youthAge.trim().length > 0 && parseInt(youthAge, 10) >= 13
         case 3: return lawyerStatus !== null && (lawyerStatus !== 'yes' || (lawyerName.trim().length > 0 && lawyerPhone.trim().length > 0))
         case 4: return hasCASD !== null && (hasCASD !== 'yes' || (casdName.trim().length > 0 && casdPhone.trim().length > 0))
         case 5: return caseManagerStatus !== null && (caseManagerStatus !== 'yes' || (caseManagerName.trim().length > 0 && caseManagerPhone.trim().length > 0))
@@ -630,6 +631,17 @@ export function Onboarding() {
               min="0" max="21"
               style={{ ...S.input, marginBottom: 20 }}
             />
+            {youthAge.trim() !== '' && parseInt(youthAge, 10) < 13 && (
+              <div style={{ background: '#F8EEF2', border: '1px solid rgba(168,88,120,0.25)', borderRadius: 16, padding: '14px 16px', marginBottom: 20 }}>
+                <p style={{ fontFamily: 'DM Sans, sans-serif', fontSize: 14, color: '#4A4058', lineHeight: 1.55, margin: '0 0 10px' }}>
+                  Anchor accounts are for ages 13 and up. If you typed the wrong age, you can fix it above. If you are under 13, please remove this account. A grown-up who helps you can use Anchor with you.
+                </p>
+                <button type="button" onClick={() => navigate('/delete-account')}
+                  style={{ background: 'transparent', border: 'none', padding: 0, fontFamily: 'DM Sans, sans-serif', fontSize: 14, fontWeight: 700, color: '#A85878', cursor: 'pointer', textDecoration: 'underline' }}>
+                  Remove my account
+                </button>
+              </div>
+            )}
             <label style={S.label}>Where are you currently living?</label>
             <OptionBtn selected={youthPlacement === 'home'} onClick={() => setYouthPlacement('home')}>At home with my parents</OptionBtn>
             <OptionBtn selected={youthPlacement === 'foster'} onClick={() => setYouthPlacement('foster')}>In a foster home</OptionBtn>

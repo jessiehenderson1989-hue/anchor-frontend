@@ -22,7 +22,8 @@ import {
   DeleteAccount,
   TermsOfService,
   PrivacyPolicy,
-  ContactSupport
+  ContactSupport,
+  Under13
 } from './screens'
 
 function App() {
@@ -162,6 +163,7 @@ function App() {
           />
           {/* Open to everyone: people who cannot sign in need it most */}
           <Route path="/contact-support" element={<ContactSupport />} />
+          <Route path="/under-13" element={<Under13 />} />
           <Route path="*" element={<Navigate to="/" replace />} />
         </Routes>
       </AuthProvider>

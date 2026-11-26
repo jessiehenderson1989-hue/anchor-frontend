@@ -250,6 +250,24 @@ export function Legal() {
             <span style={{ fontFamily: 'DM Sans, sans-serif', fontSize: 12, fontWeight: 700, color: '#3A5A80' }}>Open →</span>
           </div>
 
+          {/* From the California Courts */}
+          <div style={{ background: '#FAF7F2', borderRadius: 16, padding: '14px 16px', border: '1px solid rgba(122,102,144,0.12)', boxShadow: '0 3px 10px rgba(42,32,48,0.05)' }}>
+            <p style={{ fontFamily: 'DM Sans, sans-serif', fontSize: 12, fontWeight: 700, letterSpacing: '0.06em', textTransform: 'uppercase', color: '#695F7B', margin: '0 0 8px' }}>From the California Courts</p>
+            {[
+              { href: 'https://youtu.be/Y7Xz4QdNoEY', title: 'Watch the court orientation video', sub: 'A short video from the courts on how dependency court works.' },
+              { href: 'https://selfhelp.courts.ca.gov/juvenile-dependency/guide-parents', title: 'Chat with court self-help staff', sub: 'When chat is open, a Chat Now button shows in the bottom corner of the page. They answer general questions. For advice about your case, ask your lawyer.' },
+            ].map((l, i) => (
+              <a key={l.href} href={l.href} target="_blank" rel="noopener noreferrer"
+                style={{ display: 'flex', alignItems: 'flex-start', justifyContent: 'space-between', gap: 12, padding: '10px 0', minHeight: 44, textDecoration: 'none', borderTop: i === 0 ? 'none' : '1px solid rgba(122,102,144,0.1)' }}>
+                <span>
+                  <span style={{ display: 'block', fontFamily: 'DM Sans, sans-serif', fontSize: 14, fontWeight: 700, color: '#2A2030' }}>{l.title}</span>
+                  <span style={{ display: 'block', fontFamily: 'DM Sans, sans-serif', fontSize: 13, color: '#4A4058', lineHeight: 1.5, marginTop: 2 }}>{l.sub}</span>
+                </span>
+                <ExternalLink size={16} color="#7A6690" style={{ flexShrink: 0, marginTop: 3 }} />
+              </a>
+            ))}
+          </div>
+
           {/* Search */}
           <div style={{ position: 'relative' }}>
             <Search size={16} color="#9A90A8" style={{ position: 'absolute', left: 14, top: '50%', transform: 'translateY(-50%)' }} />
