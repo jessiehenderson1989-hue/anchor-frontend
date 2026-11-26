@@ -14,6 +14,7 @@ interface RightDuty {
   right_key: string
   category: string
   description: string
+  simple_text?: string | null
   legal_reference: string
   practical_tips: string
 }
@@ -94,7 +95,7 @@ export function RightsScreen() {
     try {
       const { data, error } = await supabase
         .from('rights_duties')
-        .select('id, title, user_role, right_key, category, description, legal_reference, practical_tips')
+        .select('id, title, user_role, right_key, category, description, simple_text, legal_reference, practical_tips')
         .order('category', { ascending: true })
         .order('title', { ascending: true })
       if (error) throw error
@@ -108,7 +109,7 @@ export function RightsScreen() {
   }
 
   const getRelatedTerms = (item: RightDuty): GlossaryTerm[] => {
-    const haystack = (item.title + ' ' + item.description + ' ' + (item.practical_tips || '')).toLowerCase()
+    const haystack = (item.title + ' ' + item.description + ' ' + (item.simple_text || '') + ' ' + (item.practical_tips || '')).toLowerCase()
     return glossaryTerms.filter(t => {
       const needle = t.term.toLowerCase()
       if (needle.length <= 3) return false
@@ -161,14 +162,22 @@ export function RightsScreen() {
               <h3 style={{ fontFamily: 'Fraunces, serif', fontSize: 16, fontWeight: 700, color: '#2A2030', margin: '0 0 4px', lineHeight: 1.3 }}>
                 {item.title}
               </h3>
-              <p style={{ fontFamily: 'DM Sans, sans-serif', fontSize: 13, color: '#4A4058', margin: 0, lineHeight: 1.6 }}>
-                {isExpanded
-                  ? item.description
-                  : item.description.length > 120
-                    ? item.description.slice(0, 120) + '…'
-                    : item.description
-                }
-              </p>
+              {item.simple_text && (
+                <p style={{ fontFamily: 'DM Sans, sans-serif', fontSize: 14, color: '#2A2030', lineHeight: 1.5, background: '#F4EFF8', borderRadius: 12, padding: '8px 12px', margin: '2px 0 8px' }}>
+                  <span style={{ display: 'block', fontSize: 12, fontWeight: 700, letterSpacing: '0.05em', textTransform: 'uppercase', color: '#5E4D74', marginBottom: 2 }}>Say it simpler</span>
+                  {item.simple_text}
+                </p>
+              )}
+              {(isExpanded || !item.simple_text) && (
+                <p style={{ fontFamily: 'DM Sans, sans-serif', fontSize: 13, color: '#4A4058', margin: 0, lineHeight: 1.6 }}>
+                  {isExpanded
+                    ? item.description
+                    : item.description.length > 120
+                      ? item.description.slice(0, 120) + '…'
+                      : item.description
+                  }
+                </p>
+              )}
             </div>
             <div style={{ flexShrink: 0, marginTop: 2 }}>
               {isExpanded

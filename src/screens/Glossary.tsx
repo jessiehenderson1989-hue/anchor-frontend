@@ -9,6 +9,7 @@ interface GlossaryTerm {
   term: string
   category: CategoryType
   definition: string
+  simple_text?: string | null
   spanish_term: string
   spanish_definition: string
   related_terms: string[]
@@ -53,6 +54,7 @@ export function Glossary() {
       filtered = filtered.filter((t) =>
         t.term?.toLowerCase().includes(q) ||
         t.definition?.toLowerCase().includes(q) ||
+        t.simple_text?.toLowerCase().includes(q) ||
         t.spanish_term?.toLowerCase().includes(q) ||
         t.category?.toLowerCase().includes(q)
       )
@@ -209,6 +211,12 @@ export function Glossary() {
                       </div>
 
                       {/* Definition — truncated when collapsed */}
+                      {term.simple_text && (
+                        <p style={{ fontFamily: 'DM Sans, sans-serif', fontSize: 14, color: '#2A2030', lineHeight: 1.5, background: '#F4EFF8', borderRadius: 12, padding: '8px 12px', margin: '2px 0 8px' }}>
+                          <span style={{ display: 'block', fontSize: 12, fontWeight: 700, letterSpacing: '0.05em', textTransform: 'uppercase', color: '#5E4D74', marginBottom: 2 }}>Say it simpler</span>
+                          {term.simple_text}
+                        </p>
+                      )}
                       <p style={{
                         fontFamily: 'DM Sans, sans-serif', fontSize: 13, color: '#4A4058',
                         margin: 0, lineHeight: 1.6,
