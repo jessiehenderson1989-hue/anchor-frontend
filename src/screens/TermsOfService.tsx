@@ -15,7 +15,7 @@ export function TermsOfService() {
       </div>
 
       <div style={{ maxWidth: 480, margin: '0 auto', padding: '28px 20px 60px' }}>
-        <p style={{ fontFamily: 'DM Sans, sans-serif', fontSize: 13, color: '#695F7B', marginBottom: 28 }}>Last updated: April 2026</p>
+        <p style={{ fontFamily: 'DM Sans, sans-serif', fontSize: 14, color: '#695F7B', marginBottom: 28 }}>Last updated: April 2026</p>
 
         {[
           {
@@ -53,7 +53,7 @@ export function TermsOfService() {
         ].map((section) => (
           <div key={section.title} style={{ marginBottom: 28 }}>
             <h2 style={{ fontFamily: 'Fraunces, serif', fontSize: 17, fontWeight: 700, color: '#2A2030', marginBottom: 8 }}>{section.title}</h2>
-            <p style={{ fontFamily: 'DM Sans, sans-serif', fontSize: 14, color: '#4A4058', lineHeight: 1.7, margin: 0 }}>{section.body}</p>
+            <p style={{ fontFamily: 'DM Sans, sans-serif', fontSize: 15, color: '#4A4058', lineHeight: 1.7, margin: 0 }}>{section.body}</p>
           </div>
         ))}
       </div>

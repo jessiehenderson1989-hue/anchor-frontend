@@ -292,7 +292,7 @@ export function Dashboard() {
               You're still here.
             </div>
           </div>
-          <div style={{ fontFamily: 'DM Sans, sans-serif', fontSize: 12, color: 'rgba(255,255,255,0.72)', lineHeight: 1.5 }}>
+          <div style={{ fontFamily: 'DM Sans, sans-serif', fontSize: 13, color: 'rgba(255,255,255,0.72)', lineHeight: 1.5 }}>
             That matters more than you know.
           </div>
 
@@ -434,7 +434,7 @@ export function Dashboard() {
                 return (
                   <div key={i} style={{ display: 'flex', gap: 9, alignItems: 'flex-start' }}>
                     <div style={{ width: 6, height: 6, borderRadius: '50%', background: activeJewel.color, marginTop: 5, flexShrink: 0, boxShadow: `0 0 4px ${activeJewel.glow}` }} />
-                    <p style={{ fontFamily: 'DM Sans, sans-serif', fontSize: 13, color: '#5A5065', margin: 0, lineHeight: 1.55 }}>
+                    <p style={{ fontFamily: 'DM Sans, sans-serif', fontSize: 15, color: '#5A5065', margin: 0, lineHeight: 1.55 }}>
                       <strong style={{ color: '#2A2030', fontWeight: 700 }}>{bold}</strong>
                       {rest.length > 0 && ` — ${rest.join(' — ')}`}
                     </p>
@@ -552,10 +552,10 @@ export function Dashboard() {
                     display: 'flex', alignItems: 'center', gap: 11,
                   }}>
                     <div style={{ width: 32, height: 32, borderRadius: 10, background: 'linear-gradient(145deg,#F4EFF8,#EDE5F4)', display: 'flex', alignItems: 'center', justifyContent: 'center', flexShrink: 0, boxShadow: 'inset 0 1px 0 rgba(255,255,255,0.9)' }}>
-                      <span style={{ fontFamily: 'DM Sans, sans-serif', fontSize: 13, fontWeight: 700, color: '#7A6690' }}>{m.name.charAt(0).toUpperCase()}</span>
+                      <span style={{ fontFamily: 'DM Sans, sans-serif', fontSize: 14, fontWeight: 700, color: '#7A6690' }}>{m.name.charAt(0).toUpperCase()}</span>
                     </div>
                     <div style={{ flex: 1, minWidth: 0 }}>
-                      <p style={{ fontFamily: 'DM Sans, sans-serif', fontSize: 13, fontWeight: 600, color: '#2A2030', margin: 0, overflow: 'hidden', textOverflow: 'ellipsis', whiteSpace: 'nowrap' }}>{m.name}</p>
+                      <p style={{ fontFamily: 'DM Sans, sans-serif', fontSize: 14, fontWeight: 600, color: '#2A2030', margin: 0, overflow: 'hidden', textOverflow: 'ellipsis', whiteSpace: 'nowrap' }}>{m.name}</p>
                       <p style={{ fontFamily: 'DM Sans, sans-serif', fontSize: 12, color: '#756B87', margin: 0 }}>{m.role}</p>
                     </div>
                     {m.phone && <a href={`tel:${m.phone.replace(/[^0-9+]/g, '')}`} aria-label={`Call ${m.name}`} onClick={(e) => e.stopPropagation()} style={{ display: 'flex', alignItems: 'center', justifyContent: 'center' }}><Phone size={16} color="#7A6690" /></a>}

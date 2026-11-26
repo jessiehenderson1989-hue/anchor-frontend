@@ -345,7 +345,7 @@ export function Preparation() {
             style={{ background: '#FAF7F2', borderRadius: 16, padding: '12px 14px', display: 'flex', alignItems: 'flex-start', gap: 10, border: '1px solid rgba(255,255,255,0.88)' }}
           >
             <Lock size={15} style={{ color: '#7A6690', flexShrink: 0, marginTop: 2 }} />
-            <p style={{ fontFamily: 'DM Sans, sans-serif', fontSize: 12, color: '#4A4058', margin: 0, lineHeight: 1.6 }}>
+            <p style={{ fontFamily: 'DM Sans, sans-serif', fontSize: 13, color: '#4A4058', margin: 0, lineHeight: 1.6 }}>
               <span style={{ fontWeight: 700, color: '#2A2030' }}>Private. </span>
               {copy.privacyNote}
             </p>
@@ -372,7 +372,7 @@ export function Preparation() {
                     </div>
                     <div>
                       <p style={{ fontFamily: 'DM Sans, sans-serif', fontSize: 14, fontWeight: 700, color: '#2A2030', margin: 0 }}>{opt.title}</p>
-                      <p style={{ fontFamily: 'DM Sans, sans-serif', fontSize: 13, color: '#4A4058', margin: '3px 0 0' }}>{opt.description}</p>
+                      <p style={{ fontFamily: 'DM Sans, sans-serif', fontSize: 14, color: '#4A4058', margin: '3px 0 0' }}>{opt.description}</p>
                     </div>
                   </div>
                 </button>
@@ -428,7 +428,7 @@ export function Preparation() {
             </div>
 
             <label
-              style={{ fontFamily: 'DM Sans, sans-serif', fontSize: 13, fontWeight: 700, color: '#2A2030', display: 'block', marginBottom: 8 }}
+              style={{ fontFamily: 'DM Sans, sans-serif', fontSize: 14, fontWeight: 700, color: '#2A2030', display: 'block', marginBottom: 8 }}
             >
               {copy.questionLabel(selectedType)}
             </label>
@@ -474,7 +474,7 @@ export function Preparation() {
               </p>
             )}
             {!concerns.trim() && !loading && (
-              <p style={{ fontFamily: 'DM Sans, sans-serif', fontSize: 12, textAlign: 'center', marginTop: 8, color: '#695F7B', lineHeight: 1.5 }}>
+              <p style={{ fontFamily: 'DM Sans, sans-serif', fontSize: 13, textAlign: 'center', marginTop: 8, color: '#695F7B', lineHeight: 1.5 }}>
                 Type something above to get your personalized guide
               </p>
             )}
@@ -508,7 +508,7 @@ export function Preparation() {
               <p style={{ fontFamily: 'DM Sans, sans-serif', fontSize: 12, fontWeight: 700, textTransform: 'uppercase', letterSpacing: '0.05em', color: '#695F7B', margin: '0 0 4px' }}>
                 You said
               </p>
-              <p style={{ fontFamily: 'DM Sans, sans-serif', fontSize: 13, color: '#2A2030', margin: 0 }}>{concerns}</p>
+              <p style={{ fontFamily: 'DM Sans, sans-serif', fontSize: 14, color: '#2A2030', margin: 0 }}>{concerns}</p>
             </div>
 
             {/* AI responses */}
@@ -521,7 +521,7 @@ export function Preparation() {
                   </p>
                 </div>
                 <div
-                  style={{ fontFamily: 'DM Sans, sans-serif', fontSize: 14, color: '#2A2030', lineHeight: 1.7, whiteSpace: 'pre-wrap' }}
+                  style={{ fontFamily: 'DM Sans, sans-serif', fontSize: 15, color: '#2A2030', lineHeight: 1.7, whiteSpace: 'pre-wrap' }}
                 >
                   {msg.content}
                 </div>
@@ -534,7 +534,7 @@ export function Preparation() {
                 key={i}
                 style={{ background: '#7A6690', borderRadius: 16, padding: '10px 14px', alignSelf: 'flex-end', marginLeft: 32 }}
               >
-                <p style={{ fontFamily: 'DM Sans, sans-serif', fontSize: 13, color: '#fff', margin: 0 }}>{msg.content}</p>
+                <p style={{ fontFamily: 'DM Sans, sans-serif', fontSize: 14, color: '#fff', margin: 0 }}>{msg.content}</p>
               </div>
             ))}
 
@@ -542,7 +542,7 @@ export function Preparation() {
             {loading && (
               <div style={{ ...card, padding: 14, display: 'flex', alignItems: 'center', gap: 10 }}>
                 <Loader2 size={15} style={{ color: '#7A6690', animation: 'spin 1s linear infinite' }} />
-                <p style={{ fontFamily: 'DM Sans, sans-serif', fontSize: 13, color: '#695F7B', margin: 0 }}>Getting your answer...</p>
+                <p style={{ fontFamily: 'DM Sans, sans-serif', fontSize: 14, color: '#695F7B', margin: 0 }}>Getting your answer...</p>
               </div>
             )}
 
@@ -565,7 +565,7 @@ export function Preparation() {
               <p style={{ fontFamily: 'DM Sans, sans-serif', fontSize: 12, fontWeight: 700, color: '#2A2030', margin: '0 0 4px' }}>
                 Ask a follow-up question
               </p>
-              <p style={{ fontFamily: 'DM Sans, sans-serif', fontSize: 12, color: '#695F7B', margin: '0 0 10px', lineHeight: 1.5 }}>
+              <p style={{ fontFamily: 'DM Sans, sans-serif', fontSize: 13, color: '#695F7B', margin: '0 0 10px', lineHeight: 1.5 }}>
                 Type your question and tap the arrow — the guide will respond.
               </p>
               <div style={{ display: 'flex', gap: 8 }}>
@@ -608,7 +608,7 @@ export function Preparation() {
                 style={{ borderRadius: 16, padding: 14, display: 'flex', alignItems: 'center', justifyContent: 'center', gap: 8, background: 'rgba(74,124,89,0.12)' }}
               >
                 <Check size={15} style={{ color: '#4A7C59' }} />
-                <p style={{ fontFamily: 'DM Sans, sans-serif', fontSize: 13, fontWeight: 700, color: '#4A7C59', margin: 0 }}>Saved to your notes!</p>
+                <p style={{ fontFamily: 'DM Sans, sans-serif', fontSize: 14, fontWeight: 700, color: '#4A7C59', margin: 0 }}>Saved to your notes!</p>
               </div>
             ) : (
               <button

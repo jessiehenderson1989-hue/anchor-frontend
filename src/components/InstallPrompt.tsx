@@ -73,7 +73,7 @@ export function InstallPrompt() {
           </div>
           <div style={{ flex: 1, minWidth: 0 }}>
             <h3 style={{ fontFamily: 'Fraunces, serif', fontSize: 17, fontWeight: 700, color: '#2A2030', margin: '0 0 2px' }}>Install Anchor</h3>
-            <p style={{ fontFamily: font, fontSize: 13, lineHeight: 1.45, color: '#4A4058', margin: '0 0 12px' }}>
+            <p style={{ fontFamily: font, fontSize: 15, lineHeight: 1.45, color: '#4A4058', margin: '0 0 12px' }}>
               Add Anchor to your home screen for quick access anytime
             </p>
             <div style={{ display: 'flex', gap: 8 }}>

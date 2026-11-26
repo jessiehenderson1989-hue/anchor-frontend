@@ -68,7 +68,7 @@ export function DeleteAccount() {
                   <p style={{ fontFamily: 'Fraunces, serif', fontSize: 17, fontWeight: 700, color: '#2A2030', margin: '0 0 6px' }}>
                     Before you go
                   </p>
-                  <p style={{ fontFamily: 'DM Sans, sans-serif', fontSize: 14, color: '#7A5A2A', margin: 0, lineHeight: 1.6 }}>
+                  <p style={{ fontFamily: 'DM Sans, sans-serif', fontSize: 15, color: '#7A5A2A', margin: 0, lineHeight: 1.6 }}>
                     We can email you a copy of your notes, contacts, and timeline before deleting your account.
                   </p>
                 </div>
@@ -107,7 +107,7 @@ export function DeleteAccount() {
                   <p style={{ fontFamily: 'Fraunces, serif', fontSize: 17, fontWeight: 700, color: '#2A2030', margin: '0 0 6px' }}>
                     This is permanent
                   </p>
-                  <p style={{ fontFamily: 'DM Sans, sans-serif', fontSize: 14, color: '#8A3A3A', margin: 0, lineHeight: 1.6 }}>
+                  <p style={{ fontFamily: 'DM Sans, sans-serif', fontSize: 15, color: '#8A3A3A', margin: 0, lineHeight: 1.6 }}>
                     All your notes, contacts, and timeline will be deleted forever. This cannot be undone.
                   </p>
                 </div>
@@ -117,7 +117,7 @@ export function DeleteAccount() {
             <div style={{ display: 'flex', flexDirection: 'column', gap: 18 }}>
               {/* Password field */}
               <div>
-                <label style={{ fontFamily: 'DM Sans, sans-serif', fontSize: 13, fontWeight: 600, color: '#5A5065', display: 'block', marginBottom: 6 }}>
+                <label style={{ fontFamily: 'DM Sans, sans-serif', fontSize: 14, fontWeight: 600, color: '#5A5065', display: 'block', marginBottom: 6 }}>
                   Confirm your password
                 </label>
                 <div style={{ position: 'relative' }}>
@@ -150,7 +150,7 @@ export function DeleteAccount() {
                     </svg>
                   )}
                 </div>
-                <span style={{ fontFamily: 'DM Sans, sans-serif', fontSize: 14, color: '#5A5065', lineHeight: 1.5 }}>
+                <span style={{ fontFamily: 'DM Sans, sans-serif', fontSize: 15, color: '#5A5065', lineHeight: 1.5 }}>
                   I understand this will permanently delete my account and all my data
                 </span>
               </label>
@@ -158,7 +158,7 @@ export function DeleteAccount() {
               {/* Error */}
               {error && (
                 <div style={{ background: '#F8EEF2', border: '1px solid rgba(168,88,120,0.2)', borderRadius: 14, padding: '12px 14px' }}>
-                  <p style={{ fontFamily: 'DM Sans, sans-serif', fontSize: 13, color: '#A85878', margin: 0 }}>{error}</p>
+                  <p style={{ fontFamily: 'DM Sans, sans-serif', fontSize: 14, color: '#A85878', margin: 0 }}>{error}</p>
                 </div>
               )}
 

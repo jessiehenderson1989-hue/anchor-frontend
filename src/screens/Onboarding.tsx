@@ -626,7 +626,7 @@ export function Onboarding() {
             />
             {youthAge.trim() !== '' && parseInt(youthAge, 10) < 13 && (
               <div style={{ background: '#F8EEF2', border: '1px solid rgba(168,88,120,0.25)', borderRadius: 16, padding: '14px 16px', marginBottom: 20 }}>
-                <p style={{ fontFamily: 'DM Sans, sans-serif', fontSize: 14, color: '#4A4058', lineHeight: 1.55, margin: '0 0 10px' }}>
+                <p style={{ fontFamily: 'DM Sans, sans-serif', fontSize: 15, color: '#4A4058', lineHeight: 1.55, margin: '0 0 10px' }}>
                   Anchor accounts are for ages 13 and up. If you typed the wrong age, you can fix it above. If you are under 13, please remove this account. A grown-up who helps you can use Anchor with you.
                 </p>
                 <button type="button" onClick={() => navigate('/delete-account')}
@@ -809,7 +809,7 @@ export function Onboarding() {
               onChange={e => setNextCourtDate(e.target.value)}
               style={S.input}
             />
-            <p style={{ fontSize: 13, color: '#756B87', marginTop: 8 }}>Leave blank if you do not know yet.</p>
+            <p style={{ fontSize: 14, color: '#756B87', marginTop: 8 }}>Leave blank if you do not know yet.</p>
           </div>
         )}
 
@@ -854,7 +854,7 @@ export function Onboarding() {
                   </div>
                   <div>
                     <p style={{ color: '#2A2030', fontWeight: 600, fontSize: 15 }}>Text Message Reminders</p>
-                    <p style={{ color: '#5A5065', fontSize: 13 }}>Court dates, appointments, deadlines</p>
+                    <p style={{ color: '#5A5065', fontSize: 14 }}>Court dates, appointments, deadlines</p>
                   </div>
                 </div>
                 <div
@@ -894,7 +894,7 @@ export function Onboarding() {
               <Lock className="w-4 h-4 flex-shrink-0 mt-0.5" style={{ color: '#C8883A' }} />
               <div>
                 <p style={{ fontSize: 12, fontWeight: 700, color: '#7A5A2A', marginBottom: 4 }}>Your privacy is protected</p>
-                <p style={{ fontSize: 12, color: '#7A5A2A', lineHeight: 1.5 }}>
+                <p style={{ fontSize: 13, color: '#7A5A2A', lineHeight: 1.5 }}>
                   Your phone number is never shared. Messages contain only dates and times — no personal details. Text STOP to unsubscribe anytime.
                 </p>
               </div>

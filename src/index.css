@@ -118,3 +118,10 @@ button, a, input[type="checkbox"], input[type="radio"] {
   box-shadow: 0 6px 20px rgba(94, 77, 116, 0.2), 0 0 0 3px rgba(122, 102, 144, 0.18), inset 0 1px 0 rgba(255, 255, 255, 1);
   box-sizing: border-box;
 }
+
+/* Form fields are always 16px. Smaller text makes iPhones zoom in when a field is tapped. */
+input:not([type='checkbox']):not([type='radio']),
+textarea,
+select {
+  font-size: 16px !important;
+}

@@ -280,7 +280,7 @@ export function Notes() {
             <h3 style={{ fontFamily: 'Fraunces, serif', fontSize: 20, fontWeight: 700, color: '#2A2030', marginBottom: 8 }}>
               {searchQuery ? 'No notes found' : 'Your notes live here'}
             </h3>
-            <p style={{ fontFamily: 'DM Sans, sans-serif', fontSize: 14, color: '#695F7B', lineHeight: 1.6, marginBottom: 20 }}>
+            <p style={{ fontFamily: 'DM Sans, sans-serif', fontSize: 15, color: '#695F7B', lineHeight: 1.6, marginBottom: 20 }}>
               {searchQuery
                 ? 'Try a different search term'
                 : 'Use notes to track what happens at hearings, visits, and meetings. Tap + New to get started.'}
@@ -327,7 +327,7 @@ export function Notes() {
                     {note.title}
                   </h3>
                   {note.content && (
-                    <p style={{ fontFamily: 'DM Sans, sans-serif', fontSize: 13, color: '#4A4058', margin: '0 0 10px', lineHeight: 1.5 }}>
+                    <p style={{ fontFamily: 'DM Sans, sans-serif', fontSize: 15, color: '#4A4058', margin: '0 0 10px', lineHeight: 1.5 }}>
                       {truncateContent(note.content)}
                     </p>
                   )}
@@ -383,7 +383,7 @@ export function Notes() {
             {/* BODY — scrollable */}
             <div style={{ padding: '20px', display: 'flex', flexDirection: 'column', gap: 16, overflowY: 'auto', flex: 1 }}>
               <div>
-                <label style={{ fontFamily: 'DM Sans, sans-serif', fontSize: 13, fontWeight: 600, color: '#4A4058', display: 'block', marginBottom: 6 }}>Title</label>
+                <label style={{ fontFamily: 'DM Sans, sans-serif', fontSize: 14, fontWeight: 600, color: '#4A4058', display: 'block', marginBottom: 6 }}>Title</label>
                 <input
                   type="text"
                   value={formData.title}
@@ -393,13 +393,13 @@ export function Notes() {
                 />
               </div>
               <div>
-                <label style={{ fontFamily: 'DM Sans, sans-serif', fontSize: 13, fontWeight: 600, color: '#4A4058', display: 'block', marginBottom: 8 }}>Category</label>
+                <label style={{ fontFamily: 'DM Sans, sans-serif', fontSize: 14, fontWeight: 600, color: '#4A4058', display: 'block', marginBottom: 8 }}>Category</label>
                 <div style={{ display: 'flex', gap: 8, flexWrap: 'wrap' }}>
                   {CATEGORIES.map((cat) => {
                     const s = CATEGORY_STYLES[cat]
                     const selected = formData.category === cat
                     return (
-                      <button className="aedge" key={cat} onClick={() => setFormData({ ...formData, category: cat })} style={{ padding: '6px 14px', borderRadius: 20, border: selected ? `1.5px solid ${s.dot}` : '1.5px solid transparent', background: selected ? s.bg : '#F0EAE0', color: selected ? s.text : '#9A90A8', fontFamily: 'DM Sans, sans-serif', fontSize: 13, fontWeight: 600, cursor: 'pointer' }}>
+                      <button className="aedge" key={cat} onClick={() => setFormData({ ...formData, category: cat })} style={{ padding: '6px 14px', borderRadius: 20, border: selected ? `1.5px solid ${s.dot}` : '1.5px solid transparent', background: selected ? s.bg : '#F0EAE0', color: selected ? s.text : '#9A90A8', fontFamily: 'DM Sans, sans-serif', fontSize: 14, fontWeight: 600, cursor: 'pointer' }}>
                         {cat}
                       </button>
                     )
@@ -407,7 +407,7 @@ export function Notes() {
                 </div>
               </div>
               <div>
-                <label style={{ fontFamily: 'DM Sans, sans-serif', fontSize: 13, fontWeight: 600, color: '#4A4058', display: 'block', marginBottom: 6 }}>
+                <label style={{ fontFamily: 'DM Sans, sans-serif', fontSize: 14, fontWeight: 600, color: '#4A4058', display: 'block', marginBottom: 6 }}>
                   Link to a stage <span style={{ fontWeight: 400, color: '#695F7B' }}>(optional)</span>
                 </label>
                 <select
@@ -427,7 +427,7 @@ export function Notes() {
                 )}
               </div>
               <div>
-                <label style={{ fontFamily: 'DM Sans, sans-serif', fontSize: 13, fontWeight: 600, color: '#4A4058', display: 'block', marginBottom: 6 }}>Note</label>
+                <label style={{ fontFamily: 'DM Sans, sans-serif', fontSize: 14, fontWeight: 600, color: '#4A4058', display: 'block', marginBottom: 6 }}>Note</label>
                 <textarea
                   value={formData.content}
                   onChange={(e) => setFormData({ ...formData, content: e.target.value })}

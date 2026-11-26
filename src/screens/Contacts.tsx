@@ -106,7 +106,7 @@ const inputStyle: React.CSSProperties = {
 }
 
 const labelStyle: React.CSSProperties = {
-  fontFamily: 'DM Sans, sans-serif', fontSize: 13, fontWeight: 600,
+  fontFamily: 'DM Sans, sans-serif', fontSize: 14, fontWeight: 600,
   color: '#4A4058', display: 'block', marginBottom: 6,
 }
 
@@ -360,7 +360,7 @@ export function Contacts() {
             </div>
             <button
               onClick={openCourtModal}
-              style={{ fontFamily: 'DM Sans, sans-serif', fontSize: 13, fontWeight: 600, color: '#7A6690', background: 'none', border: 'none', cursor: 'pointer', padding: '4px 8px' }}
+              style={{ fontFamily: 'DM Sans, sans-serif', fontSize: 14, fontWeight: 600, color: '#7A6690', background: 'none', border: 'none', cursor: 'pointer', padding: '4px 8px' }}
             >
               Edit
             </button>
@@ -372,8 +372,8 @@ export function Contacts() {
               { label: 'Next date', value: formatDate(courtInfo?.next_court_date || profile?.next_court_date || null) },
             ].map(({ label, value }) => (
               <div key={label} style={{ display: 'flex', justifyContent: 'space-between', alignItems: 'center' }}>
-                <span style={{ fontFamily: 'DM Sans, sans-serif', fontSize: 13, color: '#695F7B' }}>{label}</span>
-                <span style={{ fontFamily: 'DM Sans, sans-serif', fontSize: 13, fontWeight: 600, color: value ? '#2A2030' : '#C8C0D0' }}>
+                <span style={{ fontFamily: 'DM Sans, sans-serif', fontSize: 14, color: '#695F7B' }}>{label}</span>
+                <span style={{ fontFamily: 'DM Sans, sans-serif', fontSize: 14, fontWeight: 600, color: value ? '#2A2030' : '#C8C0D0' }}>
                   {value || 'Not set'}
                 </span>
               </div>
@@ -388,7 +388,7 @@ export function Contacts() {
               <Users size={32} color="#7A6690" />
             </div>
             <h3 style={{ fontFamily: 'Fraunces, serif', fontSize: 20, fontWeight: 700, color: '#2A2030', marginBottom: 8 }}>Build your team</h3>
-            <p style={{ fontFamily: 'DM Sans, sans-serif', fontSize: 14, color: '#695F7B', lineHeight: 1.6, marginBottom: 20 }}>
+            <p style={{ fontFamily: 'DM Sans, sans-serif', fontSize: 15, color: '#695F7B', lineHeight: 1.6, marginBottom: 20 }}>
               Save the people supporting you through this process so you always have their info handy.
             </p>
             <div style={{ display: 'flex', flexDirection: 'column', gap: 8, textAlign: 'left', background: '#FAF7F2', borderRadius: 16, padding: '12px 16px', border: '1px solid rgba(255,255,255,0.88)' }}>
@@ -455,7 +455,7 @@ export function Contacts() {
                         )}
                         {contact.notes && (
                           <div style={{ background: '#EDE6DB', borderRadius: 12, padding: '10px 12px' }}>
-                            <p style={{ fontFamily: 'DM Sans, sans-serif', fontSize: 13, color: '#4A4058', margin: 0, lineHeight: 1.5 }}>{contact.notes}</p>
+                            <p style={{ fontFamily: 'DM Sans, sans-serif', fontSize: 15, color: '#4A4058', margin: 0, lineHeight: 1.5 }}>{contact.notes}</p>
                           </div>
                         )}
                         {/* Edit / Delete */}
@@ -493,7 +493,7 @@ export function Contacts() {
                   {editingContact ? 'Edit Contact' : 'New Contact'}
                 </h2>
                 {!editingContact && (
-                  <p style={{ fontFamily: 'DM Sans, sans-serif', fontSize: 13, color: '#695F7B', marginTop: 4 }}>
+                  <p style={{ fontFamily: 'DM Sans, sans-serif', fontSize: 14, color: '#695F7B', marginTop: 4 }}>
                     Saved securely in your Anchor account
                   </p>
                 )}
@@ -516,7 +516,7 @@ export function Contacts() {
                     const sel = contactForm.role === role
                     return (
                       <button className="aedge" key={role} onClick={() => setContactForm({ ...contactForm, role })}
-                        style={{ padding: '6px 14px', borderRadius: 20, border: sel ? `1.5px solid ${c.dot}` : '1.5px solid transparent', background: sel ? c.bg : '#F0EAE0', color: sel ? c.text : '#9A90A8', fontFamily: 'DM Sans, sans-serif', fontSize: 13, fontWeight: 600, cursor: 'pointer' }}
+                        style={{ padding: '6px 14px', borderRadius: 20, border: sel ? `1.5px solid ${c.dot}` : '1.5px solid transparent', background: sel ? c.bg : '#F0EAE0', color: sel ? c.text : '#9A90A8', fontFamily: 'DM Sans, sans-serif', fontSize: 14, fontWeight: 600, cursor: 'pointer' }}
                       >{role}</button>
                     )
                   })}

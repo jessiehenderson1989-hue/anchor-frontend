@@ -113,7 +113,7 @@ export function ContactSupport() {
 
         {error && (
           <div style={{ background: '#F5ECD8', border: '1px solid rgba(200,136,58,0.2)', borderRadius: 12, padding: '10px 14px', marginBottom: 16 }}>
-            <p style={{ fontFamily: 'DM Sans, sans-serif', fontSize: 13, color: '#7A5A2A', margin: 0 }}>{error}</p>
+            <p style={{ fontFamily: 'DM Sans, sans-serif', fontSize: 14, color: '#7A5A2A', margin: 0 }}>{error}</p>
           </div>
         )}
 
@@ -125,7 +125,7 @@ export function ContactSupport() {
           {loading ? 'Sending…' : 'Send Message'}
         </button>
 
-        <p style={{ fontFamily: 'DM Sans, sans-serif', fontSize: 12, color: '#695F7B', textAlign: 'center', marginTop: 16, lineHeight: 1.5 }}>
+        <p style={{ fontFamily: 'DM Sans, sans-serif', fontSize: 13, color: '#695F7B', textAlign: 'center', marginTop: 16, lineHeight: 1.5 }}>
           We typically respond within 2–3 business days.{'\n'}For urgent legal questions, please contact your attorney.
         </p>
       </div>

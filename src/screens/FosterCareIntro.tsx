@@ -227,7 +227,7 @@ export function FosterCareIntro() {
                       width: 28, height: 28, borderRadius: 8, flexShrink: 0,
                       background: isOpen ? colors.bg : '#F0EAE0',
                       display: 'flex', alignItems: 'center', justifyContent: 'center',
-                      fontFamily: 'Fraunces, serif', fontSize: 13, fontWeight: 700,
+                      fontFamily: 'Fraunces, serif', fontSize: 14, fontWeight: 700,
                       color: isOpen ? colors.accent : '#9A90A8',
                     }}>
                       {i + 1}
@@ -248,7 +248,7 @@ export function FosterCareIntro() {
                 {isOpen && (
                   <div style={{ padding: '0 16px 16px 54px' }}>
                     <p style={{
-                      fontFamily: 'DM Sans, sans-serif', fontSize: 14, color: '#5A5065',
+                      fontFamily: 'DM Sans, sans-serif', fontSize: 15, color: '#5A5065',
                       margin: 0, lineHeight: 1.7,
                     }}>
                       {section.body}

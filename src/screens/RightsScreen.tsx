@@ -169,7 +169,7 @@ export function RightsScreen() {
                 </p>
               )}
               {(isExpanded || !item.simple_text) && (
-                <p style={{ fontFamily: 'DM Sans, sans-serif', fontSize: 13, color: '#4A4058', margin: 0, lineHeight: 1.6 }}>
+                <p style={{ fontFamily: 'DM Sans, sans-serif', fontSize: 15, color: '#4A4058', margin: 0, lineHeight: 1.6 }}>
                   {isExpanded
                     ? item.description
                     : item.description.length > 120
@@ -203,7 +203,7 @@ export function RightsScreen() {
                   }}>
                     What this means for you
                   </p>
-                  <p style={{ fontFamily: 'DM Sans, sans-serif', fontSize: 13, color: '#2A2030', margin: 0, lineHeight: 1.6, whiteSpace: 'pre-line' }}>
+                  <p style={{ fontFamily: 'DM Sans, sans-serif', fontSize: 15, color: '#2A2030', margin: 0, lineHeight: 1.6, whiteSpace: 'pre-line' }}>
                     {item.practical_tips}
                   </p>
                 </div>
@@ -345,7 +345,7 @@ export function RightsScreen() {
                 {tab.billTitle}
               </h2>
             </div>
-            <p style={{ fontFamily: 'DM Sans, sans-serif', fontSize: 13, color: '#4A4058', margin: '0 0 10px', lineHeight: 1.6 }}>
+            <p style={{ fontFamily: 'DM Sans, sans-serif', fontSize: 15, color: '#4A4058', margin: '0 0 10px', lineHeight: 1.6 }}>
               {tab.billDesc}
             </p>
             <p style={{ fontFamily: 'DM Sans, sans-serif', fontSize: 12, fontWeight: 700, color: tab.accentColor, margin: 0 }}>
@@ -367,7 +367,7 @@ export function RightsScreen() {
                   ? <Eye size={15} color="#7A6690" />
                   : <EyeOff size={15} color="#9A90A8" />
                 }
-                <span style={{ fontFamily: 'DM Sans, sans-serif', fontSize: 13, fontWeight: 600, color: '#2A2030' }}>
+                <span style={{ fontFamily: 'DM Sans, sans-serif', fontSize: 14, fontWeight: 600, color: '#2A2030' }}>
                   Show Legal Basis
                 </span>
               </div>
@@ -398,7 +398,7 @@ export function RightsScreen() {
               }}>
                 <div style={{ display: 'flex', alignItems: 'center', gap: 8 }}>
                   <ListChecks size={15} color="#C8883A" />
-                  <span style={{ fontFamily: 'DM Sans, sans-serif', fontSize: 13, fontWeight: 600, color: '#2A2030' }}>
+                  <span style={{ fontFamily: 'DM Sans, sans-serif', fontSize: 14, fontWeight: 600, color: '#2A2030' }}>
                     Show Responsibilities Only
                   </span>
                 </div>
@@ -463,10 +463,10 @@ export function RightsScreen() {
           }}>
             <AlertTriangle size={15} color="#C8883A" style={{ flexShrink: 0, marginTop: 2 }} />
             <div>
-              <h3 style={{ fontFamily: 'DM Sans, sans-serif', fontSize: 13, fontWeight: 700, color: '#7A5A2A', margin: '0 0 4px' }}>
+              <h3 style={{ fontFamily: 'DM Sans, sans-serif', fontSize: 14, fontWeight: 700, color: '#7A5A2A', margin: '0 0 4px' }}>
                 Know Your Rights
               </h3>
-              <p style={{ fontFamily: 'DM Sans, sans-serif', fontSize: 12, color: '#7A5A2A', margin: 0, lineHeight: 1.6 }}>
+              <p style={{ fontFamily: 'DM Sans, sans-serif', fontSize: 13, color: '#7A5A2A', margin: 0, lineHeight: 1.6 }}>
                 If you feel your rights are being violated, tell your attorney immediately. They are there to protect your rights and advocate for you.
               </p>
             </div>

@@ -828,9 +828,9 @@ export function Timeline() {
                         borderRadius: 12, padding: '9px 12px',
                         border: '1px solid rgba(122,102,144,0.12)',
                       }}>
-                        <p style={{ fontFamily: 'DM Sans, sans-serif', fontSize: 13, fontWeight: 700, color: '#2A2030', margin: '0 0 2px' }}>{note.title}</p>
+                        <p style={{ fontFamily: 'DM Sans, sans-serif', fontSize: 14, fontWeight: 700, color: '#2A2030', margin: '0 0 2px' }}>{note.title}</p>
                         {note.content ? (
-                          <p style={{ fontFamily: 'DM Sans, sans-serif', fontSize: 12, color: '#4A4058', margin: 0, lineHeight: 1.5, overflow: 'hidden', display: '-webkit-box', WebkitLineClamp: 2, WebkitBoxOrient: 'vertical' as const }}>
+                          <p style={{ fontFamily: 'DM Sans, sans-serif', fontSize: 13, color: '#4A4058', margin: 0, lineHeight: 1.5, overflow: 'hidden', display: '-webkit-box', WebkitLineClamp: 2, WebkitBoxOrient: 'vertical' as const }}>
                             {note.content}
                           </p>
                         ) : null}
@@ -844,7 +844,7 @@ export function Timeline() {
             {/* Mark complete button */}
             {stage.status !== 'completed' && (
               <div style={{ marginTop: 4 }}>
-                <p style={{ fontFamily: 'DM Sans, sans-serif', fontSize: 12, color: '#695F7B', margin: '0 0 8px', lineHeight: 1.5, textAlign: 'center' }}>
+                <p style={{ fontFamily: 'DM Sans, sans-serif', fontSize: 13, color: '#695F7B', margin: '0 0 8px', lineHeight: 1.5, textAlign: 'center' }}>
                   When you've completed this stage, tap below to move forward on your journey.
                 </p>
                 <button className="abtn abtn-outline abtn-block"
@@ -1044,10 +1044,10 @@ export function Timeline() {
           }}>
             <span style={{ fontSize: 16, flexShrink: 0, marginTop: 1 }}>💡</span>
             <div>
-              <p style={{ fontFamily: 'DM Sans, sans-serif', fontSize: 13, fontWeight: 700, color: '#2A2030', margin: '0 0 3px' }}>
+              <p style={{ fontFamily: 'DM Sans, sans-serif', fontSize: 14, fontWeight: 700, color: '#2A2030', margin: '0 0 3px' }}>
                 How to use your timeline
               </p>
-              <p style={{ fontFamily: 'DM Sans, sans-serif', fontSize: 12, color: '#4A4058', margin: 0, lineHeight: 1.6 }}>
+              <p style={{ fontFamily: 'DM Sans, sans-serif', fontSize: 13, color: '#4A4058', margin: 0, lineHeight: 1.6 }}>
                 Expand each stage to see tasks and your rights. Check off tasks as you complete them. When you finish a stage, tap "Mark as Complete" to move forward.
               </p>
             </div>

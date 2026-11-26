@@ -14,10 +14,10 @@ export function PrivacyPolicy() {
       </div>
 
       <div style={{ maxWidth: 480, margin: '0 auto', padding: '28px 20px 60px' }}>
-        <p style={{ fontFamily: 'DM Sans, sans-serif', fontSize: 13, color: '#695F7B', marginBottom: 28 }}>Last updated: April 2026</p>
+        <p style={{ fontFamily: 'DM Sans, sans-serif', fontSize: 14, color: '#695F7B', marginBottom: 28 }}>Last updated: April 2026</p>
 
         <div style={{ background: '#F4EFF8', border: '1px solid rgba(122,102,144,0.15)', borderRadius: 16, padding: '14px 16px', marginBottom: 28 }}>
-          <p style={{ fontFamily: 'DM Sans, sans-serif', fontSize: 14, color: '#4A4058', lineHeight: 1.6, margin: 0 }}>
+          <p style={{ fontFamily: 'DM Sans, sans-serif', fontSize: 15, color: '#4A4058', lineHeight: 1.6, margin: 0 }}>
             Your privacy matters to us. Anchor is built for people in vulnerable situations, and we take that seriously. We collect as little as possible and never sell your data.
           </p>
         </div>
@@ -62,7 +62,7 @@ export function PrivacyPolicy() {
         ].map((section) => (
           <div key={section.title} style={{ marginBottom: 28 }}>
             <h2 style={{ fontFamily: 'Fraunces, serif', fontSize: 17, fontWeight: 700, color: '#2A2030', marginBottom: 8 }}>{section.title}</h2>
-            <p style={{ fontFamily: 'DM Sans, sans-serif', fontSize: 14, color: '#4A4058', lineHeight: 1.7, margin: 0 }}>{section.body}</p>
+            <p style={{ fontFamily: 'DM Sans, sans-serif', fontSize: 15, color: '#4A4058', lineHeight: 1.7, margin: 0 }}>{section.body}</p>
           </div>
         ))}
       </div>

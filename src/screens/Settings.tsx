@@ -147,7 +147,7 @@ function Modal({ title, onClose, children }: { title: string; onClose: () => voi
 function ErrorBox({ msg }: { msg: string }) {
   return (
     <div className="rounded-2xl p-3 mb-4" style={{ background: '#F5ECD8', border: '1px solid rgba(200,136,58,0.2)' }}>
-      <p style={{ fontSize: 13, color: '#7A5A2A' }}>{msg}</p>
+      <p style={{ fontSize: 14, color: '#7A5A2A' }}>{msg}</p>
     </div>
   )
 }
@@ -373,7 +373,7 @@ export function Settings() {
             style={{ background: 'rgba(74,124,89,0.12)', border: '1px solid rgba(74,124,89,0.2)' }}
           >
             <Check className="w-4 h-4 flex-shrink-0" style={{ color: '#4A7C59' }} />
-            <p style={{ fontSize: 13, fontWeight: 600, color: '#4A7C59' }}>{successMsg}</p>
+            <p style={{ fontSize: 14, fontWeight: 600, color: '#4A7C59' }}>{successMsg}</p>
           </div>
         )}
 
@@ -396,7 +396,7 @@ export function Settings() {
                 {profile?.first_name || profile?.username || 'Your Account'}
               </p>
               {profile?.username && (
-                <p style={{ fontSize: 13, color: '#695F7B' }}>@{profile.username}</p>
+                <p style={{ fontSize: 14, color: '#695F7B' }}>@{profile.username}</p>
               )}
               {profile?.role && (
                 <span
@@ -621,7 +621,7 @@ export function Settings() {
       {/* ── CHANGE ROLE MODAL ── */}
       {showChangeRole && (
         <Modal title="Change Your Role" onClose={() => { setShowChangeRole(false); setError('') }}>
-          <p style={{ fontSize: 14, color: '#4A4058', marginBottom: 16, lineHeight: 1.5 }}>
+          <p style={{ fontSize: 15, color: '#4A4058', marginBottom: 16, lineHeight: 1.5 }}>
             Your role determines what content, rights, and resources you see. Changing it rebuilds your timeline for the new role. Checked-off steps will be cleared. Your next court date is kept.
           </p>
           {error && <ErrorBox msg={error} />}
@@ -646,7 +646,7 @@ export function Settings() {
                         </span>
                       )}
                     </div>
-                    <p style={{ fontSize: 13, color: '#4A4058', margin: '3px 0 0', lineHeight: 1.4 }}>{r.description}</p>
+                    <p style={{ fontSize: 15, color: '#4A4058', margin: '3px 0 0', lineHeight: 1.4 }}>{r.description}</p>
                   </div>
                   <div style={{
                     width: 20, height: 20, borderRadius: '50%', flexShrink: 0, marginTop: 2,
@@ -816,7 +816,7 @@ export function Settings() {
             onClick={e => e.stopPropagation()}
           >
             <h3 style={{ fontFamily: 'Fraunces, serif', fontSize: 20, fontWeight: 700, color: '#2A2030', margin: '0 0 10px' }}>Export your data?</h3>
-            <p style={{ fontFamily: 'DM Sans, sans-serif', fontSize: 14, color: '#4A4058', margin: '0 0 24px', lineHeight: 1.6 }}>
+            <p style={{ fontFamily: 'DM Sans, sans-serif', fontSize: 15, color: '#4A4058', margin: '0 0 24px', lineHeight: 1.6 }}>
               This will download a file containing your notes, contacts, timeline progress and profile information.
             </p>
             <div style={{ display: 'flex', gap: 10 }}>

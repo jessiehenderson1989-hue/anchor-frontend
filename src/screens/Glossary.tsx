@@ -137,7 +137,7 @@ export function Glossary() {
                 <button className="aedge"
                   key={cat}
                   onClick={() => { setSelectedCategory(cat); setExpandedTermId(null) }}
-                  style={{ padding: '7px 14px', borderRadius: 20, whiteSpace: 'nowrap', flexShrink: 0, border: active && colors ? `1.5px solid ${colors.dot}` : active ? '1.5px solid #7A6690' : '1.5px solid transparent', background: active && colors ? colors.bg : active ? '#F4EFF8' : '#FAF7F4', color: active && colors ? colors.text : active ? '#7A6690' : '#9A90A8', fontFamily: 'DM Sans, sans-serif', fontSize: 13, fontWeight: 600, cursor: 'pointer' }}
+                  style={{ padding: '7px 14px', borderRadius: 20, whiteSpace: 'nowrap', flexShrink: 0, border: active && colors ? `1.5px solid ${colors.dot}` : active ? '1.5px solid #7A6690' : '1.5px solid transparent', background: active && colors ? colors.bg : active ? '#F4EFF8' : '#FAF7F4', color: active && colors ? colors.text : active ? '#7A6690' : '#9A90A8', fontFamily: 'DM Sans, sans-serif', fontSize: 14, fontWeight: 600, cursor: 'pointer' }}
                 >
                   {CATEGORY_LABELS[cat]}
                 </button>
@@ -147,7 +147,7 @@ export function Glossary() {
         </div>
 
         {/* Result count */}
-        <p style={{ fontFamily: 'DM Sans, sans-serif', fontSize: 13, color: '#695F7B', marginBottom: 14 }}>
+        <p style={{ fontFamily: 'DM Sans, sans-serif', fontSize: 14, color: '#695F7B', marginBottom: 14 }}>
           {filteredTerms.length} {filteredTerms.length === 1 ? 'term' : 'terms'}
         </p>
 
@@ -211,7 +211,7 @@ export function Glossary() {
                         </p>
                       )}
                       <p style={{
-                        fontFamily: 'DM Sans, sans-serif', fontSize: 13, color: '#4A4058',
+                        fontFamily: 'DM Sans, sans-serif', fontSize: 15, color: '#4A4058',
                         margin: 0, lineHeight: 1.6,
                         display: '-webkit-box',
                         WebkitLineClamp: isExpanded ? undefined : 3,
@@ -237,10 +237,10 @@ export function Glossary() {
                       {/* Spanish translation */}
                       {term.spanish_term && term.spanish_definition && (
                         <div style={{ background: '#EAF0F8', border: '1px solid rgba(58,90,128,0.15)', borderRadius: 14, padding: '12px 14px' }}>
-                          <p style={{ fontFamily: 'DM Sans, sans-serif', fontSize: 13, fontWeight: 700, color: '#3A5A80', margin: '0 0 4px' }}>
+                          <p style={{ fontFamily: 'DM Sans, sans-serif', fontSize: 14, fontWeight: 700, color: '#3A5A80', margin: '0 0 4px' }}>
                             En Español: {term.spanish_term}
                           </p>
-                          <p style={{ fontFamily: 'DM Sans, sans-serif', fontSize: 13, color: '#3A5A80', margin: 0, lineHeight: 1.5 }}>
+                          <p style={{ fontFamily: 'DM Sans, sans-serif', fontSize: 15, color: '#3A5A80', margin: 0, lineHeight: 1.5 }}>
                             {term.spanish_definition}
                           </p>
                         </div>
@@ -281,7 +281,7 @@ export function Glossary() {
         )}
 
         {filteredTerms.length > 0 && (
-          <p style={{ fontFamily: 'DM Sans, sans-serif', fontSize: 13, color: '#695F7B', textAlign: 'center', marginTop: 24 }}>
+          <p style={{ fontFamily: 'DM Sans, sans-serif', fontSize: 14, color: '#695F7B', textAlign: 'center', marginTop: 24 }}>
             {filteredTerms.length} {filteredTerms.length === 1 ? 'term' : 'terms'} shown
           </p>
         )}
