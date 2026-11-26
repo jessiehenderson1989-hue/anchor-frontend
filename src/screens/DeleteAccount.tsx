@@ -80,16 +80,8 @@ export function DeleteAccount() {
               <button
                 onClick={handleExport}
                 disabled={exportSent}
-                style={{
-                  width: '100%', padding: '14px',
-                  background: exportSent ? '#EAF4EE' : '#7A6690',
-                  border: 'none', borderRadius: 16,
-                  display: 'flex', alignItems: 'center', justifyContent: 'center', gap: 8,
-                  fontFamily: 'DM Sans, sans-serif', fontWeight: 600, fontSize: 15,
-                  color: exportSent ? '#4A7C59' : '#fff',
-                  cursor: exportSent ? 'default' : 'pointer',
-                  boxShadow: exportSent ? 'none' : '0 4px 16px rgba(122,102,144,0.3)',
-                }}
+                className="abtn abtn-primary abtn-block"
+                style={exportSent ? { background: '#EAF4EE', color: '#4A7C59', boxShadow: 'none', opacity: 1, cursor: 'default' } : undefined}
               >
                 <Mail size={16} />
                 {exportSent ? 'Export sent ✓' : 'Email me my data'}

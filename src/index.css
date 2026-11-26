@@ -110,3 +110,11 @@ button, a, input[type="checkbox"], input[type="radio"] {
   transform: translateY(2px);
   box-shadow: 0 0 0 rgba(94, 77, 116, 0.18), inset 0 1px 0 rgba(255, 255, 255, 0.6);
 }
+
+/* Light round badge behind the logo on sign-in style screens */
+.alogo-badge {
+  border-radius: 50%;
+  background: linear-gradient(160deg, #FFFFFF, #F4EFF8);
+  box-shadow: 0 6px 20px rgba(94, 77, 116, 0.2), 0 0 0 3px rgba(122, 102, 144, 0.18), inset 0 1px 0 rgba(255, 255, 255, 1);
+  box-sizing: border-box;
+}

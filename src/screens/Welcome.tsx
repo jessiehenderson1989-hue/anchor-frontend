@@ -36,9 +36,11 @@ export function Welcome() {
         <img
           src="/anchor-mark.png"
           alt="Anchor"
+          className="alogo-badge"
           style={{
-            width: 120,
-            height: 120,
+            width: 128,
+            height: 128,
+            padding: 22,
             objectFit: 'contain',
             marginBottom: 16,
           }}

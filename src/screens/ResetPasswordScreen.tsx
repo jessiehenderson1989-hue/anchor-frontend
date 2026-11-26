@@ -30,9 +30,11 @@ function LogoMark() {
     <img
       src="/anchor-mark.png"
       alt="Anchor"
+      className="alogo-badge"
       style={{
-        width: 72,
-        height: 72,
+        width: 88,
+        height: 88,
+        padding: 15,
         objectFit: 'contain',
         marginBottom: 16,
       }}

@@ -210,14 +210,12 @@ export function LoginScreen() {
           <img
             src="/anchor-mark.png"
             alt="Anchor"
+            className="alogo-badge"
             style={{
               width: 104,
               height: 104,
               objectFit: 'contain',
               padding: 18,
-              borderRadius: '50%',
-              background: 'linear-gradient(160deg,#FFFFFF,#F4EFF8)',
-              boxShadow: '0 6px 20px rgba(94,77,116,0.2), 0 0 0 3px rgba(122,102,144,0.18), inset 0 1px 0 rgba(255,255,255,1)',
               marginBottom: 12,
             }}
           />
