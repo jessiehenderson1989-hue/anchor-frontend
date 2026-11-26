@@ -157,7 +157,11 @@ export function Preparation() {
         }
       )
 
-      if (!res.ok) throw new Error('Failed to generate guidance')
+      if (!res.ok) {
+        const info = await res.json().catch(() => null)
+        if (info?.message) { setError(info.message); return }
+        throw new Error('Failed to generate guidance')
+      }
       const data = await res.json()
       if (!data.response) throw new Error('No response received')
 
@@ -209,7 +213,15 @@ export function Preparation() {
         }
       )
 
-      if (!res.ok) throw new Error('Failed to generate response')
+      if (!res.ok) {
+        const info = await res.json().catch(() => null)
+        if (info?.message) {
+          setError(info.message)
+          setChatHistory(prev => prev.slice(0, -1))
+          return
+        }
+        throw new Error('Failed to generate response')
+      }
       const data = await res.json()
       if (!data.response) throw new Error('No response received')
 
@@ -423,6 +435,7 @@ export function Preparation() {
             <textarea
               value={concerns}
               onChange={e => setConcerns(e.target.value)}
+              maxLength={1500}
               placeholder={copy.placeholder(selectedType)}
               rows={4}
               style={{ ...inputStyle, resize: 'none', fontFamily: 'DM Sans, sans-serif', lineHeight: 1.6 }}
@@ -564,6 +577,7 @@ export function Preparation() {
                   type="text"
                   value={followUp}
                   onChange={e => setFollowUp(e.target.value)}
+                  maxLength={600}
                   onKeyDown={e => {
                     if (e.key === 'Enter' && followUp.trim()) handleFollowUp()
                   }}

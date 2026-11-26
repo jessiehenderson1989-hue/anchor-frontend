@@ -153,10 +153,10 @@ export function Resources() {
   }
 
   const pillBtn = (active: boolean, colors?: { bg: string; text: string; dot: string }): React.CSSProperties => ({
-    padding: '7px 14px', borderRadius: 20, whiteSpace: 'nowrap',
+    padding: '7px 14px', borderRadius: 20, whiteSpace: 'nowrap', flexShrink: 0,
     border: active && colors ? `1.5px solid ${colors.dot}` : active ? '1.5px solid #7A6690' : '1.5px solid transparent',
     background: active && colors ? colors.bg : active ? '#F4EFF8' : '#FAF7F4',
-    color: active && colors ? colors.text : active ? '#7A6690' : '#9A90A8',
+    color: active && colors ? colors.text : active ? '#7A6690' : '#695F7B',
     fontFamily: 'DM Sans, sans-serif', fontSize: 13, fontWeight: 600,
     cursor: 'pointer',
   })
