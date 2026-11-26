@@ -259,6 +259,11 @@ export function Settings() {
       if (timelineError) {
         // Non-fatal — timeline may already exist; log but don't block
         console.warn('Timeline re-seed warning:', timelineError.message)
+      } else if (profile?.next_court_date) {
+        // The next court date is the person's, not the role's. Keep it on the rebuilt timeline.
+        await supabase.from('timeline_stages')
+          .update({ court_date: profile.next_court_date })
+          .eq('user_id', user!.id).eq('stage_key', 'case-opening')
       }
 
       haptics.success()
@@ -617,7 +622,7 @@ export function Settings() {
       {showChangeRole && (
         <Modal title="Change Your Role" onClose={() => { setShowChangeRole(false); setError('') }}>
           <p style={{ fontSize: 14, color: '#4A4058', marginBottom: 16, lineHeight: 1.5 }}>
-            Your role determines what content, rights, and resources you see. Changing it rebuilds your timeline for the new role. Court dates and checked-off steps on your timeline will be cleared.
+            Your role determines what content, rights, and resources you see. Changing it rebuilds your timeline for the new role. Checked-off steps will be cleared. Your next court date is kept.
           </p>
           {error && <ErrorBox msg={error} />}
           <div className="space-y-3 mb-5">

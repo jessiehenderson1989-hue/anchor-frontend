@@ -111,7 +111,7 @@ const labelStyle: React.CSSProperties = {
 }
 
 export function Contacts() {
-  const { user, updateProfile } = useAuth()
+  const { user, updateProfile, profile } = useAuth()
   const [courtInfo, setCourtInfo] = useState<CourtInfo | null>(null)
   const [contacts, setContacts] = useState<Contact[]>([])
   const [loading, setLoading] = useState(true)
@@ -375,7 +375,7 @@ export function Contacts() {
             {[
               { label: 'County', value: courtInfo?.county },
               { label: 'Judge', value: courtInfo?.presiding_judge },
-              { label: 'Next date', value: formatDate(courtInfo?.next_court_date || null) },
+              { label: 'Next date', value: formatDate(courtInfo?.next_court_date || profile?.next_court_date || null) },
             ].map(({ label, value }) => (
               <div key={label} style={{ display: 'flex', justifyContent: 'space-between', alignItems: 'center' }}>
                 <span style={{ fontFamily: 'DM Sans, sans-serif', fontSize: 13, color: '#8A8098' }}>{label}</span>

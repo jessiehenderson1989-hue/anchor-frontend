@@ -53,7 +53,7 @@ const STAGE_CONTENT: Record<string, Record<Role, StageContent>> = {
       ],
     },
     youth: {
-      name: 'Case Opening',
+      name: 'Your Case Begins',
       whatHappens: 'A case has been opened and the court is now involved in decisions about where you live. You have your own rights in this process — separate from your parents. Your voice matters.',
       yourRights: ['Right to your own attorney', 'Right to know what is happening in your case', 'Right to be heard by the judge', 'Right to safe placement'],
       tasks: [
@@ -65,7 +65,7 @@ const STAGE_CONTENT: Record<string, Record<Role, StageContent>> = {
       ],
     },
     supporter: {
-      name: 'Case Opening',
+      name: 'Case Opens',
       whatHappens: 'A dependency case has been opened for the family you are supporting. The court process is beginning. You may be able to help by offering to care for the child or attending hearings as a support person.',
       yourRights: ['Right to request placement of the child', 'Right to be notified of hearings if you are a caregiver', 'Right to provide information to the court'],
       tasks: [
@@ -91,7 +91,7 @@ const STAGE_CONTENT: Record<string, Record<Role, StageContent>> = {
       ],
     },
     youth: {
-      name: 'Detention Hearing',
+      name: 'First Court Hearing',
       whatHappens: 'This is the first court hearing. The judge decides where you will live while the case is open. You can tell the judge where you want to live and who you want to be with.',
       yourRights: ['Right to be at the hearing', 'Right to your own attorney', 'Right to tell the judge your wishes', 'Right to contact with your parents (unless unsafe)'],
       tasks: [
@@ -129,7 +129,7 @@ const STAGE_CONTENT: Record<string, Record<Role, StageContent>> = {
       ],
     },
     youth: {
-      name: 'Jurisdiction Hearing',
+      name: 'Court Decides',
       whatHappens: 'The judge decides if the things alleged in the case are true. You do not have to testify, but you can. Your attorney will explain your options and what to expect.',
       yourRights: ['Right to have an attorney present', 'Right to remain silent', 'Right to have your wishes heard', 'Right to attend the hearing'],
       tasks: [
@@ -168,7 +168,7 @@ const STAGE_CONTENT: Record<string, Record<Role, StageContent>> = {
       ],
     },
     youth: {
-      name: 'Disposition Hearing',
+      name: 'Making the Plan',
       whatHappens: 'The judge decides where you will live and what services you will receive. You have the right to say what you want. Tell your attorney about your school, friends, and what matters to you.',
       yourRights: ['Right to be placed with siblings when possible', 'Right to stay in your school', 'Right to have your educational needs met', 'Right to participate in your case plan'],
       tasks: [
@@ -194,7 +194,7 @@ const STAGE_CONTENT: Record<string, Record<Role, StageContent>> = {
   },
   'six-month': {
     parent: {
-      name: '6-Month Review Hearing',
+      name: '6-Month Review',
       whatHappens: 'The judge reviews your progress on your case plan. Bring every completion certificate, letter, and proof of attendance. This is your chance to show how hard you have been working.',
       yourRights: ['Right to present evidence of your progress', 'Right to request more visits', 'Right to request return of your child if progress is sufficient', 'Right to request additional services'],
       tasks: [
@@ -207,7 +207,7 @@ const STAGE_CONTENT: Record<string, Record<Role, StageContent>> = {
       ],
     },
     youth: {
-      name: '6-Month Review Hearing',
+      name: '6-Month Check-In',
       whatHappens: 'The judge checks in on how things are going — your placement, school, and wellbeing. Tell your attorney and the court if something is not working. You deserve to be heard.',
       yourRights: ['Right to speak to the judge', 'Right to request a change in placement', 'Right to have your educational needs addressed', 'Right to request additional services'],
       tasks: [
@@ -219,7 +219,7 @@ const STAGE_CONTENT: Record<string, Record<Role, StageContent>> = {
       ],
     },
     supporter: {
-      name: '6-Month Review Hearing',
+      name: '6-Month Review',
       whatHappens: "The judge reviews how the family is progressing. As a caregiver, you may be asked about the child's wellbeing. Keep notes about how the child is doing so you can report accurately.",
       yourRights: ['Right to submit a caregiver report', 'Right to request services for the child', 'Right to be heard about placement'],
       tasks: [
@@ -233,7 +233,7 @@ const STAGE_CONTENT: Record<string, Record<Role, StageContent>> = {
   },
   'twelve-month': {
     parent: {
-      name: '12-Month Review Hearing',
+      name: '12-Month Review',
       whatHappens: 'This is a critical hearing. If you have not made substantial progress, the court may move toward a permanent plan. Bring everything showing your progress. Talk to your attorney before this hearing.',
       yourRights: ['Right to request extended reunification services', 'Right to present evidence of progress', "Right to contest the court's findings", 'Right to an attorney'],
       tasks: [
@@ -246,7 +246,7 @@ const STAGE_CONTENT: Record<string, Record<Role, StageContent>> = {
       ],
     },
     youth: {
-      name: '12-Month Review Hearing',
+      name: '12-Month Check-In',
       whatHappens: 'The judge takes a close look at your situation and decides what comes next. If you want to go home, say so. If things are not safe at home, say that too. Your voice matters here.',
       yourRights: ['Right to express your wishes about placement', 'Right to your own attorney', 'Right to participate in long-term planning for your life'],
       tasks: [
@@ -258,7 +258,7 @@ const STAGE_CONTENT: Record<string, Record<Role, StageContent>> = {
       ],
     },
     supporter: {
-      name: '12-Month Review Hearing',
+      name: '12-Month Review',
       whatHappens: "The court is making big decisions about the family's future. If you are a caregiver, be prepared to report on how the child is doing. Reunification or another permanent plan may be discussed.",
       yourRights: ['Right to submit information to the court', 'Right to request to be considered for guardianship or adoption', 'Right to request services for the child in your care'],
       tasks: [
