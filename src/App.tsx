@@ -32,7 +32,7 @@ function App() {
       <AuthProvider>
         {/* Global watermark — sits behind all screens */}
         <div style={{ position: 'fixed', top: '50%', left: '50%', transform: 'translate(-50%, -50%)', zIndex: 0, pointerEvents: 'none' }}>
-          <img src='/anchor-icon-only.png' alt='' aria-hidden='true' style={{ width: 360, height: 360, objectFit: 'contain', opacity: 0.05, filter: 'saturate(1.4) brightness(0.7)' }} />
+          <img src='/anchor-mark.png' alt='' aria-hidden='true' style={{ width: 360, height: 360, objectFit: 'contain', opacity: 0.05 }} />
         </div>
         <InstallPrompt />
         <Routes>

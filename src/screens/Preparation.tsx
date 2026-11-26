@@ -453,11 +453,7 @@ export function Preparation() {
             <button
               onClick={handleGenerate}
               disabled={!concerns.trim() || loading}
-              style={{
-                ...primaryBtn,
-                marginTop: 16,
-                opacity: (!concerns.trim() || loading) ? 0.5 : 1,
-              }}
+              className="abtn abtn-primary abtn-block" style={{ marginTop: 16 }}
             >
               {loading ? (
                 <>
@@ -661,7 +657,7 @@ export function Preparation() {
             <button
               onClick={handleSave}
               disabled={!saveTitle.trim()}
-              style={{ ...primaryBtn, opacity: !saveTitle.trim() ? 0.5 : 1 }}
+              className="abtn abtn-primary abtn-block"
             >
               <Check size={15} />
               Save

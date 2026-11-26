@@ -180,7 +180,7 @@ export function Resources() {
         <h2 style={{ fontFamily: 'Fraunces, serif', fontSize: 22, fontWeight: 700, color: '#2A2030', marginBottom: 8 }}>Couldn't load resources</h2>
         <p style={{ fontFamily: 'DM Sans, sans-serif', fontSize: 14, color: '#4A4058', marginBottom: 20 }}>{error}</p>
         <button onClick={() => { setLoading(true); setError(null); loadResources() }}
-          style={{ background: '#7A6690', color: '#fff', border: 'none', borderRadius: 16, padding: '12px 24px', fontFamily: 'DM Sans, sans-serif', fontWeight: 600, fontSize: 15, cursor: 'pointer' }}>
+          className="abtn abtn-primary abtn-sm">
           Try Again
         </button>
       </div>
@@ -217,7 +217,7 @@ export function Resources() {
               <div style={{ background: '#FAF7F2', borderRadius: 14, padding: '14px' }}>
                 <p style={{ fontFamily: 'DM Sans, sans-serif', fontSize: 13, fontWeight: 700, color: '#2A2030', margin: '0 0 4px' }}>Cal-FURS — Foster Youth Crisis Line</p>
                 <p style={{ fontFamily: 'DM Sans, sans-serif', fontSize: 13, color: '#4A4058', margin: '0 0 10px', lineHeight: 1.5 }}>24/7 crisis support for foster youth. Mobile response teams available.</p>
-                <a href="tel:1-833-939-3877" style={{ display: 'inline-flex', alignItems: 'center', gap: 6, background: '#A85878', color: '#fff', borderRadius: 12, padding: '8px 14px', fontFamily: 'DM Sans, sans-serif', fontWeight: 600, fontSize: 13, textDecoration: 'none' }}>
+                <a href="tel:1-833-939-3877" className="abtn abtn-rose abtn-sm">
                   <Phone size={13} /> Call or Text 1-833-939-3877
                 </a>
               </div>
@@ -235,7 +235,7 @@ export function Resources() {
               <div style={{ background: '#FAF7F2', borderRadius: 14, padding: '14px' }}>
                 <p style={{ fontFamily: 'DM Sans, sans-serif', fontSize: 13, fontWeight: 700, color: '#2A2030', margin: '0 0 4px' }}>Dial 211</p>
                 <p style={{ fontFamily: 'DM Sans, sans-serif', fontSize: 13, color: '#4A4058', margin: '0 0 10px', lineHeight: 1.5 }}>Free, confidential 24/7 help. Food, housing, healthcare, childcare, and more.</p>
-                <a href="tel:211" style={{ display: 'inline-flex', alignItems: 'center', gap: 6, background: '#A85878', color: '#fff', borderRadius: 12, padding: '8px 14px', fontFamily: 'DM Sans, sans-serif', fontWeight: 600, fontSize: 13, textDecoration: 'none' }}>
+                <a href="tel:211" className="abtn abtn-rose abtn-sm">
                   <Phone size={13} /> Call 211 Now
                 </a>
               </div>
@@ -324,7 +324,7 @@ export function Resources() {
             <h3 style={{ fontFamily: 'Fraunces, serif', fontSize: 20, fontWeight: 700, color: '#2A2030', marginBottom: 8 }}>No resources found</h3>
             <p style={{ fontFamily: 'DM Sans, sans-serif', fontSize: 14, color: '#695F7B', marginBottom: 20 }}>Try adjusting your filters or search</p>
             <a href={isYouth ? 'tel:1-877-846-1602' : 'tel:211'}
-              style={{ display: 'inline-flex', alignItems: 'center', gap: 6, background: '#7A6690', color: '#fff', borderRadius: 16, padding: '12px 20px', fontFamily: 'DM Sans, sans-serif', fontWeight: 600, fontSize: 14, textDecoration: 'none' }}>
+              className="abtn abtn-primary abtn-sm">
               <Phone size={14} />
               {isYouth ? 'Call Ombudsperson' : 'Call 211 for Help'}
             </a>

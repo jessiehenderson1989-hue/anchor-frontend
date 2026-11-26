@@ -151,9 +151,9 @@ export function FosterCareIntro() {
         display: 'flex', alignItems: 'center', justifyContent: 'space-between',
       }}>
         <img
-          src="/anchor-icon-only.png"
+          src="/anchor-mark.png"
           alt="Anchor"
-          style={{ width: 48, height: 48, objectFit: 'contain', filter: 'drop-shadow(0 2px 6px rgba(122,102,144,0.35))' }}
+          style={{ width: 48, height: 48, objectFit: 'contain' }}
         />
         <button
           onClick={markSeenAndContinue}
@@ -271,14 +271,7 @@ export function FosterCareIntro() {
         <button
           onClick={markSeenAndContinue}
           disabled={saving}
-          style={{
-            width: '100%', padding: '15px',
-            background: colors.accent, border: 'none', borderRadius: 20,
-            display: 'flex', alignItems: 'center', justifyContent: 'center', gap: 8,
-            fontFamily: 'DM Sans, sans-serif', fontWeight: 700, fontSize: 16,
-            color: '#fff', cursor: 'pointer',
-            boxShadow: `0 4px 20px ${colors.accent}50`,
-          }}
+          className="abtn abtn-primary abtn-block" style={{ width: '100%' }}
         >
           {saving ? 'Loading…' : "I'm ready — take me to Anchor"}
           {!saving && <ArrowRight size={18} />}

@@ -53,7 +53,7 @@ export function BottomNav() {
               }}>
                 {tab.id === 'home' ? (
                   <img
-                    src="/anchor-icon-only.png"
+                    src="/anchor-mark.png"
                     alt=""
                     style={{
                       width: 16, height: 16, objectFit: 'contain',

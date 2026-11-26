@@ -100,13 +100,13 @@ export function AppHeader({ showBack = true }: AppHeaderProps) {
             </svg>
             {/* Actual logo */}
             <img
-              src="/anchor-icon-only.png"
+              src="/anchor-mark.png"
               alt="Anchor"
               style={{
                 position: 'absolute',
                 top: '50%', left: '50%',
                 transform: 'translate(-50%, -50%)',
-                width: 30, height: 30,
+                width: 32, height: 32,
                 objectFit: 'contain',
               }}
             />

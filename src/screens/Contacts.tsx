@@ -339,13 +339,7 @@ export function Contacts() {
           </div>
           <button
             onClick={openAddContactModal}
-            style={{
-              display: 'flex', alignItems: 'center', gap: 6,
-              background: '#7A6690', color: '#fff', border: 'none',
-              borderRadius: 16, padding: '10px 18px',
-              fontFamily: 'DM Sans, sans-serif', fontWeight: 600, fontSize: 14,
-              cursor: 'pointer', boxShadow: '0 4px 16px rgba(122,102,144,0.3)',
-            }}
+            className="abtn abtn-primary abtn-sm"
           >
             <Plus size={16} />
             Add
@@ -557,11 +551,11 @@ export function Contacts() {
               </div>
               {/* Buttons inside scroll — always reachable */}
               <div style={{ display: 'flex', gap: 12, paddingTop: 4, paddingBottom: 'env(safe-area-inset-bottom, 16px)' }}>
-                <button onClick={closeContactModal} style={{ flex: 1, padding: '14px', background: '#EDE6DB', border: '1.5px solid rgba(122,102,144,0.2)', borderRadius: 16, fontFamily: 'DM Sans, sans-serif', fontWeight: 600, fontSize: 15, color: '#7A6690', cursor: 'pointer' }}>
+                <button onClick={closeContactModal} className="abtn abtn-soft" style={{ flex: 1 }}>
                   Cancel
                 </button>
                 <button onClick={handleSaveContact} disabled={!contactForm.name.trim()}
-                  style={{ flex: 1, padding: '14px', background: contactForm.name.trim() ? '#7A6690' : '#C8C0D0', border: 'none', borderRadius: 16, fontFamily: 'DM Sans, sans-serif', fontWeight: 600, fontSize: 15, color: '#fff', cursor: contactForm.name.trim() ? 'pointer' : 'not-allowed', boxShadow: contactForm.name.trim() ? '0 4px 16px rgba(122,102,144,0.3)' : 'none' }}>
+                  className="abtn abtn-primary" style={{ flex: 1 }}>
                   {editingContact ? 'Save Changes' : 'Add to Team'}
                 </button>
               </div>
@@ -599,7 +593,7 @@ export function Contacts() {
               </div>
               {/* Buttons inside scroll — always reachable */}
               <div style={{ display: 'flex', gap: 12, paddingTop: 4, paddingBottom: 'env(safe-area-inset-bottom, 16px)' }}>
-                <button onClick={() => setShowCourtModal(false)} style={{ flex: 1, padding: '14px', background: '#EDE6DB', border: '1.5px solid rgba(122,102,144,0.2)', borderRadius: 16, fontFamily: 'DM Sans, sans-serif', fontWeight: 600, fontSize: 15, color: '#7A6690', cursor: 'pointer' }}>
+                <button onClick={() => setShowCourtModal(false)} className="abtn abtn-soft" style={{ flex: 1 }}>
                   Cancel
                 </button>
                 <button onClick={handleSaveCourtInfo}

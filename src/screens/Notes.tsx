@@ -238,15 +238,7 @@ export function Notes() {
           </div>
           <button
             onClick={openAddModal}
-            style={{
-              display: 'flex', alignItems: 'center', gap: 6,
-              background: '#7A6690', color: '#fff',
-              border: 'none', borderRadius: 16,
-              padding: '10px 18px',
-              fontFamily: 'DM Sans, sans-serif', fontWeight: 600, fontSize: 14,
-              cursor: 'pointer',
-              boxShadow: '0 4px 16px rgba(122,102,144,0.3)',
-            }}
+            className="abtn abtn-primary abtn-sm"
           >
             <Plus size={16} />
             New
@@ -457,14 +449,14 @@ export function Notes() {
             }}>
               <button
                 onClick={closeModal}
-                style={{ flex: 1, padding: '14px', background: '#EDE6DB', border: '1.5px solid rgba(122,102,144,0.2)', borderRadius: 16, fontFamily: 'DM Sans, sans-serif', fontWeight: 600, fontSize: 15, color: '#7A6690', cursor: 'pointer' }}
+                className="abtn abtn-soft" style={{ flex: 1 }}
               >
                 Cancel
               </button>
               <button
                 onClick={handleSave}
                 disabled={!formData.title.trim()}
-                style={{ flex: 1, padding: '14px', background: formData.title.trim() ? '#7A6690' : '#C8C0D0', border: 'none', borderRadius: 16, fontFamily: 'DM Sans, sans-serif', fontWeight: 600, fontSize: 15, color: '#fff', cursor: formData.title.trim() ? 'pointer' : 'not-allowed', boxShadow: formData.title.trim() ? '0 4px 16px rgba(122,102,144,0.3)' : 'none' }}
+                className="abtn abtn-primary" style={{ flex: 1 }}
               >
                 Save Note
               </button>

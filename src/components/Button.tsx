@@ -15,17 +15,17 @@ export function Button({
   onClick,
   ...props
 }: ButtonProps) {
-  const baseStyles = 'font-semibold rounded-full transition-all disabled:opacity-50 disabled:cursor-not-allowed'
+  const baseStyles = 'abtn'
 
   const variantStyles = {
-    primary: 'bg-gradient-to-r from-coral-500 to-coral-400 text-white hover:shadow-lg',
-    secondary: 'border-2 border-purple-600 text-purple-600 bg-white hover:bg-purple-50',
-    outline: 'border-2 border-gray-300 text-gray-700 bg-white hover:bg-gray-50',
+    primary: 'abtn-primary',
+    secondary: 'abtn-soft',
+    outline: 'abtn-outline',
   }
 
   const sizeStyles = {
-    large: 'px-8 py-4 min-h-[48px]',
-    medium: 'px-6 py-3 min-h-[48px]',
+    large: '',
+    medium: 'abtn-sm',
   }
 
   const handleClick = (e: React.MouseEvent<HTMLButtonElement>) => {

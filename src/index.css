@@ -57,3 +57,43 @@ button, a, input[type="checkbox"], input[type="radio"] {
   min-height: unset;
   min-width: unset;
 }
+
+/* ── Anchor buttons ──────────────────────────────────────────────
+   Soft, pressable buttons. The darker bottom edge makes it clear
+   what can be tapped, and the button moves down when pressed.     */
+.abtn {
+  --edge: #58476E;
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  gap: 8px;
+  min-height: 52px;
+  padding: 0 20px;
+  border: none;
+  border-radius: 16px;
+  font-family: 'DM Sans', system-ui, sans-serif;
+  font-weight: 700;
+  font-size: 16px;
+  line-height: 1.2;
+  text-align: center;
+  text-decoration: none;
+  cursor: pointer;
+  box-shadow: 0 4px 0 var(--edge), 0 8px 18px rgba(94, 77, 116, 0.16), inset 0 1px 0 rgba(255, 255, 255, 0.28);
+  transition: transform 140ms ease, box-shadow 140ms ease, opacity 150ms ease;
+  -webkit-tap-highlight-color: transparent;
+}
+.abtn:active {
+  transform: translateY(3px);
+  box-shadow: 0 1px 0 var(--edge), 0 2px 6px rgba(94, 77, 116, 0.16), inset 0 1px 0 rgba(255, 255, 255, 0.28);
+}
+.abtn:disabled,
+.abtn[aria-disabled='true'] {
+  opacity: 0.5;
+  cursor: not-allowed;
+}
+.abtn-primary { background: linear-gradient(180deg, #8672A0, #735F8C); color: #fff; }
+.abtn-soft    { --edge: #D3C6DD; background: #F4EFF8; color: #5E4D74; }
+.abtn-outline { --edge: #DCD2E2; background: #FAF7F2; color: #5E4D74; border: 1.5px solid rgba(122, 102, 144, 0.45); }
+.abtn-rose    { --edge: #8A4462; background: linear-gradient(180deg, #B5678A, #A85878); color: #fff; }
+.abtn-sm      { min-height: 44px; padding: 0 16px; font-size: 15px; border-radius: 14px; }
+.abtn-block   { width: 100%; }

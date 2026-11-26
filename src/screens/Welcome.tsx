@@ -34,13 +34,12 @@ export function Welcome() {
       {/* ── LOGO HERO ── */}
       <div className="flex flex-col items-center pt-16 pb-8 px-6 text-center">
         <img
-          src="/anchor-icon-only.png"
+          src="/anchor-mark.png"
           alt="Anchor"
           style={{
             width: 120,
             height: 120,
             objectFit: 'contain',
-            filter: 'drop-shadow(0 6px 18px rgba(122,102,144,0.25))',
             marginBottom: 16,
           }}
         />

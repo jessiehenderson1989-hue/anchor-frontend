@@ -28,13 +28,12 @@ const labelStyle: React.CSSProperties = {
 function LogoMark() {
   return (
     <img
-      src="/anchor-icon-only.png"
+      src="/anchor-mark.png"
       alt="Anchor"
       style={{
         width: 72,
         height: 72,
         objectFit: 'contain',
-        filter: 'drop-shadow(0 4px 14px rgba(122,102,144,0.25))',
         marginBottom: 16,
       }}
     />

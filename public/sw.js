@@ -1,10 +1,10 @@
-const CACHE_NAME = 'anchor-v2';
+const CACHE_NAME = 'anchor-v3';
 const urlsToCache = [
   '/',
   '/index.html',
   '/manifest.json',
-  '/icon-192.png',
-  '/icon-512.png',
+  '/app-icon-192.png',
+  '/app-icon-512.png',
 ];
 
 self.addEventListener('install', (event) => {

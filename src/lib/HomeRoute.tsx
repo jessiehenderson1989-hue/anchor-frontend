@@ -36,7 +36,7 @@ export function HomeRoute() {
           display: 'flex', alignItems: 'center', justifyContent: 'center',
         }}>
           <img
-            src="/anchor-icon-only.png"
+            src="/anchor-mark.png"
             alt="Anchor"
             style={{
               width: 72, height: 72, objectFit: 'contain',
@@ -82,7 +82,7 @@ export function HomeRoute() {
         minHeight: '100vh', background: '#EDE6DB',
         display: 'flex', alignItems: 'center', justifyContent: 'center',
       }}>
-        <img src="/anchor-icon-only.png" alt="Anchor" style={{ width: 48, height: 48, objectFit: 'contain', opacity: 0.5 }} />
+        <img src="/anchor-mark.png" alt="Anchor" style={{ width: 48, height: 48, objectFit: 'contain', opacity: 0.5 }} />
       </div>
     )
   }

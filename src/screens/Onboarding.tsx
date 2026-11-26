@@ -1006,7 +1006,7 @@ export function Onboarding() {
             <button
               onClick={handleBack}
               disabled={saving}
-              style={S.backBtn}
+              className="abtn abtn-soft"
             >
               <ChevronLeft className="w-4 h-4" />
               Back
@@ -1015,10 +1015,8 @@ export function Onboarding() {
           <button
             onClick={handleNext}
             disabled={!isStepValid() || saving}
-            style={{
-              ...S.primaryBtn,
-              opacity: (!isStepValid() || saving) ? 0.5 : 1,
-            }}
+            className="abtn abtn-primary"
+            style={{ flex: 1 }}
           >
             {saving ? (
               <>

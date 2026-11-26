@@ -56,7 +56,7 @@ export function ContactSupport() {
           </p>
           <button
             onClick={() => navigate(user ? '/settings' : '/')}
-            style={{ background: '#7A6690', color: '#fff', border: 'none', borderRadius: 16, padding: '14px 28px', fontFamily: 'DM Sans, sans-serif', fontWeight: 700, fontSize: 15, cursor: 'pointer', boxShadow: '0 4px 16px rgba(122,102,144,0.3)' }}
+            className="abtn abtn-primary"
           >
             {user ? 'Back to Settings' : 'Back'}
           </button>
@@ -128,7 +128,7 @@ export function ContactSupport() {
         <button
           onClick={handleSubmit}
           disabled={loading || !message.trim()}
-          style={{ width: '100%', padding: '15px', background: message.trim() ? '#7A6690' : '#C8C0D0', border: 'none', borderRadius: 16, fontFamily: 'DM Sans, sans-serif', fontWeight: 700, fontSize: 15, color: '#fff', cursor: message.trim() ? 'pointer' : 'not-allowed', boxShadow: message.trim() ? '0 4px 16px rgba(122,102,144,0.3)' : 'none' }}
+          className="abtn abtn-primary abtn-block" style={{ width: '100%' }}
         >
           {loading ? 'Sending…' : 'Send Message'}
         </button>

@@ -47,7 +47,7 @@ export function ConfirmDialog({
           <Button
             onClick={onConfirm}
             disabled={loading}
-            className={`w-full ${destructive ? 'bg-[#A85878] hover:bg-[#93486A]' : ''}`}
+            className={`w-full ${destructive ? 'abtn-rose' : ''}`}
           >
             {loading ? 'Processing...' : confirmLabel}
           </Button>

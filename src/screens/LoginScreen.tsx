@@ -208,13 +208,12 @@ export function LoginScreen() {
         {/* ── LOGO ── */}
         <div className="flex flex-col items-center mb-8">
           <img
-            src="/anchor-icon-only.png"
+            src="/anchor-mark.png"
             alt="Anchor"
             style={{
-              width: 80,
-              height: 80,
+              width: 96,
+              height: 96,
               objectFit: 'contain',
-              filter: 'drop-shadow(0 4px 14px rgba(122,102,144,0.25))',
               marginBottom: 12,
             }}
           />
@@ -312,8 +311,7 @@ export function LoginScreen() {
                 <button
                   type="submit"
                   disabled={loading}
-                  className="w-full py-3.5 rounded-2xl font-semibold text-white transition-all active:scale-95 disabled:opacity-50"
-                  style={{ background: '#7A6690', boxShadow: '0 4px 16px rgba(122,102,144,0.3)' }}
+                  className="abtn abtn-primary abtn-block"
                 >
                   {loading ? (
                     <div className="flex items-center justify-center gap-2">
@@ -468,8 +466,7 @@ export function LoginScreen() {
                 <button
                   type="submit"
                   disabled={loading}
-                  className="w-full py-3.5 rounded-2xl font-semibold text-white transition-all active:scale-95 disabled:opacity-50"
-                  style={{ background: '#7A6690', boxShadow: '0 4px 16px rgba(122,102,144,0.3)' }}
+                  className="abtn abtn-primary abtn-block"
                 >
                   {loading ? (
                     <div className="flex items-center justify-center gap-2">

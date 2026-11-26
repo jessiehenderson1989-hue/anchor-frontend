@@ -224,13 +224,12 @@ export function Dashboard() {
         zIndex: 0, pointerEvents: 'none',
       }}>
         <img
-          src="/anchor-icon-only.png"
+          src="/anchor-mark.png"
           alt=""
           aria-hidden="true"
           style={{
             width: 340, height: 340, objectFit: 'contain',
-            opacity: 0.07,
-            filter: 'saturate(1.2) brightness(0.75)',
+            opacity: 0.055,
             animation: 'wmBreathe 7s ease-in-out infinite',
           }}
         />
@@ -269,7 +268,7 @@ export function Dashboard() {
           }} />
           {/* Hero anchor ghost top-right */}
           <div style={{ position: 'absolute', right: -10, top: -5, opacity: 0.08, pointerEvents: 'none' }}>
-            <img src="/anchor-icon-only.png" alt="" aria-hidden="true"
+            <img src="/anchor-mark.png" alt="" aria-hidden="true"
               style={{ width: 130, height: 130, objectFit: 'contain', filter: 'brightness(10)' }} />
           </div>
 
