@@ -1,5 +1,5 @@
 import { useState } from 'react'
-import { useNavigate } from 'react-router-dom'
+import { useLocation, useNavigate } from 'react-router-dom'
 import { ArrowLeft, Settings } from 'lucide-react'
 import { useAuth } from '../contexts/AuthContext'
 import { haptics } from '../lib/haptics'
@@ -16,6 +16,7 @@ const STAGE_COUNT = 10
 export function AppHeader({ showBack = true }: AppHeaderProps) {
   const { signOut, profile } = useAuth()
   const navigate = useNavigate()
+  const onSettings = useLocation().pathname === '/settings'
   const [showLogoutDialog, setShowLogoutDialog] = useState(false)
 
   const STAGE_ORDER = [
@@ -47,12 +48,12 @@ export function AppHeader({ showBack = true }: AppHeaderProps) {
         }}>
 
           {/* Left */}
-          <div style={{ width: 34, flexShrink: 0 }}>
+          <div style={{ width: 40, flexShrink: 0 }}>
             {showBack && (
               <button
                 onClick={() => { haptics.light(); navigate(-1) }}
                 style={{
-                  width: 34, height: 34, borderRadius: 10,
+                  width: 40, height: 40, borderRadius: 12,
                   background: 'linear-gradient(145deg,#F4EFF8,#EDE5F4)',
                   border: '1px solid rgba(255,255,255,0.9)',
                   boxShadow: '0 2px 8px rgba(122,102,144,0.12),inset 0 1px 0 rgba(255,255,255,0.9)',
@@ -61,7 +62,7 @@ export function AppHeader({ showBack = true }: AppHeaderProps) {
                 }}
                 aria-label="Go back"
               >
-                <ArrowLeft size={15} color="#7A6690" />
+                <ArrowLeft size={17} color="#7A6690" />
               </button>
             )}
           </div>
@@ -112,10 +113,11 @@ export function AppHeader({ showBack = true }: AppHeaderProps) {
           </div>
 
           {/* Right */}
+          {onSettings ? <div style={{ width: 40, flexShrink: 0 }} /> : (
           <button
             onClick={() => { haptics.light(); navigate('/settings') }}
             style={{
-              width: 34, height: 34, borderRadius: 10,
+              width: 40, height: 40, borderRadius: 12,
               background: 'linear-gradient(145deg,#F4EFF8,#EDE5F4)',
               border: '1px solid rgba(255,255,255,0.9)',
               boxShadow: '0 2px 8px rgba(122,102,144,0.12),inset 0 1px 0 rgba(255,255,255,0.9)',
@@ -124,8 +126,9 @@ export function AppHeader({ showBack = true }: AppHeaderProps) {
             }}
             aria-label="Settings"
           >
-            <Settings size={15} color="#7A6690" />
+            <Settings size={17} color="#7A6690" />
           </button>
+          )}
         </div>
       </div>
 

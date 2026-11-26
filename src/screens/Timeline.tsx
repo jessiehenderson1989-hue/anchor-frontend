@@ -845,7 +845,7 @@ export function Timeline() {
                     width: '100%', padding: '13px',
                     background: 'transparent',
                     border: '1.5px solid rgba(122,102,144,0.35)',
-                    borderRadius: 18,
+                    borderRadius: 20,
                     fontFamily: 'DM Sans, sans-serif', fontSize: 14, fontWeight: 700,
                     color: '#7A6690', cursor: 'pointer',
                   }}
@@ -1036,7 +1036,7 @@ export function Timeline() {
         {stages.filter(s => s.status === 'completed').length === 0 && (
           <div style={{
             background: 'linear-gradient(145deg,#F4EFF8,#EDE5F4)',
-            borderRadius: 18, padding: '12px 16px', marginBottom: 12,
+            borderRadius: 20, padding: '12px 16px', marginBottom: 12,
             border: '1px solid rgba(255,255,255,0.88)',
             boxShadow: '0 3px 10px rgba(122,102,144,0.1)',
             display: 'flex', gap: 10, alignItems: 'flex-start',

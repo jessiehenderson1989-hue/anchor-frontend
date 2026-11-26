@@ -62,7 +62,7 @@ export function InstallPrompt() {
         <button
           onClick={handleDismiss}
           aria-label="Dismiss"
-          style={{ position: 'absolute', top: 6, right: 6, width: 36, height: 36, display: 'flex', alignItems: 'center', justifyContent: 'center', background: 'transparent', border: 'none', borderRadius: 12, cursor: 'pointer' }}
+          style={{ position: 'absolute', top: 6, right: 6, width: 40, height: 40, display: 'flex', alignItems: 'center', justifyContent: 'center', background: 'transparent', border: 'none', borderRadius: 12, cursor: 'pointer' }}
         >
           <X size={16} color="#8A8098" />
         </button>

@@ -512,7 +512,7 @@ export function Contacts() {
                   </p>
                 )}
               </div>
-              <button onClick={closeContactModal} style={{ width: 36, height: 36, borderRadius: 12, background: '#E8DDE8', border: 'none', display: 'flex', alignItems: 'center', justifyContent: 'center', cursor: 'pointer' }}>
+              <button onClick={closeContactModal} style={{ width: 40, height: 40, borderRadius: 12, background: '#E8DDE8', border: 'none', display: 'flex', alignItems: 'center', justifyContent: 'center', cursor: 'pointer' }}>
                 <X size={16} color="#7A6690" />
               </button>
             </div>
@@ -576,7 +576,7 @@ export function Contacts() {
           <div style={modalSheet}>
             <div style={modalHeader}>
               <h2 style={{ fontFamily: 'Fraunces, serif', fontSize: 22, fontWeight: 700, color: '#2A2030', margin: 0 }}>Court Info</h2>
-              <button onClick={() => setShowCourtModal(false)} style={{ width: 36, height: 36, borderRadius: 12, background: '#E8DDE8', border: 'none', display: 'flex', alignItems: 'center', justifyContent: 'center', cursor: 'pointer' }}>
+              <button onClick={() => setShowCourtModal(false)} style={{ width: 40, height: 40, borderRadius: 12, background: '#E8DDE8', border: 'none', display: 'flex', alignItems: 'center', justifyContent: 'center', cursor: 'pointer' }}>
                 <X size={16} color="#7A6690" />
               </button>
             </div>
@@ -615,7 +615,7 @@ export function Contacts() {
       {/* Delete confirm */}
       {deleteConfirm && (
         <div style={{ ...overlay, alignItems: 'center', padding: '0 20px' }}>
-          <div style={{ background: '#FAF7F2', borderRadius: 24, padding: '28px 24px', width: '100%', maxWidth: 360 }}>
+          <div style={{ background: '#FAF7F2', borderRadius: 20, padding: '28px 24px', width: '100%', maxWidth: 360 }}>
             <h2 style={{ fontFamily: 'Fraunces, serif', fontSize: 22, fontWeight: 700, color: '#2A2030', marginBottom: 8 }}>Remove this contact?</h2>
             <p style={{ fontFamily: 'DM Sans, sans-serif', fontSize: 14, color: '#4A4058', marginBottom: 24 }}>This can't be undone.</p>
             <div style={{ display: 'flex', gap: 12 }}>

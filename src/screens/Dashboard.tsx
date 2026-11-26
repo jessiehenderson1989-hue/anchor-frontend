@@ -311,7 +311,7 @@ export function Dashboard() {
           {/* Peer voice card */}
           <div style={{
             background: '#FAF7F2',
-            borderRadius: 22,
+            borderRadius: 20,
             borderLeft: `3px solid ${activeJewel.color}`,
             border: `1px solid rgba(255,255,255,0.92)`,
             borderLeftWidth: 3,
@@ -337,7 +337,7 @@ export function Dashboard() {
             onClick={() => { haptics.light(); navigate('/timeline') }}
             style={{
             background: '#FAF7F2',
-            borderRadius: 22,
+            borderRadius: 20,
             borderLeft: '3px solid #4A8878',
             border: '1px solid rgba(255,255,255,0.92)',
             borderLeftWidth: 3, borderLeftColor: '#4A8878',
@@ -417,7 +417,7 @@ export function Dashboard() {
             onClick={() => { haptics.light(); navigate('/preparation') }}
             style={{
             background: '#FAF7F2',
-            borderRadius: 22,
+            borderRadius: 20,
             border: '1px solid rgba(255,255,255,0.92)',
             boxShadow: '0 4px 20px rgba(90,70,110,0.11), inset 0 1px 0 rgba(255,255,255,1)',
             padding: '14px 16px',

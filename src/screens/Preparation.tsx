@@ -264,7 +264,7 @@ export function Preparation() {
   const card: React.CSSProperties = {
     background: '#FAF7F2',
     border: '1px solid rgba(255,255,255,0.88)',
-    borderRadius: 24,
+    borderRadius: 20,
     boxShadow: '0 2px 12px rgba(90,78,110,0.07)',
   }
   const inputStyle: React.CSSProperties = {
@@ -630,7 +630,7 @@ export function Preparation() {
               </h3>
               <button
                 onClick={() => setShowSaveModal(false)}
-                style={{ width: 36, height: 36, borderRadius: 10, background: 'rgba(122,102,144,0.1)', border: 'none', display: 'flex', alignItems: 'center', justifyContent: 'center', cursor: 'pointer', flexShrink: 0 }}
+                style={{ width: 40, height: 40, borderRadius: 10, background: 'rgba(122,102,144,0.1)', border: 'none', display: 'flex', alignItems: 'center', justifyContent: 'center', cursor: 'pointer', flexShrink: 0 }}
               >
                 <X size={16} color="#9A90A8" />
               </button>

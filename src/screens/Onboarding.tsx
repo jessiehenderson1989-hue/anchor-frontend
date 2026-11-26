@@ -56,7 +56,7 @@ const S = {
   card: {
     background: '#FAF7F2',
     border: '1px solid rgba(255,255,255,0.88)',
-    borderRadius: 24,
+    borderRadius: 20,
     padding: '20px',
     marginBottom: 12,
   } as React.CSSProperties,

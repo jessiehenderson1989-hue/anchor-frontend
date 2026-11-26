@@ -343,10 +343,10 @@ export function Notes() {
                     {formatDate(note.updated_at)}
                   </p>
                   <div style={{ position: 'absolute', top: 14, right: 14, display: 'flex', gap: 4 }}>
-                    <button onClick={() => openEditModal(note)} style={{ width: 32, height: 32, borderRadius: 10, background: 'transparent', border: 'none', display: 'flex', alignItems: 'center', justifyContent: 'center', cursor: 'pointer', color: '#8A8098' }}>
+                    <button onClick={() => openEditModal(note)} style={{ width: 40, height: 40, borderRadius: 10, background: 'transparent', border: 'none', display: 'flex', alignItems: 'center', justifyContent: 'center', cursor: 'pointer', color: '#8A8098' }}>
                       <Pencil size={15} />
                     </button>
-                    <button onClick={() => setDeleteConfirm(note.id)} style={{ width: 32, height: 32, borderRadius: 10, background: 'transparent', border: 'none', display: 'flex', alignItems: 'center', justifyContent: 'center', cursor: 'pointer', color: '#8A8098' }}>
+                    <button onClick={() => setDeleteConfirm(note.id)} style={{ width: 40, height: 40, borderRadius: 10, background: 'transparent', border: 'none', display: 'flex', alignItems: 'center', justifyContent: 'center', cursor: 'pointer', color: '#8A8098' }}>
                       <Trash2 size={15} />
                     </button>
                   </div>
@@ -383,7 +383,7 @@ export function Notes() {
               <h2 style={{ fontFamily: 'Fraunces, serif', fontSize: 22, fontWeight: 700, color: '#2A2030', margin: 0 }}>
                 {editingNote ? 'Edit Note' : 'New Note'}
               </h2>
-              <button onClick={closeModal} style={{ width: 36, height: 36, borderRadius: 12, background: '#E8DDE8', border: 'none', display: 'flex', alignItems: 'center', justifyContent: 'center', cursor: 'pointer' }}>
+              <button onClick={closeModal} style={{ width: 40, height: 40, borderRadius: 12, background: '#E8DDE8', border: 'none', display: 'flex', alignItems: 'center', justifyContent: 'center', cursor: 'pointer' }}>
                 <X size={16} color="#7A6690" />
               </button>
             </div>
@@ -476,7 +476,7 @@ export function Notes() {
       {/* ── DELETE CONFIRM ── */}
       {deleteConfirm && (
         <div style={{ position: 'fixed', inset: 0, background: 'rgba(42,32,48,0.5)', display: 'flex', alignItems: 'center', justifyContent: 'center', zIndex: 50, padding: '0 20px' }}>
-          <div style={{ background: '#FAF7F2', borderRadius: 24, padding: '28px 24px', width: '100%', maxWidth: 360 }}>
+          <div style={{ background: '#FAF7F2', borderRadius: 20, padding: '28px 24px', width: '100%', maxWidth: 360 }}>
             <h2 style={{ fontFamily: 'Fraunces, serif', fontSize: 22, fontWeight: 700, color: '#2A2030', marginBottom: 8 }}>Delete this note?</h2>
             <p style={{ fontFamily: 'DM Sans, sans-serif', fontSize: 14, color: '#4A4058', marginBottom: 24 }}>This can't be undone.</p>
             <div style={{ display: 'flex', gap: 12 }}>

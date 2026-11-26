@@ -822,7 +822,7 @@ export function Settings() {
           onClick={() => setShowExportConfirm(false)}
         >
           <div
-            style={{ background: '#FAF7F2', borderRadius: 24, padding: '28px 24px', width: '100%', maxWidth: 360 }}
+            style={{ background: '#FAF7F2', borderRadius: 20, padding: '28px 24px', width: '100%', maxWidth: 360 }}
             onClick={e => e.stopPropagation()}
           >
             <h3 style={{ fontFamily: 'Fraunces, serif', fontSize: 20, fontWeight: 700, color: '#2A2030', margin: '0 0 10px' }}>Export your data?</h3>

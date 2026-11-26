@@ -208,7 +208,7 @@ export function FosterCareIntro() {
                 style={{
                   background: '#FAF7F2',
                   border: `1px solid ${isOpen ? colors.dot + '40' : 'rgba(122,102,144,0.12)'}`,
-                  borderRadius: 18,
+                  borderRadius: 20,
                   overflow: 'hidden',
                   transition: 'border-color 0.15s',
                 }}
@@ -273,7 +273,7 @@ export function FosterCareIntro() {
           disabled={saving}
           style={{
             width: '100%', padding: '15px',
-            background: colors.accent, border: 'none', borderRadius: 18,
+            background: colors.accent, border: 'none', borderRadius: 20,
             display: 'flex', alignItems: 'center', justifyContent: 'center', gap: 8,
             fontFamily: 'DM Sans, sans-serif', fontWeight: 700, fontSize: 16,
             color: '#fff', cursor: 'pointer',
