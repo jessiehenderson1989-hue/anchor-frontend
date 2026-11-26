@@ -702,8 +702,13 @@ export function Timeline() {
               </label>
               <input
                 type="date"
-                value={stage.court_date || ''}
-                onChange={e => updateCourtDate(stage.id, e.target.value)}
+                // Left to the browser while a date is typed. Redrawing the field on every
+                // keystroke threw away the rest of the year.
+                defaultValue={stage.court_date || ''}
+                onChange={e => {
+                  const v = e.target.value
+                  if (v === '' || /^(19|20)\d\d-\d\d-\d\d$/.test(v)) updateCourtDate(stage.id, v)
+                }}
                 className="w-full rounded-xl px-3 py-2.5 text-sm focus:outline-none"
                 style={{
                   background: '#EDE6DB',
