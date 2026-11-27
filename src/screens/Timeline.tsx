@@ -95,7 +95,7 @@ const STAGE_CONTENT: Record<string, Record<Role, StageContent>> = {
     youth: {
       name: 'First Court Hearing',
       whatHappens: 'This is the first court hearing. The judge decides where you will live while the case is open. You can tell the judge where you want to live and who you want to be with.',
-      yourRights: ['Right to be at the hearing', 'Right to your own attorney', 'Right to tell the judge your wishes', 'Right to contact with your parents (unless unsafe)'],
+      yourRights: ['Right to be at the hearing', 'Right to your own attorney', 'Right to tell the judge your wishes', 'Right to contact with your parents, unless a judge says no'],
       tasks: [
         'Go to the hearing if you are able to',
         'Tell your attorney where you want to live before the hearing',
