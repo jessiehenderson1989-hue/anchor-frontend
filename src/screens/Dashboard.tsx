@@ -84,7 +84,7 @@ const WHAT_MATTERS: Record<Role, Record<string, string[]>> = {
     'disposition':    ["Read your case plan carefully — start on it immediately","Enroll in required services this week — don't wait","Ask about help with transportation or childcare"],
     'six-month':      ["Get progress letters from every service provider","Document your visits with your child — dates and how it went","Ask your attorney what the court needs to see"],
     'twelve-month':   ["Show consistency, not perfection — courts want steady effort","Demonstrate stable housing and income if possible","Talk to your attorney about remaining steps to reunification"],
-    'eighteen-month': ["Complete every remaining case plan requirement — this is the deadline","Talk to your attorney about a 388 petition if circumstances changed","Do not miss any visits — your bond is evidence"],
+    'eighteen-month': ["Finish everything left on your case plan. For most parents this is the last deadline. Ask your lawyer if more time is possible for you.","Talk to your attorney about a 388 petition if circumstances changed","Do not miss any visits — your bond is evidence"],
     'permanency':     ["Attend every scheduled visit","Ask your attorney about the beneficial relationship exception","Document your relationship — letters, photos, records of contact"],
     'review-hearings':["Keep showing up to every hearing","Stay in contact with your attorney — don't wait for them to reach out","Stay involved in your child's life — visits, letters, phone calls"],
     'case-closure':   ["Get copies of all your case records","Ask about aftercare services — support doesn't have to end","Know what closure means for your specific situation"],

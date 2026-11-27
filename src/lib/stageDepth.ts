@@ -19,7 +19,7 @@ export const STAGE_DEPTH: Record<string, Record<Role, StageDepth>> = {
     parent: {
       goodToKnow: [
         'If your child was removed, the social worker has two court days to file a petition. The first hearing is by the end of the next court day after that.',
-        'A social worker can talk with your child at school without a court order. They must tell you afterward.',
+        'A social worker can talk with your child at school without a court order, as long as no police officer is there. They must tell you afterward.',
         'The first places the county looks for your child to stay are the other parent, a relative, or a close family friend. Give names right away.',
       ],
       ask: ['When and where is my first hearing?', 'How do I reach you before court?', 'Can my child stay with a relative or family friend right now?'],
@@ -202,7 +202,7 @@ export const STAGE_DEPTH: Record<string, Record<Role, StageDepth>> = {
     youth: {
       goodToKnow: [
         'This is usually the last hearing about going home.',
-        'If you are 16 or older, you should have a plan for adult life covering school, work, housing, and money.',
+        'If you are 16 or older, you should have a written plan for adult life. Ask to see it.',
         'You may be able to stay in foster care until 21.',
       ],
       ask: ['What happens if I cannot go home?', 'Do I have a transition plan yet?', 'Can I stay in foster care after 18?'],

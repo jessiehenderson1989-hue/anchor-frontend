@@ -234,7 +234,7 @@ export function Resources() {
             <div style={{ display: 'flex', flexDirection: 'column', gap: 10 }}>
               <div style={{ background: '#FAF7F2', borderRadius: 14, padding: '14px' }}>
                 <p style={{ fontFamily: 'DM Sans, sans-serif', fontSize: 14, fontWeight: 700, color: '#291F32', margin: '0 0 4px' }}>Dial 211</p>
-                <p style={{ fontFamily: 'DM Sans, sans-serif', fontSize: 15, color: '#4A4058', margin: '0 0 10px', lineHeight: 1.5 }}>Free, confidential 24/7 help. Food, housing, healthcare, childcare, and more.</p>
+                <p style={{ fontFamily: 'DM Sans, sans-serif', fontSize: 15, color: '#4A4058', margin: '0 0 10px', lineHeight: 1.5 }}>Free and private help with food, housing, health care and more. Open 24 hours a day in most counties.</p>
                 <a href="tel:211" className="abtn abtn-rose abtn-sm">
                   <Phone size={13} /> Call 211 Now
                 </a>

@@ -675,7 +675,7 @@ export function Onboarding() {
             <p style={S.sub}>
               {role === 'youth'
                 ? 'Every young person in dependency court has the right to their own lawyer — separate from your parents.'
-                : 'You have the right to a lawyer, even if you cannot pay. If you do not have one yet, the court will appoint one.'}
+                : 'You have the right to a lawyer, even if you cannot pay. If you cannot pay, ask the judge at your first hearing. The judge will give you one.'}
             </p>
             <OptionBtn selected={lawyerStatus === 'yes'} onClick={() => setLawyerStatus('yes')}>Yes, I have a lawyer</OptionBtn>
             <OptionBtn selected={lawyerStatus === 'no'} onClick={() => setLawyerStatus('no')}>No, I do not have one yet</OptionBtn>
@@ -1005,7 +1005,7 @@ export function Onboarding() {
         <div className="flex items-center justify-center gap-2 mt-6">
           <Lock className="w-3 h-3" style={{ color: '#62566B' }} />
           <p style={{ fontSize: 12, color: '#62566B' }}>
-            Your answers are private and never shared with CPS or the court.
+            Your answers are private. We do not share them with CPS or the court.
           </p>
         </div>
 

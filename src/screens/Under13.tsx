@@ -34,7 +34,7 @@ export function Under13() {
             Tell your lawyer, your social worker, or a grown-up you trust today.
           </p>
           <p style={p}>
-            There is also a free state office that helps kids in foster care when something is wrong. It is called the Foster Care Ombudsperson. You can call them.
+            There is also a state office that helps kids in foster care when something is wrong. It is called the Foster Care Ombudsperson. You can call them. The call is free.
           </p>
           <a href="tel:18778461602" className="abtn abtn-soft abtn-sm" style={{ marginTop: 12 }}><Phone size={16} /> 1-877-846-1602</a>
         </div>

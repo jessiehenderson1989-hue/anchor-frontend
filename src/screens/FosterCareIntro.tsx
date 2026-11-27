@@ -24,7 +24,7 @@ const CONTENT: Record<string, { headline: string; subtitle: string; sections: Se
       },
       {
         title: 'You still have rights',
-        body: 'You have the right to a lawyer even if you cannot pay, to visit your child regularly, to receive a copy of your case plan, and to speak at every court hearing. Your lawyer can explain each one.',
+        body: 'You have the right to a lawyer even if you cannot pay, to ask for visits with your child (the judge sets them and can limit them if they are not safe), to receive a copy of your case plan, and to speak at every court hearing. Your lawyer can explain each one.',
       },
       {
         title: 'The system has a lot of moving parts',
@@ -32,7 +32,7 @@ const CONTENT: Record<string, { headline: string; subtitle: string; sections: Se
       },
       {
         title: 'Resources exist to help you',
-        body: 'Parenting classes, housing assistance, mental health support, and substance use treatment are often available at no cost. Completing these services is one of the most important steps in your case plan.',
+        body: 'Your case plan may include parenting classes, counseling and treatment. Ask your social worker which ones are free. Completing these services is one of the most important steps in your case plan.',
       },
       {
         title: 'Things to remember',
@@ -92,7 +92,7 @@ const CONTENT: Record<string, { headline: string; subtitle: string; sections: Se
       },
       {
         title: 'Resources are available',
-        body: 'Parenting classes, housing assistance, mental health support, and legal aid are often available at low or no cost. You can help by learning what\'s out there and sharing it — or by helping your person access it.',
+        body: 'There are parenting classes, counseling and other help. Ask the social worker or the lawyer which ones are free. You can help by learning what\'s out there and sharing it — or by helping your person access it.',
       },
       {
         title: 'Things to remember',

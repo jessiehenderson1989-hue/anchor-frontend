@@ -69,7 +69,7 @@ const STAGE_CONTENT: Record<string, Record<Role, StageContent>> = {
     supporter: {
       name: 'Case Opens',
       whatHappens: 'A dependency case has been opened for the family you are supporting. The court process is beginning. You may be able to help by offering to care for the child or attending hearings as a support person.',
-      yourRights: ['Right to request placement of the child', 'Right to be notified of hearings if you are a caregiver', 'Right to provide information to the court'],
+      yourRights: ['Right to request placement of the child', 'If the child lives with you, ask the social worker for hearing dates', 'Right to provide information to the court'],
       tasks: [
         'Contact the social worker and let them know you are available for placement',
         'Ask about the hearing schedule so you can attend',
@@ -83,7 +83,7 @@ const STAGE_CONTENT: Record<string, Record<Role, StageContent>> = {
     parent: {
       name: 'Detention Hearing',
       whatHappens: 'The court decides if your child can return home or must stay in foster care while the case continues. The social worker has 2 court days to file papers, and this hearing is the next court day. Weekends and holidays do not count. Tell the judge if family members can care for your child.',
-      yourRights: ['Right to be present and speak', 'Right to an attorney', 'Right to suggest relatives for placement', 'Right to visits with your child'],
+      yourRights: ['Right to be present and speak', 'Right to an attorney', 'Right to suggest relatives for placement', 'Right to ask for visits with your child. The judge can limit them.'],
       tasks: [
         'Go to the hearing — do not miss it even if you do not have an attorney yet',
         'Tell the judge and social worker about family members who can care for your child',
@@ -159,7 +159,7 @@ const STAGE_CONTENT: Record<string, Record<Role, StageContent>> = {
     parent: {
       name: 'Disposition Hearing',
       whatHappens: 'The social worker writes your case plan with you, and the judge orders it. It is a list of services and goals to complete to get your child back. Enroll in services right away. The sooner you start, the better.',
-      yourRights: ['Right to participate in creating your case plan', 'Right to request reasonable services', 'Right to regular visits with your child', 'Right to object to services you believe are unreasonable'],
+      yourRights: ['Right to participate in creating your case plan', 'Right to request reasonable services', 'Right to visits as often as is safe and good for your child', 'Right to object to services you believe are unreasonable'],
       tasks: [
         'Read your case plan carefully — ask questions about anything unclear',
         'Sign up for required services as soon as possible, do not wait',
@@ -184,7 +184,7 @@ const STAGE_CONTENT: Record<string, Record<Role, StageContent>> = {
     supporter: {
       name: 'Disposition Hearing',
       whatHappens: "The judge sets up the case plan and decides on placement. If the child is living with you, you will learn what services and visitation will look like. You may be asked to support the parent's progress.",
-      yourRights: ['Right to be informed of the case plan if you are the caregiver', 'Right to visitation arrangements in writing', 'Right to request services for yourself as a caregiver'],
+      yourRights: ['Right to be informed of the case plan if you are the caregiver', 'You can ask the social worker for the visit schedule in writing', 'You can ask the social worker what help there is for caregivers'],
       tasks: [
         'Ask for a copy of the case plan if the child is in your care',
         'Understand the visitation schedule and your role in supporting it',
@@ -223,7 +223,7 @@ const STAGE_CONTENT: Record<string, Record<Role, StageContent>> = {
     supporter: {
       name: '6-Month Review',
       whatHappens: "The judge reviews how the family is progressing. As a caregiver, you may be asked about the child's wellbeing. Keep notes about how the child is doing so you can report accurately.",
-      yourRights: ['Right to submit a caregiver report', 'Right to request services for the child', 'Right to be heard about placement'],
+      yourRights: ['Right to submit a caregiver report', 'You can tell the social worker or judge what services the child needs', 'Right to be heard about placement'],
       tasks: [
         "Write notes about the child's health, school, and emotional wellbeing",
         'Ask your social worker if you can submit a caregiver report',
@@ -262,7 +262,7 @@ const STAGE_CONTENT: Record<string, Record<Role, StageContent>> = {
     supporter: {
       name: '12-Month Review',
       whatHappens: "The court is making big decisions about the family's future. If you are a caregiver, be prepared to report on how the child is doing. Reunification or another permanent plan may be discussed.",
-      yourRights: ['Right to submit information to the court', 'Right to request to be considered for guardianship or adoption', 'Right to request services for the child in your care'],
+      yourRights: ['Right to submit information to the court', 'Right to request to be considered for guardianship or adoption', 'You can tell the social worker or judge what services the child needs'],
       tasks: [
         "Document the child's wellbeing, school progress, and any challenges",
         'If you are open to guardianship or adoption, let the social worker know now',
@@ -301,7 +301,7 @@ const STAGE_CONTENT: Record<string, Record<Role, StageContent>> = {
     supporter: {
       name: '18-Month Review',
       whatHappens: 'At this hearing the judge either sends the child home or sets one more hearing to choose a permanent plan. If you are interested in guardianship or adoption, speak up now. The court considers all stable, loving options for the child.',
-      yourRights: ['Right to be assessed for guardianship or adoption', 'Right to request de facto parent status if you have been the primary caregiver', 'Right to provide a statement to the court'],
+      yourRights: ['You can ask to be considered for guardianship or adoption', 'Right to request de facto parent status if you have been the primary caregiver', 'Right to provide a statement to the court'],
       tasks: [
         'If you want to be the permanent caregiver, tell the social worker immediately',
         'Ask about the process for legal guardianship or adoption',
@@ -315,7 +315,7 @@ const STAGE_CONTENT: Record<string, Record<Role, StageContent>> = {
     parent: {
       name: 'Ongoing Reviews',
       whatHappens: 'The court checks in about every six months while your case is open. If your child is home, the judge looks at how things are going and when the case can close. Stay connected with your social worker and finish anything left on your plan.',
-      yourRights: ['Right to request modification of orders', 'Right to ongoing support services', 'Right to appeal decisions you disagree with'],
+      yourRights: ['Right to request modification of orders', 'You can ask what services your family can keep getting', 'Right to appeal decisions you disagree with'],
       tasks: [
         'Continue attending any remaining services or appointments',
         'Stay in regular contact with your social worker',
@@ -339,7 +339,7 @@ const STAGE_CONTENT: Record<string, Record<Role, StageContent>> = {
     supporter: {
       name: 'Ongoing Reviews',
       whatHappens: 'The case is moving toward closure. When an adoption is final, the court case ends. With a guardianship, the judge often closes the case too. Reach out to your social worker if you need support.',
-      yourRights: ['Right to request support services as a caregiver', 'Right to maintain court-ordered contact arrangements', 'Right to request modification of orders if circumstances change'],
+      yourRights: ['You can ask the social worker what help there is for caregivers', 'Keep the contact the judge ordered. To change it, ask the judge.', 'Right to request modification of orders if circumstances change'],
       tasks: [
         'Ask about support services available to you as a long-term caregiver',
         'Keep honoring any court-ordered contact arrangements',
@@ -373,7 +373,7 @@ const STAGE_CONTENT: Record<string, Record<Role, StageContent>> = {
     parent: {
       name: 'Case Closure',
       whatHappens: 'The court case ends. This can happen when your child is home and the judge finds it is safe, when an adoption is final, or when a guardianship is set up. If your child goes home to one parent, the judge may make custody and visit orders that stay in place after the case closes.',
-      yourRights: ['Right to copies of the final court orders', 'You can ask which services your family can keep using'],
+      yourRights: ['Ask your lawyer or the court clerk for copies of the final orders', 'You can ask which services your family can keep using'],
       tasks: [],
     },
     youth: {
