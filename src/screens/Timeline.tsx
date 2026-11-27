@@ -27,6 +27,7 @@ import { BottomNav, AppHeader } from '../components'
 import { supabase } from '../lib/supabase'
 import { useAuth } from '../contexts/AuthContext'
 import { haptics } from '../lib/haptics'
+import { STAGE_DEPTH } from '../lib/stageDepth'
 
 type Role = 'parent' | 'youth' | 'supporter'
 
@@ -754,6 +755,32 @@ export function Timeline() {
                 </div>
               </div>
             )}
+
+            {/* Good to know and questions to ask */}
+            {(() => {
+              const depth = STAGE_DEPTH[stage.stage_key]?.[role]
+              if (!depth) return null
+              return (
+                <>
+                  <div>
+                    <h4 className="text-xs font-bold uppercase tracking-wide mb-2" style={{ color: '#705987' }}>Good to know</h4>
+                    <ul style={{ margin: 0, paddingLeft: 18, display: 'flex', flexDirection: 'column', gap: 6 }}>
+                      {depth.goodToKnow.map((line, i) => (
+                        <li key={i} style={{ fontFamily: 'DM Sans, sans-serif', fontSize: 15, color: '#3A3048', lineHeight: 1.55 }}>{line}</li>
+                      ))}
+                    </ul>
+                  </div>
+                  <div style={{ background: '#E9E0EF', borderRadius: 14, padding: '12px 14px' }}>
+                    <h4 className="text-xs font-bold uppercase tracking-wide mb-2" style={{ color: '#503C64' }}>{depth.askWho}</h4>
+                    <ul style={{ margin: 0, paddingLeft: 18, display: 'flex', flexDirection: 'column', gap: 6 }}>
+                      {depth.ask.map((line, i) => (
+                        <li key={i} style={{ fontFamily: 'DM Sans, sans-serif', fontSize: 15, color: '#291F32', lineHeight: 1.5 }}>{line}</li>
+                      ))}
+                    </ul>
+                  </div>
+                </>
+              )
+            })()}
 
             {/* Tasks */}
             {stageTasks.length > 0 && (
