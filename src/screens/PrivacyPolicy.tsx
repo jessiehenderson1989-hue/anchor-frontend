@@ -14,7 +14,7 @@ export function PrivacyPolicy() {
       </div>
 
       <div style={{ maxWidth: 480, margin: '0 auto', padding: '28px 20px 60px' }}>
-        <p style={{ fontFamily: 'DM Sans, sans-serif', fontSize: 14, color: '#62566B', marginBottom: 28 }}>Last updated: April 2026</p>
+        <p style={{ fontFamily: 'DM Sans, sans-serif', fontSize: 14, color: '#62566B', marginBottom: 28 }}>Last updated: November 2026</p>
 
         <div style={{ background: '#E9E0EF', border: '1px solid rgba(112,89,135,0.15)', borderRadius: 16, padding: '14px 16px', marginBottom: 28 }}>
           <p style={{ fontFamily: 'DM Sans, sans-serif', fontSize: 15, color: '#4A4058', lineHeight: 1.6, margin: 0 }}>
@@ -29,19 +29,19 @@ export function PrivacyPolicy() {
           },
           {
             title: 'What You Create',
-            body: 'Notes, contacts, and other content you add in Anchor are stored securely in your account. Only you can see this content. We do not read it, analyze it, or share it with anyone — including courts, social workers, or government agencies.',
+            body: 'Notes, contacts, and other content you add in Anchor are stored securely in your account. Only you can see this content in the app. We do not share it with courts, social workers, or government agencies. One thing to know: when you use the Preparation Guide, what you type there is sent to an AI service (Anthropic) so it can write your guide.',
           },
           {
             title: 'How We Use Your Information',
-            body: 'We use your account information to provide the app and send you important updates if you opt in. We use anonymous usage data (not tied to your identity) to understand how people use Anchor so we can improve it. We do not use your information for advertising.',
+            body: 'We use your account information to provide the app and send you important updates if you opt in. We keep basic usage data, like which screens are opened and which steps are marked done, to understand how people use Anchor so we can improve it. We do not use your information for advertising.',
           },
           {
             title: 'Who We Share Data With',
-            body: 'We do not sell your data. We use Supabase to store your account information securely. Supabase is a trusted third-party service with strong security standards. We do not share your personal information with courts, child welfare agencies, or any government entity.',
+            body: 'We do not sell your data. We use Supabase to store your account information securely and Vercel to host the app. The Preparation Guide uses an AI service from Anthropic to write its answers. We do not share your personal information with courts, child welfare agencies, or any government entity.',
           },
           {
             title: 'Your Rights',
-            body: 'You can export all your data at any time from Settings. You can delete your account and all associated data at any time from Settings. If you have questions about what we hold, contact us and we will respond within 30 days.',
+            body: 'You can save a copy of your notes, team, timeline, and preparation guides at any time from Settings. You can delete your account and what you saved in it at any time from Settings. Messages you sent to support are kept. If you have questions about what we hold, contact us and we will respond within 30 days.',
           },
           {
             title: 'Data Security',

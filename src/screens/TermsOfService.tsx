@@ -15,7 +15,7 @@ export function TermsOfService() {
       </div>
 
       <div style={{ maxWidth: 480, margin: '0 auto', padding: '28px 20px 60px' }}>
-        <p style={{ fontFamily: 'DM Sans, sans-serif', fontSize: 14, color: '#62566B', marginBottom: 28 }}>Last updated: April 2026</p>
+        <p style={{ fontFamily: 'DM Sans, sans-serif', fontSize: 14, color: '#62566B', marginBottom: 28 }}>Last updated: November 2026</p>
 
         {[
           {
@@ -32,7 +32,7 @@ export function TermsOfService() {
           },
           {
             title: 'Your Account',
-            body: 'You are responsible for keeping your login credentials private. Do not share your account with others. You can delete your account at any time from the Settings screen, which permanently removes all data we hold about you.',
+            body: 'You are responsible for keeping your login credentials private. Do not share your account with others. You can delete your account at any time from the Settings screen, which permanently removes your account and what you saved in it. Messages you sent to support are kept.',
           },
           {
             title: 'Your Content',

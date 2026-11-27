@@ -78,7 +78,7 @@ const PEER_QUOTES: Record<Role, Record<string, string>> = {
 // ─── WHAT MATTERS ────────────────────────────────────────────────────────────
 const WHAT_MATTERS: Record<Role, Record<string, string[]>> = {
   parent: {
-    'case-opening':   ["Find your attorney today — you have the right to one at no cost","Ask your lawyer before you answer questions about what the county says happened","Write everything down — dates, names, what was said"],
+    'case-opening':   ["Find your attorney today — you have the right to one even if you cannot pay","Ask your lawyer before you answer questions about what the county says happened","Write everything down — dates, names, what was said"],
     'detention':      ["Meet with your attorney before the hearing","Arrive early and dress respectfully — first impressions matter","Ask about visitation — get a schedule in writing"],
     'jurisdiction':   ["Review the petition with your attorney — understand the allegations","Decide what you want to contest — you don't have to agree","Gather evidence that supports your side"],
     'disposition':    ["Read your case plan carefully — start on it immediately","Enroll in required services this week — don't wait","Ask about help with transportation or childcare"],

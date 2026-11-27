@@ -675,7 +675,7 @@ export function Onboarding() {
             <p style={S.sub}>
               {role === 'youth'
                 ? 'Every young person in dependency court has the right to their own lawyer — separate from your parents.'
-                : 'You have the right to a lawyer at no cost. If you do not have one yet, the court will appoint one.'}
+                : 'You have the right to a lawyer, even if you cannot pay. If you do not have one yet, the court will appoint one.'}
             </p>
             <OptionBtn selected={lawyerStatus === 'yes'} onClick={() => setLawyerStatus('yes')}>Yes, I have a lawyer</OptionBtn>
             <OptionBtn selected={lawyerStatus === 'no'} onClick={() => setLawyerStatus('no')}>No, I do not have one yet</OptionBtn>
@@ -696,7 +696,7 @@ export function Onboarding() {
         {role === 'youth' && step === 4 && (
           <div>
             <h1 style={S.heading}>Do you have a CASA volunteer?</h1>
-            <p style={S.sub}>A CASA (Court Appointed Special Advocate) is a trained volunteer who is there just for you — not for your parents or the court.</p>
+            <p style={S.sub}>A CASA (Court Appointed Special Advocate) is a trained volunteer the judge picks to get to know you. Your CASA tells the judge what they think is best for you.</p>
             <OptionBtn selected={hasCASD === 'yes'} onClick={() => setHasCASD('yes')}>Yes, I have a CASA</OptionBtn>
             <OptionBtn selected={hasCASD === 'no'} onClick={() => setHasCASD('no')}>No, I do not have one</OptionBtn>
             <OptionBtn selected={hasCASD === 'unsure'} onClick={() => setHasCASD('unsure')}>I am not sure</OptionBtn>

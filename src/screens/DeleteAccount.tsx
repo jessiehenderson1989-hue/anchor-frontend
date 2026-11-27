@@ -27,7 +27,11 @@ export function DeleteAccount() {
         supabase.from('contacts').select('*').eq('user_id', user?.id),
       ])
       if (notes.error || timeline.error || contacts.error) throw new Error('export failed')
-      const data = { profile, exportDate: new Date().toISOString(), notes: notes.data || [], timeline: timeline.data || [], contacts: contacts.data || [] }
+      const [prep, court] = await Promise.all([
+        supabase.from('preparation_notes').select('*').eq('user_id', user?.id),
+        supabase.from('court_info').select('*').eq('user_id', user?.id),
+      ])
+      const data = { profile, exportDate: new Date().toISOString(), notes: notes.data || [], timeline: timeline.data || [], contacts: contacts.data || [], preparationGuides: prep.data || [], courtInfo: court.data || [] }
       const url = URL.createObjectURL(new Blob([JSON.stringify(data, null, 2)], { type: 'application/json' }))
       const a = document.createElement('a')
       a.href = url; a.download = `anchor-data-${new Date().toISOString().split('T')[0]}.json`

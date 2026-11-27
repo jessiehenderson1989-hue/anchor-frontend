@@ -347,7 +347,11 @@ export function Settings() {
         supabase.from('timeline_stages').select('*').eq('user_id', user?.id).order('order_index'),
         supabase.from('contacts').select('*').eq('user_id', user?.id),
       ])
-      const data = { profile, exportDate: new Date().toISOString(), notes: notes.data || [], timeline: timeline.data || [], contacts: contacts.data || [] }
+      const [prep, court] = await Promise.all([
+        supabase.from('preparation_notes').select('*').eq('user_id', user?.id),
+        supabase.from('court_info').select('*').eq('user_id', user?.id),
+      ])
+      const data = { profile, exportDate: new Date().toISOString(), notes: notes.data || [], timeline: timeline.data || [], contacts: contacts.data || [], preparationGuides: prep.data || [], courtInfo: court.data || [] }
       const blob = new Blob([JSON.stringify(data, null, 2)], { type: 'application/json' })
       const url = URL.createObjectURL(blob)
       const a = document.createElement('a')
@@ -366,6 +370,8 @@ export function Settings() {
       if (signInError) { setDeleteError('Incorrect password'); haptics.error(); setLoading(false); return }
       await supabase.from('notes').delete().eq('user_id', user?.id)
       await supabase.from('timeline_stages').delete().eq('user_id', user?.id)
+      await supabase.from('timeline_tasks').delete().eq('user_id', user?.id)
+      await supabase.from('preparation_notes').delete().eq('user_id', user?.id)
       await supabase.from('contacts').delete().eq('user_id', user?.id)
       await supabase.from('court_info').delete().eq('user_id', user?.id)
       await supabase.from('profiles').delete().eq('id', user?.id)
@@ -607,7 +613,7 @@ export function Settings() {
         </button>
 
         <p className="text-center mt-6" style={{ fontSize: 12, color: '#62566B' }}>
-          Anchor v1.0.0 · Made with care for California families
+          Anchor · Made with care for California families
         </p>
       </div>
 

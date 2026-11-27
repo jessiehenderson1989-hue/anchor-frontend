@@ -132,8 +132,8 @@ const STAGE_CONTENT: Record<string, Record<Role, StageContent>> = {
     },
     youth: {
       name: 'Court Decides',
-      whatHappens: 'The judge decides if the things alleged in the case are true. You do not have to testify, but you can. Your attorney will explain your options and what to expect.',
-      yourRights: ['Right to have an attorney present', 'Right to remain silent', 'Right to have your wishes heard', 'Right to attend the hearing'],
+      whatHappens: 'The judge decides if the things alleged in the case are true. You can go and speak to the judge if you want to. Ask your lawyer if you will be asked questions. Your attorney will explain your options and what to expect.',
+      yourRights: ['Right to have your lawyer with you', 'Right to have your wishes heard', 'Right to attend the hearing'],
       tasks: [
         'Talk to your attorney about what the hearing means for you',
         'Ask if you are expected to speak or testify',
@@ -145,7 +145,7 @@ const STAGE_CONTENT: Record<string, Record<Role, StageContent>> = {
     supporter: {
       name: 'Jurisdiction Hearing',
       whatHappens: "The court is deciding if the allegations in the case are proven. If you have information that could help, share it with the family's attorney. The outcome affects what happens next in the case.",
-      yourRights: ['You can ask to attend hearings. The judge decides.', 'Right to submit a statement through the court', 'Right to request information about placement decisions'],
+      yourRights: ['You can ask to attend hearings. The judge decides.', 'Relatives can give the judge information on form JV-285', 'You can ask the social worker to consider you for placement'],
       tasks: [
         "Contact the family's attorney if you have relevant information",
         'Attend the hearing as support if the parent invites you',
@@ -275,7 +275,7 @@ const STAGE_CONTENT: Record<string, Record<Role, StageContent>> = {
   'eighteen-month': {
     parent: {
       name: '18-Month Review',
-      whatHappens: 'The court determines a permanent plan for your child. Reunification is still possible if you have made significant progress. This is the most important hearing. Be there, bring everything, and advocate for yourself.',
+      whatHappens: 'This is usually the last hearing where the judge can return your child to you. The judge must return your child unless the county shows it is not safe. If your child is not returned, the judge can end services and set a hearing to choose a permanent plan. Be there, bring everything, and speak up for yourself.',
       yourRights: ['Right to advocate for reunification', 'Right to present all evidence of your progress', "Right to appeal: 60 days for most orders, only 7 days to start a writ (a fast kind of appeal) if a .26 hearing is set", 'Right to an attorney'],
       tasks: [
         'This is the most critical hearing — do not miss it for any reason',
@@ -314,7 +314,7 @@ const STAGE_CONTENT: Record<string, Record<Role, StageContent>> = {
   'review-hearings': {
     parent: {
       name: 'Ongoing Reviews',
-      whatHappens: 'If reunification was successful, the court may hold follow-up hearings to make sure things are going well. Stay connected with your social worker and complete any remaining requirements.',
+      whatHappens: 'The court checks in about every six months while your case is open. If your child is home, the judge looks at how things are going and when the case can close. Stay connected with your social worker and finish anything left on your plan.',
       yourRights: ['Right to request modification of orders', 'Right to ongoing support services', 'Right to appeal decisions you disagree with'],
       tasks: [
         'Continue attending any remaining services or appointments',
@@ -327,7 +327,7 @@ const STAGE_CONTENT: Record<string, Record<Role, StageContent>> = {
     youth: {
       name: 'Regular Check-Ins',
       whatHappens: 'The court is checking in to make sure your permanent plan is working. If you are nearing 18, you have rights to extended services. Ask your attorney about Extended Foster Care.',
-      yourRights: ['Right to Extended Foster Care services up to age 21', 'Right to transition planning support', 'Right to maintain connections with important people in your life'],
+      yourRights: ['You may be able to stay in foster care until 21', 'Right to transition planning support', 'Right to maintain connections with important people in your life'],
       tasks: [
         'Ask your attorney or social worker about Extended Foster Care if you are 16 or older',
         'Work with your team on a transition plan for your future',
@@ -338,7 +338,7 @@ const STAGE_CONTENT: Record<string, Record<Role, StageContent>> = {
     },
     supporter: {
       name: 'Ongoing Reviews',
-      whatHappens: 'The case is moving toward closure. If you are a guardian or adoptive parent, the court will check in on how things are going. Reach out to your social worker if you need support.',
+      whatHappens: 'The case is moving toward closure. When an adoption is final, the court case ends. With a guardianship, the judge often closes the case too. Reach out to your social worker if you need support.',
       yourRights: ['Right to request support services as a caregiver', 'Right to maintain court-ordered contact arrangements', 'Right to request modification of orders if circumstances change'],
       tasks: [
         'Ask about support services available to you as a long-term caregiver',
@@ -347,6 +347,46 @@ const STAGE_CONTENT: Record<string, Record<Role, StageContent>> = {
         'Reach out if you need help — asking for support is a sign of strength',
         'Celebrate the stability you have helped create for this child',
       ],
+    },
+  },
+  permanency: {
+    parent: {
+      name: 'Permanency Hearing (.26)',
+      whatHappens: 'If your services ended, this hearing chooses a permanent plan for your child: adoption, legal guardianship, or another plan. The judge can end parental rights at this hearing. Go, and talk with your lawyer before it. Your visits and your bond with your child are part of what the judge looks at.',
+      yourRights: ['Right to be there with your lawyer', 'Right to show evidence of your bond with your child', 'Right to appeal within 60 days'],
+      tasks: [],
+    },
+    youth: {
+      name: 'Your Permanent Home Plan',
+      whatHappens: 'The judge chooses a long-term plan for where you will live: adoption, guardianship, or another plan. You can tell the judge what you want. If you are 12 or older, you cannot be adopted unless you agree.',
+      yourRights: ['Right to be at the hearing and be heard', 'Right to your own lawyer', 'You can ask to keep seeing your brothers and sisters'],
+      tasks: [],
+    },
+    supporter: {
+      name: 'Permanency Hearing',
+      whatHappens: 'The judge chooses the permanent plan for the child: adoption, guardianship, or another plan. If you want to be the permanent home, the social worker and the court need to know before this hearing.',
+      yourRights: ['A caregiver can go to this hearing and be heard', 'A caregiver can give the judge information in writing (form JV-290)'],
+      tasks: [],
+    },
+  },
+  'case-closure': {
+    parent: {
+      name: 'Case Closure',
+      whatHappens: 'The court case ends. This can happen when your child is home and the judge finds it is safe, when an adoption is final, or when a guardianship is set up. If your child goes home to one parent, the judge may make custody and visit orders that stay in place after the case closes.',
+      yourRights: ['Right to copies of the final court orders', 'You can ask which services your family can keep using'],
+      tasks: [],
+    },
+    youth: {
+      name: 'Case Ends',
+      whatHappens: 'Your case closes when you go home, are adopted, get a guardian, or leave foster care as an adult. You can still get help after your case ends.',
+      yourRights: ['If you are 18 or older, you must be given your important papers before the case closes', 'You may be able to come back into foster care before 21'],
+      tasks: [],
+    },
+    supporter: {
+      name: 'Case Closes',
+      whatHappens: 'The court case ends when the child is home safely, an adoption is final, or a guardianship is set up. Your support still matters after the case closes.',
+      yourRights: ['You can ask which services the family can still use'],
+      tasks: [],
     },
   },
 }

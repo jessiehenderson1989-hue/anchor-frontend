@@ -238,7 +238,7 @@ export function Glossary() {
                       {term.spanish_term && term.spanish_definition && (
                         <div style={{ background: '#EAF0F8', border: '1px solid rgba(58,90,128,0.15)', borderRadius: 14, padding: '12px 14px' }}>
                           <p style={{ fontFamily: 'DM Sans, sans-serif', fontSize: 14, fontWeight: 700, color: '#3A5A80', margin: '0 0 4px' }}>
-                            En Español: {term.spanish_term}
+                            En español: {term.spanish_term}
                           </p>
                           <p style={{ fontFamily: 'DM Sans, sans-serif', fontSize: 15, color: '#3A5A80', margin: 0, lineHeight: 1.5 }}>
                             {term.spanish_definition}

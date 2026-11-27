@@ -24,7 +24,7 @@ const CONTENT: Record<string, { headline: string; subtitle: string; sections: Se
       },
       {
         title: 'You still have rights',
-        body: 'You have the right to a free attorney, to visit your child regularly, to receive a copy of your case plan, and to speak at every court hearing. Your lawyer can explain each one.',
+        body: 'You have the right to a lawyer even if you cannot pay, to visit your child regularly, to receive a copy of your case plan, and to speak at every court hearing. Your lawyer can explain each one.',
       },
       {
         title: 'The system has a lot of moving parts',
@@ -58,7 +58,7 @@ const CONTENT: Record<string, { headline: string; subtitle: string; sections: Se
       },
       {
         title: 'Court hearings happen regularly',
-        body: 'There will be hearings every few months where a judge reviews your case. You are allowed to attend and to speak. Your voice matters in that room.',
+        body: 'There will be hearings about every six months where a judge reviews your case. You are allowed to attend and to speak. Your voice matters in that room.',
       },
       {
         title: 'Education rights are protected',
@@ -88,7 +88,7 @@ const CONTENT: Record<string, { headline: string; subtitle: string; sections: Se
       },
       {
         title: 'Timelines vary, but things do move',
-        body: 'Cases typically involve hearings every few months, with a major decision point around 12–18 months. Progress depends heavily on engagement with the case plan. Your encouragement can make a real difference.',
+        body: 'Cases typically involve hearings about every six months, with a major decision point around 12–18 months. Progress depends heavily on engagement with the case plan. Your encouragement can make a real difference.',
       },
       {
         title: 'Resources are available',

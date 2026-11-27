@@ -166,6 +166,9 @@ export function AuthProvider({ children }: { children: React.ReactNode }) {
       await supabase.from('notes').delete().eq('user_id', userId)
       await supabase.from('contacts').delete().eq('user_id', userId)
       await supabase.from('court_info').delete().eq('user_id', userId)
+      await supabase.from('timeline_stages').delete().eq('user_id', userId)
+      await supabase.from('timeline_tasks').delete().eq('user_id', userId)
+      await supabase.from('preparation_notes').delete().eq('user_id', userId)
       await supabase.from('profiles').delete().eq('id', userId)
 
       const { error: deleteError } = await supabase.rpc('delete_user')

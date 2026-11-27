@@ -86,7 +86,7 @@ export const STAGE_DEPTH: Record<string, Record<Role, StageDepth>> = {
     youth: {
       goodToKnow: [
         'The judge decides if what the county said is true.',
-        'You do not have to speak in court, but you can.',
+        'You can go to court and talk to the judge. Ask your lawyer if anyone can make you answer questions.',
         'Your lawyer tells the judge what you want and what they think is best for you. Those can be different.',
       ],
       ask: ['Do I have to say anything in court?', 'What happens if the judge says it is true?', 'What will you tell the judge I want?'],
@@ -107,7 +107,7 @@ export const STAGE_DEPTH: Record<string, Record<Role, StageDepth>> = {
       goodToKnow: [
         'To remove your child at this hearing, the county needs strong proof, called clear and convincing evidence.',
         'In most cases the court must order services to help you get your child back.',
-        'Your time starts now. Most parents get about a year. If your child is under 3, it may be six months.',
+        'Your time is already running. Most parents get about a year. If your child is under 3, it may be six months.',
       ],
       ask: ['Does every item in my case plan fit my situation?', 'How do I prove I am doing each service?', 'Can my visits be longer, or without a monitor?'],
       askWho: LAWYER,
@@ -115,7 +115,7 @@ export const STAGE_DEPTH: Record<string, Record<Role, StageDepth>> = {
     youth: {
       goodToKnow: [
         'The judge decides where you live and what help you and your family get.',
-        'If you are 12 or older and living away from home, you can look over your case plan, sign it, and get a copy.',
+        'You can help make your case plan. Ask your social worker to go over it with you and give you a copy.',
         'You have the right to stay at your school.',
       ],
       ask: ['Can I see my case plan?', 'Can I live with my brothers and sisters?', 'Who makes school decisions for me?'],
@@ -231,8 +231,8 @@ export const STAGE_DEPTH: Record<string, Record<Role, StageDepth>> = {
     youth: {
       goodToKnow: [
         'The judge picks a long-term plan: adoption, guardianship, staying with a relative, or staying in foster care.',
-        'If you are 12 or older and do not want to be adopted, tell your lawyer. The judge has to take that into account.',
-        'You can keep seeing your brothers and sisters.',
+        'If you are 12 or older, you cannot be adopted unless you agree. If you do not want your parents\' rights ended, tell your lawyer.',
+        'You can ask to keep seeing your brothers and sisters. After an adoption, visits happen only if your adoptive parents agree.',
       ],
       ask: ['What does each plan mean for seeing my family?', 'Can I say no to adoption?', 'Will I stay in the same home and school?'],
       askWho: LAWYER,
@@ -290,7 +290,7 @@ export const STAGE_DEPTH: Record<string, Record<Role, StageDepth>> = {
       goodToKnow: [
         'Before you leave care, you must get your documents: birth certificate, Social Security card, ID, and your health and school records.',
         'You may be able to stay in, or come back to, foster care until 21.',
-        'If you were in foster care at 18, you can keep free health coverage until 26.',
+        'If you were in foster care at 18, you can keep Medi-Cal health coverage until 26, no matter how much you earn.',
       ],
       ask: ['What papers do I get before I leave?', 'Can I stay in extended foster care?', 'Who do I call if I need help later?'],
       askWho: LAWYER,
