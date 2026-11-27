@@ -675,7 +675,7 @@ export function Onboarding() {
             <p style={S.sub}>
               {role === 'youth'
                 ? 'Every young person in dependency court has the right to their own lawyer — separate from your parents.'
-                : 'You have the right to a lawyer, even if you cannot pay. If you cannot pay, ask the judge at your first hearing. The judge will give you one.'}
+                : 'You have the right to a lawyer, even if you cannot pay. If you cannot pay, ask the judge at your first hearing. If your child was removed, or the county wants to remove your child, the judge must give you one. In other cases the judge can give you one.'}
             </p>
             <OptionBtn selected={lawyerStatus === 'yes'} onClick={() => setLawyerStatus('yes')}>Yes, I have a lawyer</OptionBtn>
             <OptionBtn selected={lawyerStatus === 'no'} onClick={() => setLawyerStatus('no')}>No, I do not have one yet</OptionBtn>

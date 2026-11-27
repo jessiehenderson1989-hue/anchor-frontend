@@ -159,7 +159,7 @@ const STAGE_CONTENT: Record<string, Record<Role, StageContent>> = {
     parent: {
       name: 'Disposition Hearing',
       whatHappens: 'The social worker writes your case plan with you, and the judge orders it. It is a list of services and goals to complete to get your child back. Enroll in services right away. The sooner you start, the better.',
-      yourRights: ['Right to participate in creating your case plan', 'Right to request reasonable services', 'Right to visits as often as is safe and good for your child', 'Right to object to services you believe are unreasonable'],
+      yourRights: ['Right to participate in creating your case plan', 'Right to request reasonable services', 'If services are ordered, a right to visits as often as is safe', 'Right to object to services you believe are unreasonable'],
       tasks: [
         'Read your case plan carefully — ask questions about anything unclear',
         'Sign up for required services as soon as possible, do not wait',
