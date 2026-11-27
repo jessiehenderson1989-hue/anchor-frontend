@@ -495,6 +495,11 @@ export function LoginScreen() {
         <p className="text-center text-xs px-4" style={{ color: '#62566B' }}>
           Your privacy is our priority. Anchor data is encrypted and never shared with court officials.
         </p>
+        <p className="text-center mt-3" style={{ fontSize: 14 }}>
+          <a href="/terms" onClick={(e) => { e.preventDefault(); navigate('/terms') }} style={{ color: '#503C64', fontWeight: 600, display: 'inline-flex', alignItems: 'center' }}>Terms</a>
+          <span style={{ color: '#62566B', margin: '0 10px' }}>|</span>
+          <a href="/privacy" onClick={(e) => { e.preventDefault(); navigate('/privacy') }} style={{ color: '#503C64', fontWeight: 600, display: 'inline-flex', alignItems: 'center' }}>Privacy</a>
+        </p>
 
       </div>
     </div>

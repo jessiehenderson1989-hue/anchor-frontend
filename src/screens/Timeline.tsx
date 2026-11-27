@@ -27,6 +27,7 @@ import { BottomNav, AppHeader } from '../components'
 import { supabase } from '../lib/supabase'
 import { useAuth } from '../contexts/AuthContext'
 import { haptics } from '../lib/haptics'
+import { STAGE_TASKS, flattenTasks, groupStarts } from '../lib/stageTasks'
 import { STAGE_DEPTH } from '../lib/stageDepth'
 
 type Role = 'parent' | 'youth' | 'supporter'
@@ -466,7 +467,8 @@ export function Timeline() {
 
   const getContent = (stage: TimelineStage): StageContent => {
     const lookup = STAGE_CONTENT[stage.stage_key]
-    if (lookup && lookup[role]) return lookup[role]
+    const groups = STAGE_TASKS[stage.stage_key]?.[role]
+    if (lookup && lookup[role]) return groups ? { ...lookup[role], tasks: flattenTasks(groups) } : lookup[role]
     // No written content for this stage and role: use what the database holds for it
     const base = fallbackContent(stage.stage_name, role)
     const dbTasks = (stage.tasks || []).map(t => t.task).filter(Boolean)
@@ -474,22 +476,26 @@ export function Timeline() {
       name: stage.stage_name,
       whatHappens: stage.what_happens || base.whatHappens,
       yourRights: stage.your_rights && stage.your_rights.length > 0 ? stage.your_rights : base.yourRights,
-      tasks: dbTasks.length > 0 ? dbTasks : base.tasks,
+      tasks: groups ? flattenTasks(groups) : dbTasks.length > 0 ? dbTasks : base.tasks,
     }
   }
+
+  // Checkmarks are matched by the step's wording, so adding or reordering steps keeps them
+  const doneLabels = (stage: TimelineStage) =>
+    new Set((stage.tasks || []).filter(t => t.completed).map(t => t.task))
 
   // Get task completion state: merge role-specific task labels with DB completion state
   const getStageTasks = (stage: TimelineStage): Task[] => {
     const content = getContent(stage)
     const roleTaskLabels = content.tasks
-    const dbTasks = stage.tasks || []
+    const done = doneLabels(stage)
     const localOverride = taskCompletions[stage.id]
 
     return roleTaskLabels.map((taskLabel, i) => ({
       task: taskLabel,
       completed: localOverride
         ? (localOverride[i] ?? false)
-        : (dbTasks[i]?.completed ?? false),
+        : done.has(taskLabel),
     }))
   }
 
@@ -534,11 +540,11 @@ export function Timeline() {
       if (!stage) return
 
       const content = getContent(stage)
-      const roleTaskCount = content.tasks.length
+      const done = doneLabels(stage)
 
       // Build current completions
       const current = taskCompletions[stageId]
-        ?? Array.from({ length: roleTaskCount }, (_, i) => stage.tasks?.[i]?.completed ?? false)
+        ?? content.tasks.map(label => done.has(label))
 
       const updated = [...current]
       updated[taskIndex] = !updated[taskIndex]
@@ -622,6 +628,8 @@ export function Timeline() {
     const isExpanded = expandedStage === stage.id
     const content = getContent(stage)
     const stageTasks = getStageTasks(stage)
+    const stageGroups = STAGE_TASKS[stage.stage_key]?.[role]
+    const taskGroups: Record<number, string> = stageGroups ? groupStarts(stageGroups) : {}
     const completed = stageTasks.filter(t => t.completed).length
     const total = stageTasks.length
     const S = STATUS_STYLES[stage.status]
@@ -789,7 +797,7 @@ export function Timeline() {
                   <div className="flex items-center gap-2">
                     <CheckSquare className="w-4 h-4" style={{ color: '#705987' }} />
                     <h4 className="text-xs font-bold uppercase tracking-wide" style={{ color: '#705987' }}>
-                      Do Now
+                      Your checklist
                     </h4>
                   </div>
                   <span className="text-xs font-semibold" style={{ color: '#62566B' }}>
@@ -810,7 +818,11 @@ export function Timeline() {
 
                 <div className="space-y-3">
                   {stageTasks.map((task, i) => (
-                    <label key={i} className="flex items-start gap-3 cursor-pointer" onClick={(e) => { e.stopPropagation(); toggleTaskCompletion(stage.id, i) }}>
+                    <div key={i}>
+                    {taskGroups[i] && (
+                      <p style={{ fontFamily: 'DM Sans, sans-serif', fontSize: 13, fontWeight: 700, color: '#503C64', margin: i === 0 ? '0 0 10px' : '8px 0 10px' }}>{taskGroups[i]}</p>
+                    )}
+                    <label className="flex items-start gap-3 cursor-pointer" onClick={(e) => { e.stopPropagation(); toggleTaskCompletion(stage.id, i) }}>
                       <div
                         onClick={(e) => { e.stopPropagation(); toggleTaskCompletion(stage.id, i) }}
                         className="w-5 h-5 rounded-lg flex-shrink-0 mt-0.5 flex items-center justify-center cursor-pointer transition-all"
@@ -831,6 +843,7 @@ export function Timeline() {
                         {task.task}
                       </span>
                     </label>
+                    </div>
                   ))}
                 </div>
               </div>
@@ -894,6 +907,8 @@ export function Timeline() {
     const isExpanded = expandedStage === stage.id
     const content = getContent(stage)
     const stageTasks = getStageTasks(stage)
+    const stageGroups = STAGE_TASKS[stage.stage_key]?.[role]
+    const taskGroups: Record<number, string> = stageGroups ? groupStarts(stageGroups) : {}
     const completed = stageTasks.filter(t => t.completed).length
     const total = stageTasks.length
     const S = STATUS_STYLES[stage.status]
@@ -959,7 +974,11 @@ export function Timeline() {
                     Tasks ({completed}/{total})
                   </p>
                   {stageTasks.map((task, i) => (
-                    <label key={i} className="flex items-start gap-2.5 cursor-pointer" onClick={(e) => { e.stopPropagation(); toggleTaskCompletion(stage.id, i) }}>
+                    <div key={i}>
+                    {taskGroups[i] && (
+                      <p style={{ fontFamily: 'DM Sans, sans-serif', fontSize: 13, fontWeight: 700, color: '#503C64', margin: '6px 0 8px' }}>{taskGroups[i]}</p>
+                    )}
+                    <label className="flex items-start gap-2.5 cursor-pointer" onClick={(e) => { e.stopPropagation(); toggleTaskCompletion(stage.id, i) }}>
                       <div
                         onClick={(e) => { e.stopPropagation(); toggleTaskCompletion(stage.id, i) }}
                         className="w-4 h-4 rounded flex-shrink-0 mt-0.5 flex items-center justify-center"
@@ -970,13 +989,14 @@ export function Timeline() {
                       >
                         {task.completed && <Check className="w-2.5 h-2.5 text-white" />}
                       </div>
-                      <span className="text-xs leading-relaxed" style={{
+                      <span className="text-sm leading-relaxed" style={{
                         color: task.completed ? '#9A90A8' : '#291F32',
                         textDecoration: task.completed ? 'line-through' : 'none',
                       }}>
                         {task.task}
                       </span>
                     </label>
+                    </div>
                   ))}
                 </div>
               )}

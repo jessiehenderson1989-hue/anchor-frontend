@@ -18,6 +18,7 @@ export function ContactSupport() {
   const { user, profile } = useAuth()
   const [topic, setTopic] = useState('')
   const [message, setMessage] = useState('')
+  const [contact, setContact] = useState('')
   const [submitted, setSubmitted] = useState(false)
   const [loading, setLoading] = useState(false)
   const [error, setError] = useState('')
@@ -32,6 +33,7 @@ export function ContactSupport() {
         role: profile?.role || null,
         topic: topic || 'Not specified',
         message: message.trim(),
+        contact: !user && contact.trim() ? contact.trim() : null,
       })
       if (dbError) throw dbError
       haptics.success()
@@ -107,9 +109,30 @@ export function ContactSupport() {
             onChange={(e) => setMessage(e.target.value)}
             placeholder="Tell us what's on your mind…"
             rows={6}
+            maxLength={4000}
             style={{ width: '100%', boxSizing: 'border-box', padding: '14px 16px', background: '#FAF7F2', border: '1.5px solid rgba(112,89,135,0.2)', borderRadius: 16, fontFamily: 'DM Sans, sans-serif', fontSize: 15, color: '#291F32', outline: 'none', resize: 'vertical', lineHeight: 1.6 }}
           />
         </div>
+
+        {!user && (
+          <div style={{ marginBottom: 20 }}>
+            <label htmlFor="support-contact" style={{ display: 'block', fontFamily: 'DM Sans, sans-serif', fontSize: 12, fontWeight: 700, letterSpacing: '0.07em', textTransform: 'uppercase', color: '#62566B', marginBottom: 8 }}>
+              How can we reach you? <span style={{ fontWeight: 400, textTransform: 'none', letterSpacing: 0 }}>(optional)</span>
+            </label>
+            <input
+              id="support-contact"
+              value={contact}
+              onChange={(e) => setContact(e.target.value)}
+              placeholder="Email or phone number"
+              maxLength={200}
+              autoComplete="email"
+              style={{ width: '100%', boxSizing: 'border-box', minHeight: 50, padding: '0 16px', background: '#FAF7F2', border: '1.5px solid rgba(112,89,135,0.2)', borderRadius: 16, fontFamily: 'DM Sans, sans-serif', color: '#291F32', outline: 'none' }}
+            />
+            <p style={{ fontFamily: 'DM Sans, sans-serif', fontSize: 14, color: '#62566B', margin: '6px 0 0', lineHeight: 1.4 }}>
+              You are not signed in, so we cannot write back unless you leave one.
+            </p>
+          </div>
+        )}
 
         {error && (
           <div style={{ background: '#F5ECD8', border: '1px solid rgba(200,136,58,0.2)', borderRadius: 12, padding: '10px 14px', marginBottom: 16 }}>

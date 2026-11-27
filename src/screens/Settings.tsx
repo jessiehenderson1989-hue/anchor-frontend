@@ -204,6 +204,8 @@ export function Settings() {
   const [newPhone, setNewPhone] = useState(profile?.phone_number || '')
   const [deletePassword, setDeletePassword] = useState('')
   const [selectedRole, setSelectedRole] = useState<string>(profile?.role || 'parent')
+  const [roleAge, setRoleAge] = useState('')
+  const [under13, setUnder13] = useState(false)
 
   const [error, setError] = useState('')
   const [deleteError, setDeleteError] = useState('')
@@ -245,11 +247,19 @@ export function Settings() {
 
   const handleChangeRole = async () => {
     if (selectedRole === profile?.role) { setShowChangeRole(false); return }
+    // Youth accounts are for ages 13 and up, so ask before switching
+    let ageUpdate: { youth_age?: string } = {}
+    if (selectedRole === 'youth') {
+      const age = parseInt(roleAge, 10)
+      if (!roleAge.trim() || isNaN(age) || age < 1 || age > 120) { setError('Please enter your age.'); return }
+      if (age < 13) { setError(''); setUnder13(true); return }
+      ageUpdate = { youth_age: String(age) }
+    }
     setLoading(true); setError('')
     try {
       // Update role in profiles
       // The timeline is rebuilt for the new role, so Home starts from the first stage too
-      const { error: profileError } = await updateProfile({ role: selectedRole, current_stage: 'case-opening' })
+      const { error: profileError } = await updateProfile({ role: selectedRole, current_stage: 'case-opening', ...ageUpdate })
       if (profileError) throw profileError
 
       // Re-seed timeline for the new role
@@ -445,7 +455,7 @@ export function Settings() {
             </button>
           </div>
           {/* ── CHANGE ROLE ROW ── */}
-          <button style={row} onClick={() => { haptics.light(); setSelectedRole(profile?.role || 'parent'); setError(''); setShowChangeRole(true) }} className="w-full hover:bg-purple-50 transition-colors">
+          <button style={row} onClick={() => { haptics.light(); setSelectedRole(profile?.role || 'parent'); setRoleAge(''); setUnder13(false); setError(''); setShowChangeRole(true) }} className="w-full hover:bg-purple-50 transition-colors">
             <div className="flex items-center gap-3">
               <div style={iconWrap}><RefreshCw className="w-4 h-4" style={{ color: '#705987' }} /></div>
               <div>
@@ -632,7 +642,7 @@ export function Settings() {
               return (
                 <button
                   key={r.value}
-                  onClick={() => { haptics.light(); setSelectedRole(r.value) }}
+                  onClick={() => { haptics.light(); setSelectedRole(r.value); setUnder13(false); setError('') }}
                   className="w-full text-left aedge"
                   style={{ background: isSelected ? '#E9E0EF' : '#F0EAE0', border: isSelected ? '2px solid #705987' : '1.5px solid rgba(112,89,135,0.15)', borderRadius: 16, padding: '14px 16px', cursor: 'pointer', display: 'flex', alignItems: 'flex-start', gap: 12 }}
                 >
@@ -660,6 +670,28 @@ export function Settings() {
               )
             })}
           </div>
+          {selectedRole === 'youth' && profile?.role !== 'youth' && !under13 && (
+            <div style={{ marginBottom: 16 }}>
+              <label htmlFor="role-age" style={{ display: 'block', fontSize: 15, fontWeight: 600, color: '#291F32', marginBottom: 6 }}>How old are you?</label>
+              <input
+                id="role-age" type="number" inputMode="numeric" min={1} max={120}
+                value={roleAge} onChange={(e) => setRoleAge(e.target.value)}
+                style={{ width: '100%', minHeight: 48, borderRadius: 14, border: '1.5px solid rgba(112,89,135,0.3)', background: '#FAF7F2', padding: '0 14px', color: '#291F32', boxSizing: 'border-box' }}
+              />
+              <p style={{ fontSize: 14, color: '#62566B', margin: '6px 0 0', lineHeight: 1.4 }}>Youth accounts are for ages 13 and up.</p>
+            </div>
+          )}
+          {under13 && (
+            <div style={{ background: '#E9E0EF', borderRadius: 16, padding: '14px 16px', marginBottom: 16 }}>
+              <p style={{ fontSize: 15, color: '#291F32', margin: '0 0 12px', lineHeight: 1.5 }}>
+                Anchor accounts are for ages 13 and up, so this account cannot be changed to Youth. There is a page with people who can help you right now.
+              </p>
+              <div className="space-y-2">
+                <button onClick={() => navigate('/under-13')} className="abtn abtn-primary abtn-block">See who can help</button>
+                <button onClick={() => navigate('/delete-account')} className="abtn abtn-outline abtn-block">Remove my account</button>
+              </div>
+            </div>
+          )}
           <div className="space-y-2">
             <button
               onClick={handleChangeRole}

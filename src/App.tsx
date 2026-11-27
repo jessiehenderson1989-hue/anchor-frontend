@@ -1,6 +1,7 @@
 import { BrowserRouter, Routes, Route, Navigate } from 'react-router-dom'
 import { AuthProvider } from './contexts/AuthContext'
 import { ProtectedRoute } from './lib/ProtectedRoute'
+import { SignedOutOnly } from './lib/SignedOutOnly'
 import { HomeRoute } from './lib/HomeRoute'
 import { InstallPrompt } from './components/InstallPrompt'
 import {
@@ -37,8 +38,8 @@ function App() {
         <InstallPrompt />
         <Routes>
           <Route path="/" element={<HomeRoute />} />
-          <Route path="/auth" element={<LoginScreen />} />
-          <Route path="/login" element={<LoginScreen />} />
+          <Route path="/auth" element={<SignedOutOnly><LoginScreen /></SignedOutOnly>} />
+          <Route path="/login" element={<SignedOutOnly><LoginScreen /></SignedOutOnly>} />
           <Route path="/forgot-password" element={<ForgotPasswordScreen />} />
           <Route path="/reset-password" element={<ResetPasswordScreen />} />
           <Route
@@ -147,19 +148,11 @@ function App() {
           />
           <Route
             path="/terms"
-            element={
-              <ProtectedRoute allowBeforeIntake>
-                <TermsOfService />
-              </ProtectedRoute>
-            }
+            element={<TermsOfService />}
           />
           <Route
             path="/privacy"
-            element={
-              <ProtectedRoute allowBeforeIntake>
-                <PrivacyPolicy />
-              </ProtectedRoute>
-            }
+            element={<PrivacyPolicy />}
           />
           {/* Open to everyone: people who cannot sign in need it most */}
           <Route path="/contact-support" element={<ContactSupport />} />
