@@ -1,4 +1,4 @@
-const CACHE_NAME = 'anchor-v3';
+const CACHE_NAME = 'anchor-v4';
 const urlsToCache = [
   '/',
   '/index.html',
@@ -32,6 +32,11 @@ self.addEventListener('activate', (event) => {
 });
 
 self.addEventListener('fetch', (event) => {
+  // Only handle this app's own files. Fonts and other outside requests go straight to the network.
+  if (new URL(event.request.url).origin !== self.location.origin || event.request.method !== 'GET') {
+    return;
+  }
+
   // Never intercept Supabase or API calls
   if (
     event.request.url.includes('supabase.co') ||
