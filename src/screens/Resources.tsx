@@ -215,7 +215,7 @@ export function Resources() {
           {isYouth ? (
             <div style={{ display: 'flex', flexDirection: 'column', gap: 10 }}>
               <div style={{ background: '#FAF7F2', borderRadius: 14, padding: '14px' }}>
-                <p style={{ fontFamily: 'DM Sans, sans-serif', fontSize: 14, fontWeight: 700, color: '#291F32', margin: '0 0 4px' }}>Cal-FURS — Foster Youth Crisis Line</p>
+                <p style={{ fontFamily: 'DM Sans, sans-serif', fontSize: 14, fontWeight: 700, color: '#291F32', margin: '0 0 4px' }}>Family Urgent Response System (FURS)</p>
                 <p style={{ fontFamily: 'DM Sans, sans-serif', fontSize: 15, color: '#4A4058', margin: '0 0 10px', lineHeight: 1.5 }}>24/7 crisis support for foster youth. Mobile response teams available.</p>
                 <a href="tel:1-833-939-3877" className="abtn abtn-rose abtn-sm">
                   <Phone size={13} /> Call or Text 1-833-939-3877

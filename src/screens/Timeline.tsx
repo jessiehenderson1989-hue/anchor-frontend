@@ -158,7 +158,7 @@ const STAGE_CONTENT: Record<string, Record<Role, StageContent>> = {
   disposition: {
     parent: {
       name: 'Disposition Hearing',
-      whatHappens: 'The judge creates your case plan — a list of services and goals you must complete to get your child back. Enroll in services right away. The sooner you start, the better.',
+      whatHappens: 'The social worker writes your case plan with you, and the judge orders it. It is a list of services and goals to complete to get your child back. Enroll in services right away. The sooner you start, the better.',
       yourRights: ['Right to participate in creating your case plan', 'Right to request reasonable services', 'Right to regular visits with your child', 'Right to object to services you believe are unreasonable'],
       tasks: [
         'Read your case plan carefully — ask questions about anything unclear',
@@ -300,7 +300,7 @@ const STAGE_CONTENT: Record<string, Record<Role, StageContent>> = {
     },
     supporter: {
       name: '18-Month Review',
-      whatHappens: 'The court is finalizing a permanent plan. If you are interested in guardianship or adoption, speak up now. The court considers all stable, loving options for the child.',
+      whatHappens: 'At this hearing the judge either sends the child home or sets one more hearing to choose a permanent plan. If you are interested in guardianship or adoption, speak up now. The court considers all stable, loving options for the child.',
       yourRights: ['Right to be assessed for guardianship or adoption', 'Right to request de facto parent status if you have been the primary caregiver', 'Right to provide a statement to the court'],
       tasks: [
         'If you want to be the permanent caregiver, tell the social worker immediately',
@@ -326,7 +326,7 @@ const STAGE_CONTENT: Record<string, Record<Role, StageContent>> = {
     },
     youth: {
       name: 'Regular Check-Ins',
-      whatHappens: 'The court is checking in to make sure your permanent plan is working. If you are nearing 18, you have rights to extended services. Ask your attorney about Extended Foster Care.',
+      whatHappens: 'The court is checking in to make sure your permanent plan is working. If you are nearing 18, you may be able to stay in foster care until 21. Ask your lawyer about Extended Foster Care.',
       yourRights: ['You may be able to stay in foster care until 21', 'Right to transition planning support', 'Right to maintain connections with important people in your life'],
       tasks: [
         'Ask your attorney or social worker about Extended Foster Care if you are 16 or older',

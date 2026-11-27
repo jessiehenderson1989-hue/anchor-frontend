@@ -261,7 +261,7 @@ export const STAGE_DEPTH: Record<string, Record<Role, StageDepth>> = {
       goodToKnow: [
         'The judge still checks on you every six months.',
         'You can ask for changes at any time through your lawyer.',
-        'At 16, planning for adult life starts: school, work, housing, and money.',
+        'At 14, your case plan must list help to get you ready to be an adult. At 16, you get your own written plan and can join the Independent Living Program.',
       ],
       ask: ['Is my plan still the right one for me?', 'Can I see more of my family?', 'What help can I get to get ready for being an adult?'],
       askWho: LAWYER,
