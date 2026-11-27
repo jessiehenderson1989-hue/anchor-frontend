@@ -4,7 +4,15 @@ import { useAuth } from '../contexts/AuthContext'
 import { Welcome } from '../screens'
 
 export function HomeRoute() {
-  const { user, profile, loading } = useAuth()
+  const { user, profile, loading, signOut } = useAuth()
+  const [stuck, setStuck] = useState(false)
+
+  // If the account details never arrive, offer a way out so nobody is left on a blank screen
+  useEffect(() => {
+    if (!(user && !profile) || loading) { setStuck(false); return }
+    const t = setTimeout(() => setStuck(true), 7000)
+    return () => clearTimeout(t)
+  }, [user, profile, loading])
   const [showSplash, setShowSplash] = useState(true)
 
   useEffect(() => {
@@ -82,7 +90,17 @@ export function HomeRoute() {
         minHeight: '100vh', background: '#EDE6DB',
         display: 'flex', alignItems: 'center', justifyContent: 'center',
       }}>
-        <img src="/anchor-mark.png" alt="Anchor" style={{ width: 48, height: 48, objectFit: 'contain', opacity: 0.5 }} />
+        {stuck ? (
+          <div style={{ maxWidth: 320, padding: 24, textAlign: 'center' }}>
+            <p style={{ fontFamily: 'DM Sans, sans-serif', fontSize: 16, color: '#291F32', lineHeight: 1.5, margin: '0 0 16px' }}>
+              We could not load your account. Check your connection and try again.
+            </p>
+            <button onClick={() => window.location.reload()} className="abtn abtn-primary abtn-block" style={{ marginBottom: 10 }}>Try again</button>
+            <button onClick={() => { signOut().finally(() => window.location.replace('/auth')) }} className="abtn abtn-outline abtn-block">Sign out</button>
+          </div>
+        ) : (
+          <img src="/anchor-mark.png" alt="Anchor" style={{ width: 48, height: 48, objectFit: 'contain', opacity: 0.5 }} />
+        )}
       </div>
     )
   }

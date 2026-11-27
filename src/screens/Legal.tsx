@@ -226,7 +226,7 @@ export function Legal() {
                 This is general legal information
               </p>
               <p style={{ fontFamily: 'DM Sans, sans-serif', fontSize: 13, color: '#3A5A80', margin: 0, lineHeight: 1.6 }}>
-                This information is educational and not legal advice. Always talk to your attorney about your specific situation. Last checked against California law in November 2026.
+                This information is educational and not legal advice. Always talk to your attorney about your specific situation. Last reviewed in November 2026.
               </p>
             </div>
           </div>

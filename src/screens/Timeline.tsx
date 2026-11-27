@@ -45,7 +45,7 @@ const STAGE_CONTENT: Record<string, Record<Role, StageContent>> = {
     parent: {
       name: 'Case Opening',
       whatHappens: 'A case has been opened with Child Protective Services about your child. This is the beginning of the dependency court process. You have rights at every step — starting right now.',
-      yourRights: ['Right to an attorney at no cost', 'Right to read the petition', 'Right to know the allegations', 'Right to request your child be placed with family'],
+      yourRights: ['Right to a lawyer, even if you cannot pay', 'Right to read the petition', 'Right to know the allegations', 'Right to request your child be placed with family'],
       tasks: [
         'Contact your attorney or ask the court to appoint one',
         'Read the petition carefully — write down anything you disagree with',
@@ -534,6 +534,7 @@ export function Timeline() {
   }
 
   const toggleTaskCompletion = async (stageId: string, taskIndex: number) => {
+    let before: boolean[] | undefined
     try {
       haptics.medium()
       const stage = stages.find(s => s.id === stageId)
@@ -546,6 +547,7 @@ export function Timeline() {
       const current = taskCompletions[stageId]
         ?? content.tasks.map(label => done.has(label))
 
+      before = current
       const updated = [...current]
       updated[taskIndex] = !updated[taskIndex]
 
@@ -564,8 +566,12 @@ export function Timeline() {
         .eq('id', stageId)
 
       if (error) throw error
+      setError(null)
     } catch (err) {
       console.error('Error updating task:', err)
+      // Put the checkmark back the way it was and say so, so nobody thinks it saved
+      if (before) { const was = before; setTaskCompletions(prev => ({ ...prev, [stageId]: was })) }
+      setError('That checkmark did not save. Check your connection and try again.')
     }
   }
 

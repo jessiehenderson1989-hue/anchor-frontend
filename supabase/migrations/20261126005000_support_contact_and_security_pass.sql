@@ -8,3 +8,5 @@ revoke execute on function public.handle_new_user() from public, anon, authentic
 -- Account deletion: signed-in people only
 revoke execute on function public.delete_user() from public, anon;
 grant execute on function public.delete_user() to authenticated;
+-- The sign-up trigger runs as the auth service, so it keeps its own permission
+grant execute on function public.handle_new_user() to supabase_auth_admin;

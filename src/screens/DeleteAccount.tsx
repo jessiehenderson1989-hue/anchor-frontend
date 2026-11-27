@@ -1,9 +1,10 @@
 import { useState } from 'react'
 import { useNavigate } from 'react-router-dom'
-import { AlertTriangle, Lock, Mail, Trash2 } from 'lucide-react'
+import { AlertTriangle, Download, Lock, Trash2 } from 'lucide-react'
 import { AppHeader } from '../components'
 import { useAuth } from '../contexts/AuthContext'
 import { haptics } from '../lib/haptics'
+import { supabase } from '../lib/supabase'
 
 export function DeleteAccount() {
   const [step, setStep] = useState<'export' | 'confirm'>('export')
@@ -12,13 +13,31 @@ export function DeleteAccount() {
   const [error, setError] = useState('')
   const [loading, setLoading] = useState(false)
   const [exportSent, setExportSent] = useState(false)
-  const { deleteAccount } = useAuth()
+  const { deleteAccount, user, profile } = useAuth()
   const navigate = useNavigate()
 
+  // Saves a real copy of the person's data to their device before anything is deleted
   const handleExport = async () => {
     haptics.light()
-    setExportSent(true)
-    setTimeout(() => setStep('confirm'), 1000)
+    setError('')
+    try {
+      const [notes, timeline, contacts] = await Promise.all([
+        supabase.from('notes').select('*').eq('user_id', user?.id).order('created_at', { ascending: false }),
+        supabase.from('timeline_stages').select('*').eq('user_id', user?.id).order('order_index'),
+        supabase.from('contacts').select('*').eq('user_id', user?.id),
+      ])
+      if (notes.error || timeline.error || contacts.error) throw new Error('export failed')
+      const data = { profile, exportDate: new Date().toISOString(), notes: notes.data || [], timeline: timeline.data || [], contacts: contacts.data || [] }
+      const url = URL.createObjectURL(new Blob([JSON.stringify(data, null, 2)], { type: 'application/json' }))
+      const a = document.createElement('a')
+      a.href = url; a.download = `anchor-data-${new Date().toISOString().split('T')[0]}.json`
+      document.body.appendChild(a); a.click(); document.body.removeChild(a)
+      URL.revokeObjectURL(url)
+      setExportSent(true)
+      setTimeout(() => setStep('confirm'), 1000)
+    } catch {
+      setError('We could not save your copy. Check your connection and try again.')
+    }
   }
 
   const handleDelete = async () => {
@@ -33,7 +52,8 @@ export function DeleteAccount() {
         setLoading(false)
         return
       }
-      navigate('/auth?mode=signup', { replace: true })
+      // A full reload clears the signed-in state left behind by the deleted account
+      window.location.replace('/auth?mode=signup')
     } catch {
       setError('Failed to delete account. Please try again.')
       setLoading(false)
@@ -69,11 +89,15 @@ export function DeleteAccount() {
                     Before you go
                   </p>
                   <p style={{ fontFamily: 'DM Sans, sans-serif', fontSize: 15, color: '#7A5A2A', margin: 0, lineHeight: 1.6 }}>
-                    We can email you a copy of your notes, contacts, and timeline before deleting your account.
+                    You can save a copy of your notes, team, and timeline to this device before deleting your account.
                   </p>
                 </div>
               </div>
             </div>
+
+            {error && (
+              <p role="alert" style={{ fontFamily: 'DM Sans, sans-serif', fontSize: 15, color: '#94445D', margin: '0 0 14px', lineHeight: 1.5 }}>{error}</p>
+            )}
 
             {/* Buttons */}
             <div style={{ display: 'flex', flexDirection: 'column', gap: 12 }}>
@@ -83,8 +107,8 @@ export function DeleteAccount() {
                 className="abtn abtn-primary abtn-block"
                 style={exportSent ? { background: '#EAF4EE', color: '#4A7C59', boxShadow: 'none', opacity: 1, cursor: 'default' } : undefined}
               >
-                <Mail size={16} />
-                {exportSent ? 'Export sent ✓' : 'Email me my data'}
+                <Download size={16} />
+                {exportSent ? 'Copy saved ✓' : 'Save a copy of my data'}
               </button>
 
               <button className="abtn abtn-outline"

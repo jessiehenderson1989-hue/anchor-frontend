@@ -172,6 +172,10 @@ export function AuthProvider({ children }: { children: React.ReactNode }) {
 
       if (deleteError) throw deleteError
 
+      // The account is gone, so clear this device's sign-in without calling the server
+      await supabase.auth.signOut({ scope: 'local' })
+      setProfile(null)
+
       return { error: null }
     } catch (error) {
       return { error: error as Error }

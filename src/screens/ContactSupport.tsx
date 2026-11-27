@@ -15,7 +15,7 @@ const TOPICS = [
 
 export function ContactSupport() {
   const navigate = useNavigate()
-  const { user, profile } = useAuth()
+  const { user, profile, loading: authLoading } = useAuth()
   const [topic, setTopic] = useState('')
   const [message, setMessage] = useState('')
   const [contact, setContact] = useState('')
@@ -54,7 +54,7 @@ export function ContactSupport() {
           </div>
           <h2 style={{ fontFamily: 'Fraunces, serif', fontSize: 24, fontWeight: 700, color: '#291F32', marginBottom: 10 }}>Message sent</h2>
           <p style={{ fontFamily: 'DM Sans, sans-serif', fontSize: 15, color: '#4A4058', lineHeight: 1.6, marginBottom: 28 }}>
-            We got your message and will follow up within a few days. Thank you for reaching out.
+            {user || contact.trim() ? 'We got your message and will follow up within a few days.' : 'We got your message. You did not leave a way to reach you, so we cannot write back.'} Thank you for reaching out.
           </p>
           <button
             onClick={() => navigate(user ? '/settings' : '/')}
@@ -70,7 +70,7 @@ export function ContactSupport() {
   return (
     <div style={{ minHeight: '100vh', background: '#EDE6DB' }}>
       <div style={{ background: '#FAF7F2', borderBottom: '1px solid rgba(112,89,135,0.1)', padding: '14px 20px', display: 'flex', alignItems: 'center', gap: 12, position: 'sticky', top: 0, zIndex: 10 }}>
-        <button className="aedge" onClick={() => navigate(-1)} style={{ background: '#E8DDE8', border: 'none', borderRadius: 10, width: 40, height: 40, display: 'flex', alignItems: 'center', justifyContent: 'center', cursor: 'pointer', flexShrink: 0 }}>
+        <button className="aedge" onClick={() => (window.history.state?.idx > 0 ? navigate(-1) : navigate('/'))} style={{ background: '#E8DDE8', border: 'none', borderRadius: 10, width: 40, height: 40, display: 'flex', alignItems: 'center', justifyContent: 'center', cursor: 'pointer', flexShrink: 0 }}>
           <ArrowLeft size={16} color="#705987" />
         </button>
         <h1 style={{ fontFamily: 'Fraunces, serif', fontSize: 20, fontWeight: 700, color: '#291F32', margin: 0 }}>Contact Support</h1>
@@ -114,7 +114,7 @@ export function ContactSupport() {
           />
         </div>
 
-        {!user && (
+        {!user && !authLoading && (
           <div style={{ marginBottom: 20 }}>
             <label htmlFor="support-contact" style={{ display: 'block', fontFamily: 'DM Sans, sans-serif', fontSize: 12, fontWeight: 700, letterSpacing: '0.07em', textTransform: 'uppercase', color: '#62566B', marginBottom: 8 }}>
               How can we reach you? <span style={{ fontWeight: 400, textTransform: 'none', letterSpacing: 0 }}>(optional)</span>
@@ -129,7 +129,7 @@ export function ContactSupport() {
               style={{ width: '100%', boxSizing: 'border-box', minHeight: 50, padding: '0 16px', background: '#FAF7F2', border: '1.5px solid rgba(112,89,135,0.2)', borderRadius: 16, fontFamily: 'DM Sans, sans-serif', color: '#291F32', outline: 'none' }}
             />
             <p style={{ fontFamily: 'DM Sans, sans-serif', fontSize: 14, color: '#62566B', margin: '6px 0 0', lineHeight: 1.4 }}>
-              You are not signed in, so we cannot write back unless you leave one.
+              Leave an email or phone number if you want us to write back.
             </p>
           </div>
         )}

@@ -1,4 +1,4 @@
-const CACHE_NAME = 'anchor-v4';
+const CACHE_NAME = 'anchor-v5';
 const urlsToCache = [
   '/',
   '/index.html',
@@ -37,15 +37,6 @@ self.addEventListener('fetch', (event) => {
     return;
   }
 
-  // Never intercept Supabase or API calls
-  if (
-    event.request.url.includes('supabase.co') ||
-    event.request.url.includes('anthropic') ||
-    event.request.url.includes('render.com')
-  ) {
-    return;
-  }
-
   event.respondWith(
     fetch(event.request)
       .then((response) => {
@@ -59,8 +50,11 @@ self.addEventListener('fetch', (event) => {
         return response;
       })
       .catch(() => {
-        // Network failed — fall back to cache
-        return caches.match(event.request);
+        // Network failed: use the saved copy. For a page the app has not saved yet,
+        // show the app itself so the person is not left on a browser error page.
+        return caches.match(event.request).then((hit) =>
+          hit || (event.request.mode === 'navigate' ? caches.match('/index.html') : undefined)
+        );
       })
   );
 });

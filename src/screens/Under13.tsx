@@ -1,5 +1,6 @@
 import { useEffect } from 'react'
 import { useNavigate } from 'react-router-dom'
+import { useAuth } from '../contexts/AuthContext'
 import { Phone, ExternalLink } from 'lucide-react'
 
 // Shown instead of creating an account when someone under 13 picks Youth.
@@ -14,6 +15,7 @@ const p: React.CSSProperties = { fontFamily: 'DM Sans, sans-serif', fontSize: 15
 
 export function Under13() {
   const navigate = useNavigate()
+  const { user } = useAuth()
   useEffect(() => { window.scrollTo(0, 0) }, [])
 
   return (
@@ -23,7 +25,7 @@ export function Under13() {
           Anchor accounts are for ages 13 and up
         </h1>
         <p style={{ ...p, marginBottom: 24 }}>
-          We did not make an account or save anything about you. You still have rights, and there are people whose job is to listen to you.
+          {user ? 'Your account was not changed.' : 'We did not make an account or save anything about you.'} You still have rights, and there are people whose job is to listen to you.
         </p>
 
         <div style={card}>
@@ -68,11 +70,11 @@ export function Under13() {
         </div>
 
         <button
-          onClick={() => navigate('/auth')}
+          onClick={() => navigate(user ? '/settings' : '/auth')}
           className="abtn abtn-outline abtn-block"
           style={{ marginTop: 10 }}
         >
-          Back to sign in
+          {user ? 'Back to Settings' : 'Back to sign in'}
         </button>
       </div>
     </div>

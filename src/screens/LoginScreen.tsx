@@ -27,7 +27,7 @@ export function LoginScreen() {
   const [error, setError] = useState('')
   const [loading, setLoading] = useState(false)
 
-  const { signIn, signUp, updateProfile } = useAuth()
+  const { signIn, signUp } = useAuth()
   const navigate = useNavigate()
 
   const handleSignIn = async (e: React.FormEvent) => {
@@ -152,13 +152,13 @@ export function LoginScreen() {
           setError("We're having trouble connecting. Please check your internet and try again.")
         }
       } else {
-        // Safety net: write role to profile in case DB trigger missed it
-        if (selectedRole) {
-          await updateProfile({
-            role: selectedRole,
-            first_name: firstName,
-            ...(selectedRole === 'youth' ? { youth_age: String(parseInt(youthAge, 10)) } : {}),
-          })
+        // The database sets name and role from the sign-up details. Age is saved here,
+        // using the new account's id directly, because the profile is not loaded yet.
+        if (selectedRole === 'youth') {
+          const { data: { user: newUser } } = await supabase.auth.getUser()
+          if (newUser) {
+            await supabase.from('profiles').update({ youth_age: String(parseInt(youthAge, 10)) }).eq('id', newUser.id)
+          }
         }
         navigate('/onboarding')
       }
@@ -496,9 +496,9 @@ export function LoginScreen() {
           Your privacy is our priority. Anchor data is encrypted and never shared with court officials.
         </p>
         <p className="text-center mt-3" style={{ fontSize: 14 }}>
-          <a href="/terms" onClick={(e) => { e.preventDefault(); navigate('/terms') }} style={{ color: '#503C64', fontWeight: 600, display: 'inline-flex', alignItems: 'center' }}>Terms</a>
+          <a href="/terms" target="_blank" rel="noopener" style={{ color: '#503C64', fontWeight: 600, display: 'inline-flex', alignItems: 'center' }}>Terms</a>
           <span style={{ color: '#62566B', margin: '0 10px' }}>|</span>
-          <a href="/privacy" onClick={(e) => { e.preventDefault(); navigate('/privacy') }} style={{ color: '#503C64', fontWeight: 600, display: 'inline-flex', alignItems: 'center' }}>Privacy</a>
+          <a href="/privacy" target="_blank" rel="noopener" style={{ color: '#503C64', fontWeight: 600, display: 'inline-flex', alignItems: 'center' }}>Privacy</a>
         </p>
 
       </div>
